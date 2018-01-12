@@ -1,0 +1,163 @@
+Global_40_House_Rules.TABLEGROUP.01;Germans=objectiveAttachment_Germans_1_Trade_with_Russia;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia;objectiveAttachment_Germans_3_Control_Caucasus;triggerAttachment_Germans_4_Presence_In_Egypt;triggerAttachment_Germans_5_Swedish_Iron_Ore;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia;objectiveAttachment_German_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.02;Russians=triggerAttachment_Russians_1_Lend_Lease;triggerAttachment_Russians_Lend_Lease_SeaZone125;triggerAttachment_Russians_Lend_Lease_SeaZone5;triggerAttachment_Russians_Lend_Lease_SeaZone80;triggerAttachment_Russians_Lend_Lease_SeaZones_+2PUs;objectiveAttachment_Russians_2_Spread_Of_Communism;objectiveAttachment_Russians_2_Spread_Of_Communism2;objectiveAttachment_Russians_3_No_Allies;objectiveAttachment_Russians_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.03;Japanese=objectiveAttachment_Japanese_1_Trade_With_America;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies;objectiveAttachment_Japanese_Strategic_Islands;objectiveAttachment_Japanese_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.04;Americans=objectiveAttachment_Americans_1_Homeland;objectiveAttachment_Americans_2_Outer_Territories;objectiveAttachment_Americans_3_Defense_Obligations;objectiveAttachment_Americans_4_Philippines;objectiveAttachment_Americans_Strategic_Islands;triggerAttachment_Americans_5_Presence_In_France;objectiveAttachment_American_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.05;Chinese=objectiveAttachment_Chinese_1_Burma_Road
+Global_40_House_Rules.TABLEGROUP.06;British=objectiveAttachment_British_1_Original;objectiveAttachment_British_1a_Original;objectiveAttachment_British_Sphere_of_Influence;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya;objectiveAttachment_UK_Pacific_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.07;Italians=objectiveAttachment_Italians_1_Control_The_Mediterranean;objectiveAttachment_Italians_2_Roman_Empire;objectiveAttachment_Italians_3_North_Africa;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia;objectiveAttachment_Italian_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.08;ANZAC=triggerAttachment_ANZAC_1_Control_Original_And_Malaya;objectiveAttachment_ANZAC_2_Control_Strategic_Islands;objectiveAttachment_ANZAC_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.09;French=conditionAttachment_French_1_Liberation_Switch;objectiveAttachment_French_Sphere_of_Influence
+Global_40_House_Rules.TABLEGROUP.10;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAlliedVictory1
+
+
+Global_40_House_Rules.Germans;objectiveAttachment_Germans_1_Trade_with_Russia=<b>5 PUs</b> if not yet at war with Russia.
+Global_40_House_Rules.Germans;objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia=<b>5 PUs</b> for each German controlled territory: Volgograd or Novgorod or Russia.
+Global_40_House_Rules.Germans;objectiveAttachment_Germans_3_Control_Caucasus=<b>5 PUs</b> if Axis controls the Caucasus.
+Global_40_House_Rules.Germans;triggerAttachment_Germans_4_Presence_In_Egypt=<b>5 PUs</b> if there is at least one German land unit in Egypt, whether or not it is controlled by Italy or Germany or Japan.
+Global_40_House_Rules.Germans;triggerAttachment_Germans_5_Swedish_Iron_Ore=<b>5 PUs</b> if Germany controls both Denmark and Norway and Sweden is not allied-controlled or pro-allied.
+Global_40_House_Rules.Germans;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each German controlled territory: Iraq or Persia or Northwest Persia.
+Global_40_House_Rules.Germans;objectiveAttachment_German_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Japanese Units are in German Controlled Territories. Sea Zones exempt. 
+
+
+Global_40_House_Rules.Russians;triggerAttachment_Russians_1_Lend_Lease=<b>5 PUs</b> if Russia is at war, sz125 has no Axis warships (all sea units except transports), Archangel is Russia-controlled, and there are no allied units in any original Russian territories.
+Global_40_House_Rules.Russians;triggerAttachment_Russians_Lend_Lease_SeaZone125=<b>2 PUs</b> When Russian National Objectives tech is on if Russia is at war, sz125 has no Axis warships (all sea units except transports),Archangel is Russian controlled and there are no allied units in any original Russian territories.
+Global_40_House_Rules.Russians;triggerAttachment_Russians_Lend_Lease_SeaZone5=<b>2 PUs</b> When Russian National Objectives tech is on if Russia is at war with Germany, sz5 has no Axis warships (all sea units except transports), Amur is Russian controlled and there are no allied units in any original Russian territories. 
+Global_40_House_Rules.Russians;triggerAttachment_Russians_Lend_Lease_SeaZone80=<b>2 PUs</b> When Russian National Objectives tech is on if Russia is at war with Germany, sz80 has no Axis warships (all sea units except transports), Persia is Allied controlled and there are no allied units in any original Russian territories.
+Global_40_House_Rules.Russians;triggerAttachment_Russians_Lend_Lease_SeaZones_+2PUs=<b>2 PUs each</b> When Russian National Objectives tech is on for Sea Zones 5,80 and 125 if Russia is at war and Japan declares war on Russia. Allied units may be present in Russia.
+Global_40_House_Rules.Russians;objectiveAttachment_Russians_2_Spread_Of_Communism=<b>3 PUs</b> for each originally German, Italian, or Pro-Axis neutral territory that Russia controls.
+Global_40_House_Rules.Russians;objectiveAttachment_Russians_2_Spread_Of_Communism2=<b>2 PUs</b> When Russian National Objectives tech is on for each originally German, Italian, or Pro-Axis Euoropean neutral territory that Russia controls.
+Global_40_House_Rules.Russians;objectiveAttachment_Russians_3_No_Allies=<b>3 PUs</b> When Russian National Objectives tech is on, Russia is at war with Germany and there are no Allied units in any original Russian territories.
+Global_40_House_Rules.Russians;objectiveAttachment_Russians_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Allied Units are in Russian Controlled Territories. Sea Zones exempt. 
+
+
+
+
+Global_40_House_Rules.Japanese;objectiveAttachment_Japanese_1_Trade_With_America=<b>10 PUs</b> if not yet at war with USA, has not yet attacked French Indo-China, and has not declared war on UK or ANZAC.
+Global_40_House_Rules.Japanese;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter=<b>5 PUs</b> if Axis controls all of Guam, Midway, Wake Island, Gilbert Islands, and Solomon Islands.
+Global_40_House_Rules.Japanese;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States=<b>5 PUs</b> for each Axis controlled territory: Hawaii, India, New South Wales, and Western United States.
+Global_40_House_Rules.Japanese;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies=<b>5 PUs</b> if Axis controls all of Sumatra, Java, Borneo, and Celebes.
+Global_40_House_Rules.Japanese;objectiveAttachment_Japanese_Strategic_Islands=<b>3 PUs</b> When the PacificIslandsAndPU_Change tech is on when at war with the USA, Japan controls Midway, Wake and Guam.
+Global_40_House_Rules.Japanese;objectiveAttachment_Japanese_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if German or Italian Units are in Japanese Controlled Territories. Sea Zones exempt. 
+
+
+Global_40_House_Rules.Americans;objectiveAttachment_Americans_1_Homeland=<b>10 PUs</b> if USA is at war and EUS, WUS, and CUS are American-controlled.
+Global_40_House_Rules.Americans;objectiveAttachment_Americans_2_Outer_Territories=<b>5 PUs</b> if USA is at war and Alaska, Aleutian Islands, Hawaiian Islands, and Johnston Island, and Line Islands are American-controlled.
+Global_40_House_Rules.Americans;objectiveAttachment_Americans_3_Defense_Obligations=<b>5 PUs</b> if USA is at war and Mexico, South Eastern Mexico, Central America, and West Indies are American-controlled.
+Global_40_House_Rules.Americans;objectiveAttachment_Americans_4_Philippines=<b>5 PUs</b> if USA is at war and the Philippines is American-controlled.
+Global_40_House_Rules.Americans;triggerAttachment_Americans_5_Presence_In_France=<b>5 PUs</b> each turn the USA has one land unit in France.
+Global_40_House_Rules.Americans;objectiveAttachment_Americans_Strategic_Islands=<b>3 PUs</b>When the PacificIslandsAndPU_Change tech is on when at war with Japan, USA controls Midway, Wake and Guam.
+Global_40_House_Rules.Americans;objectiveAttachment_American_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in American Controlled Territories. Sea Zones exempt. 
+
+
+Global_40_House_Rules.Chinese;objectiveAttachment_Chinese_1_Burma_Road=<b>6 PUs</b> and may build artillery if the Allies control India, Burma, Yunnan, and Szechwan.
+
+
+Global_40_House_Rules.British;objectiveAttachment_British_1_Original=<b>5 PUs</b> for UK Europe if UK Europe controls all of its original territories.
+Global_40_House_Rules.British;objectiveAttachment_British_1a_Original=<b>3 PUs</b> When the ConvoyAndBlockade tech is on for UK Europe if UK Europe controls all of its original territories.
+Global_40_House_Rules.British;objectiveAttachment_British_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in British Controlled Territories. Sea Zones exempt. 
+Global_40_House_Rules.British;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya=<b>5 PUs</b> for UK Pacific if UK Pacific controls both Kwangtung and Malaya, and is at war with Japan.
+Global_40_House_Rules.British;objectiveAttachment_UK_Pacific_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in UK_Pacific Controlled Territories. Sea Zones exempt. 
+
+
+Global_40_House_Rules.Italians;objectiveAttachment_Italians_1_Control_The_Mediterranean=<b>5 PUs</b> if no Allied ships are in the Med: sz92,...,sz99.
+Global_40_House_Rules.Italians;objectiveAttachment_Italians_2_Roman_Empire=<b>5 PUs</b> if Axis control at least 3 of: Gibraltar, Egypt, Southern France and Greece.
+Global_40_House_Rules.Italians;objectiveAttachment_Italians_3_North_Africa=<b>5 PUs</b> if Axis controll all of: Morocco, Algeria, Tunisia, Libya, Tobruk, and Alexandria.
+Global_40_House_Rules.Italians;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each Italian controlled territory: Iraq or Persia or Northwest Persia.
+Global_40_House_Rules.Italians;objectiveAttachment_Italian_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Japanese Units are in Italian Controlled Territories. Sea Zones exempt. 
+
+
+Global_40_House_Rules.ANZAC;triggerAttachment_ANZAC_1_Control_Original_And_Malaya=<b>5 PUs</b> if the Allies control Malaya, and ANZAC controls all of their original territories, and is at war with Japan.
+Global_40_House_Rules.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategic_Islands=<b>5 PUs</b> if the Allies (not including Dutch) control all of Dutch New Guinea, New Guinea, New Britain, and the Solomon Islands, and is at war with Japan.
+Global_40_House_Rules.ANZAC;objectiveAttachment_ANZAC_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in ANZAC Controlled Territories. Sea Zones exempt. 
+
+
+Global_40_House_Rules.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of free units in France the first time France is Liberated (The engine will give you 4 infantry automatically. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want).
+Global_40_House_Rules.French;objectiveAttachment_French_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in French Controlled Territories. Sea Zones exempt.
+
+
+Global_40_House_Rules.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at least one is Rome/Berlin/Japan.
+Global_40_House_Rules.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under allied control and allies maintain control of one of their own capitals.
+
+
+
+Global_1940_House_Rules_with_Canada.TABLEGROUP.01;Germans=objectiveAttachment_Germans_1_Trade_with_Russia;objectiveAttachment_Germans_2_Control_Moscow;objectiveAttachment_Germans_3_Control_Caucasus;triggerAttachment_Germans_4_Presence_In_Egypt;triggerAttachment_Germans_5_Swedish_Iron_Ore;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia;objectiveAttachment_German_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.02;Russians=triggerAttachment_Russians_1_Lend_Lease;triggerAttachment_Russians_Lend_Lease_SeaZone125;triggerAttachment_Russians_Lend_Lease_SeaZone5;triggerAttachment_Russians_Lend_Lease_SeaZone80;triggerAttachment_Russians_Lend_Lease_SeaZones_+2PUs;objectiveAttachment_Russians_6_Spread_Of_Communism;objectiveAttachment_Russians_6_Spread_Of_Communism2;objectiveAttachment_Russians_3_No_Allies;objectiveAttachment_Russians_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.03;Japanese=objectiveAttachment_Japanese_1_Trade_With_America;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies;objectiveAttachment_Japanese_Strategic_Islands;objectiveAttachment_Japanese_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.04;Americans=objectiveAttachment_Americans_1_Homeland;objectiveAttachment_Americans_2_Outer_Territories;objectiveAttachment_Americans_3_Defense_Obligations;objectiveAttachment_Americans_4_Philippines;objectiveAttachment_Americans_Strategic_Islands;triggerAttachment_Americans_5_Presence_In_France;objectiveAttachment_American_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.05;Chinese=objectiveAttachment_Chinese_1_Burma_Road
+Global_1940_House_Rules_with_Canada.TABLEGROUP.06;British=objectiveAttachment_British_1_Original;objectiveAttachment_British_1a_Original;objectiveAttachment_British_Sphere_of_Influence;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya;objectiveAttachment_UK_Pacific_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.07;Italians=objectiveAttachment_Italians_1_Control_The_Mediterranean;objectiveAttachment_Italians_2_Roman_Empire;objectiveAttachment_Italians_3_North_Africa;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia;objectiveAttachment_Italian_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.08;ANZAC=triggerAttachment_ANZAC_1_Control_Original_And_Malaya;objectiveAttachment_ANZAC_2_Control_Strategic_Islands;objectiveAttachment_ANZAC_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.09;French=conditionAttachment_French_1_Liberation_Switch;objectiveAttachment_French_Sphere_of_Influence
+Global_1940_House_Rules_with_Canada.TABLEGROUP.10;Victory_Conditions=triggerAttachmentAxisVictory1;triggerAttachmentAlliedVictory1
+
+
+Global_1940_House_Rules_with_Canada.Germans;objectiveAttachment_Germans_1_Trade_with_Russia=<b>5 PUs</b> if not yet at war with Russia.
+Global_1940_House_Rules_with_Canada.Germans;objectiveAttachment_Germans_2_Control_Moscow=<b>5 PUs</b> if the Germans control Moscow.
+Global_1940_House_Rules_with_Canada.Germans;objectiveAttachment_Germans_3_Control_Caucasus=<b>5 PUs</b> if Axis controls the Caucasus.
+Global_1940_House_Rules_with_Canada.Germans;triggerAttachment_Germans_4_Presence_In_Egypt=<b>5 PUs</b> if there is at least one German land unit in Egypt, whether or not it is controlled by Italy or Germany or Japan.
+Global_1940_House_Rules_with_Canada.Germans;triggerAttachment_Germans_5_Swedish_Iron_Ore=<b>5 PUs</b> if Germany controls both Denmark and Norway and Sweden is not allied-controlled or pro-allied.
+Global_1940_House_Rules_with_Canada.Germans;objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each German controlled territory: Iraq or Persia or Northwest Persia.
+Global_1940_House_Rules_with_Canada.Germans;objectiveAttachment_German_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Japanese Units are in German Controlled Territories. Sea Zones exempt. 
+
+
+Global_1940_House_Rules_with_Canada.Russians;triggerAttachment_Russians_1_Lend_Lease=<b>5 PUs</b> if Russia is at war, sz125 has no Axis warships (all sea units except transports), Archangel is Russia-controlled, and there are no allied units in any original Russian territories.
+Global_1940_House_Rules_with_Canada.Russians;triggerAttachment_Russians_Lend_Lease_SeaZone125=<b>2 PUs</b> When Russian National Objectives tech is on if Russia is at war, sz125 has no Axis warships (all sea units except transports),Archangel is Russian controlled and there are no allied units in any original Russian territories.
+Global_1940_House_Rules_with_Canada.Russians;triggerAttachment_Russians_Lend_Lease_SeaZone5=<b>2 PUs</b> When Russian National Objectives tech is on if Russia is at war with Germany, sz5 has no Axis warships (all sea units except transports), Amur is Russian controlled and there are no allied units in any original Russian territories. 
+Global_1940_House_Rules_with_Canada.Russians;triggerAttachment_Russians_Lend_Lease_SeaZone80=<b>2 PUs</b> When Russian National Objectives tech is on if Russia is at war with Germany, sz80 has no Axis warships (all sea units except transports), Persia is Allied controlled and there are no allied units in any original Russian territories.
+Global_1940_House_Rules_with_Canada.Russians;triggerAttachment_Russians_Lend_Lease_SeaZones_+2PUs=<b>2 PUs each</b> When Russian National Objectives tech is on for Sea Zones 5,80 and 125 if Russia is at war and Japan declares war on Russia. Allied units may be present in Russia.
+Global_1940_House_Rules_with_Canada.Russians;objectiveAttachment_Russians_6_Spread_Of_Communism=<b>3 PUs</b> for each originally German, Italian, or Pro-Axis neutral territory that Russia controls.
+Global_1940_House_Rules_with_Canada.Russians;objectiveAttachment_Russians_6_Spread_Of_Communism2=<b>2 PUs</b> When Russian National Objectives tech is on for each originally German, Italian, or Pro-Axis Euoropean neutral territory that Russia controls.
+Global_1940_House_Rules_with_Canada.Russians;objectiveAttachment_Russians_3_No_Allies=<b>3 PUs</b> When Russian National Objectives tech is on, Russia is at war with Germany and there are no Allied units in any original Russian territories.
+Global_1940_House_Rules_with_Canada.Russians;objectiveAttachment_Russians_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Allied Units are in Russian Controlled Territories. Sea Zones exempt. 
+
+
+
+
+Global_1940_House_Rules_with_Canada.Japanese;objectiveAttachment_Japanese_1_Trade_With_America=<b>10 PUs</b> if not yet at war with USA, has not yet attacked French Indo-China, and has not declared war on UK or ANZAC.
+Global_1940_House_Rules_with_Canada.Japanese;objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter=<b>5 PUs</b> if Axis controls all of Guam, Midway, Wake Island, Gilbert Islands, and Solomon Islands.
+Global_1940_House_Rules_with_Canada.Japanese;objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States=<b>5 PUs</b> for each Axis controlled territory: Hawaii, India, New South Wales, and Western United States.
+Global_1940_House_Rules_with_Canada.Japanese;objectiveAttachment_Japanese_4_Control_Dutch_East_Indies=<b>5 PUs</b> if Axis controls all of Sumatra, Java, Borneo, and Celebes.
+Global_1940_House_Rules_with_Canada.Japanese;objectiveAttachment_Japanese_Strategic_Islands=<b>3 PUs</b> When the PacificIslandsAndPU_Change tech is on when at war with the USA, Japan controls Midway, Wake and Guam.
+Global_1940_House_Rules_with_Canada.Japanese;objectiveAttachment_Japanese_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if German or Italian Units are in Japanese Controlled Territories. Sea Zones exempt. 
+
+
+Global_1940_House_Rules_with_Canada.Americans;objectiveAttachment_Americans_1_Homeland=<b>10 PUs</b> if USA is at war and EUS, WUS, and CUS are American-controlled.
+Global_1940_House_Rules_with_Canada.Americans;objectiveAttachment_Americans_2_Outer_Territories=<b>5 PUs</b> if USA is at war and Alaska, Aleutian Islands, Hawaiian Islands, and Johnston Island, and Line Islands are American-controlled.
+Global_1940_House_Rules_with_Canada.Americans;objectiveAttachment_Americans_3_Defense_Obligations=<b>5 PUs</b> if USA is at war and Mexico, South Eastern Mexico, Central America, and West Indies are American-controlled.
+Global_1940_House_Rules_with_Canada.Americans;objectiveAttachment_Americans_4_Philippines=<b>5 PUs</b> if USA is at war and the Philippines is American-controlled.
+Global_1940_House_Rules_with_Canada.Americans;triggerAttachment_Americans_5_Presence_In_France=<b>5 PUs</b> each turn the USA has one land unit in France.
+Global_1940_House_Rules_with_Canada.Americans;objectiveAttachment_Americans_Strategic_Islands=<b>3 PUs</b>When the PacificIslandsAndPU_Change tech is on when at war with Japan, USA controls Midway, Wake and Guam.
+Global_1940_House_Rules_with_Canada.Americans;objectiveAttachment_American_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in American Controlled Territories. Sea Zones exempt. 
+
+
+Global_1940_House_Rules_with_Canada.Chinese;objectiveAttachment_Chinese_1_Burma_Road=<b>6 PUs</b> and may build artillery if the Allies control India, Burma, Yunnan, and Szechwan.
+
+
+Global_1940_House_Rules_with_Canada.British;objectiveAttachment_British_1_Original=<b>5 PUs</b> for UK Europe if UK Europe controls all of its original territories.
+Global_1940_House_Rules_with_Canada.British;objectiveAttachment_British_1a_Original=<b>3 PUs</b> When the ConvoyAndBlockade tech is on for UK Europe if UK Europe controls all of its original territories.
+Global_1940_House_Rules_with_Canada.British;objectiveAttachment_British_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in British Controlled Territories. Sea Zones exempt. 
+Global_1940_House_Rules_with_Canada.British;objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya=<b>5 PUs</b> for UK Pacific if UK Pacific controls both Kwangtung and Malaya, and is at war with Japan.
+Global_1940_House_Rules_with_Canada.British;objectiveAttachment_UK_Pacific_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in UK_Pacific Controlled Territories. Sea Zones exempt. 
+
+
+Global_1940_House_Rules_with_Canada.Italians;objectiveAttachment_Italians_1_Control_The_Mediterranean=<b>5 PUs</b> if no Allied ships are in the Med: sz92,...,sz99.
+Global_1940_House_Rules_with_Canada.Italians;objectiveAttachment_Italians_2_Roman_Empire=<b>5 PUs</b> if Axis control at least 3 of: Gibraltar, Egypt, Southern France and Greece.
+Global_1940_House_Rules_with_Canada.Italians;objectiveAttachment_Italians_3_North_Africa=<b>5 PUs</b> if Axis controll all of: Morocco, Algeria, Tunisia, Libya, Tobruk, and Alexandria.
+Global_1940_House_Rules_with_Canada.Italians;objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia=<b>2 PUs</b> for each Italian controlled territory: Iraq or Persia or Northwest Persia.
+Global_1940_House_Rules_with_Canada.Italians;objectiveAttachment_Italian_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Japanese Units are in Italian Controlled Territories. Sea Zones exempt. 
+
+
+Global_1940_House_Rules_with_Canada.ANZAC;triggerAttachment_ANZAC_1_Control_Original_And_Malaya=<b>5 PUs</b> if the Allies control Malaya, and ANZAC controls all of their original territories, and is at war with Japan.
+Global_1940_House_Rules_with_Canada.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategic_Islands=<b>5 PUs</b> if the Allies (not including Dutch) control all of Dutch New Guinea, New Guinea, New Britain, and the Solomon Islands, and is at war with Japan.
+Global_1940_House_Rules_with_Canada.ANZAC;objectiveAttachment_ANZAC_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in ANZAC Controlled Territories. Sea Zones exempt. 
+
+
+Global_1940_House_Rules_with_Canada.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of free units in France the first time France is Liberated (The engine will give you 4 infantry automatically. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want).
+Global_1940_House_Rules_with_Canada.French;objectiveAttachment_French_Sphere_of_Influence=<b>-10 PUs</b> When Sphere Of Influence tech is on, if Russian Units are in French Controlled Territories. Sea Zones exempt.
+
+
+Global_1940_House_Rules_with_Canada.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at least one is Rome/Berlin/Japan.
+Global_1940_House_Rules_with_Canada.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under allied control and allies maintain control of one of their own capitals.
+
+
