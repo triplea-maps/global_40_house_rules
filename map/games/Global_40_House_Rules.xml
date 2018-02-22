@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="1.4"/>
+  <info name="Global 40 House Rules" version="1.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2390,39 +2390,43 @@
       <techname name="increasedFactoryProduction"/>
       <techname name="warBonds"/>
       <techname name="Improved_Mech_Inf"/>
+      
       <techname name="Attack0Cost5Bomber_ChangerMustActivate"/>
-      <techname name="UpGun_BomberA0C5_GiveToAll"/>
-      <techname name="Naval_M3_GiveToAll"/>
-      <techname name="AirfieldM2"/>
       <techname name="SubsCanEvadeDestroyers_ChangerMustActivate"/>
       <techname name="TacticalBomberCost10_ChangerMustActivate"/>
+      <techname name="AAGunC4_ChangerMustActivate"/>
+      <techname name="TransportC8_ChangerMustActivate"/>
+      <techname name="Escort_Carrier_ChangerMustActivate"/>
+      <techname name="FlyingTiger_ChangerMustActivate"/>
+      <techname name="FactoryLimited_ChangerMustActivate"/>
+      <techname name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate"/>
+      <techname name="NormandyTurnsProAllied_ChangerMustActivate"/>
+      <techname name="SphereOfInfluence_ChangerMustActivate"/>
+      <techname name="GetCapitalCashOnce_ChangerMustActivate"/>
+      
+      <techname name="UpGun_BomberA0C5_GiveToAll"/>
+      <techname name="Naval_M3_GiveToAll"/>
+      <techname name="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <techname name="Elite_GiveToAll" tech="mechanizedInfantry"/>
+      <techname name="AirTransport_GiveToAll" tech="paratroopers"/>
+      <techname name="BombersA3_GiveToAll"/>
+      
       <techname name="PacificIslandAndPU_Change"/>
       <techname name="ConvoyAndBlockade"/>
       <techname name="RussianNationalObjectives"/>
       <techname name="ChineseMilitia"/>
       <techname name="PrimitiveTerrain"/>
-      <techname name="FactoryLimited_ChangerMustActivate"/>
       <techname name="BBandCA_AA"/>
-      <techname name="TransportC8_ChangerMustActivate"/>
+      
       <techname name="Mobile_Artillery"/>
-      <techname name="Escort_Carrier_ChangerMustActivate"/>
-      <techname name="AAGunC4_ChangerMustActivate"/>
-      <techname name="MilitiaForAll_GiveToAll"/>
-      <techname name="Marines"/>
-      <techname name="Escorts_Interceptors_A2D2_GiveToAll"/>
-      <techname name="Elite_GiveToAll" tech="mechanizedInfantry"/>
-      <techname name="AirTransport_GiveToAll" tech="paratroopers"/>
+      <techname name="MilitiaForAll"/>
       <techname name="CloseAirSupport"/>
-      <techname name="FlyingTiger_ChangerMustActivate"/>
       <techname name="Bunkers"/>
-      <techname name="BombersA3_GiveToAll"/>
-      <techname name="GetCapitalCashOnce_ChangerMustActivate"/>
       <techname name="MilitaryBase_Produces_3inf"/>
-      <techname name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate"/>
-      <techname name="NormandyTurnsProAllied_ChangerMustActivate"/>
-      <techname name="RedesignNationalObjectives_ChangerMustActivate"/>
-      <techname name="SphereOfInfluence_ChangerMustActivate"/>
       <techname name="TacticalBomberAirBattleD1"/>
+      
+      <techname name="Marines"/>
+      <techname name="AirfieldM2"/>
       <!-- Airborne_Forces and Improved_Mech_Inf are custom techs... but all will end up being customized -->
     </technologies>
       <playerTech player="Changer">
@@ -2430,28 +2434,25 @@
       </category>
       <category name="Land and Production Advances">
       </category>
-      <category name="San Francisco Rules">
+      <category name="Changer Must Activate Unit Changes">
 	<tech name="Attack0Cost5Bomber_ChangerMustActivate"/>
 	<tech name="SubsCanEvadeDestroyers_ChangerMustActivate"/>
 	<tech name="TacticalBomberCost10_ChangerMustActivate"/>
-	<tech name="FactoryLimited_ChangerMustActivate"/>
+	<tech name="AAGunC4_ChangerMustActivate"/>
 	<tech name="TransportC8_ChangerMustActivate"/>
 	<tech name="Escort_Carrier_ChangerMustActivate"/>
       </category>
-      <category name="Redesign">
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="AAGunC4_ChangerMustActivate"/>
+      <category name="Changer Must Activate New Units">
 	<tech name="FlyingTiger_ChangerMustActivate"/>
       </category>
-      <category name="New Units and Other Changes">
-	<tech name="GetCapitalCashOnce_ChangerMustActivate"/>
-      </category>
-      <category name="More Units and Changes">
+      <category name="Changer Must Activate Additional Changes">
+	<tech name="FactoryLimited_ChangerMustActivate"/> 
 	<tech name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate"/>
 	<tech name="NormandyTurnsProAllied_ChangerMustActivate"/>
-	<tech name="RedesignNationalObjectives_ChangerMustActivate"/>
 	<tech name="SphereOfInfluence_ChangerMustActivate"/>
+      </category>
+      <category name="Changer Must Activate BM House Rules">
+	<tech name="GetCapitalCashOnce_ChangerMustActivate"/>
       </category>
       </playerTech>
       <playerTech player="Germans">
@@ -2471,10 +2472,13 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
+	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
+	<tech name="Elite_GiveToAll"/>
+	<tech name="AirTransport_GiveToAll"/>
+	<tech name="BombersA3_GiveToAll"/>
       </category>
       <category name="Redesign">
 	<tech name="PacificIslandAndPU_Change"/>
@@ -2486,20 +2490,15 @@
       <category name="New Units and Unit Changes">
 	<tech name="BBandCA_AA"/>
 	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
-	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
-	<tech name="Elite_GiveToAll"/>
-	<tech name="AirTransport_GiveToAll"/>
+	<tech name="MilitiaForAll"/>
 	<tech name="CloseAirSupport"/>
+	<tech name="Bunkers"/>
       </category>
       <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
 	<tech name="MilitaryBase_Produces_3inf"/>
 	<tech name="TacticalBomberAirBattleD1"/>
+	<tech name="Marines"/>
+	<tech name="AirfieldM2"/>
       </category>
     </playerTech>
     <playerTech player="Russians">
@@ -2519,36 +2518,15 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
       </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
-      </category>
-    </playerTech>
+      </playerTech>
     <playerTech player="Japanese">
       <category name="Air and Naval Advances">
         <tech name="superSub"/>
@@ -2566,35 +2544,14 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
       </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
-    </category>
     </playerTech>
     <playerTech player="Americans">
       <category name="Air and Naval Advances">
@@ -2613,34 +2570,13 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
-      </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
       </category>
     </playerTech>
     <playerTech player="Chinese">
@@ -2660,33 +2596,14 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
       </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-    </category>
     </playerTech>
     <playerTech player="British">
       <category name="Air and Naval Advances">
@@ -2705,34 +2622,13 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
-      </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
       </category>
     </playerTech>
     <playerTech player="UK_Pacific">
@@ -2752,34 +2648,13 @@
         <!--<tech name="warBonds"/>-->
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
-      </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
       </category>
     </playerTech>
     <playerTech player="Italians">
@@ -2799,34 +2674,13 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
-      </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
       </category>
     </playerTech>
     <playerTech player="ANZAC">
@@ -2846,34 +2700,13 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
-      </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
       </category>
     </playerTech>
     <playerTech player="French">
@@ -2893,36 +2726,15 @@
         <tech name="warBonds"/>
         <tech name="Improved_Mech_Inf"/>
       </category>
-      <category name="San Francisco Rules">
+      <category name="Give To All">
 	<tech name="UpGun_BomberA0C5_GiveToAll"/>
 	<tech name="Naval_M3_GiveToAll"/>
-	<tech name="AirfieldM2"/>
-      </category>
-      <category name="Redesign">
-	<tech name="PacificIslandAndPU_Change"/>
-	<tech name="ConvoyAndBlockade"/>
-	<tech name="RussianNationalObjectives"/>
-	<tech name="ChineseMilitia"/>
-	<tech name="PrimitiveTerrain"/>
-      </category>
-      <category name="New Units and Unit Changes">
-	<tech name="BBandCA_AA"/>
-	<tech name="Mobile_Artillery"/>
-	<tech name="MilitiaForAll_GiveToAll"/>
-      </category>
-      <category name="New Units and Other Changes">
-	<tech name="Marines"/>
+	<tech name="BombersA3_GiveToAll"/>
 	<tech name="Escorts_Interceptors_A2D2_GiveToAll"/>
 	<tech name="Elite_GiveToAll"/>
 	<tech name="AirTransport_GiveToAll"/>
-	<tech name="CloseAirSupport"/>
       </category>
-      <category name="More Units and Changes">
-	<tech name="Bunkers"/>
-	<tech name="BombersA3_GiveToAll"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
-      </category>
-    </playerTech>
+   </playerTech>
   </technology>
   <attachmentList>
     <!--  relationshipType Attachments -->
@@ -3187,7 +2999,6 @@
       <option name="defense" value="2"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="false"/>
-      
       <option name="requiresUnits" value="MilitaryBase"/>
       <option name="requiresUnits" value="factory_major"/>
       <option name="requiresUnits" value="factory_minor"/>
@@ -3294,6 +3105,7 @@
       <option name="defense" value="1"/>
       <!--<option name="artillerySupportable" value="false"/>-->
       <option name="isAirTransportable" value="false"/>
+      <option name="canInvadeOnlyFrom" value="transport:transportC8:battleship"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
       <option name="canBeCapturedOnEnteringBy" value="French:Americans:British:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
@@ -3307,6 +3119,7 @@
       <option name="defense" value="1"/>
       <!--<option name="artillerySupportable" value="false"/>-->
       <option name="isAirTransportable" value="false"/>
+      <option name="canInvadeOnlyFrom" value="transport:transportC8:battleship"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
       <option name="canBeCapturedOnEnteringBy" value="French:Americans:British:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
@@ -3320,6 +3133,7 @@
       <option name="defense" value="1"/>
       <!--<option name="artillerySupportable" value="false"/>-->
       <option name="isAirTransportable" value="false"/>
+      <option name="canInvadeOnlyFrom" value="transport:transportC8:battleship"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
       <option name="canBeCapturedOnEnteringBy" value="French:Americans:British:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
@@ -3647,8 +3461,7 @@
 	<option name="transportCapacity" value="4"/>
 	<option name="isAirTransport" value="true"/>
 	<option name="canBeGivenByTerritoryTo" value="British"/>
-       	
-	<option name="canAirBattle" value="true"/>
+       	<option name="canAirBattle" value="true"/>
 		</attachment>
 		<!-- Japanese_Air_Transport -->
 		<attachment name="unitAttachment" attachTo="Japanese_air_transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3660,8 +3473,7 @@
 	<option name="transportCapacity" value="4"/>
 	<option name="isAirTransport" value="true"/>
 	<option name="canBeGivenByTerritoryTo" value="British"/>
-       	
-	<option name="canAirBattle" value="true"/>
+       	<option name="canAirBattle" value="true"/>
 		</attachment>
 		<!-- Russian_Air_Transport -->
 		<attachment name="unitAttachment" attachTo="Russian_air_transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3673,8 +3485,7 @@
 	<option name="transportCapacity" value="4"/>
 	<option name="isAirTransport" value="true"/>
 	<option name="canBeGivenByTerritoryTo" value="British"/>
-       	
-	<option name="canAirBattle" value="true"/>
+       	<option name="canAirBattle" value="true"/>
 	</attachment>
     <!-- Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5565,9 +5376,9 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="infantry_bonus"/>
       <option name="impArtTech" value="true"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Japanese"/>
     </attachment>
-    <attachment name="supportAttachmentInfantryAndMechInf2" attachTo="Russian_artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentInfantryAndMechInfUSSR" attachTo="Russian_artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Russian_infantry:Russian_mech_infantry"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -5576,7 +5387,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="infantry_bonus"/>
       <option name="impArtTech" value="true"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Russians"/>
     </attachment>
     <attachment name="supportAttachmentInfantryAndMechInf1" attachTo="mobile_artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="infantry:mech_infantry:"/>
@@ -5763,7 +5574,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="infantry_bonus"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Changer"/>
     </attachment>
     <attachment name="supportAttachmentInfantry1Japanese" attachTo="Japanese_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Japanese_infantry:Japanese_mech_infantry"/>
@@ -5774,7 +5585,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="infantry_bonus"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Changer"/>
     </attachment>
     <attachment name="supportAttachmentInfantry1USSR" attachTo="Russian_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Russian_infantry:Russian_mech_infantry"/>
@@ -5785,7 +5596,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="infantry_bonus"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Changer"/>
     </attachment>
     <attachment name="supportAttachmentBomberA3" attachTo="fighter" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="bomber"/>
@@ -5796,7 +5607,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="combined_arms"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Changer"/>
     </attachment>
     <attachment name="supportAttachmentBomberA3Japanese" attachTo="Japanese_fighter" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Japanese_bomber"/>
@@ -5807,7 +5618,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="combined_arms"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Changer"/>
       </attachment>
       <attachment name="supportAttachmentBomberA3USSR" attachTo="Russian_fighter" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="bomber:Russian_bomber"/>
@@ -5818,7 +5629,7 @@
       <option name="number" value="1"/>
       <option name="bonusType" value="combined_arms"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="players" value="Changer"/>
     </attachment>
     <attachment name="conditionAttachment_Changer_Improved_Mech_Inf" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="Improved_Mech_Inf" count="1"/>
@@ -5885,6 +5696,63 @@
     <attachment name="conditionAttachment_French_Naval_Upgrade" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="Shipyard" count="1"/>
     </attachment>
+    
+    <attachment name="conditionAttachment_Germans_Elite" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_Elite" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Elite" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_Elite" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_Elite" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_UK_Pacific_Elite" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_Elite" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_Elite" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_Elite" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="Elite_GiveToAll" count="1"/>
+    </attachment>
+
+    <attachment name="conditionAttachment_Germans_AirTransport" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_AirTransport" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_AirTransport" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_AirTransport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_AirTransport" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_UK_Pacific_AirTransport" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_AirTransport" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_AirTransport" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_AirTransport" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
+    </attachment>
+
     <attachment name="conditionAttachment_Germans_BomberA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BombersA3_GiveToAll" count="1"/>
     </attachment>
@@ -5968,6 +5836,119 @@
       <option name="support" value="supportAttachmentMechanizedTechnology"/>
       <option name="uses" value="1"/>
     </attachment>
+    
+    <attachment name="triggerAttachment_Germans_Elite" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_Elite"/>
+      <option name="productionRule" value="productionGermans:buyElite"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Russians_Elite" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_Elite"/>
+      <option name="productionRule" value="productionRussians:buyRussian_Elite"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Elite" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Elite"/>
+      <option name="productionRule" value="productionJapanese:buyJapanese_Elite"/>
+      <option name="when" value="before:japanesePurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_Elite" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_Elite"/>
+      <option name="productionRule" value="productionAmericans:buyElite"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_Elite" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_Elite"/>
+      <option name="productionRule" value="productionBritish:buyElite"/>
+      <option name="productionRule" value="productionUK_Pacific:buyElite"/>
+      <option name="when" value="before:britishPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_UK_Pacific_Elite" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_UK_Pacific_Elite"/>
+      <option name="productionRule" value="productionUK_Pacific:buyElite"/>
+      <option name="when" value="before:uk_pacificPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italians_Elite" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Elite"/>
+      <option name="productionRule" value="productionItalians:buyElite"/>
+      <option name="when" value="before:italiansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZAC_Elite" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ANZAC_Elite"/>
+      <option name="productionRule" value="productionANZAC:buyElite"/>
+      <option name="when" value="before:anzacPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_French_Elite" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_Elite"/>
+      <option name="productionRule" value="productionFrench:buyElite"/>
+      <option name="when" value="before:frenchPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+
+    <attachment name="triggerAttachment_Germans_Air_Transport" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_AirTransport"/>
+      <option name="productionRule" value="productionGermans:buyAir_Transport"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Russians_Air_Transport" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_AirTransport"/>
+      <option name="productionRule" value="productionRussians:buyRussian_Air_Transport"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Air_Transport" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_AirTransport"/>
+      <option name="productionRule" value="productionJapanese:buyJapanese_Air_Transport"/>
+      <option name="when" value="before:japanesePurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_Air_Transport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_AirTransport"/>
+      <option name="productionRule" value="productionAmericans:buyAir_Transport"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_Air_Transport" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_AirTransport"/>
+      <option name="productionRule" value="productionBritish:buyAir_Transport"/>
+      <option name="productionRule" value="productionUK_Pacific:buyAir_Transport"/>
+      <option name="when" value="before:britishPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_UK_Pacific_Air_Transport" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_UK_Pacific_AirTransport"/>
+      <option name="productionRule" value="productionUK_Pacific:buyAir_Transport"/>
+      <option name="when" value="before:uk_pacificPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italians_Air_Transport" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_AirTransport"/>
+      <option name="productionRule" value="productionItalians:buyAir_Transport"/>
+      <option name="when" value="before:italiansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZAC_Air_Transport" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ANZAC_AirTransport"/>
+      <option name="productionRule" value="productionANZAC:buyAir_Transport"/>
+      <option name="when" value="before:anzacPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_French_Air_Transport" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_AirTransport"/>
+      <option name="productionRule" value="productionFrench:buyAir_Transport"/>
+      <option name="when" value="before:frenchPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+
     <attachment name="triggerAttachment_Germans_BomberA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_BomberA3"/>
       <option name="support" value="supportAttachmentBomberA3"/>
@@ -6013,15 +5994,14 @@
       <option name="support" value="supportAttachmentBomberA3"/>
       <option name="uses" value="1"/>
     </attachment>
+    
     <!--  National Objectives (A number of NOs are done with Conditions further down) -->
     
     <!-- Changer Objectives -->
     <attachment name="conditionAttachmentVictoryCities" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate" count="1"/>
     </attachment>
-    <attachment name="conditionAttachmentRedesignNationalObjectives" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="techs" value="RedesignNationalObjectives_ChangerMustActivate" count="1"/>
-    </attachment>
+    
     <attachment name="conditionAttachmentSphereOfInfluence" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="SphereOfInfluence_ChangerMustActivate" count="1"/>
     </attachment>
@@ -6069,7 +6049,7 @@
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Japanese_infantry:Japanese_militia:Japanese_marine:Japanese_elite:Japanese_artillery:Japanese_mobile_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_fighter:Japanese_tactical_bomber:Japanese_tactical_bomber10:Japanese_bomber:Japanese_bomberA0C5:Japanese_air_transport:Japanese_aaGun:Japanese_aaGunC4" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
@@ -6085,10 +6065,16 @@
     <!-- Russian Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesRussiansInvert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="unitPresence" value="ANY" count="0"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachmentAlliedExclusionTerritoriesRussiansInvertSphere" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
+      <option name="unitPresence" value="ANY" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesRussiansInvert1" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentSphereOfInfluence:conditionAttachmentAlliedExclusionTerritoriesRussiansInvert"/>
+      <option name="conditions" value="conditionAttachmentSphereOfInfluence:conditionAttachmentAlliedExclusionTerritoriesRussiansInvertSphere"/>
     </attachment>
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentRussianNationalObjectivesInvert"/>
@@ -6104,7 +6090,7 @@
       <option name="conditions" value="conditionAttachmentRussianNationalObjectives"/>
       <option name="objectiveValue" value="3"/>
       <option name="rounds" value="1-+"/>
-      <option name="alliedExclusionTerritories" value="original"/>
+      <option name="alliedExclusionTerritories" value="originalNoWater"/>
       <option name="atWarPlayers" value="Germans:Italians" count="1" />
     </attachment>
     <attachment name="objectiveAttachment_Russians_VictoryCitiesWorth1PU" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6129,7 +6115,8 @@
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesJapanInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
+      <option name="unitPresence" value="ANY" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesJapanInvert1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6623,7 +6610,7 @@
     </attachment>
     <!-- British Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesBritish" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
@@ -6655,7 +6642,7 @@
     </attachment>
     <!-- UK Pacific Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesUK_Pacific" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
@@ -7147,7 +7134,7 @@
       <option name="relationship" value="ANZAC:Japanese:anyWar"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4" count="0"/>
       <option name="invert" value="true"/>  
     </attachment>
@@ -7657,7 +7644,7 @@
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesItalians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Japanese_infantry:Japanese_militia:Japanese_marine:Japanese_elite:Japanese_artillery:Japanese_mobile_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_fighter:Japanese_tactical_bomber:Japanese_tactical_bomber10:Japanese_bomber:Japanese_bomberA0C5:Japanese_air_transport:Japanese_aaGun:Japanese_aaGunC4" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
@@ -7672,7 +7659,7 @@
     </attachment>
     <!-- Americans Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4" count="0"/>
       <option name="invert" value="true"/> 
     </attachment>
@@ -8178,7 +8165,7 @@
 				</attachment>
 	<!-- French Objectives -->
 	<attachment name="conditionAttachmentAlliedExclusionTerritoriesFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="controlled"/>
+      <option name="alliedExclusionTerritories" value="controlledNoWater"/>
       <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4" count="0"/>
       <option name="invert" value="true"/> 
     </attachment>
@@ -8334,7 +8321,7 @@
       <option name="techs" value="ChineseMilitia" count="1"/>
     </attachment>
     <attachment name="conditionAttachmentMilitia_For_All" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="techs" value="MilitiaForAll_GiveToAll" count="1"/>
+      <option name="techs" value="MilitiaForAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachmentChineseMilitiaAAGunC4Invert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAAGunCost4ChangerInvert:conditionAttachmentChineseMilitia"/>
@@ -8351,12 +8338,7 @@
     <attachment name="conditionAttachment_Marines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="Marines" count="1"/>
     </attachment>
-    <attachment name="conditionAttachmentElite" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="techs" value="Elite_GiveToAll" count="1"/>
-    </attachment>
-    <attachment name="conditionAttachmentAirTransport" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="techs" value="AirTransport_GiveToAll" count="1"/>
-    </attachment>
+    
     <attachment name="conditionAttachment_CloseAirSupport" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="CloseAirSupport" count="1"/>
     </attachment>
@@ -9068,6 +9050,8 @@
       <option name="unitType" value="battleship"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="10"/>
       <option name="unitProperty" value="maxAAattacks" count="2"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
@@ -9080,6 +9064,8 @@
       <option name="unitType" value="cruiser"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="10"/>
       <option name="unitProperty" value="maxAAattacks" count="2"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
@@ -9622,22 +9608,19 @@
       <option name="when" value="before:germansCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachmentElite" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentElite"/>
-      <option name="productionRule" value="productionGermans:buyElite"/>
-      <option name="productionRule" value="productionRussians:buyRussian_Elite"/>
-      <option name="productionRule" value="productionJapanese:buyJapanese_Elite"/>
-      <option name="productionRule" value="productionAmericans:buyElite"/>
-      <option name="productionRule" value="productionBritish:buyElite"/>
-      <option name="productionRule" value="productionUK_Pacific:buyElite"/>
-      <option name="productionRule" value="productionItalians:buyElite"/>
-      <option name="productionRule" value="productionANZAC:buyElite"/>
-      <option name="productionRule" value="productionFrench:buyElite"/>
-      <option name="when" value="before:germansPurchase"/>
+
+    <attachment name="triggerAttachmentBBsCarryElite" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Germans_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:germansCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
+    
     <attachment name="triggerAttachmentCAsCarryElite" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentElite"/>
+      <option name="trigger" value="conditionAttachment_Germans_Elite"/>
       <option name="unitType" value="cruiser"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="transportCapacity" count="4"/>
@@ -9645,24 +9628,10 @@
       <option name="when" value="before:germansCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachmentAirTransport" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentAirTransport"/>
-      <option name="productionRule" value="productionGermans:buyAir_Transport"/>
-      <option name="productionRule" value="productionRussians:buyRussian_Air_Transport"/>
-      <option name="productionRule" value="productionJapanese:buyJapanese_Air_Transport"/>
-      <option name="productionRule" value="productionAmericans:buyAir_Transport"/>
-      <option name="productionRule" value="productionBritish:buyAir_Transport"/>
-      <option name="productionRule" value="productionUK_Pacific:buyAir_Transport"/>
-      <option name="productionRule" value="productionItalians:buyAir_Transport"/>
-      <option name="productionRule" value="productionANZAC:buyAir_Transport"/>
-      <option name="productionRule" value="productionFrench:buyAir_Transport"/>
-      <option name="when" value="before:germansPurchase"/>
-      <option name="uses" value="1"/>
-    </attachment>
+    
     <attachment name="triggerAttachment_CloseAirSupport" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
       <option name="support" value="supportAttachmentInfantry1"/>
-      <option name="support" value="supportAttachmentInfantry1USSR"/>
       <option name="when" value="before:germansCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -9880,7 +9849,33 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+
+    <attachment name="triggerAttachmentBBsCarryEliteUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Russians_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:russiansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     
+    <attachment name="triggerAttachmentCAsCarryEliteUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Russians_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:russiansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupportUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1USSR"/>
+      <option name="when" value="before:russiansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- Japanese Triggers -->
     <!-- OLD Kamikaze trigger:
 				<attachment name="triggerAttachment_Japanese_Recruit_Kamikaze_Pilots" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -10087,7 +10082,33 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+
+    <attachment name="triggerAttachmentBBsCarryEliteJapan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Japanese_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:japaneseCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     
+    <attachment name="triggerAttachmentCAsCarryEliteJapan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Japanese_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:japaneseCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupportJapanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1Japanese"/>
+      <option name="when" value="before:japaneseCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- British Triggers -->
     <attachment name="triggerAttachment_British_Naval_Upgrade" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_Naval_Upgrade:conditionAttachmentChangerSubsUnBlockedInvert:conditionAttachmentEscortCarrierChangerInvert"/>
@@ -10178,7 +10199,7 @@
       <option name="trigger" value="conditionAttachmentFactoryLimited"/>
       <option name="placement" value="Quebec:harbour12" count="1"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:germansCombatMove"/>
+      <option name="when" value="after:changerCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerRemoveTacBmbrsUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentTacticalBomberCost10"/>
@@ -10216,6 +10237,32 @@
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
 
+    <attachment name="triggerAttachmentBBsCarryEliteUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_British_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:britishCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentCAsCarryEliteUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_British_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:britishCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupport" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1"/>
+      <option name="when" value="before:britishCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- UK_Pacific Triggers -->
     <attachment name="triggerAttachment_UK_Pacific_Naval_Upgrade" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_UK_Pacific_Naval_Upgrade:conditionAttachmentChangerSubsUnBlockedInvert:conditionAttachmentEscortCarrierChangerInvert"/>
@@ -10268,6 +10315,13 @@
       <option name="removeUnits" value="India:airfield" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupport" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1"/>
+      <option name="when" value="before:britishCombatMove"/>
+      <option name="uses" value="1"/>
     </attachment>
     <!-- Italians Triggers -->
     <attachment name="triggerAttachment_Italians_Naval_Upgrade" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -10354,7 +10408,33 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+
+    <attachment name="triggerAttachmentBBsCarryEliteItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Italians_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:italiansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     
+    <attachment name="triggerAttachmentCAsCarryEliteItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Italians_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:italiansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupport" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1"/>
+      <option name="when" value="before:italiansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
@@ -10441,6 +10521,33 @@
       <option name="removeUnits" value="New South Wales:aaGun" count="2"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+
+    <attachment name="triggerAttachmentBBsCarryEliteANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_ANZAC_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:anzacCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentCAsCarryEliteANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_ANZAC_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:anzacCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupport" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1"/>
+      <option name="when" value="before:anzacCombatMove"/>
+      <option name="uses" value="1"/>
     </attachment>
     <!-- Chinese Triggers -->
     <attachment name="conditionAttachmentChinaBurmaRoad" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10558,6 +10665,12 @@
       <option name="placement" value="Hopei:primitive" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ChangerRemoveYunnanInfantry" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="removeUnits" value="Yunnan:Chinese_infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
     </attachment>
     <!-- Americans Triggers -->
     
@@ -10726,6 +10839,32 @@
       <option name="when" value="before:americansNonCombatMove"/>
     </attachment>
 
+    <attachment name="triggerAttachmentBBsCarryEliteUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Americans_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:americansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentCAsCarryEliteUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_Americans_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:americansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1"/>
+      <option name="when" value="before:americansCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- Capture of Allied Capitals -->
     <attachment name="conditionAttachment_French_1_Lose_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="France" count="1"/>
@@ -11201,6 +11340,32 @@
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
 
+    <attachment name="triggerAttachmentBBsCarryEliteFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_French_Elite"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:frenchCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentCAsCarryEliteFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachment_French_Elite"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="transportCapacity" count="4"/>
+      <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="when" value="before:frenchCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_CloseAirSupport" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_CloseAirSupport"/>
+      <option name="support" value="supportAttachmentInfantry1"/>
+      <option name="when" value="before:frenchCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     
     <!-- Mongolian Triggers -->
     <attachment name="triggerAttachment_Mongolian_PrimitiveTerrain" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -12258,7 +12423,7 @@
       <attachment name="techAbilityAttachment" attachTo="AAGunC4_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
-      <attachment name="techAbilityAttachment" attachTo="MilitiaForAll_GiveToAll" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
+      <attachment name="techAbilityAttachment" attachTo="MilitiaForAll" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
       <attachment name="techAbilityAttachment" attachTo="Marines" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
@@ -12300,9 +12465,7 @@
       <attachment name="techAbilityAttachment" attachTo="NormandyTurnsProAllied_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
-      <attachment name="techAbilityAttachment" attachTo="RedesignNationalObjectives_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
-	<option name="defenseBonus" value="0:bomber"/>
-      </attachment>
+      
       <attachment name="techAbilityAttachment" attachTo="SphereOfInfluence_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
@@ -13451,20 +13614,23 @@
     <property name="Neutral Flyover Allowed" value="false" editable="false">
       <boolean/>
     </property>
+    <property name="Units Can Load In Hostile Sea Zone" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="mapName" value="global_40_house_rules" editable="false"/>
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
 <b>Global 1940 Second Edition</b><br>
 <br>
-<b>Credits:</b> Bung, Veqryn<br><br>
+<b>Original Game Credits:</b> Bung, Veqryn<br><br>
 <br>
 <b>Global 40 House Rules</b><br>
 <br>
-Global 40 House Rules is an ongoing project that adds house rules using Technologies. Simply add the rules you want by using edit mode. <br>
+Global 40 House Rules is an ongoing project that adds "House Rules" using Technologies. Simply add the rules you want by using edit mode. <br>
 Game starts with 2nd edition OOB rules, techs and units, with the exception of Sierra Leone and Yukon Territory which are British controlled. Also the OOB National Objective of +5 PUs for Russian control of Germany has been removed.<br>
 <br>
-A player named "Changer" will go first. His purpose is to activate certain technologies so the game may begin with them. There are 13 of these techs.<br>
+A player named "Changer" will go first. His purpose is to activate certain technologies so the game may begin with them. There are 12 of these techs.<br>
 Each one has "ChangerMustActivate" at the end of them.<br>
 <br>
 Changer has only 1 turn, so if techs are not activated then, you will be unable to activate them later.<br>
@@ -13475,11 +13641,15 @@ Germany needs to activate techs at the start of their turn in order for them to 
 <br>
 <b>Note</b><br>UK Pacific techs are automatically activated by the British.<br>
 <br>
+<b>Note</b><br>Convoy Zone Losses are not shown at the end of turn the way Blockade is.<br>
+<br>
 <b>Here is the Tech Tree for "Global 40 House Rules"</b> minus the OOB techs:<br>
 <br>
 <b>"Changer"</b><br>
 <b>1) "Attack0Cost5Bomber_ChangerMustActivate"</b><br>
-Bombers are now a A0 D0 M6 +1 w/AB C5 unit. They may perform SBR attacks only. They do not participate in the Air Battle with interceptors. They do 1-6 damage. They no longer receive a +2 to an SBR attack.<br>
+Bombers are now a A0 D0 M6 +1 w/AB C5 unit. They may perform SBR attacks only. They do not participate in the Air Battle with Interceptors. They do 1-6 damage. They no longer receive a +2 to an SBR attack.<br>
+<br>
+It also removes 1 Chinese Infantry from Yunnan. This is in response to Japanese Bombers not being able to participate in regular combat.<br>
 <br>
 <b> 2) "SubsCanEvadeDestroyers_ChangerMustActivate"</b><br>
 Destroyers no longer block Subs or the Sub's "First Strike" capability. They are now a A1 D1 M2 +1 w/NB C5 unit. They also have 1 preemptive "ASA" (Anti-Sub Attack) shot.<br>
@@ -13511,9 +13681,9 @@ Air and Naval Bases now cost 12. All captured and newly constructed minor factor
 <br>
 ABs are required to build fighters, TBs and bombers. Bombers may only be built in factories on originally owned territories that also have an AB. In addition, Bombers may not be built in the following territories: Kwangtung, Egypt, Norway, Alaska, West India and Korea. May not build at an AB with 3 or more damage.<br>
 <br>
-<b>Note:</b> You may not place new fighters on CVs. All air units may only be placed in the territory that contains an AB as well as the correct factory.<br>
+<b>Note:</b> You may not place new fighters on CVs. All air units may only be placed in the territory that contains an AB as well as the correct Factory.<br>
 <br>
-NBs are required to build all naval units. BBs, CVs and CAs may only be built in TTs with originally owned starting factories. These territories must also have a NB. May not build at a NB with 3 or more damage.<br>
+NBs are required to build all naval units. BBs, CVs and CAs may only be built in TTs with originally owned starting factories. These territories must also have a NB (Need not be original NB). May not build at a NB with 3 or more damage.<br>
 <br>
 New Zealand receives a Minor Factory to allow ANZAC Air builds. Quebec receives a NB to allow for naval builds. The Central United States receives a NB to allow for additional prewar naval builds.<br>
 <br>
@@ -13544,10 +13714,8 @@ All Victory Cities are now worth 1 PU to the controlling player. In addition to 
 <b>11) "NormandyTurnsProAllied_ChangerMustActivate"</b><br>
 If France and Southern France are Axis contolled and there are no French units in Normandy Bordeaux, Normandy Bordeaux will turn into a Pro-Allied Neutral at the end of France's turn.<br>
 <br>
-<b>12) "Redesign National Objectives_ChangerMustActivate"</b><br>
-Currently does nothing.<br>
 <br>
-<b>13) "Sphere of Influence_ChangerMustActivate"</b><br>
+<b>12) "Sphere of Influence_ChangerMustActivate"</b><br>
 When Sphere Of Influence tech is activated, Germany will receive a minus 10 PUs penalty if Japanese units are in any German controlled territories. <br>
 <br>
 Russia will receive a minus 10 PUs penalty if any Allied units are in any Russian controlled territories.<br>
@@ -13558,7 +13726,7 @@ America will receive a minus 10 PUs penalty if any Russian units are in any Amer
 <br>
 UK will receive a minus 10 PUs penalty if any Russian units are in any British controlled territories.<br>
 <br>
-UK_Pacific will receive a minus 10s PU penalty if any Russian units are in any UK_Pacific controlled territories.<br>
+UK_Pacific will receive a minus 10 PUs penalty if any Russian units are in any UK_Pacific controlled territories.<br>
 <br>
 Italy will receive a minus 10 PUs penalty if any Japanese units are in any Italian controlled territories.<br>
 <br>
@@ -13569,20 +13737,36 @@ France will receive a minus 10 PUs penalty if any Russian units are in any Frenc
 If a country has fewer than 10 PUs they will lose no PUs. This is not intended and needs to be player enforced.<br>
 <br>
 <b>The Following Techs are Activated by Germany or All Players</b><br>
-Tech Category <b>"San Francisco Rules"</b><br>
+Tech Category <b>"Give To All"</b><br>
 <br>
 <b>1) "UpGun_BomberA0C5_GiveToAll"</b><br>
 If "Attack0Cost5Bomber_ChangerMustActivate" has been activated, this tech will give Bombers A1 in Air Battles and Fighters A2 D2. This tech must be activated by each player in order for them to receive the tech ability.<br>
 <br>
-If this tech is activated without activating "Attack0Cost5Bomber_ChangerMustActivate", Bombers will have A2 in Air Battles. Fighters will have A2 D2. This will be changed in the future so it's not possible.<br>
+If this tech is activated without activating "Attack0Cost5Bomber_ChangerMustActivate", Bombers will have A2 in Air Battles. Fighters will have A2 D2. <br>
 <br>
 <b>2) Naval_M3_GiveToAll</b><br>
 Gives +1 Movement to Cruisers and Transports
 This tech must be activated by each player in order for them to receive the tech ability.<br>
 <br>
-<b>3) "AirfieldM2"</b><br>
-Airfields now give +2 Movement to Bombers and Fighters. It is recomended to only use the additional +1 Movement for fighters when they are escorting Bombers on SBR missions. This is Player Enforced.<br>
+<b>3) "BombersA3_GiveToAll"</b><br>
+Bombers are now A3. They receive +1A when paired with Fighters on a 1:1 basis.This tech must be activated by each player in order for them to receive the tech ability.<br>
 <br>
+<b>4) "Escorts_Interceptors_A2D2_GiveToAll"</b><br>
+Escort Fighters are now A2 Interceptors D2. This tech must be activated by each player in order for them to receive the tech ability.<br>
+<br>
+<b>5) "Elite_GiveToAll"</b><br>
+Adds the "Elite" unit. Elite is a A2 D2 M1 +1M w/tank (can blitz with tank), C5 unit. It may be transported by Cruisers and Battleships on a 1:1 basis. It may be Air Transported into combat or ncm by Air transports on a 1:1 basis if "AirTransport_GiveToAll" tech is activated.<br>
+<br>
+  This means Elites and Tanks can be transported on the same transport giving you two move 2 units on 1 transport.<br>
+  This tech must be activated by each player in order for them to receive the tech ability.<br>
+<br>
+It receives <b>No</b> combat bonuses from other units.<br>
+<br>
+<b>6) "AirTransport_GiveToAll"</b><br>
+Adds the Air Transport unit. Air Transport is a A0 D0 M5 +1 w/AB C7 unit. It may transport Elite units in either combat move or ncm on a 1:1 basis. May be taken as casualty.This tech must be activated by each player in order for them to receive the tech ability.<br>
+<br>
+<b>Note</b><br> When Attacking you will have the option of retreating if your Flight Path is over Allied controlled territories.<br>
+Over water or enemy territories and you will be unable to.<br>
 <br>
 Tech category <b>"Redesign"</b><br>
 <br>
@@ -13604,7 +13788,7 @@ Russia will receive an additional 4 PUs, Italy 3 PUs and UK 1 PU.<br>
 <br>
 Strategically, the Axis can conquer Bessarabia and Vyborg quite easily from Russia for a previously unavailable 2 PUs boost. UK Pacific may activate Eastern Persia for an easy 1 PU.<br>
 <br>
-Japan can become quite strong, quite fast using this modification so it is suggested to counter that with some Chinese modifications, which will be available in the same tech category.<br>
+Japan can become quite strong, quite fast using this modification so it is suggested to counter that with some Chinese modifications.<br>
 It is suggested to use the "ConvoyAndBlockade" tech, which is explained next, in conjuction with the "PacificIslandAndPU_Change" tech.<br>
 <br>
 <b>2) "ConvoyAndBlockade"</b><br>
@@ -13640,9 +13824,9 @@ Land Territory changes are:
 	    <br>
 	    The UK has their "British_Original"(controls all original territories) National Objective reduced to 3 PUs.<br>
 	    <br>
-	    Strategically, certain Sea Zones(91,103) may inflict substantial damage. Sea Zones 104 and 117 add an additional 2 PUs in income for the UK.<br>
+	    Strategically, certain Sea Zones(91,103) may inflict substantial damage. <br>
 	    <br>
-	    The bottom left of the screen will show the PU value of the Sea Zone you are in. An easy way to remember is, USA SZs are worth 2 PUs, UK 1 PU, except for 123 (Iceland) and USSR 0 PUs.<br>
+	    The bottom left of the screen will show the PU value of the Sea Zone you are in. An easy way to remember is, USA SZs are worth 2 PUs, UK 1 PU, except for 123 (Iceland), and USSR 0 PUs.<br>
 	    <br>
 	      <b>Note</b><br>Sea Zones 103 and 118 are Blockade Zones. So even though they are not adjacent to a Land Territory, submerged Subs will roll for damage.<br>Also of <b>note</b> loss of Convoy Zones PUs are not indicated the way PUs lost to Blockade are at end of turn.<br>
 	      <br>
@@ -13664,7 +13848,7 @@ An increase of +2 PUs per Lend Lease Route goes into effect if Russia is at war 
 A Russian Destroyer is added to Sea Zone 5. It must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
 <br>
 <b>4) "ChineseMilitia"</b><br>
-Adds the "Militia" unit for China. A0 D1 M1 C2. This helps China produce a few more units and allows them to purchase when they only have 2 PUs. Helps slow Japan down a little.<br>
+Adds the "Militia" unit for China. A0 D1 M1 C2. This helps China produce a few more units and allows them to purchase when they only have 2 PUs. Also adds a AAGun to Szechwan. Helps slow Japan down a little.<br>
 <br>
 <b>5) "PrimitiveTerrain"</b><br>
 Places a "Primitive" image in basically all of Asia, excepting most Costal Territories, and up to the Ural Mountains in Russia. When starting in a primitive territory, M2 units have their movement reduced to 1. Does not affect aircraft.<br>
@@ -13675,45 +13859,23 @@ This helps slow Japan's push through China and discourages early Soviet Far East
 Tech Category <b>"New Units and Unit Changes"</b><br>
 <br>
 <b>1) "BBandCA_AA"</b><br>
-Battleships and Cruisers now have 2 AA shots. They behave the same as regular AAGuns.<br>
+Battleships and Cruisers now have 2 AA shots. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
+<br>It is recommended to wait until RD 2 to activate BB and CA AA Guns. This prevents breaking early RD battles and reflects the early war successes in air to naval combat.<br>
 <br>
 <b>2) "Mobile_Artillery"</b><br>
 Adds a Mobile Artillery Unit. A2 D2 +1D w/tank, C5. Gives +1A to 1 Infantry or Mech Infantry. May blitz. Does not provide blitz ability to other units.<br>
 <br>
 +1D w/tank represents their use as anti-tank weapons and to prevent tank buys from being adversely affected.<br>
 <br>
-<b>3) "MilitiaForAll_GiveToAll"</b><br>
+<b>3) "MilitiaForAll"</b><br>
 Adds the Militia Unit to all players. A Player may have no more than 8 Militia at any one time. May only be placed in originally owned Territories.<br>
 <br>
-This is to prevent spammage. It is also suggested to wait until Round 3 before activation. This represents full manpower mobilization and prevents an early UK stack to prevent Sea Lion. "Chinese Militia" is still suggested for Round 1 activation. If not activated, China will also gain the ability to purchase Militia when "MilitiaForAll_GiveToAll" is activated.<br>
+This is to prevent spammage. It is also suggested to wait until Round 3 before activation. This represents full manpower mobilization and prevents an early UK stack to prevent Sea Lion. "Chinese Militia" is still suggested for Round 1 activation. If not activated, China will also gain the ability to purchase Militia when "MilitiaForAll" is activated.<br>
 <br>
-<br>
-Tech category <b>"New Units and Other Changes"</b><br>
-<br>
-<b>1) "Marines"</b><br>
-Marines are a A1 D1 M1 C3 Unit. They receive +1A when making an amphibous attack. They may be transported into battle by Battleships on a 1:1 basis.<br>
-<br>
-When "Elite_GiveToAll" tech is activated Marines will gain the ability to be transported by Cruisers. This is not intended and is player enforced.<br>
-<br>
-<b>2) "Escorts_Interceptors_A2D2_GiveToAll"</b><br>
-Escort Fighters are now A2 Interceptors D2. This tech must be activated by each player in order for them to receive the tech ability.<br>
-<br>
-<b>3) "Elite_GiveToAll"</b><br>
-Adds the "Elite" unit. Elite is a A2 D2 M1 +1M w/tank (can blitz with tank), C5 unit. It may be transported by Cruisers and Battleships on a 1:1 basis. It may be Air Transported into combat or ncm by Air transports on a 1:1 basis if "AirTransport_GiveToAll" tech is activated.<br>
-<br>
-This means Elites and Tanks can be transported on the same transport giving you two move 2 units on 1 transport.<br>
-<br>
-It receives <b>No</b> combat bonuses from other units.<br>
-<br>
-<b>4) "AirTransport_GiveToAll"</b><br>
-Adds the Air Transport unit. Air Transport is a A0 D0 M5 +1 w/AB C7 unit. It may transport Elite units in either combat move or ncm on a 1:1 basis. May be taken as casualty.<br>
-<br>
-<b>5) "CloseAirSupport"</b><br>
+<b>4) "CloseAirSupport"</b><br>
 Tac Bombers give +1A to Infantry and Mech Infantry on a 1:1 basis. Tac BombersC10 do not receive this ability.<br>
 <br>
-<br>
-Tech Category <b>"More Units and Changes"</b><br>
-<b>1) "Bunkers"</b><br>
+<b>5) "Bunkers"</b><br>
 Adds the NWO Bunker unit. Bunkers are a A0 D3 M0 C5 2-hit unit. They require one of the following units for placement: Infantry, Militia, Elite, Marine and Mech Infantry. If damaged they also require one of the previous units to be present to repair.<br>
 <br>
 You may place a minimum of 1 Bunker per territory. If the territory has a PU value you may place a total number of Bunkers = to the territory value. May only place 1 Bunker per territory per turn.<br>
@@ -13722,26 +13884,35 @@ UK Pacific is able to place Bunkers without the required units being present. Th
 <br>
 It is recommended to wait until RD 3 to activate Bunkers. This prevents breaking early RD battles and represents the time needed to build fortifications.<br>
 <br>
-<b>2) "BombersA3_GiveToAll"</b><br>
-Bombers are now A3. They receive +1A when paired with Fighters on a 1:1 basis.<br>
 <br>
-<b>3) "MilitaryBase_Produces_3inf</b><br>
+Tech Category <b>"More Units and Changes"</b><br>
+<br>
+<b>1) "MilitaryBase_Produces_3inf</b><br>
 MilitaryBases C12. May place in any territory of 1 PU or less. Maximum of 1 Base per territory. May receive up to 6 damage. Cannot place infantry if 3 or more damage. Has AA capability same as Factories.<br>
 <br>
 It will allow you to place 3 of any unit type per base. This is not intended and will be fixed in the future. 3 Infantry placed per Base per turn maximum is suggested use. This is player enforced.<br>
 <br>
-<b>4) "TacticalBomberAirBattleD1"</b><br>
+<b>2) "TacticalBomberAirBattleD1"</b><br>
 Gives Tactical Bombers the ability to intercept at D1. This is to help against A0C5 Bomber spam and represent Night Fighter Interceptors. May be used in conjunction with A2D2 Interceptors tech.<br>
+<br>
+<b>3) "Marines"</b><br>
+Marines are a A1 D1 M1 C3 Unit. They receive +1A when making an amphibous attack. They may be transported into battle by Battleships on a 1:1 basis.<br>
+<br>
+When "Elite_GiveToAll" tech is activated Marines will gain the ability to be transported by Cruisers, but only during ncm.<br>
+<br>
+<b>4) "AirfieldM2"</b><br>
+Airfields now give +2 Movement to Bombers and Fighters. It is recomended to only use the additional +1 Movement for fighters when they are escorting Bombers on SBR missions. This is Player Enforced.<br>
 <br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
+<br>
 Thanks to Black Elk for starting Redesign and Baron Munchausen for his number crunching and ideas.<br>
 Thanks to LHoffman, CWO Marc, Argothair for their ideas and suggestions.<br>
 Wild Bill, Young Grasshopper, Narvik, KNP7765 and all the others who contributed with their ideas and comments.<br>
 <br>
 Thanks to crazy_german, prastle, Frostion, Zim Zero, ZjelcoP, Red Baron, Cernel for xml help. pyt o torp for sub ideas.<br>
-To P@nther, simon33 for GitHub help. Redrum, RoiEX and DanVanAtta for additional help.<br>
+To P@nther, simon33 for GitHub help. Redrum, RoiEX, <b>ssoloff</b> and DanVanAtta for additional help.<br>
 <br>
 Thanks to Joe Pants, Veqryn and hepster for unit images.<br>
 <br>
@@ -13750,6 +13921,12 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>1.5
+<br>Rearrange Tech order and xml cleanup.
+<br>Fixed "Sphere of Influence".
+<br>Fixed a few Unit naming errors.
+<br>Cleaner Convoy Flags.
 <br>
 <br>1.4
 <br>Fixed map name so it will upload correctly.
