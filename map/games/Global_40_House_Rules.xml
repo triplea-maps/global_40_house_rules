@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="1.6"/>
+  <info name="Global 40 House Rules" version="1.7"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1199,8 +1199,8 @@
     <connection t1="110 Sea Zone" t2="105 Sea Zone"/>
   </map>
   <resourceList>
-    <resource name="techTokens"/>
     <resource name="PUs"/>
+    <resource name="techTokens"/>
     <resource name="SuicideAttackTokens"/>
   </resourceList>
   <playerList>
@@ -1661,15 +1661,15 @@
       <result resourceOrUnit="Russian_bomberA0C5" quantity="1"/>
     </productionRule>
     <productionRule name="buyAir_Transport">
-    <cost resource="PUs" quantity="7" />
+    <cost resource="PUs" quantity="6" />
     <result resourceOrUnit="air_transport" quantity="1"/>
     </productionRule>
     <productionRule name="buyJapanese_Air_Transport">
-    <cost resource="PUs" quantity="7" />
+    <cost resource="PUs" quantity="6" />
     <result resourceOrUnit="Japanese_air_transport" quantity="1"/>
     </productionRule>
     <productionRule name="buyRussian_Air_Transport">
-    <cost resource="PUs" quantity="7" />
+    <cost resource="PUs" quantity="6" />
     <result resourceOrUnit="Russian_air_transport" quantity="1"/>
     </productionRule>
     <productionRule name="buyTransport">
@@ -1874,7 +1874,7 @@
                         <result resourceOrUnit="bomberA0C5" quantity="1"/>
 			</productionRule>
 			<productionRule name="buyAir_TransportIndustrialTechnology">
-                        <cost resource="PUs" quantity="7" />
+                        <cost resource="PUs" quantity="6" />
                         <result resourceOrUnit="air_transport" quantity="1"/>
 			</productionRule>
                 
@@ -8811,6 +8811,10 @@
     <attachment name="conditionAttachmentFactoryLimited" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="FactoryLimited_ChangerMustActivate" count="1"/>
     </attachment>
+    <attachment name="conditionAttachmentFactoryLimitedInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="FactoryLimited_ChangerMustActivate" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachmentAttack0Cost5BomberChangerFactoryLimited" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger:conditionAttachmentFactoryLimited"/>
     </attachment>
@@ -9648,8 +9652,15 @@
     </attachment>
     <attachment name="triggerAttachment_MorePUs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentPacificIslands"/>
-      <option name="territories" value="Malta:Crete:Cyprus:Gibraltar:Alexandria:Tobruk:Sardinia:Sicily:Nenetsia:Vyborg:Bessarabia:Turkmenistan:Iceland:Eastern Persia"/>
+      <option name="territories" value="Poland:Malta:Crete:Cyprus:Gibraltar:Alexandria:Tobruk:Sardinia:Sicily:Nenetsia:Vyborg:Bessarabia:Turkmenistan:Iceland:Eastern Persia"/>
       <option name="territoryProperty" value="production" count="1"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_MorePUsPoland" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPacificIslands"/>
+      <option name="territories" value="Poland"/>
+      <option name="territoryProperty" value="production" count="3"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -11956,6 +11967,9 @@
     <attachment name="conditionAttachment_Germany_Occupies_Southern_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Southern France" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Japan_Occupies_Southern_France" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Southern France" count="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Italy_Occupies_Southern_France" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
       <option name="when" value="before:italiansNonCombatMove"/>
@@ -13655,43 +13669,101 @@
       <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
       <option name="when" value="after:italiansNonCombatMove"/>
       <option name="uses" value="1"/>
-      <option name="removeUnits" value="93 Sea Zone:destroyer:cruiser" count="1000"/>
+      <option name="removeUnits" value="93 Sea Zone:destroyer:destroyerC5:cruiser" count="1000"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Fleet_Scuddle" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
       <option name="when" value="after:germansNonCombatMove"/>
       <option name="uses" value="1"/>
-      <option name="removeUnits" value="93 Sea Zone:destroyer:cruiser" count="1000"/>
+      <option name="removeUnits" value="93 Sea Zone:destroyer:destroyerC5:cruiser" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Fleet_Scuddle" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="93 Sea Zone:destroyer:destroyerC5:cruiser" count="1000"/>
     </attachment>
     <attachment name="conditionAttachment_Vichy_France_Facilities_in_Southern_France" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Southern France" count="1"/>
       <option name="unitPresence" value="factory_minor" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Facilities" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
-      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="conditions" value="conditionAttachmentFactoryLimitedInvert:conditionAttachment_Italy_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:italiansPlace"/>
       <option name="uses" value="1"/>
       <option name="placement" value="Southern France:factory_minor"/>
       <option name="placement" value="Southern France:harbour"/>
     </attachment>
     <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Facilities" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
-      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="conditions" value="conditionAttachmentFactoryLimitedInvert:conditionAttachment_Germany_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:germansPlace"/>
       <option name="uses" value="1"/>
       <option name="placement" value="Southern France:factory_minor"/>
       <option name="placement" value="Southern France:harbour"/>
     </attachment>
-    <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
-      <option name="when" value="after:germansNonCombatMove"/>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Facilities" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentFactoryLimitedInvert:conditionAttachment_Japan_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:japanesePlace"/>
       <option name="uses" value="1"/>
-      <option name="removeUnits" value="Southern France:infantry:artillery:fighter:factory_minor:harbour" count="1000"/>
+      <option name="placement" value="Southern France:factory_minor"/>
+      <option name="placement" value="Southern France:harbour"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Facilities12" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentFactoryLimited:conditionAttachment_Italy_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="placement" value="Southern France:factory_minor"/>
+      <option name="placement" value="Southern France:harbour12"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Facilities12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentFactoryLimited:conditionAttachment_Germany_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:germansPlace"/>
+      <option name="uses" value="1"/>
+      <option name="placement" value="Southern France:factory_minor"/>
+      <option name="placement" value="Southern France:harbour12"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Facilities12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentFactoryLimited:conditionAttachment_Japan_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:japanesePlace"/>
+      <option name="uses" value="1"/>
+      <option name="placement" value="Southern France:factory_minor"/>
+      <option name="placement" value="Southern France:harbour12"/>
     </attachment>
     <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
       <option name="when" value="after:italiansNonCombatMove"/>
       <option name="uses" value="1"/>
-      <option name="removeUnits" value="Southern France:infantry:artillery:fighter:factory_minor:harbour" count="1000"/>
+      <option name="removeUnits" value="Southern France:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Factory_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
+      <option name="when" value="after:italiansEndTurn"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:factory_minor:harbour:harbour12" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Factory_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
+      <option name="when" value="after:germansEndTurn"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:factory_minor:harbour:harbour12" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Factory_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseEndTurn"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:factory_minor:harbour:harbour12" count="1000"/>
     </attachment>
     <attachment name="triggerAttachment_Germany_Occupies_Morocco_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
@@ -22569,6 +22641,7 @@ As mentioned above, it now fires normally at subs without a Destroyer present.<b
 <br>
 <b> 3) "TacticalBomberCost10_ChangerMustActivate"</b><br>
 The price of Tactical Bombers are reduced to C10.<br>
+They do not have ASA/ASD ability when "SubsCanEvade Destroyers..." is activated.<br>
 <br>
 <b>4) "FactoryLimited_ChangerMustActivate"</b><br>
 Air and Naval Bases now cost 12. All captured and newly constructed Minor Factories may only produce Artillery, AAguns, Armor, Mech Infantry, Mobile Infantry, Marines, Elite and Infantry. If a NB is present you may also build Subs, Transports, Escort Carriers and Destroyers. If an AB is present you may also build Fighters and Tac Bombers.<br>
@@ -22668,7 +22741,7 @@ Adds the "Elite" unit. Elite is a A2 D2 M1 +1M w/tank (can blitz with tank), C5 
 It receives <b>No</b> combat bonuses from other units.<br>
 <br>
 <b>6) "AirTransport_GiveToAll"</b><br>
-Adds the Air Transport unit. Air Transport is a A0 D0 M5 +1 w/AB C7 unit. It may transport Elite units in either combat move or ncm on a 1:1 basis. May be taken as casualty.This tech must be activated by each player in order for them to receive the tech ability.<br>
+Adds the Air Transport unit. Air Transport is a A0 D0 M5 +1 w/AB C6 unit. It may transport Elite units in either combat move or ncm on a 1:1 basis. May be taken as casualty.This tech must be activated by each player in order for them to receive the tech ability.<br>
 <br>
 <b>Note</b><br> When Attacking you will have the option of retreating if your Flight Path is over Allied controlled territories.<br>
 Over water or enemy territories and you will be unable to.<br>
@@ -22682,7 +22755,8 @@ Tech Category <b>"Give To All2"</b><br>
 This tech must be activated by each player in order for them to receive the tech ability.<br>
 <br>
   <b>2) "InteceptorDefend2_GiveToAll"</b><br>
-  Interceptors now Defend at 2. Represents advanced Fighters. Recommended Rd 5 or later. Also helps against later game Sub spam.<br>
+  Interceptors now Defend at 2. Represents advanced Fighters. Recommended Rd 5 or later. Also helps against later game Bomber spam.<br>
+  <br>
   This tech must be activated by each player in order for them to receive the tech ability.<br>
 <br>
 <br>
@@ -22690,7 +22764,7 @@ Tech category <b>"Redesign"</b><br>
 <br>
 <b>1) "PacificIslandAndPU_Change"</b><br>
 Gives all valueless Pacific Islands 1 PU when Japan is at war with any of the Western Allies. Must be at war to receive bonus.<br>
-Also gives 1 PU to the following: Malta, Crete, Cyprus, Gibraltar, Alexandria, Tobruk, Sardinia, Sicily, Nenetsia, Vyborg, Bessarabia, Turkmenistan, Iceland, Eastern Persia.<br>
+Also gives 1 PU to the following: Poland, Malta, Crete, Cyprus, Gibraltar, Alexandria, Tobruk, Sardinia, Sicily, Nenetsia, Vyborg, Bessarabia, Turkmenistan, Iceland, Eastern Persia.<br>
 Removes 1 PU from: Ontario, Rhodesia and Alberta Saskatchewan Manitoba and Kazakhstan.<br>
 <br>
 Japans "Strategic_Defense_Perimeter" National Objective is replaced by "Strategic_Islands". They now receive 3 PUs for control of "Midway, Wake Island and Guam" when at war with ANY of the Western Allies. <br>
@@ -22704,7 +22778,7 @@ The Western Allies will receive 2 PUs each time they Conquer one of the followin
 In The Mediterranean, All Players will receive 1 PU each time they Conquer one of the following: Malta, Sardinia, Sicily, Cyprus and Crete.<br>
 <br>
 With originally controlled Territories, this gives Japan an additional 5 PUs, America 6 PUs, UK Pacific 4 PUs and ANZAC 3 PUs.
-Russia will receive an additional 3 PUs, Italy 3 PUs and UK 1 PU.<br>
+Russia will receive an additional 3 PUs, Italy 3 PUs, Germany 1 PU and UK 1 PU.<br>
 <br>
 Strategically, the Axis can Conquer Bessarabia and Vyborg quite easily from Russia for a previously unavailable 2 PUs boost. UK Pacific may activate Eastern Persia for an easy 1 PU.<br>
 <br>
@@ -22789,7 +22863,8 @@ Adds a Mobile Artillery Unit. A2 D2 +1D w/tank, C5. Gives +1A to 1 Infantry or M
 <b>3) "MilitiaForAll"</b><br>
 Adds the Militia Unit to all players. A Player may have no more than 8 Militia at any one time. May only be placed in originally owned Territories.<br>
 <br>
-This is to prevent spammage. It is also suggested to wait until Round 3 before activation. This represents full manpower mobilization and prevents an early UK stack to prevent Sea Lion. "Chinese Militia" is still suggested for Round 1 activation. If not activated, China will also gain the ability to purchase Militia when "MilitiaForAll" is activated.<br>
+This is to prevent spammage. It is also suggested to wait until Round 3 before activation. This represents full manpower mobilization and prevents an early UK stack to prevent Sea Lion. If "Chinese Militia" is not activated, China will also gain the ability to purchase Militia when "MilitiaForAll" is activated.<br>
+<b>Note</b><br>You will need to use Edit to purchase UK Militia if UKP Militia puts total over 8. This will be fixed in the future.<br>
 <br>
 <b>4) "CloseAirSupport"</b><br>
 Tac Bombers give +1A to Infantry and Mech Infantry on a 1:1 basis. Tac BombersC10 do not receive this ability.<br>
@@ -22836,6 +22911,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
+<br>1.7
+<br>Fix Vichy DDC5 not scuttling correctly and Harbour12 removal and place when Southern France Liberated.<br>
+Change Air Transport cost to 6.<br>
+Added 1 PU to Poland when "PacificIslandAndPU_Change" is activated.<br>
 <br>1.6
 <br>Add "DestroyerC5Boost" and "InteceptorDefend2".
 <br>Fixed "AAGunC4" transport cost.
