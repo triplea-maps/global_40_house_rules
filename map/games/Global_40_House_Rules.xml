@@ -5452,7 +5452,7 @@
       <option name="players" value="Russians"/>
     </attachment>
     <attachment name="supportAttachmentInfantryAndMechInf1" attachTo="mobile_artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="infantry:mech_infantry:"/>
+      <option name="unitType" value="infantry:mech_infantry"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
@@ -9049,7 +9049,7 @@
     </attachment>
     <attachment name="conditionAttachment_French_1_Lose_FranceAndSouthernFrance" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_French_1_Lose_France:conditionAttachment_French_1_Lose_SouthernFrance"/>
-      <option name="directPresenceTerritories" value="Normandy Bordeaux:" count="1"/>
+      <option name="directPresenceTerritories" value="Normandy Bordeaux" count="1"/>
       <option name="unitPresence" value="infantry:Japanese_infantry:Russian_infantry:militia:Japanese_militia:Russian_militia:marine:Japanese_marine:Russian_marine:elite:Japanese_elite:Russian_elite:artillery:Japanese_artillery:Russian_artillery:mobile_artillery:Japanese_mobile_artillery:Russian_mobile_artillery:mech_infantry:Japanese_mech_infantry:Russian_mech_infantry:armour:Japanese_armour:Russian_armour:aaGun:Japanese_aaGun:Russian_aaGun:aaGunC4:Japanese_aaGunC4:Russian_aaGunC4:fighter:Japanese_fighter:Russian_fighter:bomber:Japanese_bomber:Russian_bomber:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_French_1_Can_Be_Liberated_Switch" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
