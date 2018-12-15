@@ -10228,7 +10228,6 @@
     <attachment name="conditionAttachment_Russians_1a_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
      <option name="conditions" value="conditionAttachment_Russians_1a_Convoy_Clear"/>
      <option name="directOwnershipTerritories" value="Archangel" count="1"/>
-     <option name="alliedExclusionTerritories" value="original"/>
      <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_Provoked_War_With_Japan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10268,7 +10267,6 @@
     <attachment name="conditionAttachment_Russians_2_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
      <option name="directOwnershipTerritories" value="Amur" count="1"/>
-     <option name="alliedExclusionTerritories" value="original"/>
      <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease+2" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10301,7 +10299,6 @@
     <attachment name="conditionAttachment_Russians_3_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear"/>
      <option name="alliedOwnershipTerritories" value="Persia:Caucasus" count="2"/>
-     <option name="alliedExclusionTerritories" value="original"/>
      <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_3_Lend_Lease+2" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -26899,7 +26896,7 @@ May also be activated via <b>Map Options</b> with "Canada Boost".<br>
 <b>5) "ConvoyAndBlockade"</b><br>
 This adds Blockade zones to Sea Zones:64,86,91,103,107,116,118 and 123. In addition to interdicting Land Territory PUs, Blockade Zones also interdict Sea Zones with PU value when adjacent to said Zones.<br>
 <br>
-It also adds "Convoy Zones" to Sea Zones:7,77,104,117,123 and 124. Convoy Zones allow interdiction of Land Territory PUs. They are as follows:<br>
+It also adds "Convoy Zones" to Sea Zones:7,77,104,117,123 and 124. Convoy Zones allow interdiction of Land Territory PUs if Enemy Naval Units, not including Transports, are present. They are as follows:<br>
 Sea Zone 7: Buryatia and Sakha. 2 PUs total. Russian owned.<br>
 	    Sea Zone 77: Caucasus. 2 PUs total. Russian owned.<br>
 	    Sea Zone 88: West Indies. 2 PUs total. American owned.<br>
@@ -26909,7 +26906,7 @@ Sea Zone 7: Buryatia and Sakha. 2 PUs total. Russian owned.<br>
 	    Sea Zone 117: Quebec. 2 PUs total. Canadian owned.<br>
 	    Sea Zone 123: Iceland. 1 PU total. British owned.<br>
 	    Sea Zone 123: New Brunswick Nova Scotia. 1 PU total. Canadian owned.<br>
-	    Sea Zone 124: Nenetsia and Vologda. 2 PUs total. Russian owned.<br>
+	    Sea Zone 124: Nenetsia (when PacificIslandAndPU_Change is on) and Vologda. 2 PUs total. Russian owned.<br>
 	    <br>
 Sea Zones 104 and 117 are also worth 1 PU.<br>
 	    Sea Zones 88,90 and 102 are worth 2 PUs.<br>
@@ -26930,7 +26927,7 @@ Land Territory changes are:
 	    <br>
 	    The UK has their "British_Original"(controls all Original Territories) National Objective reduced to 3 PUs.<br>
 	    <br>
-	    Strategically, certain Sea Zones(91,103) may inflict substantial damage. <br>
+	    Strategically, certain Sea Zones(89,91,103) may inflict substantial damage. <br>
 	    <br>
 	    The bottom left of the screen will show the PU value of the Sea Zone you are in. An easy way to remember is, USA Sea Zones are worth 2 PUs, UK 1 PU, except for 123 (Iceland), Canada 1 PU and USSR 0 PUs.<br>
 	    <br>
@@ -26939,17 +26936,14 @@ Land Territory changes are:
 	      May also be activated via <b>Map Options</b>.<br>
 <br>
 	    <b>6) "RussianNationalObjectives"</b><br>
-	    Reduces Russia's Sea Zone 125 Lend Lease Objective to 2 PUs. Also reduces their "Spread of Communism" Objective to 2 PUs per Territory and limits those Territories to Originally German, Italian, or Pro-Axis <b>Mainland</b> European Neutral Territories.<br>
+	    Reduces Russia's Sea Zone 125 Lend Lease Objective to 2 PUs and Allied Units are allowed in Russia. Also reduces their "Spread of Communism" Objective to 2 PUs per Territory and limits those Territories to Originally German, Italian, or Pro-Axis <b>Mainland</b> European Neutral Territories.<br>
 	    <br>
 	    These Territories are: Bulgaria, Finland, Greater Southern Germany, Slovakia Hungary, Western Germany, Romania, Poland, Germany, Norway, Denmark, Holland Belgium, Northern Italy, Southern Italy. <br>
 	    <br>
 	    Adds the following NOs to Russia:
-"The Northern Trace" Theme: Access to Allied Lend-Lease via the Northwest Staging Route. 2 PUs if Sea Zone 5 has no enemy warships (all sea units except Transports), Amur is Russian controlled and there are no Allied units in any Original Russian Territories.<br>
+"The Northern Trace" Theme: Access to Allied Lend-Lease via the Northwest Staging Route. 2 PUs if Sea Zone 5 has no enemy warships (all sea units except Transports) and Amur is Russian controlled. Allied Units are allowed in Russia.<br>
 <br>
-"Persian Corridor" Theme: Access to Allied Lend-Lease via the Trans-Iranian Supply Route. 2 PUs if Sea Zone 80 has no enemy warships (all sea units except Transports), Persia is Allied controlled and there are no Allied units in any Original Russian Territories.<br>
-<br>
-<b>Note</b><br> Allied Ships in any of Sea Zones 125, 80 or 5 will negate the Lend Lease Objective. Allied ships may still Liberate those Sea Zones. <br>
-Does not affect the +2 Lend Lease Objectives.<br>
+"Persian Corridor" Theme: Access to Allied Lend-Lease via the Trans-Iranian Supply Route. 2 PUs if Sea Zone 80 has no enemy warships (all sea units except Transports) and Persia and Caucasus is Allied controlled. Allied Units are allowed in Russia.<br>
 <br>
 Beginning RD 3 an Additional increase of +2 PUs per Lend Lease Route goes into effect if Russia is at war and Japan declares war on Russia. Allied units <b>May</b> be present in Russia.<br>
 <br>
