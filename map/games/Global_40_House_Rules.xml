@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="1.7"/>
+  <info name="Global 40 House Rules" version="1.8"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -10254,7 +10254,7 @@
       <option name="tech" value="BBandCA_AA"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachmentBBandCAaa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachmentBBandBbCaAa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn2OrHigher:BbCaAa"/>
       <option name="tech" value="BBandCA_AA"/>
       <option name="uses" value="1"/>
@@ -24768,6 +24768,12 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>1.8
+<br>Fix BBandCA_ AA not working with Map Option "Option Redesign".
+<br>
+<br>1.7
+<br>Clarified some Game Notes.
 <br>
 <br>1.6
 <br>Added "Option Redesign" and "BM Rules" to "Map Options".<br>Added "Map Options"for some of the "Techs". Also adds "Towed AA Gun".
