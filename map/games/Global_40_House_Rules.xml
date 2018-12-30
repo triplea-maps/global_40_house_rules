@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="1.8"/>
+  <info name="Global 40 House Rules" version="1.9"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6250,6 +6250,10 @@
     <attachment name="Redesign" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Option Redesign"/>
     </attachment>
+    <attachment name="RedesignInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Option Redesign"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="BbCaAa" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Battleships and Cruisers AA Round 2"/>
     </attachment>
@@ -7943,7 +7947,7 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1" />
     </attachment>
     <attachment name="objectiveAttachment_ANZAC_2_Control_Strategic_Islands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentBM_RulesInvert:BMRulesInvert:conditionAttachmentANZAC_At_War_With_Japanese"/>
+      <option name="conditions" value="conditionAttachmentBM_RulesInvert:BMRulesInvert:RedesignInvert:conditionAttachmentANZAC_At_War_With_Japanese"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
       <!-- we do not want dutch control of new guinea to count towards this goal -->
@@ -7951,6 +7955,13 @@
     </attachment>
     <attachment name="objectiveAttachment_ANZAC_2_Control_Strategic_IslandsBM" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentBM_Rules:conditionAttachmentANZAC_At_War_With_Japanese"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
+      <!-- we do not want dutch control of new guinea to count towards this goal -->
+      <option name="players" value="British:UK_Pacific:Americans:ANZAC:Russians:French"/>
+    </attachment>
+    <attachment name="objectiveAttachment_ANZAC_2_Control_Strategic_IslandsRedesign" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Redesign"/>
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
       <!-- we do not want dutch control of new guinea to count towards this goal -->
