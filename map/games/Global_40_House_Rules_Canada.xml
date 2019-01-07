@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="1.91"/>
+  <info name="Global 40 House Rules with Canada" version="1.93"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1463,7 +1463,9 @@
       <step name="britishEndTurn" delegate="endTurn" player="British">
         <stepProperty name="skipPosting" value="true"/>
       </step>
-      <step name="UK_PacificPlace" delegate="place" player="UK_Pacific"/>
+      <step name="UK_PacificPlace" delegate="place" player="UK_Pacific">
+	  <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
+	  </step>
       <step name="UK_PacificEndTurn" delegate="endTurn" player="UK_Pacific">
         <stepProperty name="turnSummaryPlayers" value="British:UK_Pacific"/>
       </step>
@@ -26664,6 +26666,7 @@ Germany needs to activate techs at the start of their turn in order for them to 
 <br>
 <b>Note</b><br>Convoy Zone Losses are not shown at the end of turn the way Blockade is.<br>
 <br>
+<b>Note</b><br>When using Edit some Units have the same Image.<br><br>
 <b>Here is the Tech Tree for "Global 40 House Rules"</b> minus the OOB techs:<br>
 <br>
 <b>"Changer"</b><br>
@@ -27021,6 +27024,7 @@ UK Pacific is able to place Bunkers without the required units being present. Th
 <br>
 It is recommended to wait until RD 3 to activate Bunkers. This prevents breaking early RD battles and represents the time needed to build fortifications.<br>
 <br>
+<b>Note</b><br>Bunker 2 Hit Point and SBR Damage are separate but Image is the same. So if you repair SBR Damage or Hit Point Damage the Bunker Hit Image will show up and vice versa.<br><br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>2) "MilitaryBase_Produces_3inf</b><br>
@@ -27112,7 +27116,7 @@ Thanks to simon33 for doing the original Canada mod.<br>
 <br>
 Thanks to Black Elk for starting Redesign and Baron Munchausen for his number crunching and ideas.<br>
 Thanks to LHoffman, CWO Marc, Argothair for their ideas and suggestions.<br>
-Wild Bill, Young Grasshopper, Narvik, KNP7765 and all the others who contributed with their ideas and comments.<br>
+Wild Bill, Young Grasshopper, Narvik, KNP7765, Gamerman1, Der Kuenstler, oztea and all the others who contributed with their ideas and comments.<br>
 <br>
 Thanks to crazy_german, prastle, Frostion, Zim Zero, ZjelcoP, Red Baron, Cernel for xml help. pyt o torp for sub ideas.<br>
 To P@nther, simon33 for GitHub help. Redrum, RoiEX, <b>ssoloff</b> and DanVanAtta for additional help.<br>
