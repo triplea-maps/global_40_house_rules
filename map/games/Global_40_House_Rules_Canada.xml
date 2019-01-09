@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="1.93"/>
+  <info name="Global 40 House Rules with Canada" version="1.94"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2463,6 +2463,7 @@
       <techname name="FlyingTiger_ChangerMustActivate"/>
       <techname name="FactoryLimited_ChangerMustActivate"/>
       <techname name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate"/>
+      <techname name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3"/>
       <techname name="NormandyTurnsProAllied_ChangerMustActivate"/>
       <techname name="SphereOfInfluence_ChangerMustActivate"/>
       <techname name="GetCapitalCashOnce_ChangerMustActivate"/>
@@ -2525,6 +2526,7 @@
       <category name="Changer Must Activate Additional Changes">
 	<tech name="FactoryLimited_ChangerMustActivate"/> 
 	<tech name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate"/>
+	<tech name="AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3"/>
 	<tech name="NormandyTurnsProAllied_ChangerMustActivate"/>
 	<tech name="SphereOfInfluence_ChangerMustActivate"/>
 	<tech name="GetCapitalCashOnce_ChangerMustActivate"/>
@@ -6453,6 +6455,16 @@
     <attachment name="conditionAttachmentVictoryCities" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate" count="1"/>
     </attachment>
+    <attachment name="conditionAttachmentVictoryCitiesRD3" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentVictoryCitiesRD3a" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="3-+"/>
+    </attachment>
+    <attachment name="conditionAttachmentVictoryCitiesRD3Activate" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentVictoryCitiesRD3:conditionAttachmentVictoryCitiesRD3a"/>
+    <option name="conditionType" value="AND"/>
+    </attachment>
     <attachment name="Guerrillas" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
     </attachment>
@@ -6507,8 +6519,15 @@
     <attachment name="PhilippineBoost" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Philippines PU Boost"/>
     </attachment>
+    <attachment name="conditionAttachmentPhilippineBoostRedesignRD3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="3-+"/>
+    </attachment>
+    <attachment name="conditionAttachmentPhilippineBoostRedesignRD3Activate" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Redesign:conditionAttachmentPhilippineBoostRedesignRD3"/>
+      <option name="conditionType" value="And"/> 
+    </attachment>
     <attachment name="conditionAttachmentPhilippineBoostRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="Redesign:PhilippineBoost"/>
+      <option name="conditions" value="conditionAttachmentPhilippineBoostRedesignRD3Activate:PhilippineBoost"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="conditionAttachmentPacificIslandsOption" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6528,8 +6547,15 @@
     <attachment name="GermanBoost" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="German Boost"/>
     </attachment>
+    <attachment name="conditionAttachmentGermanBoostRedesignRD3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="3-+"/>
+    </attachment>
+    <attachment name="conditionAttachmentGermanBoostRedesignRD3Activate" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Redesign:conditionAttachmentGermanBoostRedesignRD3"/>
+      <option name="conditionType" value="And"/> 
+    </attachment>
     <attachment name="conditionAttachmentGermanBoostRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="Redesign:GermanBoost"/>
+      <option name="conditions" value="conditionAttachmentGermanBoostRedesignRD3Activate:GermanBoost"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="conditionAttachmentPacificIslandsInvertBM" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6600,7 +6626,7 @@
       <option name="conditionType" value="OR"/>  
     </attachment>
     <attachment name="objectiveAttachment_Germans_VictoryCitiesWorth1PU" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/> 
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -6712,7 +6738,7 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1" />
     </attachment>
     <attachment name="objectiveAttachment_Russians_VictoryCitiesWorth1PU" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -7300,7 +7326,7 @@
                                   <option name="rounds" value="4-+"/>
                                 </attachment>
       <attachment name="objectiveAttachment_Japanese_VictoryCitiesWorth1PU" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
 	<option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -7405,7 +7431,7 @@
       <option name="alliedOwnershipTerritories" value="Malta:Crete:Cyprus" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_British_VictoryCitiesWorth1PU" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -7481,7 +7507,7 @@
       <option name="conditions" value="conditionAttachmentSphereOfInfluence:conditionAttachmentAlliedExclusionTerritoriesCanada"/>
     </attachment>
     <attachment name="objectiveAttachment_Canada_VictoryCitiesWorth1PU" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -8510,7 +8536,7 @@
                                   
                                 </attachment>
       <attachment name="objectiveAttachment_UK_Pacific_VictoryCitiesWorth1PU" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
 	<option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -8559,7 +8585,7 @@
       <option name="alliedOwnershipTerritories" value="Malta:Crete:Cyprus" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_VictoryCitiesWorth1PU" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9140,7 +9166,7 @@
                                   
                                 </attachment>
       <attachment name="objectiveAttachment_ANZAC_VictoryCitiesWorth1PU" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
 	<option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9717,7 +9743,7 @@
                                   
                                 </attachment>
 				<attachment name="objectiveAttachment_Americans_VictoryCitiesWorth1PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-				  <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+				  <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
 				  <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9793,7 +9819,7 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1" />
     </attachment>
 <attachment name="objectiveAttachment_French_VictoryCitiesWorth1PU" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-  <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+  <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
   <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9880,7 +9906,7 @@
       <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoadBM:conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_VictoryCitiesWorth1PU" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -10812,7 +10838,7 @@
     <!-- Changer Triggers -->
     <attachment name="triggerAttachmentRedesignMod" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Attack0Cost5Bomber_ChangerMustActivate:SubsCanEvadeDestroyers_ChangerMustActivate:AAGunC4_ChangerMustActivate:Escort_Carrier_ChangerMustActivate:FlyingTiger_ChangerMustActivate:FactoryLimited_ChangerMustActivate:AdditionalVictoryCitiesWorthPUs_ChangerMustActivate:NormandyTurnsProAllied_ChangerMustActivate:SphereOfInfluence_ChangerMustActivate:GetCapitalCashOnce_ChangerMustActivate:BM_VichyRule_ChangerMustActivate:GermansInLondon5PU_ChangerMustActivate"/>
+      <option name="tech" value="Attack0Cost5Bomber_ChangerMustActivate:SubsCanEvadeDestroyers_ChangerMustActivate:AAGunC4_ChangerMustActivate:Escort_Carrier_ChangerMustActivate:FlyingTiger_ChangerMustActivate:FactoryLimited_ChangerMustActivate:AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3:NormandyTurnsProAllied_ChangerMustActivate:SphereOfInfluence_ChangerMustActivate:GetCapitalCashOnce_ChangerMustActivate:BM_VichyRule_ChangerMustActivate:GermansInLondon5PU_ChangerMustActivate"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerSubsUnBlocked" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -10935,11 +10961,11 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerVictoryCities" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentVictoryCities:VC+1"/>
+      <option name="trigger" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3Activate:VC+1"/>
       <option name="conditionType" value="OR"/> 
       <option name="territories" value="French West Africa:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Greece:Romania:Libya:Caroline Islands:Manchuria:Ukraine:Iraq:Archangel:Tunisia"/>
       <option name="territoryProperty" value="victoryCity" count="1"/>
-      <option name="when" value="before:changerEndTurn"/>
+      <option name="when" value="after:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Marines" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -25350,6 +25376,9 @@
       <attachment name="techAbilityAttachment" attachTo="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
+      <attachment name="techAbilityAttachment" attachTo="AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
+	<option name="defenseBonus" value="0:bomber"/>
+      </attachment>
       <attachment name="techAbilityAttachment" attachTo="NormandyTurnsProAllied_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
@@ -26684,14 +26713,14 @@ Due to the Japanese Bombers not being able to participate in regular combat, an 
 It also moves the 19 Sea Zone Sub and Destroyer to 20 Sea Zone. This allows the option of striking the British Battleship in 37 Sea Zone on a Round 1 Japanese Attack.<br>
 <br>
 <b>Note</b><br>
-When attacking the same Territory as an SBR, the attacking Strategic Bombers will die if the land battle is unsuccessful. This is unintended and should be corrected via Edit.
-<br>
+When attacking the same Territory as an SBR, the attacking Strategic Bombers will die if the land battle is unsuccessful. This is unintended and should be corrected via Edit. <br>Strategic Bombers will be captured the same as Infrastructure. Use Edit if you prefer to destroy them.
+<br><br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b> 3) "SubsCanEvadeDestroyers_ChangerMustActivate"</b><br>
 Destroyers no longer block Subs or the Sub's "First Strike" capability. They are now a A1 D1 M2 +1 w/NB C5 unit. They also have 1 preemptive "ASA" (Anti-Sub Attack) shot.<br>
 <br>
-When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 1) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
+When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 1 out of 6) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
 <br>
 The Destroyer also has 1 preemptive "ASD" (Anti-Sub Defense) shot for combat and 1 for movement. It hits at 1 out of 10. So when a Sub attacks a Destroyer, it will undergo 1 ASD shot when the Sub enters the Destroyer's Sea Zone and 1 ASD shot at the beginning of Combat. Both of these attacks occur before the Subs First Strike.<br>
 <br>
@@ -26701,7 +26730,8 @@ Destroyers will fire 1 ASD shot when Subs pass through the Destroyer's Sea Zone 
 Destroyer ASA/D shots will stack. Meaning if there is only 1 Sub and multiple Destroyers, the sub will undergo as many ASA/D shots as there are Destroyers.<br>
 <br>
 Subs remain A2 D1 M2 +1 w/NB C6. Subs cannot be blocked by any Naval Vessel. Subs are now susceptible to counterattack from Fighters and Tac Bombers. When attacking naval units who have air units present, Subs will undergo counterfire from the air units regardless of the outcome of their "First Strike".<br>
-When defending against attack by air units the sub may still submerge before the attack (except for the Tac Bombers ASA shot mentioned below).<br>
+When defending against attack by air units the sub may still submerge before the attack (except for the Tac Bombers ASA shot mentioned below).<br><br>
+Subs in Blockade Zones may either retreat or undergo 1 Round of Combat from ASW Units during the Subs Combat phase.<br><br>
 All other rules regarding Subs are unchanged.<br>
 <br>
 <b>Note</b><br> When moving a sub through a contested Sea Zone, you must move in one continuous movement. If you stop in the contested Sea Zone you will be unable to pass through.<br>
@@ -26760,6 +26790,7 @@ All Victory Cities are now worth 1 PU to the controlling player. In addition to 
 <br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
+There are currently No Victory Conditions for this Option.<br><br>
 <b>11) "NormandyTurnsProAllied_ChangerMustActivate"</b><br>
 If France and Southern France are Axis contolled and there are no French units in Normandy Bordeaux, Normandy Bordeaux will turn into a Pro-Allied Neutral at the end of France's turn.<br>
 <br>
@@ -26875,6 +26906,8 @@ Removes 1 PU from: Ontario, Rhodesia and Alberta Saskatchewan Manitoba and Kazak
 Japans "Strategic_Defense_Perimeter" National Objective is replaced by "Strategic_Islands". They now receive 3 PUs for control of "Midway, Wake Island and Guam" when at war with ANY of the Western Allies. <br>
 <br>
 The USA also acquires the "Strategic_Islands" National Objective when at war with Japan.<br>
+<br>
+The ANZAC Objective for Controlling Dutch New Guinea, New Guinea, New Britain and The Solomons is Reduced to 3 PUs .<br>
 <br>
 On the Pacific Map, when at war with each other, Japan and the Western Allies will receive 2 PUs each time they Conquer a 2 PUs value Island or less (except the Philippines).<br>
 <br>
@@ -27057,7 +27090,7 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "FactoryLimited_ChangerMustActivate"
 <br>
-"AdditionalVictoryCitiesWorthPUs_ChangerMustActivate"
+"AdditionalVictoryCitiesWorthPUs_ChangerMustActivate" Activated Round 3
 <br>
 "NormandyTurnsProAllied_ChangerMustActivate"
 <br>
@@ -27095,7 +27128,12 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "Bunkers" Activated Round 3
 <br>
+"German Boost" Activated Round 3
 <br>
+"Philippines PU Boost" Activated Round 3
+<br>
+<br>
+There are currently No Victory Conditions for this Option.<br><br>
 <b>2)BM Rules</b><br>
 Adds the "BM Rules". Must Activate the "BM Vichy Rule" and "Chinese Guerrilla Fighters" separately. <br>
 <br>
