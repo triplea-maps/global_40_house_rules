@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.0"/>
+  <info name="Global 40 House Rules" version="2.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -24909,11 +24909,13 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "CloseAirSupport"
 <br>
+"BM Vichy Rule"
+<br>
 "Bunkers" Activated Round 3
 <br>
 <br>
 There are currently No Victory Conditions for this Option.<br>
-The "BM Vichy Rule" must be activated separately if desired.<br><br>
+<br>
 <b>2)Option taamvan</b><br>
 Changes the control of Novgorod, Volgograd, Russia Objective to 3 PUs for Germany. Control of Caucasus is also reduced to 3.<bvr> Also adds a Fighter to Russia and a Armor to Urals.<br>
 <br>
