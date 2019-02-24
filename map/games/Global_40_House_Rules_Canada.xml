@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.1"/>
+  <info name="Global 40 House Rules with Canada" version="2.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -9901,13 +9901,14 @@
     </attachment>
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption1:Guerrillas"/>
+      <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadBM" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_Burma_RoadBM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
-      <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoadBM:conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
+      <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoad:conditionAttachmentJapaneseDoNotControlBurmaRoadBM"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_VictoryCitiesWorth1PU" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
@@ -27199,6 +27200,8 @@ Also to everyone else who helped with their comments and ideas.<br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
+<br>2.2
+<br>Fix Chinese not being able to buy Artillery in BM Rules.<br>
 <br>2.0
 <br>Add "Option taamvan".
 <br>
