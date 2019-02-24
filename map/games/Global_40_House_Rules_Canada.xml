@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="1.96"/>
+  <info name="Global 40 House Rules with Canada" version="1.9"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3220,6 +3220,8 @@
       <option name="requiresUnits" value="factory_major"/>
       <option name="requiresUnits" value="factory_minor"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
+      <option name="canBeCapturedOnEnteringBy" value="French:Americans:British:Canada:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
     </attachment>
     <!-- Militia -->
     <attachment name="unitAttachment" attachTo="militia" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4195,6 +4197,7 @@
      <option name="givesMovement" value="-1:Japanese_mobile_artillery"/>
      <option name="givesMovement" value="-1:Russian_mobile_artillery"/>
      <option name="isAAforBombingThisUnitOnly" value="false"/>
+     <option name="canBeCapturedOnEnteringBy" value="French:Americans:British:Canada:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>
      <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
     <!-- Harbour -->
@@ -10603,6 +10606,9 @@
     <attachment name="conditionAttachment_False" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="false"/>
     </attachment>
+    <attachment name="conditionAttachment_True" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="true"/>
+    </attachment>
     <attachment name="conditionAttachmentTurn3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="3"/>
     </attachment>
@@ -10940,7 +10946,7 @@
     </attachment>
     <attachment name="triggerAttachment_ChangerRemoveSub" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentChangerRemoveSub"/>
-      <option name="removeUnits" value="66 Sea Zone:submarine" count="1"/>                                         	                <option name="when" value="before:changerEndTurn"/>
+      <option name="removeUnits" value="66 Sea Zone:submarine" count="1"/>                <option name="when" value="before:changerEndTurn"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerVictoryCities" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24260,6 +24266,19 @@
       <option name="changeOwnership" value="Buyant-Uhaa:Mongolians:Russians:true"/>
       <option name="changeOwnership" value="Ulaanbaatar:Mongolians:Russians:true"/>
     </attachment>
+  <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_3" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>  
+      <option name="removeUnits" value="Ulaanbaatar:infantry" count="1"/>
+      <option name="removeUnits" value="Buyant-Uhaa:infantry" count="2"/>
+      <option name="removeUnits" value="Olgiy:infantry" count="2"/>
+      <option name="removeUnits" value="Dzavhan:infantry" count="1"/>
+      <option name="placement" value="Ulaanbaatar:Russian_infantry" count="1"/>
+      <option name="placement" value="Buyant-Uhaa:Russian_infantry" count="2"/>
+      <option name="placement" value="Olgiy:Russian_infantry" count="2"/>
+      <option name="placement" value="Dzavhan:Russian_infantry" count="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
       <option name="when" value="after:japaneseBattle"/>
@@ -27145,6 +27164,9 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>1.9
+<br>Fix "Sphere of Influence" activating when Mongolians activated. Also fixed Mongolia Infantry changing to Russian Infantry.
 <br>
 <br>1.8
 <br>Fix BBandCA_ AA not working with Map Option "Option Redesign".
