@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="1.9"/>
+  <info name="Global 40 House Rules" version="2.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6259,6 +6259,13 @@
       <option name="gameProperty" value="Option Redesign"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="taamvan" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Option taamvan"/>
+    </attachment>
+    <attachment name="taamvanInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Option taamvan"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="BbCaAa" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Battleships and Cruisers AA Round 2"/>
     </attachment>
@@ -6348,11 +6355,22 @@
       <option name="atWarPlayers" value="Russians" count="0"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="taamvanInvert"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Novgorod:Volgograd:Russia" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_3_Control_Caucasus" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="taamvanInvert"/>
       <option name="objectiveValue" value="5"/>
+      <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia_3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="taamvan"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="directOwnershipTerritories" value="Novgorod:Volgograd:Russia" count="each"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Germans_3_Control_Caucasus_3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="3"/>
       <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11654,6 +11672,13 @@
       <option name="trigger" value="conditionAttachmentPhilippineBoost"/>
       <option name="territories" value="Philippines"/>
       <option name="territoryProperty" value="production" count="3"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_taamvan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="taamvan"/>
+      <option name="placement" value="Russia:Russian_fighter" count="1"/>
+      <option name="placement" value="Urals:Russian_armour" count="1"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -24319,6 +24344,9 @@
     <property name="Option Redesign" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Option taamvan" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="BM Rules" value="false" editable="true">
       <boolean/>
     </property>
@@ -24884,17 +24912,21 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 "Bunkers" Activated Round 3
 <br>
 <br>
-There are currently No Victory Conditions for this Option.<br><br>
-<b>2)BM Rules</b><br>
+There are currently No Victory Conditions for this Option.<br>
+The "BM Vichy Rule" must be activated separately if desired.<br><br>
+<b>2)Option taamvan</b><br>
+Changes the control of Novgorod, Volgograd, Russia Objective to 3 PUs for Germany. Control of Caucasus is also reduced to 3.<bvr> Also adds a Fighter to Russia and a Armor to Urals.<br>
+<br>
+<b>3)BM Rules</b><br>
 Adds the "BM Rules". Must Activate the "BM Vichy Rule" and "Chinese Guerrilla Fighters" separately. <br>
 <br>
-<b>3)German Boost</b><br>
+<b>4)German Boost</b><br>
 Gives 1 PU to Poland, Slovakia Hungary, Romania and Yugoslavia. You may wish to use this option if "Victory Cities Worth 1 PU", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Russia becomes too strong. <br>
 <br>
-<b>4)Philippines PU Boost</b><br>
+<b>5)Philippines PU Boost</b><br>
 Gives 1 PU to the Philippines. You may wish to use this option if "Victory Cities Worth 1 PU", "ChineseMilitia", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Allies become too strong. <br>
 <br>
-<b>5)Towed AA Gun</b><br> Activated by <b>"AA Gun Cost 4"</b>. Is a A0 D1 M1 +1 with Mech Infantry, C5 unit. Can blitz with Mech Infantry and Armor. It has 2AA shots. May not fire more than 1 shot per plane. Can Combat Move and can conquer/capture Territories and Infrastructure.
+<b>6)Towed AA Gun</b><br> Activated by <b>"AA Gun Cost 4"</b>. Is a A0 D1 M1 +1 with Mech Infantry, C5 unit. Can blitz with Mech Infantry and Armor. It has 2AA shots. May not fire more than 1 shot per plane. Can Combat Move and can conquer/capture Territories and Infrastructure.
 <br>
 <br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
@@ -24917,6 +24949,9 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>2.0
+<br>Add "Option taamvan".
 <br>
 <br>1.9
 <br>Fix "Sphere of Influence" activating when Mongolians activated. Also fixed Mongolia Infantry changing to Russian Infantry.
