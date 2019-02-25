@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.2"/>
+  <info name="Global 40 House Rules with Canada" version="2.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -12324,7 +12324,7 @@
       <option name="trigger" value="taamvan"/>
       <option name="placement" value="Russia:Russian_fighter" count="1"/>
       <option name="placement" value="Urals:Russian_armour" count="1"/>
-      <option name="when" value="before:germansPolitics"/>
+      <option name="when" value="before:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <!-- Russians Triggers -->
@@ -27200,6 +27200,8 @@ Also to everyone else who helped with their comments and ideas.<br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
+<br>2.3
+<br>Change "Option taamvan" to activate at Game start.<br>
 <br>2.2
 <br>Fix Chinese not being able to buy Artillery in BM Rules.<br>
 <br>2.0
