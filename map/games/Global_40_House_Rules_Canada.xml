@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.4"/>
+  <info name="Global 40 House Rules with Canada" version="2.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2498,7 +2498,7 @@
       <techname name="CloseAirSupport"/>
       
       <techname name="Bunkers"/>
-      <techname name="MilitaryBase_Produces_3inf"/>
+      <techname name="MilitaryBase_Produces_2inf"/>
       <techname name="TacticalBomberAirBattleD1"/>
       
       <techname name="AirfieldM2"/>
@@ -2588,7 +2588,7 @@
       </category>
       <category name="More Units and Changes">
 	<tech name="Bunkers"/>
-	<tech name="MilitaryBase_Produces_3inf"/>
+	<tech name="MilitaryBase_Produces_2inf"/>
 	<tech name="TacticalBomberAirBattleD1"/>
 	<tech name="AirfieldM2"/>
       </category>
@@ -4250,13 +4250,13 @@
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
-    <!-- MilitaryBase -->
+    <!-- Military Base -->
     <attachment name="unitAttachment" attachTo="MilitaryBase" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
       <option name="unitPlacementRestrictions" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="1"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
-      <option name="canProduceXUnits" value="3"/>
+      <option name="canProduceXUnits" value="2"/>
       <option name="maxDamage" value="6"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
@@ -10235,7 +10235,7 @@
       <option name="techs" value="Bunkers" count="1"/>
     </attachment>
     <attachment name="conditionAttachmentMilitaryBase" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="techs" value="MilitaryBase_Produces_3inf" count="1"/>
+      <option name="techs" value="MilitaryBase_Produces_2inf" count="1"/>
     </attachment>
     <attachment name="conditionAttachmentTacticalBomberAirBattleD1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="TacticalBomberAirBattleD1" count="1"/>
@@ -25260,6 +25260,7 @@
       <option name="productionBonus" value="2:factory_major"/>
       <option name="productionBonus" value="2:factory_upgrade"/>
       <option name="productionBonus" value="1:factory_minor"/>
+      <option name="productionBonus" value="1:MilitaryBase"/>
       <option name="minimumTerritoryValueForProductionBonus" value="0"/>
       <option name="repairDiscount" value="50"/>
     </attachment>
@@ -25398,7 +25399,7 @@
       <attachment name="techAbilityAttachment" attachTo="DestroyerC5Boost_GiveToAll" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
-      <attachment name="techAbilityAttachment" attachTo="MilitaryBase_Produces_3inf" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
+      <attachment name="techAbilityAttachment" attachTo="MilitaryBase_Produces_2inf" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
 	<option name="defenseBonus" value="0:bomber"/>
       </attachment>
       <attachment name="techAbilityAttachment" attachTo="AdditionalVictoryCitiesWorthPUs_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
@@ -27091,10 +27092,10 @@ It is recommended to wait until RD 3 to activate Bunkers. This prevents breaking
 <b>Note</b><br>Bunker 2 Hit Point and SBR Damage are separate but Image is the same. So if you repair SBR Damage or Hit Point Damage the Bunker Hit Image will show up and vice versa.<br><br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
-<b>2) "MilitaryBase_Produces_3inf</b><br>
+<b>2) "MilitaryBase_Produces_2inf</b><br>
 MilitaryBases C12. May place in any territory of 1 PU or less. Maximum of 1 Base per territory. May receive up to 6 damage. Cannot place Infantry if 3 or more damage. Has AA capability same as Factories.<br>
 <br>
-It will allow you to place 3 of any unit type per base. This is not intended and will be fixed in the future. 3 Infantry placed per Base per turn maximum is suggested use. This is player enforced.<br>
+It will allow you to place 2 of any unit type per base. This is not intended and will be fixed in the future. 2 Infantry placed per Base per turn maximum is suggested use. This is player enforced.<br>
 <br>
 <b>3) "TacticalBomberAirBattleD1"</b><br>
 Gives Tactical Bombers the ability to intercept at D1. This is to help against A0C5 Bomber spam and represent Night Fighter Interceptors. <br>
@@ -27200,6 +27201,9 @@ Also to everyone else who helped with their comments and ideas.<br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
+<br>2.5
+<br>Fix Bunkers and Military Base not showing up when Radar tech and Increased Factory tech is activated.<br>
+Reduce Military Base to 2 Infantry.<br>
 <br>2.3
 <br>Change "Option taamvan" to activate at Game start.<br>
 <br>2.2
