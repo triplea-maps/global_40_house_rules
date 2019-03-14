@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.63"/>
+  <info name="Global 40 House Rules with Canada" version="2.64"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2480,6 +2480,7 @@
 
       <techname name="DestroyerC5Boost_GiveToAll"/>
       <techname name="InteceptorDefend2_GiveToAll"/>
+      <techname name="CruisersA4_GiveToAll"/>
       
       <techname name="PacificIslandAndPU_Change"/>
       <techname name="CanadaBoost"/>
@@ -2566,6 +2567,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
       <category name="Redesign">
 	<tech name="PacificIslandAndPU_Change"/>
@@ -2621,6 +2623,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
       </playerTech>
     <playerTech player="Japanese">
@@ -2651,6 +2654,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="Americans">
@@ -2681,6 +2685,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="Chinese">
@@ -2711,6 +2716,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="British">
@@ -2741,6 +2747,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="UK_Pacific">
@@ -2771,6 +2778,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="Italians">
@@ -2801,6 +2809,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="Canada">
@@ -2831,6 +2840,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="ANZAC">
@@ -2861,6 +2871,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
     </playerTech>
     <playerTech player="French">
@@ -2891,6 +2902,7 @@
       <category name="Give To All2">
 	<tech name="DestroyerC5Boost_GiveToAll"/>
 	<tech name="InteceptorDefend2_GiveToAll"/>
+	<tech name="CruisersA4_GiveToAll"/>
       </category>
    </playerTech>
   </technology>
@@ -5895,7 +5907,19 @@
       <option name="bonusType" value="combined_arms"/>
       <option name="impArtTech" value="false"/>
       <option name="players" value="Changer"/>
+      </attachment>
+      <attachment name="supportAttachmentCruiserA4" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="CAcombined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Changer"/>
     </attachment>
+      
     <attachment name="conditionAttachment_Changer_Improved_Mech_Inf" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="Improved_Mech_Inf" count="1"/>
     </attachment>
@@ -6050,11 +6074,28 @@
       <option name="conditions" value="conditionAttachment_Germans_BomberA3Option:BmbrA3"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
+    <attachment name="CAA4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Cruiser Attack 4"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_CruiserA4Option" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_CruiserA4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_CruiserA4Option:CAA4"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
     <attachment name="conditionAttachment_Russians_BomberA3Option" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BombersA3_GiveToAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_BomberA3" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_BomberA3Option:BmbrA3"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
+    <attachment name="conditionAttachment_Russians_CruiserA4Option" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_CruiserA4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_CruiserA4Option:CAA4"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="conditionAttachment_Japanese_BomberA3Option" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6064,11 +6105,25 @@
       <option name="conditions" value="conditionAttachment_Japanese_BomberA3Option:BmbrA3"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
+    <attachment name="conditionAttachment_Japanese_CruiserA4Option" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_CruiserA4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_CruiserA4Option:CAA4"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
     <attachment name="conditionAttachment_Americans_BomberA3Option" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BombersA3_GiveToAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_BomberA3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_BomberA3Option:BmbrA3"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
+    <attachment name="conditionAttachment_Americans_CruiserA4Option" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_CruiserA4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_CruiserA4Option:CAA4"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="conditionAttachment_British_BomberA3Option" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6078,11 +6133,25 @@
       <option name="conditions" value="conditionAttachment_British_BomberA3Option:BmbrA3"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
+    <attachment name="conditionAttachment_British_CruiserA4Option" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_CruiserA4" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_CruiserA4Option:CAA4"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
     <attachment name="conditionAttachment_Canada_BomberA3Option" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BombersA3_GiveToAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Canada_BomberA3" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Canada_BomberA3Option:BmbrA3"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
+    <attachment name="conditionAttachment_Canada_CruiserA4Option" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Canada_CruiserA4" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Canada_CruiserA4Option:CAA4"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="conditionAttachment_UK_Pacific_BomberA3Option" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6092,11 +6161,25 @@
       <option name="conditions" value="conditionAttachment_UK_Pacific_BomberA3Option:BmbrA3"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
+    <attachment name="conditionAttachment_UK_Pacific_CruiserA4Option" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_UK_Pacific_CruiserA4" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_UK_Pacific_CruiserA4Option:CAA4"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
     <attachment name="conditionAttachment_Italians_BomberA3Option" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BombersA3_GiveToAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Italians_BomberA3" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italians_BomberA3Option:BmbrA3"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
+    <attachment name="conditionAttachment_Italians_CruiserA4Option" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_CruiserA4" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_CruiserA4Option:CAA4"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="conditionAttachment_ANZAC_BomberA3Option" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6106,11 +6189,25 @@
       <option name="conditions" value="conditionAttachment_ANZAC_BomberA3Option:BmbrA3"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
+    <attachment name="conditionAttachment_ANZAC_CruiserA4Option" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_CruiserA4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ANZAC_CruiserA4Option:CAA4"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
     <attachment name="conditionAttachment_French_BomberA3Option" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BombersA3_GiveToAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_French_BomberA3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_French_BomberA3Option:BmbrA3"/>
+      <option name="conditionType" value="OR"/> 
+    </attachment>
+    <attachment name="conditionAttachment_French_CruiserA4Option" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CruisersA4_GiveToAll" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_CruiserA4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_CruiserA4Option:CAA4"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
     
@@ -6380,6 +6477,57 @@
     <attachment name="triggerAttachment_French_BomberA3" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_French_BomberA3"/>
       <option name="support" value="supportAttachmentBomberA3"/>
+      <option name="uses" value="1"/>
+    </attachment>
+
+    <attachment name="triggerAttachment_Germans_CruiserA4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Russians_CruiserA4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_CruiserA4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_CruiserA4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_CruiserA4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Canada_CruiserA4" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Canada_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_UK_Pacific_CruiserA4" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_UK_Pacific_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italians_CruiserA4" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZAC_CruiserA4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ANZAC_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_French_CruiserA4" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_CruiserA4"/>
+      <option name="support" value="supportAttachmentCruiserA4"/>
       <option name="uses" value="1"/>
     </attachment>
 
@@ -10994,7 +11142,7 @@
     <!-- Germans Triggers -->
     <attachment name="triggerAttachmentRedesignModGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:PacificIslandAndPU_Change:CanadaBoost:CanadaUnitBoost:CanadianNationalObjectives:ConvoyAndBlockade:RussianNationalObjectives:PrimitiveTerrain:Mobile_Artillery:CloseAirSupport"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:CruisersA4_GiveToAll:PacificIslandAndPU_Change:CanadaBoost:CanadaUnitBoost:CanadianNationalObjectives:ConvoyAndBlockade:RussianNationalObjectives:PrimitiveTerrain:Mobile_Artillery:CloseAirSupport"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentBBandCAaa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -11046,11 +11194,6 @@
     <attachment name="triggerAttachmentGermansEliteAT" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EliteAT"/>
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachmentGermansBmbrA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="BmbrA3"/>
-      <option name="tech" value="BombersA3_GiveToAll"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentGermansBmbrA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -11240,7 +11383,7 @@
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
       <option name="unitProperty" value="attackAAmaxDieSides" count="10"/>
-      <option name="unitProperty" value="maxAAattacks" count="2"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
       <option name="unitProperty" value="typeAA" count="Battleship and CruiserAA"/>
@@ -26645,6 +26788,9 @@
     <property name="Bomber Attack 3" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Cruiser Attack 4" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Transport Cost 8" value="false" editable="true">
       <boolean/>
     </property>
@@ -26926,8 +27072,16 @@ This tech must be activated by each player in order for them to receive the tech
   Interceptors now Defend at 2. Represents advanced Fighters. Recommended Rd 5 or later. Also helps against later game Bomber spam.<br>
   <br>
   This tech must be activated by each player in order for them to receive the tech ability.<br>
-<br>
-<br>
+  <br>
+  <b>3) "CruisersA4_GiveToAll"</b><br>
+  Cruisers now receive a +1 Attack when paired 1:1 with a Battleship.<br>
+  <br>
+  This tech must be activated by each player in order for them to receive the tech ability.<br>
+  <br>
+  May be given to all players via
+  "Map Options". <br>
+  <br>
+  <br>
 Tech category <b>"Redesign"</b><br>
 <br>
 <b>1) "PacificIslandAndPU_Change"</b><br>
@@ -27051,7 +27205,7 @@ This helps slow Japan's push through China and discourages early Soviet Far East
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>3) "BBandCA_AA"</b><br>
-Battleships and Cruisers now have 2 AA shots. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
+Battleships now have 2 AA shots and Cruisers 1. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
 <br>It is recommended to wait until RD 2 to activate BB and CA AA Guns. This prevents breaking early RD battles and reflects the early war successes in air to naval combat.<br>
 <br>
 May also be activated via <b>Map Options</b>.<br>
@@ -27133,8 +27287,6 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 "GermansInLondon5PU_ChangerMustActivate"
 <br>
 "Elite_GiveToAll"
-<br>
-"AirTransport_GiveToAll"
 <br>
 "PacificIslandAndPU_Change"
 <br>
