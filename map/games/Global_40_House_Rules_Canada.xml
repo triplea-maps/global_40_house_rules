@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.65"/>
+  <info name="Global 40 House Rules with Canada" version="2.66"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -11369,7 +11369,7 @@
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
       <option name="unitProperty" value="attackAAmaxDieSides" count="10"/>
-      <option name="unitProperty" value="maxAAattacks" count="2"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
       <option name="unitProperty" value="typeAA" count="Battleship and CruiserAA"/>
@@ -27205,7 +27205,7 @@ This helps slow Japan's push through China and discourages early Soviet Far East
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>3) "BBandCA_AA"</b><br>
-Battleships now have 2 AA shots and Cruisers 2. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
+Battleships now have 1 AA shot and Cruisers 2. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
 <br>It is recommended to wait until RD 2 to activate BB and CA AA Guns. This prevents breaking early RD battles and reflects the early war successes in air to naval combat.<br>
 <br>
 May also be activated via <b>Map Options</b>.<br>
