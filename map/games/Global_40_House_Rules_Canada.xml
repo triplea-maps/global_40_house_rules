@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.6"/>
+  <info name="Global 40 House Rules with Canada" version="2.611"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6492,7 +6492,11 @@
     <attachment name="triggerAttachment_Germans_CruiserA4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_CruiserA4"/>
       <option name="support" value="supportAttachmentCruiserA4"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="bombard" count="-reset-2"/>
       <option name="uses" value="1"/>
+      <option name="when" value="after:germansPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Russians_CruiserA4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_CruiserA4"/>
@@ -27172,7 +27176,10 @@ This tech must be activated by each player in order for them to receive the tech
   This tech must be activated by each player in order for them to receive the tech ability.<br>
   <br>
   <b>3) "CruisersA4_GiveToAll"</b><br>
-  Cruisers now receive a +1 Attack when paired 1:1 with a Battleship.<br>
+  Cruisers now receive a +1 Attack when paired 1:1 with a Battleship. Cruiser's Bombard attack is reduced to "2" unless paired with a Battleship where it remains at "3".<br>
+  <br>
+  <b>Note</b><br>
+  If only Germany has activated this Option, all Cruisers will Bombard at 2 but only Germany will get +1 on the attack. The other players will need to be activated seprately for attack bonus or activate all players via Map Options. This will be fixed in the future.<br>
   <br>
   This tech must be activated by each player in order for them to receive the tech ability.<br>
   <br>
@@ -27468,7 +27475,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
-<br>2.6
+<br>2.611
+<br>Fix Cruiser Bombard attacking at 4 when paired with Battleship and CruiserA4 was activated. Also Reduces Cruiser's Bombard to 2 when not paired with a Battleship when CruiserA4 is activated. Bombards at 3 when paired with Battleship.<br>
+<br>
+2.6
 <br>Reduces Battleship's AA fire to 1 in "BBandCA_AA".
 <br>
 Adds "CruisersA4_GiveToAll" "PlanesTargetNaval" and "PlanesTargetNavalCV". <br>
