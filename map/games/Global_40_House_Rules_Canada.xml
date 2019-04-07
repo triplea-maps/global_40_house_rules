@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.614"/>
+  <info name="Global 40 House Rules with Canada" version="2.616"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5720,7 +5720,7 @@
       <option name="players" value="Germans:Russians:Americans:British:Canada:UK_Pacific:French:Italians:Japanese:Chinese:Canada:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentTacticalBomber1Japanese" attachTo="Japanese_fighter" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="Japanese_tactical_bomber:Japanese_tactical_bomber"/>
+      <option name="unitType" value="Japanese_tactical_bomber:Japanese_tactical_bomber10"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
@@ -11390,6 +11390,8 @@
       <option name="unitProperty" value="attackAA" count="1"/>
       <option name="unitProperty" value="attackAAmaxDieSides" count="10"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
       <option name="unitProperty" value="typeAA" count="BattleshipAndCruiserAA"/>
@@ -11403,6 +11405,8 @@
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
       <option name="unitProperty" value="attackAAmaxDieSides" count="10"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="2"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
@@ -11416,14 +11420,14 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="6"/>
-      <option name="unitProperty" value="offensiveAttackAA" count="2"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="10"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
-      <option name="unitProperty" value="typeAA" count="PlanesTargetShips"/>
+      <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -11433,14 +11437,14 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="6"/>
-      <option name="unitProperty" value="offensiveAttackAA" count="2"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="10"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
-      <option name="unitProperty" value="typeAA" count="PlanesTargetShips"/>
+      <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -11450,14 +11454,14 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="6"/>
-      <option name="unitProperty" value="offensiveAttackAA" count="2"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="10"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="carrier"/>
-      <option name="unitProperty" value="typeAA" count="PlanesTargetShips"/>
+      <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -11467,14 +11471,150 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="6"/>
-      <option name="unitProperty" value="offensiveAttackAA" count="2"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="10"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="carrier"/>
-      <option name="unitProperty" value="typeAA" count="PlanesTargetShips"/>
+      <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetNavalUSSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNaval"/>
+      <option name="unitType" value="Russian_tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
+      <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetNaval1USSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNaval"/>
+      <option name="unitType" value="Russian_fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
+      <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetCVsUSSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNavalCV"/>
+      <option name="unitType" value="Russian_tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetCVs1USSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNavalCV"/>
+      <option name="unitType" value="Russian_fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetNavalJapanese" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNaval"/>
+      <option name="unitType" value="Japanese_tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
+      <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetNaval1Japanese" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNaval"/>
+      <option name="unitType" value="Japanese_fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
+      <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetCVsJapanese" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNavalCV"/>
+      <option name="unitType" value="Japanese_tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_PlanesTargetCVs1Japanese" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentPlanesTargetNavalCV"/>
+      <option name="unitType" value="Japanese_fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
+      <option name="unitProperty" value="attackAA" count="1"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
+      <option name="unitProperty" value="offensiveAttackAA" count="1"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="maxAAattacks" count="1"/>
+      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="damageableAA" count="true"/>
+      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -27010,12 +27150,12 @@ All other rules regarding Subs are unchanged.<br>
 <b>Note</b><br> When moving a sub through a contested Sea Zone, you must move in one continuous movement. If you stop in the contested Sea Zone you will be unable to pass through.<br>
 <br>You will also be unable to undo your move once being "Depth Charged". Includes if you stop after the "Depth Charging" and still have movement left.<br>
 <br>
-In addition to it's normal unit stats, Tac Bombers now have 1 ASA1 and ASD1 each. Their ASD shot hits at a 1 out of 6. It is only fired during the Combat Phase.<br>
+In addition to it's normal unit stats, Tac Bombers now have 1 ASA1 and ASD1 each. Their ASA and ASD shot hits at a 1 out of 8. It is only fired during the Combat Phase.<br>
 <br>
 As mentioned above, it now fires normally at subs without a Destroyer present.<br>
 <br>
 <b>Note</b><br>
-If "PlanesTargetNaval" and or "PlanesTargetNavalCV" has been activated the Tac Bombers ASA shot becomes 1 shot that hits at 2 out of 10.<br>
+If "PlanesTargetNaval" and or "PlanesTargetNavalCV" has been activated the Tac Bombers ASA shot becomes 1 shot that hits at 1 out of 8.<br>
 Also, Tactical Bombers ASA and ASD shots will no longer stack, meaning 2 Tac Bombers against 1 Submarine, the Submarine will only undergo 1 ASA or ASD shot.<br>
 <br>
 May also be activated via <b>Map Options</b>.<br>
@@ -27305,6 +27445,8 @@ May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>3) "BBandCA_AA"</b><br>
 Battleships now have 1 AA shot and Cruisers 2. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
+They also have Offensive AA shots that hit at 1 in 12. 2 for Cruiser and 1 for Battleship. Targets either Tactical bombers or Fighters Before regular combat.
+<br>
 <br>It is recommended to wait until RD 2 to activate BB and CA AA Guns. This prevents breaking early RD battles and reflects the early war successes in air to naval combat.<br>
 <br>
 May also be activated via <b>Map Options</b>.<br>
@@ -27357,13 +27499,20 @@ Gives Tactical Bombers the ability to intercept at D1. This is to help against A
 Airfields now give +2 Movement to Bombers and Fighters. It is recomended to only use the additional +1 Movement for fighters when they are escorting Bombers on SBR missions. This is Player Enforced.<br>
 <br>
 <b>5) "PlanesTargetNaval"</b><br>
-Fighters and Tac Bombers now target Cruisers and Battleships prior to regular combat. They get 1 shot that hits on a 2 out of 10.<br>
+Fighters and Tactial Bombers now target Cruisers and Battleships prior to regular combat. They get 1 shot that hits at 1 out of 8. Their shots do not stack.<br>
+However, each Tactical Bomber and Fighter can target the same Ship. So 1 Ship can receive 2 attacks if attacked by a Tactical Bomber and Fighter. If 2 Figters or 2 Tacs attacked it would only receive 1 shot.
+<br>
+<br>
+Also Tac Bombers will Defend with "1" 1 in 8 shot against Cruisers and Battleships and Fighters will Defend at 1 in 12.<br>
 <br>Round 2 activation is recommended as well as using "BBandCA_AA" tech with this option.<br> 
 <br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>5) "PlanesTargetNavalCV"</b><br>
-Fighters and Tac Bombers now target Carriers prior to regular combat. They get 1 shot that hits on a 2 out of 10.<br>
+Fighters and Tac Bombers now target Carriers prior to regular combat. They get 1 shot that hits on a 1 out of 8. Their shots do not stack.<br>
+However, each Tactical Bomber and Fighter can target the same Ship. So 1 Ship can receive 2 attacks if attacked by a Tactical Bomber and Fighter. If 2 Figters or 2 Tacs attacked it would only receive 1 shot.<br>
+<br>
+Also Tac Bombers will Defend with "1" 1 in 8 shot against Cruisers and Battleships and Fighters will Defend at 1 in 12.<br>
 <br>Round 2 activation is recommended as well as using "PlanesTargetNaval" and "BBandCA_AA" tech with this option.<br> 
 <br>
 May also be activated via <b>Map Options</b>.<br>
