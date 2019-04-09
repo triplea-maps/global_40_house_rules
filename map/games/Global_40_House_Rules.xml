@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.617"/>
+  <info name="Global 40 House Rules" version="2.618"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1463,7 +1463,7 @@
 	  <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
 	  </step>
       <step name="UK_PacificEndTurn" delegate="endTurn" player="UK_Pacific">
-        <stepProperty name="turnSummaryPlayers" value="British:UK_Pacific"/>
+        <stepProperty name="turnSummaryPlayers" value="Americans:Chinese:British:UK_Pacific"/>
       </step>
       <!-- Italians Game Sequence -->
       <step name="italiansTech" delegate="tech" player="Italians"/>
@@ -1498,7 +1498,9 @@
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
-      <step name="frenchEndTurn" delegate="endTurn" player="French"/>
+      <step name="frenchEndTurn" delegate="endTurn" player="French">
+        <stepProperty name="turnSummaryPlayers" value="ANZAC:French"/>
+      </step>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
   </gamePlay>
