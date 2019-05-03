@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.618"/>
+  <info name="Global 40 House Rules" version="2.639"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6411,6 +6411,37 @@
       <option name="gameProperty" value="Option taamvan"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="RussiaSpreadsCommunismInAfrica" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Russia Spreads Communism In Africa"/>
+    </attachment>
+    <attachment name="RussiaSpreadsCommunismInAfricaInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Russia Spreads Communism In Africa"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="GermanTradeWithRussia" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="German Trade With Russia"/>
+    </attachment>
+    <attachment name="GermanTradeWithRussiaInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="German Trade With Russia"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="ChinaM" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="China M"/>
+    </attachment>
+    <attachment name="ChinaMInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="China M"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="ChinaM_BM" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="China M BM"/>
+    </attachment>
+    <attachment name="ChinaM_BMInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="China M BM"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="ItalyControlsOriginal" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Italy Controls Original"/>
+    </attachment>
     <attachment name="BbCaAa" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Battleships and Cruisers AA Round 2"/>
     </attachment>
@@ -6496,6 +6527,26 @@
     </attachment>
     <!-- German Objectives -->
     <attachment name="objectiveAttachment_Germans_1_Trade_with_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="GermanTradeWithRussia"/>
+      <option name="objectiveValue" value="5"/>
+      <option name="atWarPlayers" value="Russians" count="0"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAtWarWithRussia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Russians" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAtWarWithRussiaInvert" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Russians" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_GermansNotAtWarWithRussia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <option name="directOwnershipTerritories" value="Novgorod:Volgograd:Russia:Karelia:Archangel:Caucasus:Bessarabia:Western Ukraine:Eastern Poland:Baltic States:Belarus:Vyborg:Ukraine:Nenetsia:Rostov:Bryansk:Vologda:Smolensk" count="1"/>  
+    </attachment>
+    <attachment name="conditionAttachment_GermansNotAtWarWithRussiaInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Novgorod:Volgograd:Russia:Karelia:Archangel:Caucasus:Bessarabia:Western Ukraine:Eastern Poland:Baltic States:Belarus:Vyborg:Ukraine:Nenetsia:Rostov:Bryansk:Vologda:Smolensk" count="1"/>
+    <option name="invert" value="true"/>  
+    </attachment>
+    <attachment name="objectiveAttachment_Germans_1A_Trade_with_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="GermanTradeWithRussiaInvert:conditionAttachment_ItaliansAtWarWithRussiaInvert:conditionAttachment_GermansNotAtWarWithRussiaInvert"/>
       <option name="objectiveValue" value="5"/>
       <option name="atWarPlayers" value="Russians" count="0"/>
     </attachment>
@@ -6515,6 +6566,7 @@
       <option name="directOwnershipTerritories" value="Novgorod:Volgograd:Russia" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_3_Control_Caucasus_3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="taamvan"/>
       <option name="objectiveValue" value="3"/>
       <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
     </attachment>
@@ -6706,7 +6758,7 @@
       <option name="conditions" value="conditionAttachmentSphereOfInfluence:conditionAttachmentAlliedExclusionTerritoriesRussiansInvertSphere"/>
     </attachment>
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentRussianNationalObjectivesInvert:RussianNOsInvert:conditionAttachmentBM_RulesInvert:BMRulesInvert"/>
+      <option name="conditions" value="RussiaSpreadsCommunismInAfrica:conditionAttachmentRussianNationalObjectivesInvert:RussianNOsInvert:conditionAttachmentBM_RulesInvert:BMRulesInvert"/>
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="Bulgaria:Finland:Iraq:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia" count="each"/>
     </attachment>
@@ -6717,6 +6769,11 @@
     </attachment>
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism3" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentRussianNationalObjectivesInvert:RussianNOsInvert:conditionAttachmentBM_Rules"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="directOwnershipTerritories" value="Bulgaria:Finland:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Northern Italy:Southern Italy" count="each"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="RussiaSpreadsCommunismInAfricaInvert:conditionAttachmentRussianNationalObjectivesInvert:RussianNOsInvert:conditionAttachmentBM_RulesInvert"/>
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="Bulgaria:Finland:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Northern Italy:Southern Italy" count="each"/>
     </attachment>
@@ -8045,6 +8102,11 @@
     <attachment name="objectiveAttachment_Italians_2_Roman_Empire" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Italians_Control_Original" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="ItalyControlsOriginal"/>
+      <option name="objectiveValue" value="3"/>
+      <option name="directOwnershipTerritories" value="original"/>
     </attachment>
     <attachment name="conditionAttachment_Italians_3_North_Africa_Control" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentBM_VichyRule"/>
@@ -9435,9 +9497,16 @@
       <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="4"/>
+      <option name="invert" value="true"/>  
+    </attachment>
+    <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="4"/>
+    </attachment>
     <attachment name="objectiveAttachment_Chinese_1_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="6"/>
-      <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoadBMInvert:BMRulesInvert:conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
+      <option name="conditions" value="ChinaMInvert:BMRulesInvert:conditionAttachmentJapaneseDoNotControlBurmaRoadBMInvert:conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
     </attachment>
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentBM_Rules:conditionAttachmentChinaInfantrySpawnBM"/>
@@ -9448,11 +9517,16 @@
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadBM" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption"/>
+      <option name="conditions" value="ChinaMInvert:conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_Burma_RoadBM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
-      <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoad:conditionAttachmentJapaneseDoNotControlBurmaRoadBM"/>
+      <option name="conditions" value="ChinaMInvert:conditionAttachmentJapaneseDoNotControlBurmaRoad:conditionAttachmentJapaneseDoNotControlBurmaRoadBM"/>
+    </attachment>
+    <attachment name="objectiveAttachment_China_M" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="1"/>
+      <option name="conditions" value="ChinaM"/>
+      <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_VictoryCitiesWorth1PU" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
@@ -10123,7 +10197,18 @@
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:militia:mobile_artillery:aaGunC4:TowedAAgun:elite:marine" count="1"/>
     </attachment>
+    <attachment name="WesternEuropeBeachHead" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Western Europe Beach Head"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_9_Western_Europe_Beach_Head" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="BMRules:WesternEuropeBeachHead"/>
+      <option name="alliedOwnershipTerritories" value="Normandy Bordeaux:Holland Belgium:Southern France" count="2"/>
+    </attachment>
+    <attachment name="WesternEuropeBeachHead3PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Western Europe Beach Head 3 PU"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_9_Western_Europe_Beach_Head3PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="BMRules:WesternEuropeBeachHead3PU"/>
       <option name="alliedOwnershipTerritories" value="Normandy Bordeaux:Holland Belgium:Southern France" count="2"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_10_unit_presence" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10137,6 +10222,13 @@
     </attachment>
     <attachment name="conditionAttachment_Americans_11_North_Africa_Beach_Head" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="BMRules:NorthAfricaObjective"/>
+      <option name="alliedOwnershipTerritories" value="Morocco:Algeria:Tunisia" count="3"/>
+    </attachment>
+    <attachment name="NorthAfricaObjective3PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="USA bonus for North Africa 3 PU"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_11_North_Africa_Beach_Head3PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="BMRules:NorthAfricaObjective3PU"/>
       <option name="alliedOwnershipTerritories" value="Morocco:Algeria:Tunisia" count="3"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Major_Factory_Eastern" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10779,7 +10871,7 @@
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
       <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
-      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
+      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger:bomber:Russian_bomber:Japanese_bomber"/>
       <option name="unitProperty" value="typeAA" count="Battleship and CruiserAA"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -10795,7 +10887,7 @@
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
       <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
-      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger"/>
+      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger:bomber:Russian_bomber:Japanese_bomber"/>
       <option name="unitProperty" value="typeAA" count="Battleship and CruiserAA"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -13149,6 +13241,13 @@
       <option name="conditions" value="objectiveAttachment_Chinese_1_Burma_Road"/>
       <option name="frontier" value="productionChinese_Burma_Road_Open"/>
     </attachment>
+    <attachment name="conditionAttachmentChinaMArtillery" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="India:Burma" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Artillery_SuppliesChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:conditionAttachmentChinaMArtillery"/>
+      <option name="frontier" value="productionChinese_Burma_Road_Open"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Artillery_SuppliesBM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="objectiveAttachment_Chinese_Burma_RoadBM"/>
       <option name="frontier" value="productionChinese_Burma_Road_Open"/>
@@ -13240,8 +13339,32 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_YunnanChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_Empty"/>
+      <option name="placement" value="Yunnan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_YunnanChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_Empty"/>
+      <option name="placement" value="Yunnan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Szechwan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_Empty:Guerrillas"/>
+      <option name="placement" value="Szechwan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_SzechwanChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_Empty"/>
+      <option name="placement" value="Szechwan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_SzechwanChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_Empty"/>
       <option name="placement" value="Szechwan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -13252,8 +13375,32 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_SikangChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_Empty"/>
+      <option name="placement" value="Sikang:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_SikangChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_Empty"/>
+      <option name="placement" value="Sikang:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Hunan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_Empty:Guerrillas"/>
+      <option name="placement" value="Hunan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_HunanChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_Empty"/>
+      <option name="placement" value="Hunan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_HunanChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_Empty"/>
       <option name="placement" value="Hunan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -13264,8 +13411,32 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_KweichowChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_Empty"/>
+      <option name="placement" value="Kweichow:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_KweichowChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_Empty"/>
+      <option name="placement" value="Kweichow:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Tsinghai" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_Empty:Guerrillas"/>
+      <option name="placement" value="Tsinghai:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_TsinghaiChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_Empty"/>
+      <option name="placement" value="Tsinghai:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_TsinghaiChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_Empty"/>
       <option name="placement" value="Tsinghai:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -13276,8 +13447,32 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_ShensiChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_Empty"/>
+      <option name="placement" value="Shensi:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_ShensiChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_Empty"/>
+      <option name="placement" value="Shensi:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Hopei" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_Empty:Guerrillas"/>
+      <option name="placement" value="Hopei:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_HopeiChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_Empty"/>
+      <option name="placement" value="Hopei:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_HopeiChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_Empty"/>
       <option name="placement" value="Hopei:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -13288,8 +13483,32 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_KansuChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_Empty"/>
+      <option name="placement" value="Kansu:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_KansuChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_Empty"/>
+      <option name="placement" value="Kansu:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Suiyuyan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_Empty:Guerrillas"/>
+      <option name="placement" value="Suiyuyan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_SuiyuyanChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_Empty"/>
+      <option name="placement" value="Suiyuyan:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_SuiyuyanChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_Empty"/>
       <option name="placement" value="Suiyuyan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -13300,8 +13519,32 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_ChaharChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_Empty"/>
+      <option name="placement" value="Chahar:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_ChaharChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_Empty"/>
+      <option name="placement" value="Chahar:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Anhwe" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_Empty:Guerrillas"/>
+      <option name="placement" value="Anhwe:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_AnhweChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaMInvert:conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_Empty"/>
+      <option name="placement" value="Anhwe:infantry"/>
+      <option name="uses" value="999"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Chinese_Guerilla_AnhweChinaM_BM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ChinaM:ChinaM_BM:Guerrillas:conditionAttachmentJapaneseDoNotControlBurmaRoadChinaM:conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_Empty"/>
       <option name="placement" value="Anhwe:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -13429,6 +13672,12 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_ChinaM" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="ChinaM"/>
+      <option name="relationshipChange" value="Chinese:UK_Pacific:Concordant:Allied"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:chinesePurchase"/>
+    </attachment>
     <!-- Americans Triggers -->
     <attachment name="triggerAttachmentRedesignModUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
@@ -13445,6 +13694,18 @@
       <option name="conditionType" value="AND"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_6_Western_Europe_Beach_Head3PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentBM_Rules:conditionAttachment_Americans_8_unit_presence:conditionAttachment_Americans_9_Western_Europe_Beach_Head3PU"/>
+      <option name="conditionType" value="AND"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="3"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_7_North_Africa_Beach_Head3PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentBM_Rules:conditionAttachment_Americans_10_unit_presence:conditionAttachment_Americans_11_North_Africa_Beach_Head3PU"/>
+      <option name="conditionType" value="AND"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="3"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_7_North_Africa_Beach_Head" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentBM_Rules:conditionAttachment_Americans_10_unit_presence:conditionAttachment_Americans_11_North_Africa_Beach_Head"/>
@@ -22802,6 +23063,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment1noteB" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="notification" value="R01B"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="conditionAttachmentTurn2Check" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Germany" count="1"/>
       <option name="rounds" value="2"/>
@@ -24720,6 +24987,12 @@
       <property name="Chinese Guerrilla Fighters" value="false" editable="true">
       <boolean/>
       </property>
+      <property name="China M" value="false" editable="true">
+      <boolean/>
+      </property>
+      <property name="China M BM" value="false" editable="true">
+      <boolean/>
+      </property>
     <property name="Pacific Islands and PU Change" value="false" editable="true">
       <boolean/>
     </property>
@@ -24727,6 +25000,12 @@
       <boolean/>
     </property>
     <property name="Russia No Allies" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="German Trade With Russia" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Russia Spreads Communism In Africa" value="true" editable="true">
       <boolean/>
     </property>
     <property name="Victory Cities Worth 1 PU" value="false" editable="true">
@@ -24819,6 +25098,15 @@
       <property name="USA bonus for North Africa" value="true" editable="true">
       <boolean/>
       </property>
+      <property name="USA bonus for North Africa 3 PU" value="false" editable="true">
+      <boolean/>
+      </property>
+      <property name="Western Europe Beach Head" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Western Europe Beach Head 3 PU" value="false" editable="true">
+      <boolean/>
+      </property>
       <property name="USA bonus for Islands surrounding the Carolines inclusive" value="true" editable="true">
       <boolean/>
       </property>
@@ -24826,6 +25114,9 @@
       <boolean/>
       </property>
       <property name="Japan Iwo Jima/Okinawa bonus" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Italy Controls Original" value="false" editable="true">
       <boolean/>
     </property>
     <!-- Neutrals related -->
@@ -25020,6 +25311,7 @@ Adds the BM Marine unit. Explained in the BM Rules below.<br>
 <br>
 <b>17) "ChinaInfantrySpawnBM_ChangerMustActivate"</b><br>
 Explained in the BM Rules below.<br>
+May also be activated via <b>Map Options</b> under <b>Chinese Guerrilla Fighters</b><br>
 <br>
 <br>
 <b>The Following Techs are Activated by Germany or All Players</b><br>
@@ -25340,6 +25632,40 @@ Gives 1 PU to the Philippines. You may wish to use this option if "Victory Citie
 <b>6)Towed AA Gun</b><br> Activated by <b>"AA Gun Cost 4"</b>. Is a A0 D1 M1 +1 with Mech Infantry, C5 unit. Can blitz with Mech Infantry and Armor. It has 2AA shots. May not fire more than 1 shot per plane. Can Combat Move and can conquer/capture Territories and Infrastructure.
 <br>
 <br>
+<b>7)German Trade With Russia</b><br> When <b>Deactivated</b> Germany will not receive the Trade with Russia National objective if it has any units in Original Russian Territories.<br>
+<br>
+Prevents Italy declaring war on Russia and taking control of Russian Territory and having Germany move Units into that territory while not at war with Russia and still able to collect the Trade National Objective.
+<br>
+<br>
+<b>8)Russia Spreads Communism In Africa</b><br> When <b>Deactivated</b> Russia will not receive the Spread of Communism National Objective for any Territories <b>Not</b> in <b>Mainland Europe</b>.
+<br>
+<br>
+<b>9)China M</b><br> Adds the <b>Mursilis</b> China Rules. Changes China's National Objective to 1 PU for each Burma Road Territory that is Allied controlled. Also allows Artillery builds as long as at least <b>1</b> of Burma or India is under Allied control.<br>
+<br>
+If <b>Chinese Guerrilla Fighters</b> have been activated, they will now only spawn once <b>All</b> Burma Road Territories are under Axis control.<br>
+<br>
+<b>Note</b><br>
+UK Pacific is Allied with China from the start, which allows UK Pacific Units to move into China. This is unintended and will need to be Player Enforced. May be fixed in the future.
+<br>
+<br>
+<b>10)China M BM</b><br>When used with the "China M" option, Chinese Guerrillas will spawn according to BM Rules .
+<br>
+<br>
+<b>11)Italy Controls Original</b><br> Italy receives 3 PUs when it controls all of it's Original Territories.
+<br>
+<br>
+<b>12)USA bonus for North Africa 3 PU</b><br> Reduces the BM North Africa USA bonus to 3.<br>
+<br>
+<b>Note</b><br>
+You need to turn off the "USA bonus for North Africa" option or it will show up as well.
+<br>
+<br>
+<b>13)Western Europe Beach Head 3 PU</b><br> Reduces the BM Western Europe Beach Head for USA bonus to 3.<br>
+<br>
+<b>Note</b><br>
+You need to turn off the "Western Europe Beach Head" option or it will show up as well.
+<br>
+<br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -25356,11 +25682,17 @@ To P@nther, simon33 for GitHub help. Redrum, RoiEX, <b>ssoloff</b> and DanVanAtt
 Thanks to Joe Pants, Veqryn and hepster for unit images.<br>
 <br>
 To regular kid and the Mod Squad for BM additions. <br>
+Mursilis for his ideas.
 Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
+<br>
+2.639<br>
+Adds Map Options "China M" "China M BM" "German Trade With Russia" "Russia Spreads Communism In Africa" "Italy Controls Original" "USA bonus for North Africa 3 PU" "Western Europe Beach Head 3 PU".<br>
+Fixes taamvan German Caucasus Objective showing up when taamvan Option not activated.<br>
+Allow BBandCA_AA to hit Bombers.<br>
 <br>
 2.616<br>
 Adds Russian and Japanese Tacs/Ftrs to "Planes Can Target Ships/CVs". Changes Tac/Ftrs Target Ships to hit at 1 in 8 instead of 2 in 10.<br>
