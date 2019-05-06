@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.642"/>
+  <info name="Global 40 House Rules" version="2.643"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -25362,8 +25362,6 @@ Tech Category <b>"Give To All2"</b><br>
 <b>1) "DestroyerC5Boost_GiveToAll"</b><br>
 "DestroyerC5" now attack on a 2 out of 10 on ASA attack. They attack at 1 during normal combat. This represents advanced ASW Capabilities and is recommeneded for RD 5 or later. Also helps against later game Sub spam.<br>Does not affect their ASD shot.<br><br>
 This tech must be activated by each player in order for them to receive the tech ability.<br>
-<br>
-<b>Note</b> DestroyerC5 has been changed to attack at 2 out of 10, so this currently will not change anything and is being left in for now for potential future use.<br>
 <br>
   <b>2) "InteceptorDefend2_GiveToAll"</b><br>
   Interceptors now Defend at 2. Represents advanced Fighters. Recommended Rd 5 or later. Also helps against later game Bomber spam.<br>
