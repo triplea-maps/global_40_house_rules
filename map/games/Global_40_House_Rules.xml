@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.643"/>
+  <info name="Global 40 House Rules" version="2.640"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3537,11 +3537,8 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isStrategicBomber" value="true"/>
-      <option name="isInfrastructure" value="true"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="airAttack" value="0"/>
-      <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Japanese_BomberA0C5 -->
@@ -3551,11 +3548,8 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isStrategicBomber" value="true"/>
-      <option name="isInfrastructure" value="true"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="airAttack" value="0"/>
-      <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Russian_BomberA0C5 -->
@@ -3565,11 +3559,8 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isStrategicBomber" value="true"/>
-      <option name="isInfrastructure" value="true"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="airAttack" value="0"/>
-      <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Air_Transport -->
@@ -3769,9 +3760,9 @@
       <option name="defense" value="1"/>
       <option name="isAAforCombatOnly" value="true"/>
       <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="12"/>
-      <option name="offensiveAttackAA" value="2"/>
-      <option name="offensiveAttackAAmaxDieSides" value="12"/>
+      <option name="attackAAmaxDieSides" value="10"/>
+      <option name="offensiveAttackAA" value="1"/>
+      <option name="offensiveAttackAAmaxDieSides" value="10"/>
       <option name="maxAAattacks" value="1"/>
       <option name="mayOverStackAA" value="true"/>
       <option name="targetsAA" value="submarine"/>
@@ -3907,9 +3898,9 @@
       <option name="defense" value="1"/>
       <option name="isAAforCombatOnly" value="true"/>
       <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="8"/>
+      <option name="attackAAmaxDieSides" value="10"/>
       <option name="offensiveAttackAA" value="1"/>
-      <option name="offensiveAttackAAmaxDieSides" value="8"/>
+      <option name="offensiveAttackAAmaxDieSides" value="10"/>
       <option name="mayOverStackAA" value="true"/>
       <option name="maxAAattacks" value="1"/>
       <option name="targetsAA" value="submarine"/>
@@ -23665,7 +23656,7 @@
       <option name="attackRollsBonus" value="1:Japanese_bomber"/>
       <option name="attackRollsBonus" value="1:Russian_bomber"/>
       <option name="attackRollsBonus" value="1:bomberA0C5"/>
-      <option name="attackRollsBonus" value="1:bomberA0C5"/>
+      <option name="attackRollsBonus" value="1:Japanese_bomberA0C5"/>
       <option name="attackRollsBonus" value="1:Russian_bomberA0C5"/>
     </attachment>
     <!-- Advanced Artillery (improvedArtillerySupport) is handled via Support Attachments -->
@@ -25186,14 +25177,17 @@ It also moves the 19 Sea Zone Sub and Destroyer to 20 Sea Zone. This allows the 
 <b>Note</b><br>
 When attacking the same Territory as an SBR, the attacking Strategic Bombers will die if the land battle is unsuccessful. This is unintended and should be corrected via Edit.<br>Strategic Bombers will be captured the same as Infrastructure. Use Edit if you prefer to destroy them.
 <br><br>
+<b>Note</b>
+This should now be corrected.<br>
+<br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b> 3) "SubsCanEvadeDestroyers_ChangerMustActivate"</b><br>
 Destroyers no longer block Subs or the Sub's "First Strike" capability. They are now a A1 D1 M2 +1 w/NB C5 unit. They also have 1 preemptive "ASA" (Anti-Sub Attack) shot.<br>
 <br>
-When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 2 out of 12) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
+When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 1 out of 6) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
 <br>
-The Destroyer also has 1 preemptive "ASD" (Anti-Sub Defense) shot for combat and 1 for movement. It hits at 1 out of 12. So when a Sub attacks a Destroyer, it will undergo 1 ASD shot when the Sub enters the Destroyer's Sea Zone and 1 ASD shot at the beginning of Combat. Both of these attacks occur before the Subs First Strike.<br>
+The Destroyer also has 1 preemptive "ASD" (Anti-Sub Defense) shot for combat and 1 for movement. It hits at 1 out of 10. So when a Sub attacks a Destroyer, it will undergo 1 ASD shot when the Sub enters the Destroyer's Sea Zone and 1 ASD shot at the beginning of Combat. Both of these attacks occur before the Subs First Strike.<br>
 <br>
 Destroyers will fire 1 ASD shot when Subs pass through the Destroyer's Sea Zone whether during Combat Move or Non Combat Move.<br>
 <br>
@@ -25689,14 +25683,8 @@ Modded for TripleA by b<br>
 <br>Change Log:
 <br>
 <br>
-2.642<br>
-Change DestroyerC5 Depth charge hit to 1 in 12 instead on Defense and 2 in 12 on Offense.<br>
-<br>
-2.641<br>
-Change DestroyerC5 Depth charge hit back to 1 in 10 instead of 1 in 8, but now it hit's on attack at 2 out of 10 instead of 1 in 10<br>
-<br>
 2.640<br>
-Change DestroyerC5 Depth charge hit to 1 in 8 instead of 1 in 10<br>
+Fixes an intermittent error when "A0C5" Bomber and Interceptors do battle.<br>
 <br>
 2.639<br>
 Adds Map Options "China M" "China M BM" "German Trade With Russia" "Russia Spreads Communism In Africa" "Italy Controls Original" "USA bonus for North Africa 3 PU" "Western Europe Beach Head 3 PU".<br>
