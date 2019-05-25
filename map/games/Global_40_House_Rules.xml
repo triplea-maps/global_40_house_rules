@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.640"/>
+  <info name="Global 40 House Rules" version="2.641"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3537,8 +3537,11 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isStrategicBomber" value="true"/>
+      <option name="isInfrastructure" value="false"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="airAttack" value="0"/>
+      <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Japanese_BomberA0C5 -->
@@ -3548,8 +3551,11 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isStrategicBomber" value="true"/>
+      <option name="isInfrastructure" value="false"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="airAttack" value="0"/>
+      <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Russian_BomberA0C5 -->
@@ -3559,8 +3565,11 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isStrategicBomber" value="true"/>
+      <option name="isInfrastructure" value="false"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="airAttack" value="0"/>
+      <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Air_Transport -->
@@ -23656,7 +23665,7 @@
       <option name="attackRollsBonus" value="1:Japanese_bomber"/>
       <option name="attackRollsBonus" value="1:Russian_bomber"/>
       <option name="attackRollsBonus" value="1:bomberA0C5"/>
-      <option name="attackRollsBonus" value="1:Japanese_bomberA0C5"/>
+      <option name="attackRollsBonus" value="1:bomberA0C5"/>
       <option name="attackRollsBonus" value="1:Russian_bomberA0C5"/>
     </attachment>
     <!-- Advanced Artillery (improvedArtillerySupport) is handled via Support Attachments -->
@@ -25175,11 +25184,10 @@ Due to the Japanese Bombers not being able to participate in regular combat, an 
 It also moves the 19 Sea Zone Sub and Destroyer to 20 Sea Zone. This allows the option of striking the British Battleship in 37 Sea Zone on a Round 1 Japanese Attack.<br>
 <br>
 <b>Note</b><br>
-When attacking the same Territory as an SBR, the attacking Strategic Bombers will die if the land battle is unsuccessful. This is unintended and should be corrected via Edit.<br>Strategic Bombers will be captured the same as Infrastructure. Use Edit if you prefer to destroy them.
+Even though they are A0 D0 for normal combat, they still produce a hitpoint. This is unintended and will be fixed in the future.<br>
+So don't take them as casualties in normal combat until all other units have been destroyed or finish battle and use edit to kill them.<br>
+While a bit of a hassle, it's not unplayable as these situations are somewhat rare.
 <br><br>
-<b>Note</b>
-This should now be corrected.<br>
-<br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b> 3) "SubsCanEvadeDestroyers_ChangerMustActivate"</b><br>
@@ -25683,8 +25691,9 @@ Modded for TripleA by b<br>
 <br>Change Log:
 <br>
 <br>
-2.640<br>
-Fixes an intermittent error when "A0C5" Bomber and Interceptors do battle.<br>
+2.641<br>
+Fixes bug in A0C5 Bomber freezing game.  
+<br>
 <br>
 2.639<br>
 Adds Map Options "China M" "China M BM" "German Trade With Russia" "Russia Spreads Communism In Africa" "Italy Controls Original" "USA bonus for North Africa 3 PU" "Western Europe Beach Head 3 PU".<br>
