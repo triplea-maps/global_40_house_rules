@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.641"/>
+  <info name="Global 40 House Rules with Canada" version="2.642"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3859,9 +3859,9 @@
       <option name="defense" value="1"/>
       <option name="isAAforCombatOnly" value="true"/>
       <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="10"/>
-      <option name="offensiveAttackAA" value="1"/>
-      <option name="offensiveAttackAAmaxDieSides" value="10"/>
+      <option name="attackAAmaxDieSides" value="12"/>
+      <option name="offensiveAttackAA" value="2"/>
+      <option name="offensiveAttackAAmaxDieSides" value="12"/>
       <option name="maxAAattacks" value="1"/>
       <option name="mayOverStackAA" value="true"/>
       <option name="targetsAA" value="submarine"/>
@@ -3997,9 +3997,9 @@
       <option name="defense" value="1"/>
       <option name="isAAforCombatOnly" value="true"/>
       <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="10"/>
-      <option name="offensiveAttackAA" value="1"/>
-      <option name="offensiveAttackAAmaxDieSides" value="10"/>
+      <option name="attackAAmaxDieSides" value="12"/>
+      <option name="offensiveAttackAA" value="2"/>
+      <option name="offensiveAttackAAmaxDieSides" value="12"/>
       <option name="mayOverStackAA" value="true"/>
       <option name="maxAAattacks" value="1"/>
       <option name="targetsAA" value="submarine"/>
@@ -27428,9 +27428,9 @@ May also be activated via <b>Map Options</b>.<br>
 <b> 3) "SubsCanEvadeDestroyers_ChangerMustActivate"</b><br>
 Destroyers no longer block Subs or the Sub's "First Strike" capability. They are now a A1 D1 M2 +1 w/NB C5 unit. They also have 1 preemptive "ASA" (Anti-Sub Attack) shot.<br>
 <br>
-When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 1 out of 6) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
+When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 2 out of 12) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
 <br>
-The Destroyer also has 1 preemptive "ASD" (Anti-Sub Defense) shot for combat and 1 for movement. It hits at 1 out of 10. So when a Sub attacks a Destroyer, it will undergo 1 ASD shot when the Sub enters the Destroyer's Sea Zone and 1 ASD shot at the beginning of Combat. Both of these attacks occur before the Subs First Strike.<br>
+The Destroyer also has 1 preemptive "ASD" (Anti-Sub Defense) shot for combat and 1 for movement. It hits at 1 out of 12. So when a Sub attacks a Destroyer, it will undergo 1 ASD shot when the Sub enters the Destroyer's Sea Zone and 1 ASD shot at the beginning of Combat. Both of these attacks occur before the Subs First Strike.<br>
 <br>
 Destroyers will fire 1 ASD shot when Subs pass through the Destroyer's Sea Zone whether during Combat Move or Non Combat Move.<br>
 <br>
@@ -27948,6 +27948,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.642<br>
+Change DestroyerC5 to hit at 2 in 12 on attack and 1 in 12 on defense.
 <br>
 <br>
 2.641<br>
