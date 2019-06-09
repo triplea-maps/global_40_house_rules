@@ -5,6 +5,7 @@
 95 Sea Zone  (2289,1280)
 102 Sea Zone  (921,841)
 104 Sea Zone  (1595,803)
+118 Sea Zone  (1440,187)
 123 Sea Zone  (1412,29)
 124 Sea Zone  (2066,70)
 117 Sea Zone  (1204,187)

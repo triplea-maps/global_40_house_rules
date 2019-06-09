@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.642"/>
+  <info name="Global 40 House Rules with Canada" version="2.644"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5083,6 +5083,10 @@
     <attachment name="territoryAttachment" attachTo="104 Sea Zone" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
+    <attachment name="territoryAttachment" attachTo="108 Sea Zone" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+      <option name="blockadeZone" value="false"/>
+    </attachment>
     <attachment name="territoryAttachment" attachTo="116 Sea Zone" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <option name="blockadeZone" value="false"/>
@@ -5092,7 +5096,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="118 Sea Zone" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-      <option name="blockadeZone" value="false"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="123 Sea Zone" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -11984,6 +11987,25 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_118_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
+      <option name="territories" value="118 Sea Zone"/>
+      <option name="territoryProperty" value="production" count="0"/>
+      <option name="territoryProperty" value="convoyRoute" count="true"/>
+      <option name="territoryProperty" value="blockadeZone" count="true"/>
+      <option name="territoryProperty" value="convoyAttached" count=""/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_118_SeaZonea" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
+      <option name="territories" value="Scotland"/>
+      <option name="territoryProperty" value="production" count="2"/>
+      <option name="territoryProperty" value="convoyRoute" count="true"/>
+      <option name="territoryProperty" value="convoyAttached" count="118 Sea Zone"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_123_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
       <option name="territories" value="123 Sea Zone"/>
@@ -12080,7 +12102,14 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
-    
+    <attachment name="triggerAttachment_108_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
+      <option name="territories" value="108 Sea Zone"/>
+      <option name="territoryProperty" value="production" count="0"/>
+      <option name="territoryProperty" value="blockadeZone" count="true"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_116_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
       <option name="territories" value="116 Sea Zone"/>
@@ -12303,6 +12332,25 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_118_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
+      <option name="territories" value="118 Sea Zone"/>
+      <option name="territoryProperty" value="production" count="0"/>
+      <option name="territoryProperty" value="convoyRoute" count="true"/>
+      <option name="territoryProperty" value="blockadeZone" count="true"/>
+      <option name="territoryProperty" value="convoyAttached" count=""/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_118_SeaZonea" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
+      <option name="territories" value="Scotland"/>
+      <option name="territoryProperty" value="production" count="2"/>
+      <option name="territoryProperty" value="convoyRoute" count="true"/>
+      <option name="territoryProperty" value="convoyAttached" count="118 Sea Zone"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_123_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
       <option name="territories" value="123 Sea Zone"/>
@@ -12390,14 +12438,7 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_118_SeaZone" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentConvoyandBlockade"/>
-      <option name="territories" value="118 Sea Zone"/>
-      <option name="territoryProperty" value="production" count="0"/>
-      <option name="territoryProperty" value="blockadeZone" count="true"/>
-      <option name="when" value="before:germansPolitics"/>
-      <option name="uses" value="1"/>
-    </attachment>
+    
     <attachment name="triggerAttachment_Militia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentChineseMilitia"/>
       <option name="productionRule" value="productionChinese_Burma_Road_Open:buyMilitia"/>
@@ -26286,6 +26327,7 @@
       <territoryOwner territory="102 Sea Zone" owner="Americans"/>
       <territoryOwner territory="104 Sea Zone" owner="British"/>
       <territoryOwner territory="117 Sea Zone" owner="Canada"/>
+      <territoryOwner territory="118 Sea Zone" owner="British"/>
       <territoryOwner territory="123 Sea Zone" owner="British"/>
 
       <territoryOwner territory="66 Sea Zone" owner="Changer"/>
@@ -27400,6 +27442,7 @@ Germany needs to activate techs at the start of their turn in order for them to 
 <b>Note</b><br>UK Pacific and Canada techs are automatically activated by the British.<br>
 <br>
 <b>Note</b><br>Convoy Zone Losses are not shown at the end of turn the way Blockade is.<br>
+They are shown in "Game History"<br>
 <br>
 <b>Note</b><br>When using Edit some Units have the same Image.<br><br>
 <b>Here is the Tech Tree for "Global 40 House Rules"</b> minus the OOB techs:<br>
@@ -27661,9 +27704,9 @@ Gives 2 PUs to Canada if Sea Zones 117 and 123 are Allied controlled.<br>
 May also be activated via <b>Map Options</b> with "Canada Boost".<br>
 <br>
 <b>5) "ConvoyAndBlockade"</b><br>
-This adds Blockade zones to Sea Zones:64,86,91,103,107,116,118 and 123. In addition to interdicting Land Territory PUs, Blockade Zones also interdict Sea Zones with PU value when adjacent to said Zones.<br>
+This adds Blockade zones to Sea Zones:64,86,91,103,107,108,116,118 and 123. In addition to interdicting Land Territory PUs, Blockade Zones also interdict Sea Zones with PU value when adjacent to said Zones.<br>
 <br>
-It also adds "Convoy Zones" to Sea Zones:7,77,104,117,123 and 124. Convoy Zones allow interdiction of Land Territory PUs if Enemy Naval Units, not including Transports, are present. They are as follows:<br>
+It also adds "Convoy Zones" to Sea Zones:7,77,104,117,118,123 and 124. Convoy Zones allow interdiction of Land Territory PUs if Enemy Naval Units, not including Transports, are present. They are as follows:<br>
 Sea Zone 7: Buryatia and Sakha. 2 PUs total. Russian owned.<br>
 	    Sea Zone 77: Caucasus. 2 PUs total. Russian owned.<br>
 	    Sea Zone 88: West Indies. 2 PUs total. American owned.<br>
@@ -27671,6 +27714,7 @@ Sea Zone 7: Buryatia and Sakha. 2 PUs total. Russian owned.<br>
 	    Sea Zone 102: Central America. 2 PUs total. American owned.<br>
 	    Sea Zone 104: Gold Coast and Nigeria. 2 PUS total. British owned.<br>
 	    Sea Zone 117: Quebec. 2 PUs total. Canadian owned.<br>
+	    Sea Zone 118: Scotland. 2 PU total. British owned.<br>
 	    Sea Zone 123: Iceland. 1 PU total. British owned.<br>
 	    Sea Zone 123: New Brunswick Nova Scotia. 1 PU total. Canadian owned.<br>
 	    Sea Zone 124: Nenetsia (when PacificIslandAndPU_Change is on) and Vologda. 2 PUs total. Russian owned.<br>
@@ -27698,7 +27742,8 @@ Land Territory changes are:
 	    <br>
 	    The bottom left of the screen will show the PU value of the Sea Zone you are in. An easy way to remember is, USA Sea Zones are worth 2 PUs, UK 1 PU, except for 123 (Iceland), Canada 1 PU and USSR 0 PUs.<br>
 	    <br>
-	      <b>Note</b><br>Sea Zones 103 and 118 are Blockade Zones. So even though they are not adjacent to a Land Territory, submerged Subs will roll for damage.<br>Also of <b>note</b> loss of Convoy Zones PUs are not indicated the way PUs lost to Blockade are at end of turn.<br>
+	    <b>Note</b><br>Sea Zones 103, 108 and 118 are Blockade Zones. So even though they are not adjacent to a Land Territory, submerged Subs will roll for damage.<br>Also of <b>note</b> loss of Convoy Zones PUs are not indicated the way PUs lost to Blockade are at end of turn.<br>
+	    They are shown in "Game History"<br>
 	      <br>
 	      May also be activated via <b>Map Options</b>.<br>
 <br>
@@ -27948,6 +27993,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.644<br>
+Adds 108 and 118 Sea Zones as Blockade Zones when "Convoy and Blockade" is activated. Also makes Sea Zone 118 a Convoy Zone against Scotland.
 <br>
 <br>
 2.642<br>
