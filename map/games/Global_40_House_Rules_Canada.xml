@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.644"/>
+  <info name="Global 40 House Rules with Canada" version="2.645"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -27993,6 +27993,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.645<br>
+Fix Objective "Germans 1A Trade with Russia" not showing up when Option "German Trade with Russia" is activated.
 <br>
 <br>
 2.644<br>
