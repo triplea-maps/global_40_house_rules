@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.645"/>
+  <info name="Global 40 House Rules with Canada" version="2.646"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -11517,11 +11517,11 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
-      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
@@ -11551,11 +11551,11 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
-      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="carrier"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
@@ -11585,11 +11585,11 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
-      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
@@ -11619,11 +11619,11 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
-      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="carrier"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
@@ -11653,11 +11653,11 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
-      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="battleship:cruiser"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
@@ -11687,11 +11687,11 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="isAAforCombatOnly" count="true"/>
       <option name="unitProperty" value="attackAA" count="1"/>
-      <option name="unitProperty" value="attackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="attackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
-      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="8"/>
+      <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="maxAAattacks" count="1"/>
-      <option name="unitProperty" value="mayOverStackAA" count="false"/>
+      <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="carrier"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
@@ -27493,7 +27493,7 @@ In addition to it's normal unit stats, Tac Bombers now have 1 ASA1 and ASD1 each
 As mentioned above, it now fires normally at subs without a Destroyer present.<br>
 <br>
 <b>Note</b><br>
-If "PlanesTargetNaval" and or "PlanesTargetNavalCV" has been activated then Tactical Bombers ASA and ASD shots now hit at 1 out of 8. They will also no longer stack, meaning 2 Tac Bombers against 1 Submarine, the Submarine will only undergo 1 ASA or ASD shot.<br>
+If "PlanesTargetNaval" and or "PlanesTargetNavalCV" has been activated then Tactical Bombers ASA and ASD shots now hit at 1 out of 12.<br>
 <br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
@@ -27785,9 +27785,9 @@ May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>3) "BBandCA_AA"</b><br>
 Battleships now have 1 AA shot and Cruisers 2. They hit at 1 out of 10 as opposed to 1 out of 6.<br>
-They also have Offensive AA shots that hit at 1 in 12. 2 for Cruiser and 1 for Battleship. Targets either Tactical bombers or Fighters Before regular combat.
-<br>
 <br>It is recommended to wait until RD 2 to activate BB and CA AA Guns. This prevents breaking early RD battles and reflects the early war successes in air to naval combat.<br>
+<br>
+If "PlanesTargetNaval" and or "PlanesTargetNavalCV" has been activated, AA shots will also fire when Attacking.<br>
 <br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
@@ -27839,29 +27839,35 @@ Gives Tactical Bombers the ability to intercept at D1. This is to help against A
 Airfields now give +2 Movement to Bombers and Fighters. It is recomended to only use the additional +1 Movement for fighters when they are escorting Bombers on SBR missions. This is Player Enforced.<br>
 <br>
 <b>5) "PlanesTargetNaval"</b><br>
-Fighters and Tactial Bombers now target Cruisers and Battleships prior to regular combat. They get 1 shot that hits at 1 out of 8. Their shots do not stack.<br>
-However, each Tactical Bomber and Fighter can target the same Ship. So 1 Ship can receive 2 attacks if attacked by a Tactical Bomber and Fighter. If 2 Figters or 2 Tacs attacked it would only receive 1 shot.
+Fighters and Tactial Bombers now target Cruisers and Battleships prior to regular combat. Fighters get 1 shot that hits at 1 out of 8. Their shots do not stack.<br>
+Tactical Bombers hit at 1 out of 12. Their shots stack.
 <br>
 <br>
-Also Tac Bombers will Defend with "1" 1 in 8 shot against Cruisers and Battleships and Fighters will Defend at 1 in 12.<br>
+Also Tac Bombers will Defend with "1" 1 in 12 shot against Cruisers and Battleships which will stack and Fighters will Defend at 1 in 12, which will not stack.<br>
 <br>Round 2 activation is recommended as well as using "BBandCA_AA" tech with this option.<br> 
 <br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
-<b>5) "PlanesTargetNavalCV"</b><br>
-Fighters and Tac Bombers now target Carriers prior to regular combat. They get 1 shot that hits on a 1 out of 8. Their shots do not stack.<br>
-However, each Tactical Bomber and Fighter can target the same Ship. So 1 Ship can receive 2 attacks if attacked by a Tactical Bomber and Fighter. If 2 Figters or 2 Tacs attacked it would only receive 1 shot.<br>
+<b>Note</b><br>
+If "SubsCanEvadeDestroyers_ChangerMustActivate" tech has been activated and Submarines are present, they will also be targeted by Tactical Bombers, along with Cruisers and Battleships.<br>
 <br>
-Also Tac Bombers will Defend with "1" 1 in 8 shot against Cruisers and Battleships and Fighters will Defend at 1 in 12.<br>
-<br>Round 2 activation is recommended as well as using "PlanesTargetNaval" and "BBandCA_AA" tech with this option.<br> 
+If only Submarines are targeted the Tac Bombers will attack with 1 ASA shot that hits at 1 out of 12. This replaces their ASA/ASD shots that hit at 1 out of 6.
+<br>
+<br>
+<b>6) "PlanesTargetNavalCV"</b><br>
+Fighters and Tactial Bombers now target Cruisers and Battleships prior to regular combat. Fighters get 1 shot that hits at 1 out of 8. Their shots do not stack.<br>
+Tactical Bombers hit at 1 out of 12. Their shots stack.
+<br>
+<br>
+Also Tac Bombers will Defend with "1" 1 in 12 shot against Cruisers and Battleships which will stack and Fighters will Defend at 1 in 12, which will not stack.<br>
+<br>Round 2 activation is recommended as well as using "BBandCA_AA" tech with this option.<br> 
 <br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>Note</b><br>
 If "SubsCanEvadeDestroyers_ChangerMustActivate" tech has been activated and Submarines are present, they will also be targeted by Tactical Bombers, along with Cruisers, Battleships and Carriers.<br>
 <br>
-If only Submarines are targeted the Tac Bombers will attack with 1 ASA shot that hits at 1 out of 8. This replaces their ASA/ASD shots that hit at 1 out of 6.<br>
-Also, Tactical Bombers ASA and ASD shots will no longer stack, meaning 2 Tac Bombers against 1 Submarine, the Submarine will only undergo 1 ASA or ASD shot.<br>
+If only Submarines are targeted the Tac Bombers will attack with 1 ASA shot that hits at 1 out of 12. This replaces their ASA/ASD shots that hit at 1 out of 6.
 <br>
 <br>
 <b>Map Options</b><br>
@@ -27993,6 +27999,11 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.646<br>
+Change Tactical Bomber to hit at 1 in 12 when "Planes Target Naval" activated
+and stack against Subs and Ships.
 <br>
 <br>
 2.645<br>
