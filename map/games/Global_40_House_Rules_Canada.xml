@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.647"/>
+  <info name="Global 40 House Rules with Canada" version="2.648"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1327,7 +1327,12 @@
     <unit name="bunker"/>
     <unit name="UKPbunker"/>
     <unit name="TowedAAgun"/>
-    
+    <unit name="Supply_Crate"/>
+    <unit name="PUs5"/>
+    <unit name="PUs5_UKP"/>
+    <unit name="PUs3"/>
+    <unit name="West_India_LL"/>
+    <unit name="Amur_LL"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -1857,6 +1862,30 @@
       <cost resource="PUs" quantity="12"/>
       <result resourceOrUnit="MilitaryBase" quantity="1"/>
     </productionRule>
+    <productionRule name="buySupply_Crate">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="Supply_Crate" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyPUs5">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="PUs5" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyPUs5_UKP">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="PUs5_UKP" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyPUs3">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="PUs3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyWest_India_LL">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="West_India_LL" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAmur_LL">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Amur_LL" quantity="1"/>
+    </productionRule>
     <!-- Advanced Industrial Production -->
     <!--<productionRule name="buyInfantryIndustrialTechnology">
                         <cost resource="PUs" quantity="3" />
@@ -2176,6 +2205,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
       <productionFrontier name="productionRussians">
       <frontierRules name="buyRussian_Infantry"/>
@@ -2197,6 +2227,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
       <productionFrontier name="productionJapanese">
       <frontierRules name="buyJapanese_Infantry"/>
@@ -2218,6 +2249,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
       <productionFrontier name="productionAmericans">
       <frontierRules name="buyInfantry"/>
@@ -2239,6 +2271,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
       <productionFrontier name="productionBritish">
       <frontierRules name="buyInfantry"/>
@@ -2260,6 +2293,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
       <productionFrontier name="productionUK_Pacific">
       <frontierRules name="buyInfantry"/>
@@ -2281,8 +2315,9 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
-    <productionFrontier name="productionItalians">
+      <productionFrontier name="productionItalians">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
@@ -2302,8 +2337,9 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
-    </productionFrontier>
-    <productionFrontier name="productionCanada">
+      
+      </productionFrontier>
+      <productionFrontier name="productionCanada">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
@@ -2323,6 +2359,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
     </productionFrontier>
     <productionFrontier name="productionANZAC">
       <frontierRules name="buyInfantry"/>
@@ -2344,6 +2381,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
     </productionFrontier>
     <productionFrontier name="productionFrench">
       <frontierRules name="buyInfantry"/>
@@ -2365,6 +2403,7 @@
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyAirfield"/>
       <frontierRules name="buyHarbour"/>
+      
       </productionFrontier>
     <productionFrontier name="productionChinese_Burma_Road_Open">
       <frontierRules name="buyChinese_Infantry"/>
@@ -3714,7 +3753,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
     </attachment>
     <!-- Japanese_Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="Japanese_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3732,7 +3771,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
     </attachment>
     <!-- Russian_Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="Russian_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3750,7 +3789,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
     </attachment>
     <!-- Tactical Bomber10 -->
     <attachment name="unitAttachment" attachTo="tactical_bomber10" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3768,7 +3807,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
     </attachment>
     <!-- Japanese_Tactical Bomber10 -->
     <attachment name="unitAttachment" attachTo="Japanese_tactical_bomber10" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3786,7 +3825,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:Supply_Crate"/>
     </attachment>
     <!-- Russian_Tactical Bomber10 -->
     <attachment name="unitAttachment" attachTo="Russian_tactical_bomber10" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3804,7 +3843,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
     </attachment>
     <!-- Transport -->
     <attachment name="unitAttachment" attachTo="transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4446,6 +4485,60 @@
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
     </attachment>
+    <!-- Supply_Crate -->
+    <attachment name="unitAttachment" attachTo="Supply_Crate" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="transportCost" value="5"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="7"/>
+      <option name="maxOperationalDamage" value="7"/>
+      <option name="isInfrastructure" value="true"/>
+      <option name="canDieFromReachingMaxDamage" value="true"/>
+      <option name="whenCapturedChangesInto" value="any:any:true:PUs3:1"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- PUs5 -->
+    <attachment name="unitAttachment" attachTo="PUs5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="createsResourcesList" value="5:PUs"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- PUs5_UKP -->
+    <attachment name="unitAttachment" attachTo="PUs5_UKP" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="createsResourcesList" value="0:PUs"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- PUs3 -->
+    <attachment name="unitAttachment" attachTo="PUs3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="createsResourcesList" value="3:PUs"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- West_India_LL -->
+    <attachment name="unitAttachment" attachTo="West_India_LL" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="createsResourcesList" value="0:PUs"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Amur_LL -->
+    <attachment name="unitAttachment" attachTo="Amur_LL" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="createsResourcesList" value="0:PUs"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
     <!-- Territory Attachments -->
     <!-- P40 -->
     <attachment name="territoryAttachment" attachTo="Caroline Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -4658,7 +4751,7 @@
       <option name="production" value="3"/>
       <option name="victoryCity" value="1"/>
       <option name="capital" value="UK_Pacific"/>
-      <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="British:Japanese"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Malaya" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -4684,7 +4777,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Queensland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="British:ANZAC"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Victoria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -4704,14 +4797,14 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="New Zealand" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="British:ANZAC"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="New South Wales" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="capital" value="ANZAC"/>
       <option name="victoryCity" value="1"/>
-      <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="British:ANZAC"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="South Australia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -4763,7 +4856,7 @@
     <attachment name="territoryAttachment" attachTo="Western United States" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
       <option name="victoryCity" value="1"/>
-      <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="Americans:British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alaska" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -4821,6 +4914,7 @@
     <attachment name="territoryAttachment" attachTo="Amur" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
       <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="Russians"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Yakut S.S.R." javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -5124,10 +5218,11 @@
       <option name="unitProduction" value="20"/>
       <option name="capital" value="Americans"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="Americans"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="West India" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="changeUnitOwners" value="British"/>
+      <option name="changeUnitOwners" value="British:Japanese"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Belgian Congo" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -5139,6 +5234,7 @@
     <attachment name="territoryAttachment" attachTo="Quebec" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
+      <option name="changeUnitOwners" value="Canada"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alberta Saskatchewan Manitoba" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5185,6 +5281,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Scotland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="South West Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5203,6 +5300,7 @@
       <option name="unitProduction" value="10"/>
       <option name="capital" value="British"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="British"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Anglo Egyptian Sudan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5227,6 +5325,7 @@
     <attachment name="territoryAttachment" attachTo="Normandy Bordeaux" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
+      <option name="changeUnitOwners" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Central Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5247,6 +5346,7 @@
     <attachment name="territoryAttachment" attachTo="Southern France" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="unitProduction" value="3"/>
+      <option name="changeUnitOwners" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5261,6 +5361,7 @@
       <option name="unitProduction" value="10"/>
       <option name="capital" value="French"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tunisia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5279,6 +5380,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Romania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
+      <option name="changeUnitOwners" value="Germans"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Poland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -5287,6 +5389,7 @@
     <attachment name="territoryAttachment" attachTo="Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
       <option name="unitProduction" value="5"/>
+      <option name="changeUnitOwners" value="Germans"/>
       <option name="capital" value="Germans"/>
       <option name="victoryCity" value="1"/>
     </attachment>
@@ -5308,6 +5411,7 @@
     <attachment name="territoryAttachment" attachTo="Northern Italy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
       <option name="unitProduction" value="10"/>
+      <option name="changeUnitOwners" value="Italians"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Libya" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5323,6 +5427,7 @@
       <option name="unitProduction" value="3"/>
       <option name="capital" value="Italians"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="Italians"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Ethiopia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5356,6 +5461,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Archangel" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="changeUnitOwners" value="Russians"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Eastern Poland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -5367,6 +5473,7 @@
       <option name="production" value="3"/>
       <option name="unitProduction" value="10"/>
       <option name="capital" value="Russians"/>
+      <option name="changeUnitOwners" value="Russians"/>
       <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tambov" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -5388,6 +5495,7 @@
     <attachment name="territoryAttachment" attachTo="Volgograd" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
+      <option name="changeUnitOwners" value="Russians"/>
       <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Turkmenistan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -5400,6 +5508,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Caucasus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="Russians"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Smolensk" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -6578,6 +6687,22 @@
       <option name="gameProperty" value="German Trade With Russia"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="SupplyToken" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Supply Token"/>
+    </attachment>
+    <attachment name="ArgoCanadaBoost" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Argo Canada Boost"/>
+    </attachment>
+    <attachment name="UKoneEconomy" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="UK One Economy"/>
+    </attachment>
+    <attachment name="UKoneEconomyInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="UK One Economy"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="AmurLL" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Amur Lend Lease"/>
+    </attachment>
     <attachment name="ChinaM" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="China M"/>
     </attachment>
@@ -7102,7 +7227,7 @@
     </attachment>
     <attachment name="objectiveAttachment_Japanese_5_Pacific_Island_Control" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Pacific_Attack:conditionAttachmentPacificIslands"/>
-      <option name="objectiveValue" value="1"/>                         <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Guam:Gilbert Islands:Samoa" count="each"/>
+      <option name="objectiveValue" value="1"/>                         <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Gilbert Islands:Samoa" count="each"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Island_Attack" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:any:any:currentRound:Guam"/>
@@ -7755,7 +7880,7 @@
     </attachment>
     <attachment name="objectiveAttachment_Canada_Pacific_Island_Control" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Pacific_Attack_Canada:conditionAttachmentPacificIslands"/>
-      <option name="objectiveValue" value="1"/>                                         <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Guam:Gilbert Islands:Samoa" count="each"/>
+      <option name="objectiveValue" value="1"/>                                         <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Gilbert Islands:Samoa" count="each"/>
     </attachment>
     <attachment name="conditionAttachment_Canada_Island_Attack" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
                                          <option name="battle" value="Canada:any:any:currentRound:Guam"/>
@@ -8296,12 +8421,52 @@
       <option name="directOwnershipTerritories" value="Malaya:Kwangtung" count="2"/>
       <option name="atWarPlayers" value="Japanese" count="1"/>
     </attachment>
+    <attachment name="conditionAttachmentLLindiaPUs5UKP" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+     <option name="directPresenceTerritories" value="India" count="1"/>
+     <option name="unitPresence" value="PUs5_UKP" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindia2PUs5UKP" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+     <option name="directPresenceTerritories" value="India" count="1"/>
+     <option name="unitPresence" value="PUs5_UKP" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindia3PUs5UKP" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+     <option name="directPresenceTerritories" value="India" count="1"/>
+     <option name="unitPresence" value="PUs5_UKP" count="3"/>
+    </attachment>
+    <attachment name="objectiveAttachmentLLindia_PUs5_UKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLindiaPUs5UKP"/>
+      <option name="objectiveValue" value="5"/>
+    </attachment>
+    <attachment name="objectiveAttachmentLLindia_2_PUs5_UKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLindia2PUs5UKP"/>
+      <option name="objectiveValue" value="5"/>
+    </attachment>
+    <attachment name="objectiveAttachmentLLindia_3_PUs5_UKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLindia3PUs5UKP"/>
+      <option name="objectiveValue" value="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaPUs5UKP" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+     <option name="directPresenceTerritories" value="West India" count="1"/>
+     <option name="unitPresence" value="PUs5_UKP" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindia2PUs5UKP" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+     <option name="directPresenceTerritories" value="West India" count="1"/>
+     <option name="unitPresence" value="PUs5_UKP" count="2"/>
+    </attachment>
+    <attachment name="objectiveAttachmentLLwestindia_PUs5_UKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLwestindiaPUs5UKP"/>
+      <option name="objectiveValue" value="5"/>
+    </attachment>
+    <attachment name="objectiveAttachmentLLwestindia_2_PUs5_UKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLwestindia2PUs5UKP"/>
+      <option name="objectiveValue" value="5"/>
+    </attachment>
     <attachment name="conditionAttachment_Pacific_Attack_2" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
      <option name="atWarPlayers" value="Japanese" count="1" />
     </attachment>
     <attachment name="objectiveAttachment_UK_Pacific_3_Pacific_Island_Control" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Pacific_Attack_2:conditionAttachmentPacificIslands"/>
-      <option name="objectiveValue" value="1"/>                                                   <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Guam:Gilbert Islands:Samoa" count="each"/>
+      <option name="objectiveValue" value="1"/>                                                   <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Gilbert Islands:Samoa" count="each"/>
     </attachment>
     <attachment name="conditionAttachment_UK_Pacific_Island_Attack" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
                                          <option name="battle" value="British:any:any:currentRound:Guam"/>
@@ -8939,7 +9104,7 @@
 
     <attachment name="objectiveAttachment_ANZAC_3_Pacific_Island_Control" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Pacific_Attack_3:conditionAttachmentPacificIslands"/>
-      <option name="objectiveValue" value="1"/>                                         <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Guam:Gilbert Islands:Samoa" count="each"/>
+      <option name="objectiveValue" value="1"/>                                         <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Gilbert Islands:Samoa" count="each"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_Island_Attack" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
                                          <option name="battle" value="ANZAC:any:any:currentRound:Guam"/>
@@ -9517,7 +9682,7 @@
 				</attachment>
     <attachment name="objectiveAttachment_Americans_5_Pacific_Island_Control" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
                                         <option name="conditions" value="conditionAttachment_Pacific_Attack_4:conditionAttachmentPacificIslands"/>
-                                    	<option name="objectiveValue" value="1"/>                                                   <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Guam:Gilbert Islands:Samoa" count="each"/>
+                                    	<option name="objectiveValue" value="1"/>                                                   <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Gilbert Islands:Samoa" count="each"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Island_Attack" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
                                          <option name="battle" value="Americans:any:any:currentRound:Guam"/>
@@ -10490,6 +10655,94 @@
     <attachment name="conditionAttachmentTurn2OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="2-+"/>
     </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermanyMinor" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Romania" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany2Minor" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Romania" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany3Minor" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Romania" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermanyMajor" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Romania" count="1"/>
+            <option name="unitPresence" value="factory_major" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany2Major" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Romania" count="1"/>
+            <option name="unitPresence" value="factory_major" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany3Major" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Romania" count="1"/>
+            <option name="unitPresence" value="factory_major" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany" attachTo="Germans" javaClass="RulesAttachment" type="player">
+     <option name="conditions" value="conditionAttachmentLLromaniaGermanyMinor:conditionAttachmentLLromaniaGermanyMajor"/>
+      <option name="conditionType" value="OR"/>    
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany2" attachTo="Germans" javaClass="RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLromaniaGermany2Minor:conditionAttachmentLLromaniaGermany2Major"/>
+      <option name="conditionType" value="OR"/>       
+    </attachment>
+    <attachment name="conditionAttachmentLLromaniaGermany3" attachTo="Germans" javaClass="RulesAttachment" type="player">
+    <option name="conditions" value="conditionAttachmentLLromaniaGermany3Minor:conditionAttachmentLLromaniaGermany3Major"/>
+      <option name="conditionType" value="OR"/>         
+    </attachment>
+    <attachment name="conditionAttachmentLLgermanyGermany" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLgermanyGermany2" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLgermanyGermany3" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLgermanyGermany4" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLgermanyGermany5" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestgermanyGermany" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestgermanyGermany2" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestgermanyGermany3" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestgermanyGermany4" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestgermanyGermany5" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western Germany" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveGermanyPUs5" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+     <attachment name="conditionAttachmentLLremoveGermanyPUs3" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+        </attachment>
     <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentRussianNationalObjectivesInvert:RussianNOsInvert:conditionAttachmentBM_RulesInvert:BMRulesInvert"/>
@@ -10642,6 +10895,108 @@
       <option name="conditions" value="conditionAttachment_Russians_1aaa_Lend_Lease:conditionAttachment_Russians_2aa_Lend_Lease:conditionAttachment_Russians_3aa_Lend_Lease"/>
       <option name="conditionType" value="OR"/>
     </attachment>
+    <attachment name="conditionAttachmentLLnovgoUSSR" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Novgorod" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnovgoUSSR2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Novgorod" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLrussiaUSSR" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Russia" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLrussiaUSSR2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Russia" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLrussiaUSSR3" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Russia" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLvolgogradUSSR" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Volgograd" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLvolgogradUSSR2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Volgograd" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLcaucasusUSSR" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Caucasus" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+	    <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLcaucasusUSSR2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Caucasus" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrUK" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrUK2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrUK3" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrUK4" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrUK5" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrUK6" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrScotland" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrScotland2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrIndia" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrIndia2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrIndia3" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrWestIndia" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLussrWestIndia2" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLamurUSSR" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Amur" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+	    <option name="unitPresence" value="Amur_LL" count="1"/>
+    </attachment>
+    
+    <attachment name="conditionAttachmentLLremoveUSSRPUs5" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+     <attachment name="conditionAttachmentLLremoveUSSRPUs3" attachTo="Russians" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+        </attachment>
     <!-- Japanese Conditions -->
     <attachment name="conditionAttachmentAllies_Conquer_Japanese_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Iwo Jima:Marianas:Okinawa" count="1"/>
@@ -10751,6 +11106,64 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachmentLLindiaJapanMinor" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan2Minor" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan3Minor" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapanMajor" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="factory_major" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan2Major" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="factory_major" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan3Major" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="factory_major" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+     <option name="conditions" value="conditionAttachmentLLindiaJapanMinor:conditionAttachmentLLindiaJapanMajor"/>
+      <option name="conditionType" value="OR"/>    
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan2" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+     <option name="conditions" value="conditionAttachmentLLindiaJapan2Minor:conditionAttachmentLLindiaJapan2Major"/>
+      <option name="conditionType" value="OR"/>    
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaJapan3" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+     <option name="conditions" value="conditionAttachmentLLindiaJapan3Minor:conditionAttachmentLLindiaJapan3Major"/>
+      <option name="conditionType" value="OR"/>    
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaJapan" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaJapan2" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveJapanPUs5" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveJapanPUs3" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
     <!-- British Conditions -->
     <attachment name="conditionAttachment_ANZAC_1_Original" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="original"/>
@@ -10772,6 +11185,51 @@
       <option name="unitPresence" value="submarine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+
+    <attachment name="conditionAttachmentLLukUK" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukUK2" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukUK3" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukUK4" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukUK5" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukUK6" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukScotland" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+	    <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukScotland2" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="factory_minor" count="1"/>
+	    <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+
+    <attachment name="conditionAttachmentLLremoveUKPUs5" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveUKPUs5_UKP" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveUKPUs3" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
     <!-- UK_Pacific Conditions -->
     <attachment name="conditionAttachment_UK_Pacific_4_No_Enemy_Submarines_in_Indian_Ocean" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentBM_Rules"/>
@@ -10787,9 +11245,214 @@
       <option name="conditions" value="conditionAttachmentBM_Rules"/>
       <option name="alliedOwnershipTerritories" value="West India" count="1"/>
     </attachment>
+    
+    <attachment name="conditionAttachmentLLindiaUKP" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaUKP2" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaUKP3" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaUKPoneEconomy" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaUKPoneEconomy2" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaUKPoneEconomy3" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaUKP" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+             <option name="unitPresence" value="Supply_Crate" count="1"/>
+	     <option name="unitPresence" value="West_India_LL" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaUKP2" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+            <option name="unitPresence" value="West_India_LL" count="1"/>         </attachment>
+    <attachment name="conditionAttachmentLLwestindiaUKPoneEconomy" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+             <option name="unitPresence" value="Supply_Crate" count="1"/>
+	     <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaUKPoneEconomy2" attachTo="British" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    <option name="unitPresence" value="factory_minor" count="1"/>         </attachment>
+    <attachment name="conditionAttachmentLLwestindiaUKPfactory" attachTo="UK_Pacific" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+             <option name="unitPresence" value="factory_minor" count="1"/>       </attachment>
+    
+	    <!-- Italians Conditions -->
+    <attachment name="conditionAttachmentLLitalyNItaly" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLitalyNItaly2" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLitalyNItaly3" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLitalyNItaly4" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLitalySItaly" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLitalySItaly2" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLitalySItaly3" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+
+    <attachment name="conditionAttachmentLLremoveItalyPUs5" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveItalyPUs3" attachTo="Italians" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+	    
+    <!-- Canada Conditions -->
+    <attachment name="conditionAttachmentLLquebecCanada" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Quebec" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLquebecCanada2" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Quebec" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLscotlandCanada" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLscotlandCanada2" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukCanada" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukCanada2" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukCanada3" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukCanada4" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukCanada5" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLukCanada6" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaCanada" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaCanada2" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaCanada3" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaCanada" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaCanada2" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveCanadaPUs5" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveCanadaPUs3" attachTo="Canada" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
     <!-- ANZAC Conditions -->
     <attachment name="conditionAttachment_ANZAC_1_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Malaya" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLqueenslandANZAC" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Queensland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+	    <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLqueenslandANZAC2" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Queensland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+	    <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnewsouthwalesANZAC" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="New South Wales" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnewsouthwalesANZAC2" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="New South Wales" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnewzealandANZAC" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="New Zealand" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+	    <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnewzealandANZAC2" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="New Zealand" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+	    <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaANZAC" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaANZAC2" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLindiaANZAC3" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaANZAC" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwestindiaANZAC2" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveANZACPUs5" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveANZACPUs3" attachTo="ANZAC" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
     </attachment>
     <!-- Chinese Conditions -->
     <attachment name="conditionAttachment_Chinese_Own_Kiangsu" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10862,6 +11525,97 @@
       <option name="unitPresence" value="factory_upgrade:factory_major" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachmentLLusaUK" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaUK2" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaUK3" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaUK4" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaUK5" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaUK6" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaScotland" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaScotland2" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Scotland" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLeusUSA" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Eastern United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLeusUSA2" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Eastern United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLeusUSA3" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Eastern United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLeusUSA4" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Eastern United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwusUSA" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwusUSA2" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwusUSA3" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLwusUSA4" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Western United States" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaIndia" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaIndia2" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaIndia3" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaWestIndia" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLusaWestIndia2" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="West India" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    
+    <attachment name="conditionAttachmentLLremoveUSAPUs5" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveUSAPUs3" attachTo="Americans" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
     <!-- French Conditions -->
     <attachment name="conditionAttachment_French_1_Lose_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="France" count="1"/>
@@ -10881,6 +11635,48 @@
       <option name="conditions" value="conditionAttachment_French_1_Can_Be_Liberated_Switch"/>
       <option name="directOwnershipTerritories" value="France" count="1"/>
       <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnormandyFrance" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Normandy Bordeaux" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLnormandyFrance2" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Normandy Bordeaux" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLsfranceFrance" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Southern France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLsfranceFrance2" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Southern France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLsfranceFrance3" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="Southern France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLfranceFrance" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLfranceFrance2" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLfranceFrance3" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLfranceFrance4" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directPresenceTerritories" value="France" count="1"/>
+            <option name="unitPresence" value="Supply_Crate" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveFrenchPUs5" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachmentLLremoveFrenchPUs3" attachTo="French" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="map" count="each"/>
     </attachment>
     <!-- Political related conditions -->
     <attachment name="conditionAttachment_False" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11210,6 +12006,18 @@
       <option name="unitProperty" value="attack" count="0"/>
       <option name="unitProperty" value="defense" count="1"/>
       <option name="unitProperty" value="isCombatTransport" count="true"/>
+      <option name="unitProperty" value="maxDamage" count="5"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentSupplyCrateDamage5" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="unitType" value="Supply_Crate"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="attack" count="0"/>
+      <option name="unitProperty" value="defense" count="0"/>
+      <option name="unitProperty" value="maxDamage" count="5"/>
+      <option name="unitProperty" value="maxOperationalDamage" count="5"/>
       <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -11240,6 +12048,58 @@
       <option name="productionRule" value="productionFrench:buyMarine"/>
       <option name="when" value="before:changerEndTurn"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentArgoCanadaBoost" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ArgoCanadaBoost:NewSubsInvert"/>
+      <option name="placement" value="Ontario:airfield" count="1"/>
+      <option name="placement" value="120 Sea Zone:destroyer" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentArgoCanadaBoostDDC5" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ArgoCanadaBoost:NewSubs"/>
+      <option name="placement" value="Ontario:airfield" count="1"/>
+      <option name="placement" value="120 Sea Zone:destroyerC5" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentUKoneEconomy" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="UKoneEconomy:conditionAttachment_True"/>
+      <option name="changeOwnership" value="all:UK_Pacific:British:false"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ChangerRemoveIndiaInfra" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="UKoneEconomy"/>
+      <option name="removeUnits" value="India:factory_major" count="1"/>
+      <option name="removeUnits" value="India:airfield" count="1"/>
+      <option name="removeUnits" value="India:harbour" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ChangerAddIndiaInfra" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="UKoneEconomy"/>
+      <option name="placement" value="India:factory_major" count="1"/>
+      <option name="placement" value="India:airfield" count="1"/>
+      <option name="placement" value="India:harbour" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAmurLL" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AmurLL:NewSubsInvert"/>
+      <option name="placement" value="Amur:Amur_LL" count="1"/>
+      <option name="placement" value="5 Sea Zone:destroyer" count="1"/>
+      <option name="placement" value="5 Sea Zone:transport" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAmurLLddC5" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AmurLL:NewSubs"/>
+      <option name="placement" value="Amur:Amur_LL" count="1"/>
+      <option name="placement" value="5 Sea Zone:destroyerC5" count="1"/>
+      <option name="placement" value="5 Sea Zone:transport" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
     </attachment>
     <!-- Germans Triggers -->
     <attachment name="triggerAttachmentRedesignModGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -11737,22 +12597,29 @@
       <option name="trigger" value="conditionAttachmentCanadaBoost"/>
       <option name="territories" value="Newfoundland Labrador:Yukon Territory"/>
       <option name="territoryProperty" value="production" count="1"/>
-      <option name="when" value="before:germansPolitics"/>
+      <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_CanadaBoost1" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentCanadaBoost"/>
       <option name="territories" value="British Columbia"/>
       <option name="territoryProperty" value="production" count="2"/>
-      <option name="when" value="before:germansPolitics"/>
+      <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_CanadaUnitBoost" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentCanadaUnitBoost"/>
+      <option name="trigger" value="conditionAttachmentCanadaUnitBoost:UKoneEconomyInvert"/>
       <option name="placement" value="Alberta Saskatchewan Manitoba:tactical_bomber" count="1"/>
       <option name="placement" value="Alberta Saskatchewan Manitoba:infantry" count="2"/>
       <option name="placement" value="United Kingdom:infantry" count="2"/>
-      <option name="when" value="before:germansPolitics"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_CanadaUnitBoostukOneEconomy" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCanadaUnitBoost:UKoneEconomy"/>
+      <option name="placement" value="Alberta Saskatchewan Manitoba:tactical_bomber" count="1"/>
+      <option name="placement" value="Alberta Saskatchewan Manitoba:infantry" count="2"/>
+      <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_MorePUs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -12648,6 +13515,21 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentSupplyToken" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SupplyToken"/>
+      <option name="productionRule" value="productionGermans:buySupply_Crate"/>
+      <option name="productionRule" value="productionRussians:buySupply_Crate"/>
+      <option name="productionRule" value="productionJapanese:buySupply_Crate"/>
+      <option name="productionRule" value="productionAmericans:buySupply_Crate"/>
+      <option name="productionRule" value="productionBritish:buySupply_Crate"/>
+      <option name="productionRule" value="productionUK_Pacific:buySupply_Crate"/>
+      <option name="productionRule" value="productionItalians:buySupply_Crate"/>
+      <option name="productionRule" value="productionCanada:buySupply_Crate"/>
+      <option name="productionRule" value="productionANZAC:buySupply_Crate"/>
+      <option name="productionRule" value="productionFrench:buySupply_Crate"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_AAGunC4Changer" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentAAGunCost4Changer"/>
       <option name="productionRule" value="productionGermans:-buyAAGun"/>
@@ -12836,6 +13718,94 @@
       <option name="placement" value="Urals:Russian_armour" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLromaniaGermany" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLromaniaGermany"/>
+            <option name="placement" value="Romania:PUs5"/>
+	    <option name="removeUnits" value="Romania:Supply_Crate"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLromaniaGermany2" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLromaniaGermany2"/>
+            <option name="placement" value="Romania:PUs5" count="1"/>
+	    <option name="removeUnits" value="Romania:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLromaniaGermany3" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLromaniaGermany3"/>
+            <option name="placement" value="Romania:PUs5" count="1"/>
+	    <option name="removeUnits" value="Romania:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLgermanyGermany" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLgermanyGermany"/>
+            <option name="placement" value="Germany:PUs5"/>
+	    <option name="removeUnits" value="Germany:Supply_Crate"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLgermanyGermany2" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLgermanyGermany2"/>
+            <option name="placement" value="Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLgermanyGermany3" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLgermanyGermany3"/>
+            <option name="placement" value="Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLgermanyGermany4" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLgermanyGermany4"/>
+            <option name="placement" value="Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLgermanyGermany5" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLgermanyGermany5"/>
+            <option name="placement" value="Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestgermanyGermany" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestgermanyGermany"/>
+            <option name="placement" value="Western Germany:PUs5"/>
+	    <option name="removeUnits" value="Western Germany:Supply_Crate"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestgermanyGermany2" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestgermanyGermany2"/>
+            <option name="placement" value="Western Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Western Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestgermanyGermany3" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestgermanyGermany3"/>
+            <option name="placement" value="Western Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Western Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestgermanyGermany4" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestgermanyGermany4"/>
+            <option name="placement" value="Western Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Western Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestgermanyGermany5" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestgermanyGermany5"/>
+            <option name="placement" value="Western Germany:PUs5" count="1"/>
+	    <option name="removeUnits" value="Western Germany:Supply_Crate" count="1"/>
+            <option name="when" value="before:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveGermanyPUs5" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveGermanyPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveGermanyPUs3" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveGermanyPUs3"/>
+      <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <!-- Russians Triggers -->
     <attachment name="triggerAttachmentRedesignModRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13046,6 +14016,207 @@
       <option name="conditions" value="EliteAT"/>
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLnovgoUSSR" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnovgoUSSR"/>
+            <option name="placement" value="Novgorod:PUs5"/>
+	    <option name="removeUnits" value="Novgorod:Supply_Crate"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLnovgoUSSR2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnovgoUSSR2"/>
+            <option name="placement" value="Novgorod:PUs5" count="1"/>
+	    <option name="removeUnits" value="Novgorod:Supply_Crate" count="1"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLrussiaUSSR" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLrussiaUSSR"/>
+            <option name="placement" value="Russia:PUs5"/>
+	    <option name="removeUnits" value="Russia:Supply_Crate"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLrussiaUSSR2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLrussiaUSSR2"/>
+            <option name="placement" value="Russia:PUs5" count="1"/>
+	    <option name="removeUnits" value="Russia:Supply_Crate" count="1"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLrussiaUSSR3" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLrussiaUSSR3"/>
+            <option name="placement" value="Russia:PUs5" count="1"/>
+	    <option name="removeUnits" value="Russia:Supply_Crate" count="1"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLvolgogradUSSR" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLvolgogradUSSR"/>
+            <option name="placement" value="Volgograd:PUs5"/>
+	    <option name="removeUnits" value="Volgograd:Supply_Crate"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLvolgogradUSSR2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLvolgogradUSSR2"/>
+            <option name="placement" value="Volgograd:PUs5" count="1"/>
+	    <option name="removeUnits" value="Volgograd:Supply_Crate" count="1"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLcaucasusUSSR" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLcaucasusUSSR"/>
+            <option name="placement" value="Caucasus:PUs5"/>
+	    <option name="removeUnits" value="Caucasus:Supply_Crate"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLcaucasusUSSR2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLcaucasusUSSR2"/>
+            <option name="placement" value="Caucasus:PUs5" count="1"/>
+	    <option name="removeUnits" value="Caucasus:Supply_Crate" count="1"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK2"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK3"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK4" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK4"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK5" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK5"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK6" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK6"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK2"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK3" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK3"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK4" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK4"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK5" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK5"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrUK6" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrUK6"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrScotland" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrScotland"/>
+            <option name="placement" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrScotland2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrScotland2"/>
+            <option name="placement" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrScotland" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrScotland"/>
+            <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrScotland2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrScotland2"/>
+            <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrIndia" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrIndia"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrIndia2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrIndia2"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrIndia3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrIndia3"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrIndia" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrIndia"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrIndia2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrIndia2"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrIndia3" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrIndia3"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrWestIndia" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrWestIndia"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrWestIndia2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrWestIndia2"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrWestIndia" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrWestIndia"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLussrWestIndia2" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLussrWestIndia2"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:russiansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLamurUSSR" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLamurUSSR"/>
+            <option name="placement" value="Amur:PUs5"/>
+	    <option name="removeUnits" value="Amur:Supply_Crate"/>
+            <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentLLremoveUSSRPUs5" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveUSSRPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:russiansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveUSSRPUs3" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveUSSRPUs3"/>
+      <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:russiansCombatMove"/>
     </attachment>
     
     <!-- Japanese Triggers -->
@@ -13368,6 +14539,46 @@
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentLLindiaJapan" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaJapan"/>
+            <option name="placement" value="India:PUs5"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaJapan2" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaJapan2"/>
+            <option name="placement" value="India:PUs5"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaJapan3" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaJapan3"/>
+            <option name="placement" value="India:PUs5"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaJapan" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaJapan"/>
+            <option name="placement" value="West India:PUs5"/>
+	    <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaJapan2" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaJapan2"/>
+            <option name="placement" value="West India:PUs5"/>
+	    <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveJapanPUs5" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveJapanPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:japaneseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveJapanPUs3" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveJapanPUs3"/>
+      <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:japaneseCombatMove"/>
+    </attachment>
     
     <!-- British Triggers -->
     <attachment name="triggerAttachmentRedesignModUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13400,7 +14611,7 @@
       <option name="productionRule" value="productionBritish:buyCarrierX"/>
       <option name="productionRule" value="productionBritish:-buyBattleship"/>
       <option name="productionRule" value="productionBritish:buyBattleshipX"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_British_Naval_UpgradeSubsUnBlocked" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13417,7 +14628,7 @@
       <option name="productionRule" value="productionBritish:buyCarrierX"/>
       <option name="productionRule" value="productionBritish:-buyBattleship"/>
       <option name="productionRule" value="productionBritish:buyBattleshipX"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerRemoveBombers3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13563,7 +14774,70 @@
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
       <option name="uses" value="1"/>
     </attachment>
-    
+    <attachment name="triggerAttachmentLLukUK" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukUK"/>
+            <option name="placement" value="United Kingdom:PUs5"/>
+	    <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukUK2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukUK2"/>
+            <option name="placement" value="United Kingdom:PUs5"/>
+	    <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukUK3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukUK3"/>
+            <option name="placement" value="United Kingdom:PUs5"/>
+	    <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukUK4" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukUK4"/>
+            <option name="placement" value="United Kingdom:PUs5"/>
+	    <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukUK5" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukUK5"/>
+            <option name="placement" value="United Kingdom:PUs5"/>
+	    <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukUK6" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukUK6"/>
+            <option name="placement" value="United Kingdom:PUs5"/>
+	    <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukScotland" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukScotland"/>
+            <option name="placement" value="Scotland:PUs5"/>
+	    <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukScotland2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukScotland2"/>
+            <option name="placement" value="Scotland:PUs5"/>
+	    <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveUKPUs5" attachTo="British" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveUKPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:britishCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveUKPUs5_UKP" attachTo="British" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveUKPUs5"/>
+      <option name="removeUnits" value="all:PUs5_UKP" count="1"/>
+            <option name="when" value="before:britishCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveUKPUs3" attachTo="British" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveUKPUs3"/>
+      <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:britishCombatMove"/>
+    </attachment>
+ 
     <!-- UK_Pacific Triggers -->
     <attachment name="triggerAttachment_UK_Pacific_Naval_Upgrade" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_UK_Pacific_Naval_Upgrade:conditionAttachmentChangerSubsUnBlockedInvert:NewSubsInvert:conditionAttachmentEscortCarrierChangerInvert:EscortCVInvert"/>
@@ -13579,7 +14853,7 @@
       <option name="productionRule" value="productionUK_Pacific:buyCarrierX"/>
       <option name="productionRule" value="productionUK_Pacific:-buyBattleship"/>
       <option name="productionRule" value="productionUK_Pacific:buyBattleshipX"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_UK_Pacific_Naval_UpgradeSubsUnBlocked" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13596,7 +14870,7 @@
       <option name="productionRule" value="productionUK_Pacific:buyCarrierX"/>
       <option name="productionRule" value="productionUK_Pacific:-buyBattleship"/>
       <option name="productionRule" value="productionUK_Pacific:buyBattleshipX"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerRemoveHarboursUKPacific" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13616,6 +14890,71 @@
       <option name="removeUnits" value="India:airfield" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaUKP" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomyInvert:conditionAttachmentLLindiaUKP"/>
+            <option name="placement" value="India:PUs5_UKP"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaUKP2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomyInvert:conditionAttachmentLLindiaUKP2"/>
+            <option name="placement" value="India:PUs5_UKP"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaUKP3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomyInvert:conditionAttachmentLLindiaUKP3"/>
+            <option name="placement" value="India:PUs5_UKP"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaUKPoneEconomy" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomy:conditionAttachmentLLindiaUKPoneEconomy"/>
+            <option name="placement" value="India:PUs5"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaUKPoneEconomy2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomy:conditionAttachmentLLindiaUKPoneEconomy2"/>
+            <option name="placement" value="India:PUs5"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaUKPoneEconomy3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomy:conditionAttachmentLLindiaUKPoneEconomy3"/>
+            <option name="placement" value="India:PUs5"/>
+	    <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaUKP" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomyInvert:conditionAttachmentLLwestindiaUKP"/>
+            <option name="placement" value="West India:PUs5_UKP"/>
+	    <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaUKP2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomyInvert:conditionAttachmentLLwestindiaUKP2"/>
+            <option name="placement" value="West India:PUs5_UKP"/>
+	    <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaUKPoneEconomy" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomy:conditionAttachmentLLwestindiaUKPoneEconomy"/>
+            <option name="placement" value="West India:PUs5"/>
+	    <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaUKPoneEconomy2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="UKoneEconomyInvert:conditionAttachmentLLwestindiaUKPoneEconomy2"/>
+            <option name="placement" value="West India:PUs5"/>
+	    <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaUKPfactory" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="SupplyToken:UKoneEconomyInvert:conditionAttachmentLLwestindiaUKPfactory"/>
+            <option name="placement" value="West India:West_India_LL"/>
+            <option name="when" value="before:britishPurchase"/>
     </attachment>
     <!-- Italians Triggers -->
     <attachment name="triggerAttachmentRedesignModItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13770,6 +15109,58 @@
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentLLitalyNItaly" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalyNItaly"/>
+            <option name="placement" value="Northern Italy:PUs5"/>
+	    <option name="removeUnits" value="Northern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLitalyNItaly2" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalyNItaly2"/>
+            <option name="placement" value="Northern Italy:PUs5"/>
+	    <option name="removeUnits" value="Northern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLitalyNItaly3" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalyNItaly3"/>
+            <option name="placement" value="Northern Italy:PUs5"/>
+	    <option name="removeUnits" value="Northern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLitalyNItaly4" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalyNItaly4"/>
+            <option name="placement" value="Northern Italy:PUs5"/>
+	    <option name="removeUnits" value="Northern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLitalySItaly" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalySItaly"/>
+            <option name="placement" value="Southern Italy:PUs5"/>
+	    <option name="removeUnits" value="Southern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLitalySItaly2" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalySItaly2"/>
+            <option name="placement" value="Southern Italy:PUs5"/>
+	    <option name="removeUnits" value="Southern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLitalySItaly3" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLitalySItaly3"/>
+            <option name="placement" value="Southern Italy:PUs5"/>
+	    <option name="removeUnits" value="Southern Italy:Supply_Crate"/>
+            <option name="when" value="before:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveItalyPUs5" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveItalyPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:italiansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveItalyPUs3" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveItalyPUs3"/>
+      <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:italiansCombatMove"/>
+    </attachment>
     
     <!-- Canada Triggers -->
       <attachment name="triggerAttachment_Canada_Naval_Upgrade" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -13860,6 +15251,158 @@
       <option name="support" value="supportAttachmentInfantry1"/>
       <option name="when" value="before:canadaCombatMove"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLquebecCanada" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLquebecCanada"/>
+            <option name="placement" value="Quebec:PUs5"/>
+	    <option name="removeUnits" value="Quebec:Supply_Crate"/>
+            <option name="when" value="before:canadaNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLquebecCanada2" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLquebecCanada2"/>
+            <option name="placement" value="Quebec:PUs5"/>
+	    <option name="removeUnits" value="Quebec:Supply_Crate"/>
+            <option name="when" value="before:canadaNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLscotlandCanada" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLscotlandCanada"/>
+            <option name="placement" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLscotlandCanada2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLscotlandCanada2"/>
+            <option name="placement" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLscotlandCanada" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLscotlandCanada"/>
+            <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLscotlandCanada2" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLscotlandCanada2"/>
+            <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada2"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada3"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada4" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada4"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada5" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada5"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada6" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada6"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada2" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada2"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada3" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada3"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada4" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada4"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada5" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada5"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLukCanada6" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLukCanada6"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaCanada" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaCanada"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaCanada2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaCanada2"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaCanada3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaCanada3"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaCanada" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaCanada"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaCanada2" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaCanada2"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaCanada3" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaCanada3"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaCanada" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaCanada"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaCanada2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaCanada2"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaCanada" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaCanada"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaCanada2" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaCanada2"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:canadaEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveCanadaPUs5" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveCanadaPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:canadaCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveCanadaPUs3" attachTo="Canada" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveCanadaPUs3"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:canadaCombatMove"/>
     </attachment>
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachmentRedesignModANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -14020,6 +15563,102 @@
       <option name="conditions" value="EliteAT"/>
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLqueenslandANZAC" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLqueenslandANZAC"/>
+            <option name="placement" value="Queensland:PUs5"/>
+	    <option name="removeUnits" value="Queensland:Supply_Crate"/>
+            <option name="when" value="before:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLqueenslandANZAC2" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLqueenslandANZAC2"/>
+            <option name="placement" value="Queensland:PUs5"/>
+	    <option name="removeUnits" value="Queensland:Supply_Crate"/>
+            <option name="when" value="before:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLnewsouthwalesANZAC" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnewsouthwalesANZAC"/>
+            <option name="placement" value="New South Wales:PUs5"/>
+	    <option name="removeUnits" value="New South Wales:Supply_Crate"/>
+            <option name="when" value="before:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLnewsouthwalesANZAC2" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnewsouthwalesANZAC2"/>
+            <option name="placement" value="New South Wales:PUs5"/>
+	    <option name="removeUnits" value="New South Wales:Supply_Crate"/>
+            <option name="when" value="before:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLnewzealandANZAC" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnewzealandANZAC"/>
+            <option name="placement" value="New Zealand:PUs5"/>
+	    <option name="removeUnits" value="New Zealand:Supply_Crate"/>
+            <option name="when" value="before:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLnewzealandANZAC2" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnewzealandANZAC2"/>
+            <option name="placement" value="New Zealand:PUs5"/>
+	    <option name="removeUnits" value="New Zealand:Supply_Crate"/>
+            <option name="when" value="before:anzacNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaANZAC" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaANZAC"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaANZAC2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaANZAC2"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaANZAC3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaANZAC3"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaANZAC" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaANZAC"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaANZAC2" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaANZAC2"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLindiaANZAC3" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLindiaANZAC3"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaANZAC" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaANZAC"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaANZAC2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaANZAC2"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaANZAC" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaANZAC"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwestindiaANZAC2" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwestindiaANZAC2"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveANZACPUs5" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLremoveANZACPUs5"/>
+            <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:anzacCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveANZACPUs3" attachTo="ANZAC" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLremoveANZACPUs5"/>
+            <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:anzacCombatMove"/>
     </attachment>
     
     <!-- Chinese Triggers -->
@@ -15116,7 +16755,195 @@
       <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentLLusaUK" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK2"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK3"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK4" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK4"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK5" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK5"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK6" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK6"/>
+            <option name="placement" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK2" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK2"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK3" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK3"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK4" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK4"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK5" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK5"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaUK6" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaUK6"/>
+            <option name="removeUnits" value="United Kingdom:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaScotland" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaScotland"/>
+            <option name="placement" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaScotland2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaScotland2"/>
+            <option name="placement" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaScotland" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaScotland"/>
+            <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaScotland2" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaScotland2"/>
+            <option name="removeUnits" value="Scotland:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLeusUSA" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLeusUSA"/>
+            <option name="placement" value="Eastern United States:PUs5"/>
+	    <option name="removeUnits" value="Eastern United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLeusUSA2" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLeusUSA2"/>
+            <option name="placement" value="Eastern United States:PUs5"/>
+	    <option name="removeUnits" value="Eastern United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLeusUSA3" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLeusUSA3"/>
+            <option name="placement" value="Eastern United States:PUs5"/>
+	    <option name="removeUnits" value="Eastern United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLeusUSA4" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLeusUSA4"/>
+            <option name="placement" value="Eastern United States:PUs5"/>
+	    <option name="removeUnits" value="Eastern United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwusUSA" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwusUSA"/>
+            <option name="placement" value="Western United States:PUs5"/>
+	    <option name="removeUnits" value="Western United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwusUSA2" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwusUSA2"/>
+            <option name="placement" value="Western United States:PUs5"/>
+	    <option name="removeUnits" value="Western United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwusUSA3" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwusUSA3"/>
+            <option name="placement" value="Western United States:PUs5"/>
+	    <option name="removeUnits" value="Western United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLwusUSA4" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLwusUSA4"/>
+            <option name="placement" value="Western United States:PUs5"/>
+	    <option name="removeUnits" value="Western United States:Supply_Crate"/>
+            <option name="when" value="before:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaIndia" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaIndia"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaIndia2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaIndia2"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaIndia3" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaIndia3"/>
+            <option name="placement" value="India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaIndia" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaIndia"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaIndia2" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaIndia2"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaIndia3" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaIndia3"/>
+            <option name="removeUnits" value="India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaWestIndia" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaWestIndia"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaWestIndia2" attachTo="British" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaWestIndia2"/>
+            <option name="placement" value="West India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaWestIndia" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaWestIndia"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLusaWestIndia2" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLusaWestIndia2"/>
+            <option name="removeUnits" value="West India:Supply_Crate"/>
+            <option name="when" value="before:americansEndTurn"/>
+    </attachment>
     
+    <attachment name="triggerAttachmentLLremoveUSAPUs5" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLremoveUSAPUs5"/>
+            <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentLLremoveUSAPUs3" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLremoveUSAPUs3"/>
+            <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:americansCombatMove"/>
+    </attachment>
     <!-- French Triggers -->
     <attachment name="triggerAttachmentRedesignModFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
@@ -15126,6 +16953,70 @@
        <attachment name="conditionAttachmentDummyCondition" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="United Kingdom"/>
       <option name="invert" value="true"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLnormandyFrance" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnormandyFrance"/>
+            <option name="placement" value="Normandy Bordeaux:PUs5"/>
+	    <option name="removeUnits" value="Normandy Bordeaux:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLnormandyFrance2" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLnormandyFrance2"/>
+            <option name="placement" value="Normandy Bordeaux:PUs5"/>
+	    <option name="removeUnits" value="Normandy Bordeaux:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLsfranceFrance" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLsfranceFrance"/>
+            <option name="placement" value="Southern France:PUs5"/>
+	    <option name="removeUnits" value="Southern France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLsfranceFrance2" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLsfranceFrance2"/>
+            <option name="placement" value="Southern France:PUs5"/>
+	    <option name="removeUnits" value="Southern France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLsfranceFrance3" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLsfranceFrance3"/>
+            <option name="placement" value="Southern France:PUs5"/>
+	    <option name="removeUnits" value="Southern France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLfranceFrance" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLfranceFrance"/>
+            <option name="placement" value="France:PUs5"/>
+	    <option name="removeUnits" value="France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLfranceFrance2" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLfranceFrance2"/>
+            <option name="placement" value="France:PUs5"/>
+	    <option name="removeUnits" value="France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLfranceFrance3" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLfranceFrance3"/>
+            <option name="placement" value="France:PUs5"/>
+	    <option name="removeUnits" value="France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLfranceFrance4" attachTo="French" javaClass="TriggerAttachment" type="player">
+            <option name="conditions" value="conditionAttachmentLLfranceFrance4"/>
+            <option name="placement" value="France:PUs5"/>
+	    <option name="removeUnits" value="France:Supply_Crate"/>
+            <option name="when" value="before:frenchNonCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLremoveFrenchPUs5" attachTo="French" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveFrenchPUs5"/>
+      <option name="removeUnits" value="all:PUs5" count="1"/>
+            <option name="when" value="before:frenchCombatMove"/>
+       </attachment>
+       <attachment name="triggerAttachmentLLremoveFrenchPUs3" attachTo="French" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentLLremoveFrenchPUs3"/>
+      <option name="removeUnits" value="all:PUs3" count="1"/>
+            <option name="when" value="before:frenchCombatMove"/>
     </attachment>
     <attachment name="conditionAttachment_French_Territory_May_Turn_Vichy_SwitchTech" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="true"/>
@@ -25286,6 +27177,7 @@
     <attachment name="playerAttachment" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="suicideAttackResources" value="SuicideAttackTokens" count="2"/>
       <!--<option name="suicideAttackTargets" value="battleship:carrier:EscortCarrier:EscortCarrierASW:cruiser:destroyerC5:destroyer"/>-->
+      <option name="giveUnitControl" value="Germans:Italians"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Changer" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <!-- giveUnitControl allow multiple players to give units to multiple other players, if those units are in a designated territory 
@@ -25298,15 +27190,12 @@
       <option name="giveUnitControl" value="British"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
-      <option name="giveUnitControl" value="Chinese"/>
+      <option name="giveUnitControl" value="Chinese:Russians:Canada:ANZAC:French"/>
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Canada" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="giveUnitControl" value="Russians:ANZAC:French"/>
       <option name="destroysPUs" value="false"/>
-    </attachment>
-    <attachment name="playerAttachment" attachTo="British" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
-      <option name="shareTechnology" value="UK_Pacific:Canada"/>
-      <option name="helpPayTechCost" value="UK_Pacific"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="immuneToBlockade" value="true"/>
@@ -25317,18 +27206,25 @@
     </attachment>
     
     <attachment name="playerAttachment" attachTo="British" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="giveUnitControl" value="Russians:Canada:Americans:ANZAC:French"/>
+      <option name="shareTechnology" value="UK_Pacific:Canada"/>
+      <option name="helpPayTechCost" value="UK_Pacific"/>
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="giveUnitControl" value="Russians:Americans:Canada:French"/>
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="giveUnitControl" value="Canada:Americans:ANZAC:French"/>
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="giveUnitControl" value="Japanese:Italians"/>
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="giveUnitControl" value="Japanese:Germans"/>
       <option name="destroysPUs" value="false"/>
     </attachment>
     <!--  Rules Restrictions -->
@@ -25368,8 +27264,9 @@
       <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
     <attachment name="rulesAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-    <option name="conditions" value="conditionAttachmentRussianNationalObjectives"/>
-    <option name="movementRestrictionTerritories" value="6 Sea Zone:2 Sea Zone:7 Sea Zone:8 Sea Zone"/>
+      <option name="conditions" value="AmurLL:conditionAttachmentRussianNationalObjectives"/>
+      <option name="conditionType" value="OR"/>
+    <option name="movementRestrictionTerritories" value="6 Sea Zone:7 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone"/>
     <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
     <!-- Political Action Attachments -->
@@ -27289,7 +29186,19 @@
     <property name="China AA Gun" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Supply Token" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="UK One Economy" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Canada Boost" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Argo Canada Boost" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Amur Lend Lease" value="false" editable="true">
       <boolean/>
     </property>
     <property name="German Boost" value="false" editable="true">
@@ -27977,6 +29886,53 @@ You need to turn off the "USA bonus for North Africa" option or it will show up 
 You need to turn off the "Western Europe Beach Head" option or it will show up as well.
 <br>
 <br>
+<b>14)Supply Token</b><br> Adds the <b>Argothair</b> Supply Token. A <b> Big Thank You</b> to redrum and Hepps. They made it <b>MUCH</b> easier to implement. When activated you will be able to buy the "Supply Crate" Unit. It is a A0 D0 M1 C5 Unit. It may be Bombed. 7 damage will kill it. If "A0C5 Bomber" has been activated, the 5 damage will kill it. It is unaffected with less damage. It will fire AA same as Minor Factories. If captured they will immediately turn into "3 PUs". There is no limit on how many may be captured per turn. It has the same transport value as Infantry. Not meant for Air Transport.<br>
+<br>
+Will change to Allied control in certain Territories. Also certain Territories will convert Crates up to their Territory value to "5 PUs" each if a Factory is present. So Russia could convert 3 "Crates" for 15 PUs. The Territories are as follows:<br>
+<br>
+<b>Germany</b><br>
+W Germany, Germany, and Romania will convert Allied Crates to German ones and turn them into PUs.You will need a Factory in Romania. <br><br>
+<b>Russia</b><br>
+Archangel, Russia, Volgograd, Caucasus and Amur will convert Allied Crates to Russian. Russia, Volgograd, Novograd and Caucasus will turn them into PUs. Caucasus will need a factory to do so.<br>
+<br> 
+There is a separate "Map Option" for Amur. It doesn’t need a Factory to convert Crates. It works the same as the Factories and only coverts as many as its TTy value. In this case 1. It also places a DD and Trprt in SZ 5. They may only move in SZs 1, 2, 3, 4, 5, 8, 9 and 10 until at war with Japan. Movement restrictions are then lifted.<br>
+<br>
+<b>Japan</b><br>
+India and West India will convert Crates and turn them into PUs. W India would need a factory. <br>
+<br>
+<b>USA</b><br>
+Eastern US and Western US will only convert up to 4 Crates each per turn instead of their Territory value. Also Canada Crates will not convert. This was to keep Canada from just buying Crates and sending them to the US and doing nothing else. <br>
+<br>
+<b>China</b><br>
+They do not participate. An option for them may be added in the future.<br>
+<br>
+<b>UK</b><br>
+They and UKP work a little different than everybody else due to the way triplea does the split income thingy. UK and Scotland convert Crates up to their TTy value and turn them into dough. Scotland needs a Factory for that. They convert Crates to UK Crates up to TTy value per Allied turn regardless of how many UK Crates are there. So if USA sends 12 Crates to UK, 6 would convert to Uk Crates and the other 6 would stay US. Then, hypothetically, Canada could land 8 Crates and UK would convert 6 to UK crates as well. The other 2 staying Canadian.<br>
+<br>
+<b>UKP</b><br>
+India and West India convert Crates the same way as UK does. W India needs a Factory. When converting to PUs, they use a National Objective. Instead of saying “Units Generate … PUs”, it will instead say they reached a "National Objective". This does not show up in the Objectives tab.<br>
+<br>
+<b>Italy</b><br>
+N Italy and S Italy convert Crates and turn them into PUs.<br>
+<br>
+<b>Canada</b><br>
+Quebec converts Crates and turns them into PUs. It won’t convert UK Crates. This may be changed in the future.<br>
+<br>
+<b>ANZAC</b><br>
+Queensland, New South Wales and New Zealand convert Crates. Queensland and NSWs will convert them to PUs. NSWs would need a Factory. If “Factory Limited” is activated, New Zealand will also convert them to PUs.<br>
+<br>
+<b>France</b><br>
+Normandy, S France and France itself, all convert Crates. They all convert them to PUs.<br>
+<br>
+More information in this thread<b>https://www.axisandallies.org/forums/topic/33666/supply-token-for-lend-lease/23</b>
+<br>
+<br>
+<b>15)Amur Lend Lease</b><br> Enables Amur to convert "Supply Crates" to PUs when "Supply Token" is activated<br>
+<br>
+<b>16)Argo Canada Boost</b><br> Adds A Canadian Destroyer to Sea Zone 120 and an Airfield to Ontario.<br>
+<br>
+<b>16)UK One Economy</b><br> Combines UK and UK Pacific into one economy. You will need to “Edit” the extra 17 PUs to UK and remove them from UKP. UKP won’t show up if you don’t, but it will affect the “PUs Game Total”.<br>
+<br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -27998,6 +29954,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.648<br>
+Adds "Argothair's" "Supply Token". Also adds "Argo Canada Boost" and "UK One Economy". Adds "Amur Lend Lease" as well. Fixes UK "Shipyard" tech.
 <br>
 <br>
 2.647<br>
