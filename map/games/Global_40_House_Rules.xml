@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.648"/>
+  <info name="Global 40 House Rules" version="2.649"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -27288,7 +27288,7 @@ You need to turn off the "USA bonus for North Africa" option or it will show up 
 You need to turn off the "Western Europe Beach Head" option or it will show up as well.
 <br>
 <br>
-<b>14)Supply Token</b><br> Adds the <b>Argothair</b> Supply Token. A <b> Big Thank You</b> to redrum and Hepps. They made it <b>MUCH</b> easier to implement. When activated you will be able to buy the "Supply Crate" Unit. It is a A0 D0 M1 C5 Unit. It may be Bombed. 7 damage will kill it. If "A0C5 Bomber" has been activated, the 5 damage will kill it. It is unaffected with less damage. It will fire AA same as Minor Factories. If captured they will immediately turn into "3 PUs". There is no limit on how many may be captured per turn. It has the same transport value as Infantry. Not meant for Air Transport.<br>
+<b>14)Supply Token</b><br> Adds the <b>Argothair</b> Supply Token. A <b> Big Thank You</b> to redrum and Hepps. They made it <b>MUCH</b> easier to implement. When activated you will be able to buy the "Supply Crate" Unit. It is a A0 D0 M1 C5 Unit. It may be Bombed. 7 damage will kill it. If "A0C5 Bomber" has been activated, then 5 damage will kill it. It is unaffected with less damage. It will fire AA same as Minor Factories. If captured they will immediately turn into "3 PUs". There is no limit on how many may be captured per turn. It has the same transport value as Infantry. Not meant for Air Transport.<br>
 <br>
 Will change to Allied control in certain Territories. Also certain Territories will convert Crates up to their Territory value to "5 PUs" each if a Factory is present. So Russia could convert 3 "Crates" for 15 PUs. The Territories are as follows:<br>
 <br>
@@ -27352,6 +27352,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.649<br>
+Adds unit images for supply crate for Canada, ANZAC and France.
 <br>
 <br>
 2.648<br>
