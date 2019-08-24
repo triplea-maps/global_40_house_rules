@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.649"/>
+  <info name="Global 40 House Rules with Canada" version="2.650"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -10620,6 +10620,9 @@
       <option name="conditions" value="conditionAttachmentPrimitiveOption:Primitive"/>
       <option name="conditionType" value="OR"/> 
     </attachment>
+    <attachment name="MovelVCs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Movel Victory Conditions"/>
+    </attachment>
     <attachment name="Stuka" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Close Air Support"/>
     </attachment>
@@ -10742,7 +10745,55 @@
     </attachment>
      <attachment name="conditionAttachmentLLremoveGermanyPUs3" attachTo="Germans" javaClass="RulesAttachment" type="player">
             <option name="directOwnershipTerritories" value="map" count="each"/>
-        </attachment>
+     </attachment>
+     <attachment name="conditionAttachmentGermansHoldBerlin" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="directOwnershipTerritories" value="Germany" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisHoldWarsaw" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Poland" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisHoldRome" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Southern Italy" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisHoldParis" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="France" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisHoldTokyo" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Japan" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisHoldShanghai" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Kiangsu" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisTakeCaucasus" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlNortAfrica" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Morocco:Algeria:Tunisia:Libya:Tobruk:Alexandria:Egypt" count="7"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlBalkansAndCrete" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Crete:Yugoslavia:Greece:Bulgaria:Slovakia Hungary:Albania:Romania" count="7"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlPhilippines" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Philippines" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlBurmaRoad" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="4"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControl5AlliedTTysInPacific" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="New Britain:Solomon Islands:New Guinea:Philippines:Line Islands:Guam:Wake Island:Aleutian Islands:Johnston Island:Hawaiian Islands:Midway:Fiji:Ceylon:Samoa:Gilbert Islands:Celebes:Java:Dutch New Guinea:Sumatra:New Hebrides" count="5"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlChina" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Manchuria:Hainan:Shensi:Yunnan:Szechwan:Suiyuyan:Kweichow:Hunan:Hopei:Shantung:Kwangsi:Kiangsu:Kiangsi:Jehol:Chahar:Anhwe:Tsinghai:Kansu" count="18"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlNovgorod" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Novgorod" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlStalingrad" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Volgograd" count="1"/>
+     </attachment>
+     <attachment name="conditionAttachmentAxisControlPersiaAndIraq" attachTo="Germans" javaClass="RulesAttachment" type="player">
+            <option name="alliedOwnershipTerritories" value="Iraq:Northwest Persia:Persia:Eastern Persia" count="4"/>
+     </attachment>
     <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentRussianNationalObjectivesInvert:RussianNOsInvert:conditionAttachmentBM_RulesInvert:BMRulesInvert"/>
@@ -27160,6 +27211,21 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansTech"/>
     </attachment>
+    <attachment name="conditionAttachmentTurn11CheckVC" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentGermansHoldBerlin:conditionAttachmentAxisHoldWarsaw:conditionAttachmentAxisHoldRome:conditionAttachmentAxisHoldParis:conditionAttachmentAxisHoldTokyo:conditionAttachmentAxisHoldShanghai:conditionAttachmentAxisTakeCaucasus:conditionAttachmentAxisControlNortAfrica:conditionAttachmentAxisControlBalkansAndCrete:conditionAttachmentAxisControlPhilippines:conditionAttachmentAxisControlBurmaRoad:conditionAttachmentAxisControl5AlliedTTysInPacific:conditionAttachmentAxisControlChina:conditionAttachmentAxisControlNovgorod:conditionAttachmentAxisControlStalingrad:conditionAttachmentAxisControlPersiaAndIraq"/>
+      <option name="conditionType" value="9"/> 
+      <option name="rounds" value="11"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn11CheckVCMovel" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="MovelVCs:conditionAttachmentTurn11CheckVC"/>
+      <option name="conditionType" value="AND"/> 
+    </attachment>
+    <attachment name="triggerAttachment11note" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn11CheckVCMovel"/>
+      <option name="notification" value="R011VC"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     
     <!-- Player Attachments -->
     <attachment name="playerAttachment" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
@@ -29322,6 +29388,9 @@
     <property name="Units Can Load In Hostile Sea Zone" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Movel Victory Conditions" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="mapName" value="global_40_house_rules" editable="false"/>
     <property name="notes">
       <value><![CDATA[  
@@ -29931,8 +30000,28 @@ More information in this thread<b>https://www.axisandallies.org/forums/topic/336
 <br>
 <b>16)Argo Canada Boost</b><br> Adds A Canadian Destroyer to Sea Zone 120 and an Airfield to Ontario.<br>
 <br>
-<b>16)UK One Economy</b><br> Combines UK and UK Pacific into one economy. You will need to “Edit” the extra 17 PUs to UK and remove them from UKP. UKP won’t show up if you don’t, but it will affect the “PUs Game Total”.<br>
+<b>17)UK One Economy</b><br> Combines UK and UK Pacific into one economy. You will need to “Edit” the extra 17 PUs to UK and remove them from UKP. UKP won’t show up if you don’t, but it will affect the “PUs Game Total”.<br>
 <br>
+<b>18)Movel Victory Conditions</b><br> Courtesy of taamvan.<br>
+The Axis need "9" of the following after round 10 for victory:<br>
+Hold Berlin=Control Germany<br>
+Hold Warsaw=Control Poland<br>
+Hold Rome=Control Southern Italy<br>
+Hold Paris=Control France<br>
+Hold Toykyo=Control Japan<br>
+Hold Shanghai=Control Kiangsu<br>
+Seize the Caucasus=Control<br>
+Control North Africa=Morocco:Algeria:Tunisia:Libya:Tobruk:Alexandria:Egypt<br>
+Control All of Balkans=Crete:Yugoslavia:Greece:Bulgaria:Slovakia Hungary:Albania:Romania<br>
+Control of Philippines<br>
+Control of the Burma Road=India:Burma:Yunnan:Szechwan<br>
+Control of "5" Allied Island Territories in the Pacific=New Britain:Solomon Islands:New Guinea:Philippines:Line Islands:Guam:Wake Island:Aleutian Islands:Johnston Island:Hawaiian Islands:Midway:Fiji:Ceylon:Samoa:Gilbert Islands:Celebes:Java:Dutch New Guinea:Sumatra:New Hebrides<br>
+Seize all of China=Control of Manchuria:Hainan:Shensi:Yunnan:Szechwan:Suiyuyan:Kweichow:Hunan:Hopei:Shantung:Kwangsi:Kiangsu:Kiangsi:Jehol:Chahar:Anhwe:Tsinghai:Kansu<br>
+Seize Novgorod=Control<br>
+Seize Stalingrad=Control Volgograd<br>
+Seize Persia and Iraq=Control Iraq:Northwest Persia:Persia:Eastern Persia<br>
+<br>
+Victory Notification will activate at beginning of Germans round 11 purchase.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -29954,6 +30043,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.650<br>
+Add "Movel Victory Conditions".
 <br>
 <br>
 2.649<br>
