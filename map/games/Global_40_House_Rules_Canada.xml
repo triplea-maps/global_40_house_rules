@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.650"/>
+  <info name="Global 40 House Rules with Canada" version="2.651"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6952,6 +6952,9 @@
       <option name="gameProperty" value="Russia No Allies"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="BBandCA2Shot" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="BB and CA 2 Shot"/>
+    </attachment>
     <attachment name="conditionAttachmentUSSrNoAlliesOption" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="RussiaNoAllies" count="1"/>
     </attachment>
@@ -12641,6 +12644,26 @@
       <option name="unitProperty" value="mayOverStackAA" count="true"/>
       <option name="unitProperty" value="targetsAA" count="submarine"/>
       <option name="unitProperty" value="typeAA" count="DestroyerDepthChargeBoost"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BBandCA2ShotBB" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BBandCA2Shot"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="attackRolls" count="2"/>
+      <option name="unitProperty" value="defenseRolls" count="2"/>
+      <option name="unitProperty" value="bombard" count="2"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BBandCA2ShotCA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BBandCA2Shot"/>
+      <option name="unitType" value="cruiser"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="attackRolls" count="2"/>
+      <option name="unitProperty" value="defenseRolls" count="2"/>
+      <option name="unitProperty" value="bombard" count="1"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -29240,6 +29263,9 @@
     <property name="Russia No Allies" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="BB and CA 2 Shot" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="German Trade With Russia" value="true" editable="true">
       <boolean/>
     </property>
@@ -29452,6 +29478,8 @@ May also be activated via <b>Map Options</b>.<br>
 <b> 3) "SubsCanEvadeDestroyers_ChangerMustActivate"</b><br>
 Destroyers no longer block Subs or the Sub's "First Strike" capability. They are now a A1 D1 M2 +1 w/NB C5 unit. They also have 1 preemptive "ASA" (Anti-Sub Attack) shot.<br>
 <br>
+<b>Note</b><br>
+If necessary activate "BB and CA 2 Shot" to prevent DDC5 spammage.<br><br>
 When attacking a Sub, the Destroyer will fire a one time "ASA1" (hits at 2 out of 12) shot. If successful, the Sub is immediately destroyed and may not return fire. If the Sub survives, it may then submerge or take its normal "First Strike" shot.<br>
 <br>
 The Destroyer also has 1 preemptive "ASD" (Anti-Sub Defense) shot for combat and 1 for movement. It hits at 1 out of 12. So when a Sub attacks a Destroyer, it will undergo 1 ASD shot when the Sub enters the Destroyer's Sea Zone and 1 ASD shot at the beginning of Combat. Both of these attacks occur before the Subs First Strike.<br>
@@ -30021,7 +30049,10 @@ Seize Novgorod=Control<br>
 Seize Stalingrad=Control Volgograd<br>
 Seize Persia and Iraq=Control Iraq:Northwest Persia:Persia:Eastern Persia<br>
 <br>
-Victory Notification will activate at beginning of Germans round 11 purchase.<br><br>
+  Victory Notification will activate at beginning of Germans round 11 purchase.<br><br>
+  <b>19)BB and CA 2 Shot</b><br>
+Recommended for use with "Option Redesign" and "Convoy and Blockade".<br>
+Battleships now have 2 shots at 4 when attacking or defending and Cruisers have 2 shots at 3. BB Bombard at 2 shots at 2 and CAs 2 shots at 1.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -30043,6 +30074,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.651<br>
+Add "BB and CA 2 Shot".
 <br>
 <br>
 2.650<br>
