@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.651"/>
+  <info name="Global 40 House Rules" version="2.652"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1297,6 +1297,7 @@
     <unit name="EscortCarrier"/>
     <unit name="EscortCarrierASW"/>
     <unit name="battleship"/>
+    <unit name="battleship-damaged"/>
     <unit name="submarineX"/>
     <unit name="destroyerX"/>
     <unit name="destroyerC5X"/>
@@ -3764,7 +3765,7 @@
       <option name="defense" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
     </attachment>
-    <!-- Battle Ship -->
+    <!-- BattleShip -->
     <attachment name="unitAttachment" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isSea" value="true"/>
@@ -3776,7 +3777,20 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="isAAforCombatOnly" value="false"/>
       <option name="maxAAattacks" value="0"/>
-      </attachment>
+    </attachment>
+    
+    <!-- BattleShip-damaged -->
+    <attachment name="unitAttachment" attachTo="battleship-damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="canBombard" value="true"/>
+      <option name="bombard" value="2"/>
+      <option name="hitPoints" value="2"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:battleship"/>
+    </attachment>
+    
     <!-- Cruiser -->
     <attachment name="unitAttachment" attachTo="cruiser" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -11872,7 +11886,9 @@
       <option name="unitProperty" value="attackRolls" count="2"/>
       <option name="unitProperty" value="defenseRolls" count="2"/>
       <option name="unitProperty" value="bombard" count="2"/>
-      <option name="when" value="before:germansPolitics"/>
+      <option name="unitProperty" value="hitPoints" count="2"/>
+      <option name="unitProperty" value="whenHitPointsDamagedChangesInto" count="1:true:battleship-damaged"/>
+      <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_BBandCA2ShotCA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -26369,7 +26385,7 @@
     <property name="Super Sub Defence Bonus" value="0" editable="true">
       <number min="0" max="1"/>
     </property>
-    <property name="LHTR Heavy Bombers" value="false" editable="true">
+    <property name="LHTR Heavy Bombers" value="true" editable="true">
       <boolean/>
     </property>
     <property name="Heavy Bomber Dice Rolls" value="2" editable="false">
@@ -27450,7 +27466,9 @@ Seize Persia and Iraq=Control Iraq:Northwest Persia:Persia:Eastern Persia<br>
 Victory Notification will activate at beginning of Germans round 11 purchase.<br><br>
 <b>17)BB and CA 2 Shot</b><br>
 Recommended for use with "Option Redesign" and "Convoy and Blockade".<br>
-Battleships now have 2 shots at 4 when attacking or defending and Cruisers have 2 shots at 3. BB Bombard at 2 shots at 2 and CAs 2 shots at 1.<br><br>
+Battleships now have 2 shots at 4 when attacking or defending and Cruisers have 2 shots at 3. BB Bombard at 2 shots at 2 and CAs 2 shots at 1.<br>
+When damaged a Battleship will only have 1 shot at 4 and 1 at 2 while Bombarding.<br><br>
+<b>Note</b><br>You must turn off "LHTR Heavy bombers" in map options, or it will still roll twice but only use the best one.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -27472,6 +27490,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.652<br>
+When "BB and CA 2 Shot" is activated BB will only have 1 shot when damaged.
 <br>
 <br>
 2.651<br>
