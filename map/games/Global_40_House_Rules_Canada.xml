@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.652"/>
+  <info name="Global 40 House Rules with Canada" version="2.654"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -12678,12 +12678,19 @@
       <option name="unitProperty" value="attackRolls" count="2"/>
       <option name="unitProperty" value="defenseRolls" count="2"/>
       <option name="unitProperty" value="bombard" count="1"/>
-      <option name="when" value="before:germansPolitics"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_NewFoundland" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCanadaBoost"/>
+      <option name="territories" value="Newfoundland Labrador"/>
+      <option name="territoryProperty" value="production" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_CanadaBoost" attachTo="Canada" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentCanadaBoost"/>
-      <option name="territories" value="Newfoundland Labrador:Yukon Territory"/>
+      <option name="territories" value="Ontario:Yukon Territory"/>
       <option name="territoryProperty" value="production" count="1"/>
       <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
@@ -12707,6 +12714,27 @@
       <option name="trigger" value="conditionAttachmentCanadaUnitBoost:UKoneEconomy"/>
       <option name="placement" value="Alberta Saskatchewan Manitoba:tactical_bomber" count="1"/>
       <option name="placement" value="Alberta Saskatchewan Manitoba:infantry" count="2"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermanUnitBoost" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BBandCA2Shot"/>
+      <option name="placement" value="113 Sea Zone:destroyerC5" count="1"/>
+      <option name="placement" value="113 Sea Zone:submarine" count="1"/>
+      <option name="placement" value="112 Sea Zone:destroyerC5" count="1"/>
+      <option name="placement" value="125 Sea Zone:destroyerC5" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_BritishUnitBoost" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BBandCA2Shot"/>
+      <option name="placement" value="99 Sea Zone:submarine" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapanUnitBoost" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="BBandCA2Shot"/>
+      <option name="placement" value="19 Sea Zone:destroyerC5" count="1"/>
       <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -12747,7 +12775,7 @@
     </attachment>
     <attachment name="triggerAttachment_LessPUs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentPacificIslands"/>
-      <option name="territories" value="Ontario:Rhodesia:Alberta Saskatchewan Manitoba:Kazakhstan"/>
+      <option name="territories" value="Rhodesia:Alberta Saskatchewan Manitoba:Kazakhstan"/>
       <option name="territoryProperty" value="production" count="0"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -28266,7 +28294,7 @@
       <territoryOwner territory="Anglo Egyptian Sudan" owner="British"/>
       <territoryOwner territory="Rhodesia" owner="British"/>
       <territoryOwner territory="Tanganyika Territory" owner="British"/>
-      <territoryOwner territory="Newfoundland Labrador" owner="Canada"/>
+      <territoryOwner territory="Newfoundland Labrador" owner="British"/>
       <territoryOwner territory="Morocco" owner="French"/>
       <territoryOwner territory="French Equatorial Africa" owner="French"/>
       <territoryOwner territory="Normandy Bordeaux" owner="French"/>
@@ -29713,6 +29741,8 @@ May also be activated via <b>Map Options</b>.<br>
 <b>2) "CanadaBoost"</b><br>
 Gives plus 1 PU to British Columbia. Newfoundland Labrador and Yukon Territory are now worth 1 PU.<br>
 <br>
+  <b.Note</b><br>
+  New Foundland Labrador has been changed to British Ownership. Ontario is now worth 1 PU.<br><br>
 May also be activated via <b>Map Options</b> with "Canada Boost".<br>
 <br>
 <b>3) "CanadaUnitBoost"</b><br>
@@ -30069,6 +30099,8 @@ Recommended for use with "Option Redesign" and "Convoy and Blockade".<br>
 Battleships now have 2 shots at 4 when attacking or defending and Cruisers have 2 shots at 3. BB Bombard at 2 shots at 2 and CAs 2 shots at 1.<br>
 When damaged a Battleship will only have 1 shot at 4 and 1 at 2 while Bombarding.<br><br>
 <b>Note</b><br>You must turn off "LHTR Heavy bombers" in map options, or it will still roll twice but only use the best one. <br><br>
+Also while a Submarine's First Strike will damage a BB, the BB will still fire 2 shots for the first round of combat. The secound round it will only fire once or be immediately sunk if hit by another First Strike.<br><br>
+To keep from breaking round 1 battles, Germany has C5 Destroyers placed in 125 Sea Zone, 112 Sea Zone and 113 Sea Zone. 113 also receives a Submarine.<br>The UK receives a Submarine in 99 Sea Zone and Japan a C5 Destroyer in 19 Sea Zone.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -30090,6 +30122,14 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.654<br>
+Adds additional German, British and Japan Naval Units. Change New Foundland Ownership to British. Made Ontario worth 1 PU when "Canada Boost" is activated. 
+<br>
+<br>
+2.653<br>
+When "BB and CA 2 Shot" CA will now activate before "Purchase" phase.
 <br>
 <br>
 2.652<br>
