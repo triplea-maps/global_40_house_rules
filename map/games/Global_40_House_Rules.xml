@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.655"/>
+  <info name="Global 40 House Rules" version="2.656"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4182,7 +4182,7 @@
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="6"/>
       <option name="maxOperationalDamage" value="2"/>
-      <option name="repairsUnits" value="battleship:carrier"/>
+      <option name="repairsUnits" value="battleship:carrier:battleship-damaged"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="harbour_structure"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
@@ -4207,7 +4207,7 @@
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="6"/>
       <option name="maxOperationalDamage" value="2"/>
-      <option name="repairsUnits" value="battleship:carrier"/>
+      <option name="repairsUnits" value="battleship:carrier:battleship-damaged"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="harbour12_structure"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
@@ -11886,7 +11886,6 @@
       <option name="unitProperty" value="attackRolls" count="2"/>
       <option name="unitProperty" value="defenseRolls" count="2"/>
       <option name="unitProperty" value="bombard" count="2"/>
-      <option name="unitProperty" value="hitPoints" count="2"/>
       <option name="unitProperty" value="whenHitPointsDamagedChangesInto" count="1:true:battleship-damaged"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
@@ -27490,7 +27489,9 @@ Recommended for use with "Option Redesign" and "Convoy and Blockade".<br>
 Battleships now have 2 shots at 4 when attacking or defending and Cruisers have 2 shots at 3. BB Bombard at 2 shots at 2 and CAs 2 shots at 1.<br>
 When damaged a Battleship will only have 1 shot at 4 and 1 at 2 while Bombarding.<br><br>
 <b>Note</b><br>You must turn off "LHTR Heavy bombers" in map options, or it will still roll twice but only use the best one. <br><br>
-Also while a Submarine's First Strike will damage a BB, the BB will still fire 2 shots for the first round of combat. The secound round it will only fire once or be immediately sunk if hit by another First Strike.<br><br>To keep from breaking round 1 battles, Germany has C5 Destroyers placed in 125 Sea Zone, 112 Sea Zone and 113 Sea Zone. 113 also receives a Submarine.<br>The UK receives a Submarine in 99 Sea Zone and Japan a C5 Destroyer in 19 Sea Zone.<br><br>
+Also while a Submarine's First Strike will damage a BB, the BB will still fire 2 shots for the first round of combat. The secound round it will only fire once or be immediately sunk if hit by another First Strike.<br><br>
+If you edit a damaged battleship you will also need to add 1 hit of damage or it will not repair correctly.<br><br>
+To keep from breaking round 1 battles, Germany has C5 Destroyers placed in 125 Sea Zone, 112 Sea Zone and 113 Sea Zone. 113 also receives a Submarine.<br>The UK receives a Submarine in 99 Sea Zone and Japan a C5 Destroyer in 19 Sea Zone.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -27512,6 +27513,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.656<br>
+Fix battleship-damaged not repairing. 
 <br>
 <br>
 2.655<br>
