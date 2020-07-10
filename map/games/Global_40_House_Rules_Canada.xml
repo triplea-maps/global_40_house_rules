@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.659"/>
+  <info name="Global 40 House Rules with Canada" version="2.66"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -30220,10 +30220,6 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "PacificIslandAndPU_Change"
 <br>
-"CanadaBoost"
-<br>
-"CanadaUnitBoost"
-<br>
 "CanadianNationalObjectives"
 <br>
 "ConvoyAndBlockade"
@@ -30439,6 +30435,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.66<br>
+Remove "Canada Boost" from "Option Redesign" in Game Notes. Didn't previously work. 
 <br>
 <br>
 2.659<br>
