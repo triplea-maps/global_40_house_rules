@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.656"/>
+  <info name="Global 40 House Rules with Canada" version="2.658"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1334,6 +1334,7 @@
     <unit name="PUs3"/>
     <unit name="West_India_LL"/>
     <unit name="Amur_LL"/>
+    <unit name="Neutral_Navy"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -1886,6 +1887,10 @@
     <productionRule name="buyAmur_LL">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="Amur_LL" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyNeutral_Navy">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Neutral_Navy" quantity="1"/>
     </productionRule>
     <!-- Advanced Industrial Production -->
     <!--<productionRule name="buyInfantryIndustrialTechnology">
@@ -4551,6 +4556,14 @@
       <option name="createsResourcesList" value="0:PUs"/>
       <option name="canBeGivenByTerritoryTo" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
     </attachment>
+    <!-- Neutral_Navy -->
+    <attachment name="unitAttachment" attachTo="Neutral_Navy" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="createsResourcesList" value="0:PUs"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese:Neutral_True"/>
+    </attachment>
     <!-- Territory Attachments -->
     <!-- P40 -->
     <attachment name="territoryAttachment" attachTo="Caroline Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -6816,7 +6829,29 @@
       <option name="conditionType" value="OR"/> 
       </attachment>
       
-    <!-- German Objectives -->
+      <!-- German Objectives -->
+      <attachment name="CDGneutralsModified" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Charles de Gaulle Neutrals Modified"/>
+    </attachment>
+    <attachment name="CDGneutralsInvertModified" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Charles de Gaulle Neutrals Modified"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="CDGneutralsNavy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Charles de Gaulle Neutrals Modified"/>
+    </attachment>
+    <attachment name="CDGneutralsInvertNavy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Charles de Gaulle Neutrals Modified"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachmentCDGMOD" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="CDGneutralsModified"/>
+    </attachment>
+    <attachment name="conditionAttachmentCDGMODInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="CDGneutralsModified"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    
     <attachment name="objectiveAttachment_Germans_1_Trade_with_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="GermanTradeWithRussia"/>
       <option name="objectiveValue" value="5"/>
@@ -11863,6 +11898,18 @@
     <attachment name="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="Germans:Neutral_True:anyNeutral"/>
     </attachment>
+    <attachment name="conditionAttachment_Italians_Not_Yet_At_War_With_TrueNeutrals" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Italians:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Not_Yet_At_War_With_TrueNeutrals" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Japanese:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_Not_Yet_At_War_With_Mongolians" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Germans:Mongolians:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Not_Yet_At_War_With_Mongolians" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Japanese:Mongolians:anyNeutral"/>
+    </attachment>
     <attachment name="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="British:Neutral_True:anyNeutral"/>
     </attachment>
@@ -11918,6 +11965,27 @@
     </attachment>
     <attachment name="conditionAttachment_British_Not_Yet_At_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="British:Japanese:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_Not_Yet_At_War_With_True_Neutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="British:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_Not_Yet_At_War_With_True_Neutrals" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Russians:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_Not_Yet_At_War_With_True_Neutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Germans:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_Not_Yet_At_War_With_True_Neutrals" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Italians:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Not_Yet_At_War_With_True_Neutrals" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Japanese:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_Not_Yet_At_War_With_True_Neutrals" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Americans:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_Not_Yet_At_War_With_True_Neutrals" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="French:Neutral_True:anyNeutral"/>
     </attachment>
     <!-- Russian Territories next to Mongolian Territories:
 						Timguska:Yenisey:Yakut S.S.R.:Buryatia:Amur
@@ -12486,7 +12554,7 @@
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
-      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser:carrier"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -12503,7 +12571,7 @@
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
-      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser:carrier"/>
       <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -12554,7 +12622,7 @@
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
-      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser:carrier"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -12571,7 +12639,7 @@
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
-      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser:carrier"/>
       <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -12622,7 +12690,7 @@
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
-      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser:carrier"/>
       <option name="unitProperty" value="typeAA" count="TacsTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -12639,7 +12707,7 @@
       <option name="unitProperty" value="maxAAattacks" count="1"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
       <option name="unitProperty" value="damageableAA" count="true"/>
-      <option name="unitProperty" value="targetsAA" count="carrier"/>
+      <option name="unitProperty" value="targetsAA" count="battleship:cruiser:carrier"/>
       <option name="unitProperty" value="typeAA" count="FightersTargetShips"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -13922,6 +13990,129 @@
       <option name="removeUnits" value="all:PUs3" count="1"/>
             <option name="when" value="before:germansCombatMove"/>
     </attachment>
+    
+    <attachment name="triggerAttachment_VenezuelaMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="placement" value="Venezuela:infantry" count="3"/>
+      <option name="placement" value="Venezuela:artillery" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Colombia" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Colombia:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Ecuador" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Ecuador:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Peru" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Peru:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Bolivia" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Bolivia:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Paraguay" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Paraguay:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Uruguay" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Uruguay:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_ArgentinaMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="placement" value="Argentina:infantry" count="1"/>
+      <option name="placement" value="Argentina:artillery" count="1"/>
+      <option name="placement" value="Argentina:Neutral_Navy" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_ChileMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="placement" value="Chile:infantry" count="1"/>
+      <option name="placement" value="Chile:artillery" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Mozambique" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="removeUnits" value="Mozambique:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Angola" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="removeUnits" value="Angola:infantry" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Portugal" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Portugal:infantry" count="2"/>
+      <option name="placement" value="Portugal:artillery" count="1"/>
+      <option name="placement" value="Portugal:aaGun" count="1"/>
+      <option name="placement" value="Portugal:Neutral_Navy" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Spain" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Spain:infantry" count="4"/>
+      <option name="placement" value="Spain:artillery" count="1"/>
+      <option name="placement" value="Spain:aaGun" count="1"/>
+      <option name="placement" value="Spain:armour" count="1"/>
+      <option name="placement" value="Spain:fighter" count="1"/>
+      <option name="placement" value="Spain:Neutral_Navy" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_SwitzerlandMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="placement" value="Switzerland:infantry" count="2"/>
+      <option name="placement" value="Switzerland:artillery" count="1"/>
+      <option name="placement" value="Switzerland:aaGun" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Sweden" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Sweden:artillery" count="1"/>
+      <option name="placement" value="Sweden:aaGun" count="1"/>
+      <option name="placement" value="Sweden:Neutral_Navy" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Turkey" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Turkey:artillery" count="1"/>
+      <option name="placement" value="Turkey:aaGun" count="1"/>
+      <option name="placement" value="Turkey:fighter" count="1"/>
+      <option name="placement" value="Turkey:Neutral_Navy" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_SaudiArabia" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentCDGMOD"/>
+      <option name="placement" value="Saudi Arabia:infantry" count="4"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    
     <!-- Russians Triggers -->
     <attachment name="triggerAttachmentRedesignModRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
@@ -27231,6 +27422,9 @@
       <option name="when" value="before:americansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="conditionAttachmentAllNeutralWar" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMOD"/>
+    </attachment>
 
     <!-- NOTIFICATIONs -->
     <attachment name="conditionAttachmentTurn1Check" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -27400,8 +27594,36 @@
     <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
     <!-- Political Action Attachments -->
+    <attachment name="politicalActionAttachment_Axis_To_War_With_MongoliansCDG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Germans_Not_Yet_At_War_With_Mongolians"/>
+      <option name="relationshipChange" value="Germans:Mongolians:War"/>
+      <option name="relationshipChange" value="Italians:Mongolians:War"/>
+      <option name="relationshipChange" value="Japanese:Mongolians:War"/>
+      <option name="relationshipChange" value="Mongolians:British:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:UK_Pacific:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:ANZAC:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:Chinese:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:French:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
+      <option name="text" value="Axis_War_Mongolians"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Axis_To_War_With_MongoliansCDG" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Japanese_Not_Yet_At_War_With_Mongolians"/>
+      <option name="relationshipChange" value="Germans:Mongolians:War"/>
+      <option name="relationshipChange" value="Italians:Mongolians:War"/>
+      <option name="relationshipChange" value="Japanese:Mongolians:War"/>
+      <option name="relationshipChange" value="Mongolians:British:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:UK_Pacific:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:ANZAC:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:Chinese:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:French:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
+      <option name="text" value="Axis_War_Mongolians"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="Germans:Neutral_True:War"/>
       <option name="relationshipChange" value="Italians:Neutral_True:War"/>
       <option name="relationshipChange" value="Japanese:Neutral_True:War"/>
@@ -27428,7 +27650,7 @@
       <option name="text" value="Axis_War_Neutral_True_Mongolians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_Italians_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="Germans:Neutral_True:War"/>
       <option name="relationshipChange" value="Italians:Neutral_True:War"/>
       <option name="relationshipChange" value="Japanese:Neutral_True:War"/>
@@ -27455,7 +27677,7 @@
       <option name="text" value="Axis_War_Neutral_True_Mongolians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_Japanese_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="Germans:Neutral_True:War"/>
       <option name="relationshipChange" value="Italians:Neutral_True:War"/>
       <option name="relationshipChange" value="Japanese:Neutral_True:War"/>
@@ -27481,9 +27703,27 @@
       <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
       <option name="text" value="Axis_War_Neutral_True_Mongolians"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Germans_To_War_With_True_Neutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAllNeutralWar:conditionAttachment_Germans_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="Germans:Neutral_True:War"/>
+      <option name="text" value="Germans_War_Neutral_True"/>
+    </attachment>
+
+    <attachment name="politicalActionAttachment_Italians_To_War_With_True_Neutrals" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAllNeutralWar:conditionAttachment_Italians_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="Italians:Neutral_True:War"/>
+      <option name="text" value="Italians_War_Neutral_True"/>
+    </attachment>
+
+    <attachment name="politicalActionAttachment_Japanese_To_War_With_True_Neutrals" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAllNeutralWar:conditionAttachment_Japanese_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="Japanese:Neutral_True:War"/>
+      <option name="text" value="Japanese_War_Neutral_True"/>
+    </attachment>
+    
     <!-- TODO: I suppose all the allies could go to war with Mongolians, but seriously.... they never would, so I'm not going to crowd out everyone's politics screen with it. -->
     <attachment name="politicalActionAttachment_Allies_To_War_With_Mongolians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_May_Declare_War_On_Mongolians"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_Russians_May_Declare_War_On_Mongolians"/>
       <option name="relationshipChange" value="British:Mongolians:War"/>
       <option name="relationshipChange" value="UK_Pacific:Mongolians:War"/>
       <option name="relationshipChange" value="Canada:Mongolians:War"/>
@@ -27500,7 +27740,7 @@
       <option name="text" value="Allies_War_Mongolians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="Canada:Neutral_True:War"/>
@@ -27515,8 +27755,16 @@
       <!-- Allies declaring war on Strict Neutrals does not flip Mongolians -->
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
+    <attachment name="politicalActionAttachment_British_To_War_With_True_Neutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="CDGneutralsModified:conditionAttachment_British_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="British:Neutral_True:War"/>
+      <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
+      <option name="relationshipChange" value="Canada:Neutral_True:War"/>
+      <option name="relationshipChange" value="ANZAC:Neutral_True:War"/>
+      <option name="text" value="British_War_Neutral_True"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="Canada" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="Canada:Neutral_True:War"/>
@@ -27532,7 +27780,7 @@
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="Canada:Neutral_True:War"/>
@@ -27548,7 +27796,7 @@
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="Canada:Neutral_True:War"/>
@@ -27563,8 +27811,15 @@
       <!-- Allies declaring war on Strict Neutrals does not flip Mongolians -->
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
+    <attachment name="politicalActionAttachment_French_To_War_With_True_Neutrals" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="CDGneutralsModified:conditionAttachment_French_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="French:Neutral_True:War"/>
+      
+      <!-- France declaring war on Strict Neutrals does not flip Mongolians -->
+      <option name="text" value="French_War_Neutral_True"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals:conditionAttachment_Germans_At_War_With_Russians"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals:conditionAttachment_Germans_At_War_With_Russians"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="Canada:Neutral_True:War"/>
@@ -27581,7 +27836,7 @@
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals:conditionAttachment_Americans_At_War_With_At_Least_One_Axis"/>
+      <option name="conditions" value="CDGneutralsInvertModified:conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals:conditionAttachment_Americans_At_War_With_At_Least_One_Axis"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="Canada:Neutral_True:War"/>
@@ -27597,6 +27852,12 @@
       <!-- Allies declaring war on Strict Neutrals does not flip Mongolians -->
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Americans_To_War_With_True_Neutrals" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAllNeutralWar:conditionAttachment_Americans_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="Americans:Neutral_True:War"/>
+      <option name="text" value="Americans_War_Neutral_True"/>
+    </attachment>
+    
     <attachment name="politicalActionAttachment_Japanese_To_War_With_Russians" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
@@ -27697,6 +27958,12 @@
       <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
       <option name="text" value="Russians_War_Italians"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Russians_To_War_With_True_Neutrals" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAllNeutralWar:conditionAttachment_Russians_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="relationshipChange" value="Russians:Neutral_True:War"/>
+      <option name="text" value="Russians_War_Neutral_True"/>
+    </attachment>
+    
     <attachment name="politicalActionAttachment_British_To_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_Japanese"/>
       <option name="relationshipChange" value="Japanese:British:Unprovoked"/>
@@ -29455,6 +29722,9 @@
     <property name="Units Can Load In Hostile Sea Zone" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Charles de Gaulle Neutrals Modified" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Movel Victory Conditions" value="false" editable="true">
       <boolean/>
     </property>
@@ -30101,6 +30371,53 @@ When damaged a Battleship will only have 1 shot at 4 and 1 at 2 while Bombarding
 Also while a Submarine's First Strike will damage a BB, the BB will still fire 2 shots for the first round of combat. The secound round it will only fire once or be immediately sunk if hit by another First Strike.<br><br>
 If you edit a damaged battleship you will also need to add 1 hit of damage or it will not repair correctly.<br><br>
 To keep from breaking round 1 battles, Germany has C5 Destroyers placed in 125 Sea Zone, 112 Sea Zone and 113 Sea Zone. 113 also receives a Submarine.<br>The UK receives a Submarine in 99 Sea Zone and Japan a C5 Destroyer in 19 Sea Zone.<br><br>
+<b>20)"Charles de Gaulle Neutrals Modified"</b><br>
+Adds "Charles de Gaulle Neutrals" (Only "Modified" option is available).<br>Discussed in detail here:<b>https://www.axisandallies.org/forums/topic/28180/should-we-make-better-rules-for-invadable-neutrals-1940/4?page=1</b><br><br>
+Check the box in "Map Options" before game start. You will need to declare war against the True Neutrals in order to attack them. You will need to <b>Player Enforce</b> correct "Neutral" behavior if needed. <br><br> 
+Neutral Ships don’t affect naval at all unless you are attacking them. Neutral Navies are represented with a "Neutral_Navy" <img src="Neutral_Navy.png"/> unit placed in their Home country. You will need to <b>Edit</b> the appropriate number of Ships <b>Before</b> your Combat Move.<br><br>
+When attacking a neutral, the units written here are immediately placed in the attacked territory as well as any territories alligned to them (triplea does this automatically). The opposing team will pick a player<b> Player Enforced</b> to represent those forces and collect income from any of their territories you failed to take. So, after combat, use edit to change any surviving units and the territory itself, to the Player of your choice.<br>
+<br>
+The neutrals which have more than one territory are:<br>
+Mongolia (use OOB rules for this one)<br>
+Portugal: Portugal, Portuguese Giunea, Angola, Mozambique<br>
+Spain: Spain, Rio de Oro<br>
+<br>
+The new neutral setup is:<br>
+<br>
+Venezuela: 6 infantry<br>
+Colombia: 1 infantry<br>
+Ecuador: 1 infantry<br>
+Peru: 1 infantry<br>
+Bolivia: 1 infantry<br>
+Paraguay: 1 infantry<br>
+Uraguay: 1 infantry<br>
+Argentina: 6 infantry<br>
+SZ 66 (alligned with Argentina): 1 cruiser<br>
+Chile: 4 infantry<br>
+Mozambique: 1 infantry<br>
+Angola: 1 infantry<br>
+Portugal: 4 infantry, 1 artillery, 1 AA gun<br>
+SZ 104 (alligned with Portugal): 1 cruiser, 1 transport<br>
+Spain: 10 infantry, 1 artillery, 1 AA gun, 1 tank, 1 fighter<br>
+SZ 92 (alligned with Spain): 1 destroyer<br>
+SZ 91 (alligned with Spain): 1 destroyer<br>
+Switzerland: 6 infantry<br>
+Sweden: 6 infantry, 1 artillery, 1 AA gun<br>
+SZ 114 (alligned with Sweden): 1 destroyer<br>
+Turkey: 8 infantry, 1 artillery, 1 AA gun, 1 fighter<br>
+SZ 99 (alligned with Turkey): 1 destroyer<br>
+Arabia: 6 infantry<br>
+Afghanistan: 4 infantry<br><br>
+
+<b>"Charles de Gaulle Neutrals Modified"</b>.<br>
+Changes the unit setup for:<br>
+Poland: -2 infantry adds 1 fighter<br>
+Switzerland: -2 infantry adds 1 artillery, 1 AA gun<br>
+Venezuela: -1 infantry adds 1 artillery<br>
+Argentina: -1 infantry adds 1 artillery<br>
+Chile: -1 infantry adds 1 artillery<br>
+
+<br>Discussed in detail here:<b>https://www.axisandallies.org/forums/topic/28180/should-we-make-better-rules-for-invadable-neutrals-1940/4?page=1</b><br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -30122,6 +30439,14 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.658<br>
+Adds "Charles de Gaulle Neutrals Modified". 
+<br>
+<br>
+2.657<br>
+Make "Planes Target Carriers" also target Battleships and Cruisers. 
 <br>
 <br>
 2.656<br>
