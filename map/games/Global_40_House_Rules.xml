@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.659"/>
+  <info name="Global 40 House Rules" version="2.661"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3299,8 +3299,10 @@
       <option name="isAirTransportable" value="true"/>
       <option name="canInvadeOnlyFrom" value="all"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
-      <option name="canBeGivenByTerritoryTo" value="British"/>         <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Elite -->
     <attachment name="unitAttachment" attachTo="Japanese_elite" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3313,7 +3315,9 @@
       <option name="isAirTransportable" value="true"/>
       <option name="canInvadeOnlyFrom" value="all"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
-      <option name="canBeGivenByTerritoryTo" value="British"/>         <option name="receivesAbilityWhenWith" value="canBlitz:Japanese_armour"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:Japanese_armour"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Elite -->
     <attachment name="unitAttachment" attachTo="Russian_elite" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3326,8 +3330,11 @@
       <option name="isAirTransportable" value="true"/>
       <option name="canInvadeOnlyFrom" value="all"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
-      <option name="canBeGivenByTerritoryTo" value="British"/>         <option name="receivesAbilityWhenWith" value="canBlitz:Russian_armour"/>
-    </attachment>                                                    <!-- Mech Infantry -->
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:Russian_armour"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
+    </attachment>
+    <!-- Mech Infantry -->
     <attachment name="unitAttachment" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="transportCost" value="6"/>
@@ -3338,6 +3345,7 @@
       <option name="givesMovement" value="1:TowedAAgun"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Mech Infantry -->
     <attachment name="unitAttachment" attachTo="Japanese_mech_infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3350,6 +3358,7 @@
       <option name="givesMovement" value="1:Japanese_TowedAAgun"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Mech Infantry -->
     <attachment name="unitAttachment" attachTo="Russian_mech_infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3362,6 +3371,7 @@
       <option name="givesMovement" value="1:Russian_TowedAAgun"/>
       <option name="repairsUnits" value="bunker:UKPbunker"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Artillery -->
     <attachment name="unitAttachment" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3371,6 +3381,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Artillery -->
     <attachment name="unitAttachment" attachTo="Japanese_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3380,6 +3391,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Artillery -->
     <attachment name="unitAttachment" attachTo="Russian_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3389,6 +3401,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Mobile_Artillery -->
     <attachment name="unitAttachment" attachTo="mobile_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3399,6 +3412,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Mobile_Artillery -->
     <attachment name="unitAttachment" attachTo="Japanese_mobile_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3409,6 +3423,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Mobile_Artillery -->
     <attachment name="unitAttachment" attachTo="Russian_mobile_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3419,6 +3434,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Armour -->
     <attachment name="unitAttachment" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3429,6 +3445,7 @@
       <option name="defense" value="3"/>
       <option name="isLandTransport" value="true"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Armour -->
     <attachment name="unitAttachment" attachTo="Japanese_armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3439,6 +3456,7 @@
       <option name="defense" value="3"/>
       <option name="isLandTransport" value="true"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Armour -->
     <attachment name="unitAttachment" attachTo="Russian_armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3448,7 +3466,7 @@
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
       <option name="isLandTransport" value="true"/>
-      <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/><option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Fighter -->
     <attachment name="unitAttachment" attachTo="fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3466,6 +3484,7 @@
       <option name="airAttack" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="blockade" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Fighter -->
     <attachment name="unitAttachment" attachTo="Japanese_fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3483,6 +3502,7 @@
       <option name="airAttack" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="blockade" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Fighter -->
     <attachment name="unitAttachment" attachTo="Russian_fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3500,6 +3520,7 @@
       <option name="airAttack" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="blockade" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Flying Tiger -->
     <attachment name="unitAttachment" attachTo="flying_tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3534,6 +3555,7 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="airAttack" value="1"/>
       <option name="canAirBattle" value="true"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Bomber -->
     <attachment name="unitAttachment" attachTo="Japanese_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3549,6 +3571,7 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="airAttack" value="1"/>
       <option name="canAirBattle" value="true"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Bomber -->
     <attachment name="unitAttachment" attachTo="Russian_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3564,6 +3587,7 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="airAttack" value="1"/>
       <option name="canAirBattle" value="true"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- BomberA0C5 -->
     <attachment name="unitAttachment" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3578,6 +3602,7 @@
       <option name="airAttack" value="0"/>
       <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_BomberA0C5 -->
     <attachment name="unitAttachment" attachTo="Japanese_bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3592,6 +3617,7 @@
       <option name="airAttack" value="0"/>
       <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_BomberA0C5 -->
     <attachment name="unitAttachment" attachTo="Russian_bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3606,6 +3632,7 @@
       <option name="airAttack" value="0"/>
       <option name="canAirBattle" value="true"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Air_Transport -->
 		<attachment name="unitAttachment" attachTo="air_transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3618,6 +3645,7 @@
 	<option name="isAirTransport" value="true"/>
 	<option name="canBeGivenByTerritoryTo" value="British"/>
        	<option name="canAirBattle" value="true"/>
+	<option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
 		</attachment>
 		<!-- Japanese_Air_Transport -->
 		<attachment name="unitAttachment" attachTo="Japanese_air_transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3630,6 +3658,7 @@
 	<option name="isAirTransport" value="true"/>
 	<option name="canBeGivenByTerritoryTo" value="British"/>
        	<option name="canAirBattle" value="true"/>
+	<option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
 		</attachment>
 		<!-- Russian_Air_Transport -->
 		<attachment name="unitAttachment" attachTo="Russian_air_transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3642,6 +3671,7 @@
 	<option name="isAirTransport" value="true"/>
 	<option name="canBeGivenByTerritoryTo" value="British"/>
        	<option name="canAirBattle" value="true"/>
+	<option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
 	</attachment>
     <!-- Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3660,6 +3690,7 @@
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="Japanese_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3678,6 +3709,7 @@
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="Russian_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3696,6 +3728,7 @@
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Tactical Bomber10 -->
     <attachment name="unitAttachment" attachTo="tactical_bomber10" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3714,6 +3747,7 @@
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Tactical Bomber10 -->
     <attachment name="unitAttachment" attachTo="Japanese_tactical_bomber10" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3732,6 +3766,7 @@
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Tactical Bomber10 -->
     <attachment name="unitAttachment" attachTo="Russian_tactical_bomber10" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3750,6 +3785,7 @@
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Transport -->
     <attachment name="unitAttachment" attachTo="transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4233,12 +4269,19 @@
     </attachment>
     <!-- MilitaryBase -->
     <attachment name="unitAttachment" attachTo="MilitaryBase" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="isFactory" value="true"/>
+      <option name="isInfrastructure" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="6"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="airfield12_structure"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="movement" value="0"/>
       <option name="unitPlacementRestrictions" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="1"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="canProduceXUnits" value="2"/>
-      <option name="maxDamage" value="6"/>
+      <option name="canProduceUnits" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
     <!-- AA Gun -->
@@ -4252,6 +4295,7 @@
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_AA Gun -->
     <attachment name="unitAttachment" attachTo="Japanese_aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4264,6 +4308,7 @@
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_AA Gun -->
     <attachment name="unitAttachment" attachTo="Russian_aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4271,11 +4316,12 @@
       <!--<option name="isRocket" value="true"/>-->
       <option name="canNotMoveDuringCombatMove" value="true"/>
       <!--<option name="isInfrastructure" value="true"/>
-						 <option name="canBeDamaged" value="false"/>-->
+      <option name="canBeDamaged" value="false"/>-->
       <option name="movement" value="1"/>
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- AA GunC4 -->
     <attachment name="unitAttachment" attachTo="aaGunC4" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4289,6 +4335,7 @@
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- TowedAAgun -->
     <attachment name="unitAttachment" attachTo="TowedAAgun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4303,6 +4350,7 @@
       <option name="receivesAbilityWhenWith" value="canBlitz:mech_infantry"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_AA GunC4 -->
     <attachment name="unitAttachment" attachTo="Japanese_aaGunC4" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4330,6 +4378,7 @@
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_TowedAAgun -->
     <attachment name="unitAttachment" attachTo="Russian_TowedAAgun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4344,6 +4393,7 @@
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_AA GunC4 -->
     <attachment name="unitAttachment" attachTo="Russian_aaGunC4" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4357,6 +4407,7 @@
       <option name="transportCost" value="6"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Bunker -->
     <attachment name="unitAttachment" attachTo="bunker" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4417,6 +4468,7 @@
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="whenCapturedChangesInto" value="any:any:true:PUs3:1"/>
       <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- PUs5 -->
     <attachment name="unitAttachment" attachTo="PUs5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -12003,24 +12055,10 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_MorePUsRomania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentGermanBoost"/>
-      <option name="territories" value="Romania"/>
-      <option name="territoryProperty" value="production" count="4"/>
-      <option name="when" value="before:germansPolitics"/>
-      <option name="uses" value="1"/>
-    </attachment>
     <attachment name="triggerAttachment_MorePUsSlovakia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentGermanBoost"/>
       <option name="territories" value="Slovakia Hungary"/>
       <option name="territoryProperty" value="production" count="4"/>
-      <option name="when" value="before:germansPolitics"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_MorePUsYugoslavia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentGermanBoost"/>
-      <option name="territories" value="Yugoslavia"/>
-      <option name="territoryProperty" value="production" count="3"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -27547,9 +27585,7 @@ It is recommended to wait until RD 3 to activate Bunkers. This prevents breaking
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>2) "MilitaryBase_Produces_2inf</b><br>
-MilitaryBases C12. May place in any territory of 1 PU or less. Maximum of 1 Base per territory. May receive up to 6 damage. Cannot place Infantry if 3 or more damage. Has AA capability same as Factories.<br>
-<br>
-It will allow you to place 2 of any unit type per base. This is not intended and will be fixed in the future. 2 Infantry placed per Base per turn maximum is suggested use. This is player enforced.<br>
+MilitaryBases C12. May place in any territory of 1 PU or less. Maximum of 1 Base per territory. May receive up to 6 damage. Cannot place Infantry if 2 or more damage. May only palce 1 with 1 damage. Has AA capability same as Factories.<br>
 <br>
 <b>3) "TacticalBomberAirBattleD1"</b><br>
 Gives Tactical Bombers the ability to intercept at D1. This is to help against A0C5 Bomber spam and represent Night Fighter Interceptors. <br>
@@ -27647,7 +27683,7 @@ Changes the control of Novgorod, Volgograd, Russia Objective to 3 PUs for German
 Adds the "BM Rules". Must Activate the "BM Vichy Rule" and "Chinese Guerrilla Fighters" separately. <br>
 <br>
 <b>4)German Boost</b><br>
-Gives 1 PU to Poland, Slovakia Hungary, Romania and Yugoslavia. You may wish to use this option if "Victory Cities Worth 1 PU", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Russia becomes too strong. <br>
+Gives 1 PU to Poland and Slovakia Hungary. You may wish to use this option if "Victory Cities Worth 1 PU", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Russia becomes too strong. <br>
 <br>
 <b>5)Philippines PU Boost</b><br>
 Gives 1 PU to the Philippines. You may wish to use this option if "Victory Cities Worth 1 PU", "ChineseMilitia", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Allies become too strong. <br>
@@ -27828,6 +27864,14 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.662<br>
+Fix Military Base to only place infantry. Fix no Military Base image for China. China may now capture Military Bases. 
+<br>
+<br>
+2.661<br>
+Change "German Boost" to Poland and Slovakia Hungary only. 
 <br>
 <br>
 2.659<br>
