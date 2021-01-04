@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.664"/>
+  <info name="Global 40 House Rules with Canada" version="2.665"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -13372,10 +13372,10 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_MorePUsSlovakia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_MorePUsSouthernGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentGermanBoost"/>
-      <option name="territories" value="Slovakia Hungary"/>
-      <option name="territoryProperty" value="production" count="4"/>
+      <option name="territories" value="Greater Southern Germany"/>
+      <option name="territoryProperty" value="production" count="5"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -31140,6 +31140,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.665<br>
+Fix German Boost.
 <br>
 <br>
 2.664<br>

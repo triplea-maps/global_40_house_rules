@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.664"/>
+  <info name="Global 40 House Rules" version="2.665"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -28501,6 +28501,10 @@ Modded for TripleA by b<br>
 <br>
 2.664<br>
 Fixes "NormandyTurnsProAllied_ChangerMustActivate" activating more than once. Mongolia now turns Russian after attacked. Decreases "Long Range Fighter" cost to 12 PUs. Adds "BB and CA 2 Shot", "Destroyer Cost 6", "Battleship Cost 18", "Carrier Cost 13", "Escort Carrier Cost 7" and "Cruiser Cost 11".
+<br>
+<br>
+2.665<br>
+Version change.
 <br>
 <br>
 2.663<br>
