@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.665"/>
+  <info name="Global 40 House Rules with Canada" version="2.671"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7135,11 +7135,24 @@
     <attachment name="Guerrillas" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
     </attachment>
+    <attachment name="GuerrillasInvert" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
+    </attachment>
+    <option name="invert" value="true"/>
     <attachment name="conditionAttachmentChinaInfantrySpawnBMOption" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="ChinaInfantrySpawnBM_ChangerMustActivate" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentChinaInfantrySpawnBMOptionInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="ChinaInfantrySpawnBM_ChangerMustActivate" count="1"/>
+      <option name="invert" value="true"/>
       </attachment>
       <attachment name="conditionAttachmentChinaInfantrySpawnBM" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentChinaInfantrySpawnBMOption:Guerrillas"/>
+      <option name="conditionType" value="OR"/> 
+      </attachment>
+      <attachment name="conditionAttachmentChinaInfantrySpawnBMInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentChinaInfantrySpawnBMOption:Guerrillas"/>
+      <option name="invert" value="true"/>
       <option name="conditionType" value="OR"/> 
       </attachment>
       
@@ -10655,7 +10668,7 @@
     </attachment>
     <attachment name="objectiveAttachment_Chinese_1_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="6"/>
-      <option name="conditions" value="ChinaMInvert:BMRulesInvert:conditionAttachmentJapaneseDoNotControlBurmaRoadBMInvert:conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
+      <option name="conditions" value="ChinaMInvert:BMRulesInvert:conditionAttachmentChinaInfantrySpawnBMInvert:conditionAttachmentJapaneseDoNotControlBurmaRoadBMInvert:conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
     </attachment>
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoadBMOption1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentBM_Rules:conditionAttachmentChinaInfantrySpawnBM"/>
@@ -10988,11 +11001,15 @@
     <attachment name="conditionAttachmentChineseMilitia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="ChineseMilitia" count="1"/>
     </attachment>
+    <attachment name="conditionAttachmentChineseMilitiaAAgun" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentChineseMilitia:ChinaAAgun"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
     <attachment name="conditionAttachmentMilitia_For_All" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="MilitiaForAll" count="1"/>
     </attachment>
     <attachment name="conditionAttachmentChineseMilitiaAAGunC4Invert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAAGunCost4ChangerInvert:AAgunC4Invert:conditionAttachmentChineseMilitia"/>
+      <option name="conditions" value="conditionAttachmentAAGunCost4ChangerInvert:AAgunC4Invert:conditionAttachmentChineseMilitiaAAgun"/>
     </attachment>
     <attachment name="conditionAttachmentChineseMilitiaAAGunC4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAAGunCost4Changer:ChinaAAgun"/>
@@ -11467,7 +11484,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Yunnan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Yunnan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Szechwan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11475,7 +11492,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Szechwan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Szechwan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Sikang" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11483,7 +11500,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Sikang_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Sikang" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hunan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11491,7 +11508,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hunan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Hunan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kweichow" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11499,7 +11516,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kweichow_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kweichow" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Tsinghai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11507,7 +11524,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Tsinghai_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Tsinghai" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shensi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11515,7 +11532,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shensi_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Shensi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hopei" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11523,7 +11540,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hopei_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Hopei" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kansu" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11531,7 +11548,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kansu_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kansu" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Suiyuyan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11539,7 +11556,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Suiyuyan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Suiyuyan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Chahar" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11547,7 +11564,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Chahar_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Chahar" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Anhwe" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11555,7 +11572,7 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Anhwe_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Anhwe" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:Japanese_infantry:Japanese_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_marine:Japanese_elite:Japanese_mobile_artillery" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentLLindiaJapanMinor" attachTo="Japanese" javaClass="RulesAttachment" type="player">
@@ -12612,7 +12629,7 @@
     <!-- Germans Triggers -->
     <attachment name="triggerAttachmentRedesignModGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:CruisersA4_GiveToAll:PacificIslandAndPU_Change:CanadaBoost:CanadaUnitBoost:CanadianNationalObjectives:ConvoyAndBlockade:RussianNationalObjectives:PrimitiveTerrain:Mobile_Artillery:CloseAirSupport"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:CruisersA4_GiveToAll:PacificIslandAndPU_Change:CanadaBoost:CanadaUnitBoost:CanadianNationalObjectives:ConvoyAndBlockade:PrimitiveTerrain:Mobile_Artillery:CloseAirSupport"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentBBandCAaa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -12657,6 +12674,15 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="FtrsA1D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Escorts Attack 1 and Interceptors Defend 2"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -13379,9 +13405,16 @@
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_MorePUsSlovakia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentGermanBoost"/>
+      <option name="territories" value="Slovakia Hungary"/>
+      <option name="territoryProperty" value="production" count="4"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_LessPUs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentPacificIslands"/>
-      <option name="territories" value="Rhodesia:Alberta Saskatchewan Manitoba:Kazakhstan"/>
+      <option name="territories" value="Rhodesia:Alberta Saskatchewan Manitoba:Kazakhstan:Evenkiyskiy"/>
       <option name="territoryProperty" value="production" count="0"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -14657,6 +14690,12 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentA0C5DDGermanAdd" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="placement" value="113 Sea Zone:destroyerC5" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachmentRedesignModRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -14860,6 +14899,12 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -15254,7 +15299,7 @@
     </attachment>
 
     <attachment name="triggerAttachment_ChangerRemoveSubSZ19" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
       <option name="placement" value="20 Sea Zone:submarine" count="1"/>
       <option name="removeUnits" value="19 Sea Zone:submarine" count="1"/>
       <option name="uses" value="1"/>
@@ -15388,6 +15433,12 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -15631,6 +15682,12 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachmentGermansBMinterceptorsAndEscorts" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BMRules"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
@@ -15710,6 +15767,12 @@
       <option name="productionRule" value="productionBritish:buyFighter_lr"/>
       <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentA0C5DDBritishAdd" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="placement" value="81 Sea Zone:destroyerC5" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
     </attachment>
  
     <!-- UK_Pacific Triggers -->
@@ -15976,6 +16039,12 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -16447,6 +16516,12 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachmentGermansBMinterceptorsAndEscorts" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BMRules"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
@@ -16893,16 +16968,6 @@
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
-    <attachment name="triggerAttachment_Chinese_AAGun" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentChineseMilitiaAAGunC4Invert"/>
-      <option name="placement" value="Szechwan:aaGun" count="1"/>                                           	              <option name="uses" value="1"/>
-      <option name="when" value="before:germansCombatMove"/>
-    </attachment>
-    <attachment name="triggerAttachment_Chinese_AAGunC4" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentChineseMilitiaAAGunC4"/>
-      <option name="placement" value="Szechwan:aaGunC4" count="1"/>                                           	              <option name="uses" value="1"/>
-      <option name="when" value="before:germansCombatMove"/>
-    </attachment>
     <attachment name="triggerAttachment_Chinese_PrimitiveTerrain" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentPrimitiveTerrain"/>
       <option name="placement" value="Szechwan:primitive" count="1"/>
@@ -16999,13 +17064,7 @@
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
     <attachment name="triggerAttachmentChineseAAgunC4" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentChineseMilitiaAAGunC4"/>
-      <option name="placement" value="Szechwan:aaGunC4" count="1"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="after:changerCombatMove"/>
-    </attachment>
-    <attachment name="triggerAttachmentChineseAAgunC4Redesign" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="Redesign"/>
+      <option name="conditions" value="conditionAttachmentChineseMilitiaAAGunC4"/>
       <option name="placement" value="Szechwan:aaGunC4" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
@@ -17641,6 +17700,12 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -19750,6 +19815,12 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -28267,6 +28338,7 @@
       <option name="relationshipChange" value="Italians:Mongolians:War"/>
       <option name="relationshipChange" value="Japanese:Mongolians:War"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
+      <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Mongolians:British:Friendly_Neutral"/>
       <option name="relationshipChange" value="Mongolians:UK_Pacific:Friendly_Neutral"/>
       <option name="relationshipChange" value="Mongolians:ANZAC:Friendly_Neutral"/>
@@ -30357,6 +30429,9 @@
       <boolean/>
       </property>
       <property name="Escorts and Interceptors A2D2" value="false" editable="true">
+	<boolean/>
+	</property>
+	<property name="Escorts Attack 1 and Interceptors Defend 2" value="false" editable="true">
       <boolean/>
       </property>
       <property name="USSR Lend Lease bonus for Japan declaring war on it" value="true" editable="true">
@@ -30470,6 +30545,8 @@ Bombers are now a A0 D0 M6 +1 w/AB C5 unit. They may perform SBR attacks only. T
 Due to the Japanese Bombers not being able to participate in regular combat, an Airfield is placed in Formosa, which allows the Formosa Fighter to be able to strike Yunnan Round 1. <br>
 <br>
 It also moves the 19 Sea Zone Sub and Destroyer to 20 Sea Zone. This allows the option of striking the British Battleship in 37 Sea Zone on a Round 1 Japanese Attack.<br>
+<br>
+Germany has a Destroyer placed in 113 Sea Zone and United Kingdom has a Destroyer placed in 81 Sea Zone. This compensates for the lack of Strategic Bombers in Round 1 Attacks.<br>
 <br>
 <b>Note</b><br>
 Even though they are A0 D0 for normal combat, they still produce a hitpoint. This is unintended and will be fixed in the future.<br>
@@ -30662,6 +30739,9 @@ This tech must be activated by each player in order for them to receive the tech
   <br>
   This tech must be activated by each player in order for them to receive the tech ability.<br>
   <br>
+May be given to all players via
+  "Map Options".<br>
+  <br>
   <b>3) "CruisersA4_GiveToAll"</b><br>
   Cruisers now receive a +1 Attack when paired 1:1 with a Battleship. Cruiser's Bombard attack is now "4" when paired with a Battleship .<br>
   <br>
@@ -30676,7 +30756,7 @@ Tech category <b>"Redesign"</b><br>
 <b>1) "PacificIslandAndPU_Change"</b><br>
 Gives all valueless Pacific Islands 1 PU when Japan is at war with any of the Western Allies. Must be at war to receive bonus.<br>
 Also gives 1 PU to the following: Poland, Malta, Crete, Cyprus, Gibraltar, Alexandria, Tobruk, Sardinia, Sicily, Nenetsia, Vyborg, Bessarabia, Turkmenistan, Iceland, Eastern Persia.<br>
-Removes 1 PU from: Ontario, Rhodesia and Alberta Saskatchewan Manitoba and Kazakhstan.<br>
+Removes 1 PU from: Ontario, Rhodesia, Alberta Saskatchewan Manitoba, Kazakhstan and Evenkiyskiy.<br>
 <br>
 Japans "Strategic_Defense_Perimeter" National Objective is replaced by "Strategic_Islands". They now receive 3 PUs for control of "Midway, Wake Island and Guam" when at war with ANY of the Western Allies. <br>
 <br>
@@ -30914,8 +30994,6 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "ConvoyAndBlockade"
 <br>
-"RussianNationalObjectives"
-<br>
 "PrimitiveTerrain"
 <br>
 "BBandCA_AA" Activated Round 2
@@ -30940,7 +31018,7 @@ Changes the control of Novgorod, Volgograd, Russia Objective to 3 PUs for German
 Adds the "BM Rules". Must Activate the "BM Vichy Rule" and "Chinese Guerrilla Fighters" separately. <br>
 <br>
 <b>4)German Boost</b><br>
-Gives 1 PU to Poland and Greater Southern Germany. You may wish to use this option if "Victory Cities Worth 1 PU", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Russia becomes too strong. <br>
+Gives 1 PU to Poland, Slovakia Hungary and Greater Southern Germany. You may wish to use this option if "Victory Cities Worth 1 PU", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Russia becomes too strong. <br>
 <br>
 <b>5)Philippines PU Boost</b><br>
 Gives 1 PU to the Philippines. You may wish to use this option if "Victory Cities Worth 1 PU", "ChineseMilitia", "RussianNationalObjectives", "RussiaNoAllies" or "PacificIslandAndPU_Change" is activated if you feel Allies become too strong. <br>
@@ -31141,6 +31219,29 @@ Also to everyone else who helped with their comments and ideas.<br>
 Modded for TripleA by b<br>
 <br>Change Log:
 <br>
+<br>
+2.671<br>
+Add DDC5 to Sea Zones 113 for Germany and 81 for United Kingdom when "Attack 0 Cost 5 Bomber" is Activated.
+<br>
+<br>
+2.67<br>
+Make China AA Guns Adhere to BM Rules.
+<br>
+<br>
+2.669<br>
+Fix Out Of Box China Burma Road Objective showing up when "Chinese Guerrilla Fighters" activated.
+<br>
+<br>
+2.668<br>
+Fix China AA Gun placing twice.
+<br>
+<br>
+2.667<br>
+Adds "InteceptorDefend2_GiveToAll"to Map Options.
+<br>
+<br>
+2.666<br>
+Give "Slovakia Hungary" 1 PU for "German Boost". Remove 1 PU from "Evenkiyskiy" when "PacificIslandAndPU_Change" activated. Make China and Russia "Allied" when Japan and Russia are at war and "Charles de Gaulle Neutrals Modified" activated. Remove "RussianNationalObjectives" from "Option Redesign" map option.<br>
 <br>
 2.665<br>
 Fix German Boost.
