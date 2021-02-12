@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.671"/>
+  <info name="Global 40 House Rules" version="2.672"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6889,6 +6889,12 @@
     <attachment name="ItalyControlsOriginal" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Italy Controls Original"/>
     </attachment>
+    <attachment name="ItalyBoost" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Italy Boost"/>
+    </attachment>
+    <attachment name="MongoliaBoost" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Mongolia Boost"/>
+    </attachment>
     <attachment name="BbCaAa" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Battleships and Cruisers AA Round 2"/>
     </attachment>
@@ -6965,6 +6971,10 @@
     <attachment name="Guerrillas" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
     </attachment>
+    <attachment name="GuerrillasInvert" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachmentChinaInfantrySpawnBMOption" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="ChinaInfantrySpawnBM_ChangerMustActivate" count="1"/>
       </attachment>
@@ -6998,6 +7008,9 @@
     <attachment name="conditionAttachmentCDGMODInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="CDGneutralsModified"/>
       <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="GermanyControlsFranceRD10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Germany 5 PU Controls France RD 10"/>
     </attachment>
     
     <attachment name="objectiveAttachment_Germans_1_Trade_with_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -7163,6 +7176,17 @@
       <option name="objectiveValue" value="-10"/>
       <option name="rounds" value="1-+"/>
       <option name="atWarPlayers" value="Russians:Americans:British:UK_Pacific:ANZAC:French" count="1" />
+    </attachment>
+    <attachment name="conditionAttachmentGermanyControlsFrance" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="France"/>
+    </attachment>
+    <attachment name="conditionAttachmentGermansControlFrance1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="GermanyControlsFranceRD10:conditionAttachmentGermanyControlsFrance"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Germany_Controls_France_RD_10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentGermansControlFrance1"/>
+      <option name="objectiveValue" value="5"/>
+      <option name="rounds" value="10-+"/>
     </attachment>
 
     <attachment name="conditionAttachment_Germans_Island_Attack" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10333,7 +10357,7 @@
       <option name="gameProperty" value="Primitive Terrain"/>
     </attachment>
     <attachment name="PrimitiveInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="gameProperty" value="Factory Limited"/>
+      <option name="gameProperty" value="Primitive Terrain"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentPrimitiveOption" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11666,7 +11690,7 @@
     <!-- Changer Triggers -->
     <attachment name="triggerAttachmentRedesignMod" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Attack0Cost5Bomber_ChangerMustActivate:SubsCanEvadeDestroyers_ChangerMustActivate:AAGunC4_ChangerMustActivate:Escort_Carrier_ChangerMustActivate:FlyingTiger_ChangerMustActivate:FactoryLimited_ChangerMustActivate:AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3:NormandyTurnsProAllied_ChangerMustActivate:SphereOfInfluence_ChangerMustActivate:GetCapitalCashOnce_ChangerMustActivate:BM_VichyRule_ChangerMustActivate:GermansInLondon5PU_ChangerMustActivate"/>
+      <option name="tech" value="Attack0Cost5Bomber_ChangerMustActivate:SubsCanEvadeDestroyers_ChangerMustActivate:AAGunC4_ChangerMustActivate:Escort_Carrier_ChangerMustActivate:FlyingTiger_ChangerMustActivate:FactoryLimited_ChangerMustActivate:NormandyTurnsProAllied_ChangerMustActivate:SphereOfInfluence_ChangerMustActivate:GetCapitalCashOnce_ChangerMustActivate:BM_VichyRule_ChangerMustActivate:GermansInLondon5PU_ChangerMustActivate:ChinaInfantrySpawnBM_ChangerMustActivate"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerSubsUnBlocked2" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -12517,6 +12541,34 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_ItalyBoostNorth" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ItalyBoost"/>
+      <option name="territories" value="Northern Italy"/>
+      <option name="territoryProperty" value="production" count="5"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ItalyBoostSouth" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="ItalyBoost"/>
+      <option name="territories" value="Southern Italy"/>
+      <option name="territoryProperty" value="production" count="4"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_MongoliaBoostDzavhan" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="MongoliaBoost"/>
+      <option name="territories" value="Dzavhan"/>
+      <option name="territoryProperty" value="production" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_MongoliaBoostUlaanbaatar" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="MongoliaBoost"/>
+      <option name="territories" value="Ulaanbaatar"/>
+      <option name="territoryProperty" value="production" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_GermanUnitBoost" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="BBandCA2Shot"/>
       <option name="placement" value="113 Sea Zone:destroyerC5" count="1"/>
@@ -12568,7 +12620,7 @@
     </attachment>
     <attachment name="triggerAttachment_LessPUs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentPacificIslands"/>
-      <option name="territories" value="Ontario:Rhodesia:Alberta Saskatchewan Manitoba:Kazakhstan:Evenkiyskiy"/>
+      <option name="territories" value="Ontario:Rhodesia:Alberta Saskatchewan Manitoba:Kazakhstan"/>
       <option name="territoryProperty" value="production" count="0"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -13943,12 +13995,25 @@
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_PrimitiveTerrain" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentPrimitiveTerrain"/>
+      <option name="conditions" value="GuerrillasInvert:conditionAttachmentPrimitiveTerrain"/>
       <option name="placement" value="Amur:primitive" count="1"/>
       <option name="placement" value="Urals:primitive" count="1"/>
       <option name="placement" value="Novosibirsk:primitive" count="1"/>
       <option name="placement" value="Siberia:primitive" count="1"/>      <option name="uses" value="1"/>
       <option name="placement" value="Kazakhstan:primitive" count="1"/>      <option name="uses" value="1"/>
+      <option name="placement" value="Sakha:primitive" count="1"/>
+      <option name="placement" value="Buryatia:primitive" count="1"/>
+      <option name="placement" value="Yenisey:primitive" count="1"/>
+      <option name="placement" value="Yakut S.S.R.:primitive" count="1"/>
+      <option name="placement" value="Evenkiyskiy:primitive" count="1"/>
+      <option name="placement" value="Timguska:primitive" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_PrimitiveTerrainGuerrillas" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Guerrillas:conditionAttachmentPrimitiveTerrain"/>
+      <option name="placement" value="Amur:primitive" count="1"/>
+      <option name="placement" value="Siberia:primitive" count="1"/>      
       <option name="placement" value="Sakha:primitive" count="1"/>
       <option name="placement" value="Buryatia:primitive" count="1"/>
       <option name="placement" value="Yenisey:primitive" count="1"/>
@@ -25799,7 +25864,7 @@
     <attachment name="rulesAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="AmurLL:conditionAttachmentRussianNationalObjectives"/>
       <option name="conditionType" value="OR"/>
-    <option name="movementRestrictionTerritories" value="6 Sea Zone:7 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone"/>
+    <option name="movementRestrictionTerritories" value="6 Sea Zone:7 Sea Zone:8 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone"/>
     <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
     <!-- Political Action Attachments -->
@@ -27733,7 +27798,13 @@
     <property name="German Boost" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Italy Boost" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Philippines PU Boost" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Mongolia Boost" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Sphere of Influence" value="false" editable="true">
@@ -27761,6 +27832,9 @@
       <boolean/>
     </property>
     <property name="Normandy Turns Pro Allied" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Germany 5 PU Controls France RD 10" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Flying Tigers" value="false" editable="true">
@@ -28236,6 +28310,9 @@ Adds the "Militia" unit for China. A0 D1 M1 C2. This helps China produce a few m
 Places a "Primitive" image in basically all of Asia, excepting most Costal Territories, and up to the Ural Mountains in Russia. When starting in a primitive territory, M2 units have their movement reduced to 1. Does not affect aircraft.<br>
 This helps slow Japan's push through China and discourages early Soviet Far East invasions.<br>
 <br>
+Evenkiyskiy, Urals and Kazakhstan do not receive a Primitive designation when "Chinese Guerrilla Fighters" is activated. This is to prevent Japan from being adversely affected when attacking Russia.
+<br>
+<br>
 May also be activated via <b>Map Options</b>.<br>
 <br>
 <b>3) "BBandCA_AA"</b><br>
@@ -28337,8 +28414,6 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "FactoryLimited_ChangerMustActivate"
 <br>
-"AdditionalVictoryCitiesWorthPUs_ChangerMustActivate" (Additional PUs Activate Round 3) 
-<br>
 "NormandyTurnsProAllied_ChangerMustActivate"
 <br>
 "Sphere of Influence_ChangerMustActivate"
@@ -28346,6 +28421,8 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 "GetCapitalCashOnce_ChangerMustActivate"
 <br>
 "GermansInLondon5PU_ChangerMustActivate"
+<br>
+"ChinaInfantrySpawnBM_ChangerMustActivate"w
 <br>
 "Elite_GiveToAll"
 <br>
@@ -28554,6 +28631,12 @@ Reduces the cost of Carrier to 13 PUs. This is for use if "BB and CA 2 Shot" is 
 Reduces the cost of Escort Carrier to 7 PUs. This is for use if "Carrier Cost 13" is activated.<br><br>
 <b>24)Cruiser Cost 11</b><br>
 Reduces the cost of Cruiser to 11 PUs. This is to help encourage Cruiser builds.<br><br>
+<b>25)Italy Boost</b><br>
+Gives +1 PU to Northern and Southern Italy.<br><br>
+<b>26)Mongolia Boost</b><br>
+Gives 1 PU to Dzavhan and Ulaanbaatar. Adds some incentive for Japan to attack Russia when "Primitive Terrain" is activated. Gives Russia a little mini boost at the same time.<br><br>
+<b>27)"Germany 5 PU Controls France RD 10"</b><br>
+Germany receives 5 PUs when it controls France round 10 and later.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -28574,6 +28657,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.672<br>
+Adds "Germany 5 PU Controls France RD 10". Fix Russia being able to move to 8 Sea Zone when not at war with Japan. Adds "Mongolia Boost". Adds "Italy Boost". Remove Primitive Terrain from Evenkiyskiy, Urals and Kazakhstan when "Chinese Guerrilla Fighters" is activated. Remove "AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3" from Map Option Redesign. Add "ChinaInfantrySpawnBM_ChangerMustActivate" to Map Option "Redesign". Add 1 PU to Evenkiyskiy  when "PacificIslandAndPU_Change" activated.
 <br>
 <br>
 2.671<br>
