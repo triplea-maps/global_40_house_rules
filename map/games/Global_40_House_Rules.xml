@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.672"/>
+  <info name="Global 40 House Rules" version="2.674"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7012,6 +7012,9 @@
     <attachment name="GermanyControlsFranceRD10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Germany 5 PU Controls France RD 10"/>
     </attachment>
+    <attachment name="NormandyOriginallyNeutral" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Normandy Original Owner Pro Neutral Allies"/>
+    </attachment>
     
     <attachment name="objectiveAttachment_Germans_1_Trade_with_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="GermanTradeWithRussia"/>
@@ -13874,6 +13877,20 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmentA0C5TacGermanAdd" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="placement" value="Romania:tactical_bomber" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentNormandyOriginallyNeutral" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="NormandyOriginallyNeutral"/>
+      <option name="territories" value="Normandy Bordeaux"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="originalOwner" count="Neutral_Allies"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachmentRedesignModRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -14972,6 +14989,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmentA0C5TacBritishAdd" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="placement" value="Newfoundland Labrador:tactical_bomber" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
     
     <!-- UK_Pacific Triggers -->
     <attachment name="triggerAttachment_UK_Pacific_Naval_Upgrade" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -15284,6 +15307,12 @@
       <option name="productionRule" value="productionItalians:buyFighter_lr"/>
       <option name="when" value="before:italiansPurchase"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentA0C5TacItalianAdd" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
+      <option name="placement" value="Sicily:tactical_bomber" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
     </attachment>
     
     <!-- ANZAC Triggers -->
@@ -27837,6 +27866,9 @@
     <property name="Germany 5 PU Controls France RD 10" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Normandy Original Owner Pro Neutral Allies" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Flying Tigers" value="false" editable="true">
       <boolean/>
     </property>
@@ -28001,7 +28033,9 @@ Due to the Japanese Bombers not being able to participate in regular combat, an 
 <br>
 It also moves the 19 Sea Zone Sub and Destroyer to 20 Sea Zone. This allows the option of striking the British Battleship in 37 Sea Zone on a Round 1 Japanese Attack.<br>
 <br>
-Germany has a Destroyer placed in 113 Sea Zone and United Kingdom has a Destroyer placed in 81 Sea Zone. This compensates for the lack of Strategic Bombers in Round 1 Attacks.<br>
+Germany has a Destroyer placed in 113 Sea Zone and United Kingdom has a Destroyer placed in 81 Sea Zone. This compensates for the lack of Strategic Bombers in Round 1 Attacks. Also adds German Tactical Bomber to Romania and British Tactical Bomber to Newfoundland Labrador.<br>
+<br>
+Italy has a Tactical bomber placed in Sicily.<br>
 <br>
 <b>Note</b><br>
 Even though they are A0 D0 for normal combat, they still produce a hitpoint. This is unintended and will be fixed in the future.<br>
@@ -28637,6 +28671,8 @@ Gives +1 PU to Northern and Southern Italy.<br><br>
 Gives 1 PU to Dzavhan and Ulaanbaatar. Adds some incentive for Japan to attack Russia when "Primitive Terrain" is activated. Gives Russia a little mini boost at the same time.<br><br>
 <b>27)"Germany 5 PU Controls France RD 10"</b><br>
 Germany receives 5 PUs when it controls France round 10 and later.<br><br>
+<b>28)"Normandy Original Owner Pro Neutral Allies"</b><br>
+When France is Liberated, Normandy Bordeaux will no longer turn French.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -28645,7 +28681,7 @@ Thanks to Black Elk for starting Redesign and Baron Munchausen for his number cr
 Thanks to LHoffman, CWO Marc, Argothair for their ideas and suggestions.<br>
 Wild Bill, Young Grasshopper, Narvik, KNP7765, Gamerman1, Der Kuenstler, oztea and all the others who contributed with their ideas and comments.<br>
 <br>
-Thanks to crazy_german, prastle, Frostion, Zim Zero, ZjelcoP, Red Baron, Cernel for xml help. pyt o torp for sub ideas.<br>
+Thanks to crazy_german, prastle, Frostion, Zim Zero, ZjelcoP, Red Baron, Cernel, wc_sumpton and General_Zod for xml help. pyt o torp for sub ideas.<br>
 <br>
 To P@nther, simon33 for GitHub help. Redrum, RoiEX, <b>ssoloff</b> and DanVanAtta for additional help.<br>
 <br>
@@ -28657,6 +28693,14 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.674 4/24/21<br>
+Adds "Normandy Original Owner Pro Neutral Allies".
+<br>
+<br>
+2.673<br>
+Adds German Tactical Bomber to Romania and British Tactical Bomber to Newfoundland Labrador and Italy has a Tactical Bomber placed in Sicily when "Attack0Cost5Bomber_ChangerMustActivate" is activated.
 <br>
 <br>
 2.672<br>
