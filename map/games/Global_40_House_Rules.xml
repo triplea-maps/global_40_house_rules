@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.674"/>
+  <info name="Global 40 House Rules" version="2.675"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6968,6 +6968,13 @@
     <attachment name="conditionAttachmentVictoryCitiesRD3redesign" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="conditions" value="conditionAttachmentVictoryCitiesRD3:conditionAttachmentVictoryCitiesRD3a"/>  
     </attachment>
+    <attachment name="VC+1RD3" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Victory Cities Worth 1 PU Round 3"/>
+    </attachment>
+    <attachment name="conditionAttachmentVictoryCitiesRD3MapOption" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentVictoryCitiesRD3redesign:VC+1RD3"/>
+      <option name="conditionType" value="AND"/>
+      </attachment>
     <attachment name="Guerrillas" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
     </attachment>
@@ -6987,6 +6994,14 @@
       <option name="invert" value="true"/>
       <option name="conditionType" value="OR"/> 
       </attachment>
+      <attachment name="JapanAttackOnRussia" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Japan Attacks Russia"/>
+      </attachment>
+      <attachment name="JapanAttackOnRussiaInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="gameProperty" value="Japan Attacks Russia"/>
+	<option name="invert" value="true"/>
+    </attachment>
+      
     <!-- German Objectives -->
     <attachment name="CDGneutralsModified" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Charles de Gaulle Neutrals Modified"/>
@@ -7002,11 +7017,20 @@
       <option name="gameProperty" value="Charles de Gaulle Neutrals Modified"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="conditionAttachmentCDGMOD" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachmentCDGMODr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="CDGneutralsModified"/>
     </attachment>
-    <attachment name="conditionAttachmentCDGMODInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachmentCDGMOD" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Redesign:CDGneutralsModified"/>
+      <option name="conditionType" value="OR"/>   
+    </attachment>
+    <attachment name="conditionAttachmentCDGMODInvertr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="CDGneutralsModified"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachmentCDGMODInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Redesign:CDGneutralsModified"/>
+      <option name="conditionType" value="OR"/>   
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="GermanyControlsFranceRD10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -7161,7 +7185,7 @@
       <option name="conditionType" value="OR"/> 
     </attachment>
     <attachment name="objectiveAttachment_Germans_VictoryCitiesWorth1PU" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
       <option name="conditionType" value="OR"/> 
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -7186,8 +7210,12 @@
     <attachment name="conditionAttachmentGermansControlFrance1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="GermanyControlsFranceRD10:conditionAttachmentGermanyControlsFrance"/>
     </attachment>
+    <attachment name="conditionAttachmentGermansControlFranceRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Redesign:conditionAttachmentGermanyControlsFrance"/>
+    </attachment>
     <attachment name="objectiveAttachment_Germany_Controls_France_RD_10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentGermansControlFrance1"/>
+      <option name="conditions" value="conditionAttachmentGermansControlFrance1:conditionAttachmentGermansControlFranceRedesign"/>
+      <option name="conditionType" value="OR"/>   
       <option name="objectiveValue" value="5"/>
       <option name="rounds" value="10-+"/>
     </attachment>
@@ -7289,7 +7317,7 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1" />
     </attachment>
     <attachment name="objectiveAttachment_Russians_VictoryCitiesWorth1PU" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -7903,7 +7931,7 @@
                                   <option name="rounds" value="4-+"/>
                                 </attachment>
       <attachment name="objectiveAttachment_Japanese_VictoryCitiesWorth1PU" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
 	<option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -8008,7 +8036,7 @@
       <option name="alliedOwnershipTerritories" value="Malta:Crete:Cyprus" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_British_VictoryCitiesWorth1PU" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -8593,7 +8621,7 @@
                                   
                                 </attachment>
       <attachment name="objectiveAttachment_UK_Pacific_VictoryCitiesWorth1PU" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
 	<option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -8608,7 +8636,8 @@
       <option name="alliedOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_Control_Original" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="ItalyControlsOriginal"/>
+      <option name="conditions" value="Redesign:ItalyControlsOriginal"/>
+      <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="original"/>
     </attachment>
@@ -8647,7 +8676,7 @@
       <option name="alliedOwnershipTerritories" value="Malta:Crete:Cyprus" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_VictoryCitiesWorth1PU" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9254,7 +9283,7 @@
                                   
                                 </attachment>
       <attachment name="objectiveAttachment_ANZAC_VictoryCitiesWorth1PU" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+	<option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
 	<option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9857,7 +9886,7 @@
                                   
                                 </attachment>
 				<attachment name="objectiveAttachment_Americans_VictoryCitiesWorth1PU" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-				  <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+				  <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
 				  <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -9933,7 +9962,7 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1" />
     </attachment>
 <attachment name="objectiveAttachment_French_VictoryCitiesWorth1PU" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-  <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+  <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
   <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -10033,7 +10062,7 @@
       <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_VictoryCitiesWorth1PU" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1"/>
+      <option name="conditions" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3redesign:VC+1:conditionAttachmentVictoryCitiesRD3MapOption"/>
       <option name="conditionType" value="OR"/>
       <option name="objectiveValue" value="1"/>
       <option name="directOwnershipTerritories" value="Russia:Ontario:Egypt:Eastern United States:Western United States:France:United Kingdom:Volgograd:Novgorod:India:Kwangtung:Philippines:Kiangsu:Japan:Hawaiian Islands:New South Wales:Iraq:Poland:Germany:Southern Italy:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Tunisia:Romania:Libya:Caroline Islands:Manchuria:Ukraine:French West Africa:Archangel:Greece" count="each"/>
@@ -11660,6 +11689,10 @@
     <attachment name="conditionAttachment_Russians_Conquer_Japanese_Territory_By_Mongolia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Russians:Japanese:any:currentRound:Manchuria:Jehol:Chahar:Suiyuyan:Kansu:Korea"/>
     </attachment>
+    <attachment name="conditionAttachment_Russians_Conquer_Japanese_Territory_By_MongoliaInvert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Russians:Japanese:any:currentRound:Manchuria:Jehol:Chahar:Suiyuyan:Kansu:Korea"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_Japanese_Conquer_Russians_Territory_By_MongoliaCDG" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:Russians:any:currentRound:Timguska:Yenisey:Yakut S.S.R.:Buryatia:Amur"/>
     </attachment>
@@ -11669,6 +11702,9 @@
     <attachment name="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Conquer_Russians_Territory_By_MongoliaCDG:conditionAttachment_Japanese_Conquer_Mongolians_Territory"/>
       <option name="conditionType" value="OR"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Conquer_Any_Russians_Territory" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Japanese:Russians:any:currentRound:Timguska:Yenisey:Yakut S.S.R.:Buryatia:Amur:Sakha:Soviet Far East:Siberia:Novosibirsk:Kazakhstan:Evenkiyskiy:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_have_units_in_China" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Shantung:Kwangsi:Kiangsi:Kiangsu:Jehol:Manchuria:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Kwangtung:Burma" count="1"/>
@@ -11694,6 +11730,11 @@
     <attachment name="triggerAttachmentRedesignMod" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
       <option name="tech" value="Attack0Cost5Bomber_ChangerMustActivate:SubsCanEvadeDestroyers_ChangerMustActivate:AAGunC4_ChangerMustActivate:Escort_Carrier_ChangerMustActivate:FlyingTiger_ChangerMustActivate:FactoryLimited_ChangerMustActivate:NormandyTurnsProAllied_ChangerMustActivate:SphereOfInfluence_ChangerMustActivate:GetCapitalCashOnce_ChangerMustActivate:BM_VichyRule_ChangerMustActivate:GermansInLondon5PU_ChangerMustActivate:ChinaInfantrySpawnBM_ChangerMustActivate"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentVCsRD3" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="VC+1RD3"/>
+      <option name="tech" value="AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerSubsUnBlocked2" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -11816,7 +11857,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ChangerVictoryCities" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3:VC+1"/>
+      <option name="trigger" value="conditionAttachmentVictoryCities:conditionAttachmentVictoryCitiesRD3:VC+1:VC+1RD3"/>
       <option name="conditionType" value="OR"/> 
       <option name="territories" value="French West Africa:Szechwan:Alaska:Malaya:Amur:New Zealand:British Columbia:New Britain:Yakut S.S.R.:Union of South Africa:Iceland:Norway:Greece:Romania:Libya:Caroline Islands:Manchuria:Ukraine:Iraq:Archangel:Tunisia"/>
       <option name="territoryProperty" value="victoryCity" count="1"/>
@@ -11856,43 +11897,56 @@
     <!-- Germans Triggers -->
     <attachment name="triggerAttachmentRedesignModGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:CruisersA4_GiveToAll:PacificIslandAndPU_Change:ConvoyAndBlockade:PrimitiveTerrain:Mobile_Artillery:CloseAirSupport"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll:PacificIslandAndPU_Change:ConvoyAndBlockade:PrimitiveTerrain:Mobile_Artillery:CloseAirSupport"/>
+      <option name="when" value="before:changerNonCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentRussianNOsRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Redesign"/>
+      <option name="tech" value="RussianNationalObjectives"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentBBandCAaa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn2OrHigher:Redesign"/>
       <option name="tech" value="BBandCA_AA"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentBBandBbCaAa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn2OrHigher:BbCaAa"/>
       <option name="tech" value="BBandCA_AA"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentMilitia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn3OrHigher:Redesign"/>
       <option name="tech" value="MilitiaForAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentmilitiA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn3OrHigher:militiA"/>
       <option name="tech" value="MilitiaForAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentBunkers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn3OrHigher:Redesign"/>
       <option name="tech" value="Bunkers"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentBnkrs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn3OrHigher:Bnkr"/>
       <option name="tech" value="Bunkers"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentGermansBMinterceptorsAndEscorts" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BMRules"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="FtrsA2D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11901,7 +11955,7 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA2D2"/>
       <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="FtrsA1D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11910,7 +11964,7 @@
     <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="FtrsA1D2"/>
       <option name="tech" value="InteceptorDefend2_GiveToAll"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="PlanesTrgtNavalRD2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11919,7 +11973,7 @@
     <attachment name="triggerAttachmentGermansPlanes_Target_Naval" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn2OrHigher:PlanesTrgtNavalRD2"/>
       <option name="tech" value="PlanesTargetNaval"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="PlanesTrgtCVsRD2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11928,7 +11982,13 @@
     <attachment name="triggerAttachmentGermansPlanes_Target_NavalCVs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn2OrHigher:PlanesTrgtCVsRD2"/>
       <option name="tech" value="PlanesTargetNavalCV"/>
-      <option name="when" value="before:germansPurchase"/>
+      <option name="when" value="before:changerNonCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansPlanes_Target_NavalCVsRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn2OrHigher:Redesign"/>
+      <option name="tech" value="PlanesTargetNavalCV"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentGermansEliteAT" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -12077,7 +12137,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_DestroyerC5" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentChangerSubsUnBlocked:DDC6Invert"/>
+      <option name="trigger" value="conditionAttachmentChangerSubsUnBlocked:RedesignInvert:DDC6Invert"/>
       <option name="productionRule" value="productionGermans:-buyDestroyer"/>
       <option name="productionRule" value="productionGermans:buyDestroyerC5"/>
       <option name="productionRule" value="productionRussians:-buyDestroyer"/>
@@ -12101,6 +12161,29 @@
     </attachment>
     <attachment name="triggerAttachment_DestroyerC6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentChangerSubsUnBlocked:DDC6"/>
+      <option name="productionRule" value="productionGermans:-buyDestroyer"/>
+      <option name="productionRule" value="productionGermans:buyDestroyerC6"/>
+      <option name="productionRule" value="productionRussians:-buyDestroyer"/>
+      <option name="productionRule" value="productionRussians:buyDestroyerC6"/>
+      <option name="productionRule" value="productionJapanese:-buyDestroyer"/>
+      <option name="productionRule" value="productionJapanese:buyDestroyerC6"/>
+      <option name="productionRule" value="productionAmericans:-buyDestroyer"/>
+      <option name="productionRule" value="productionAmericans:buyDestroyerC6"/>
+      <option name="productionRule" value="productionBritish:-buyDestroyer"/>
+      <option name="productionRule" value="productionBritish:buyDestroyerC6"/>
+      <option name="productionRule" value="productionUK_Pacific:-buyDestroyer"/>
+      <option name="productionRule" value="productionUK_Pacific:buyDestroyerC6"/>
+      <option name="productionRule" value="productionItalians:-buyDestroyer"/>
+      <option name="productionRule" value="productionItalians:buyDestroyerC6"/>
+      <option name="productionRule" value="productionANZAC:-buyDestroyer"/>
+      <option name="productionRule" value="productionANZAC:buyDestroyerC6"/>
+      <option name="productionRule" value="productionFrench:-buyDestroyer"/>
+      <option name="productionRule" value="productionFrench:buyDestroyerC6"/>
+      <option name="when" value="before:germansPurchase"/> 
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_DestroyerC6Redesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentChangerSubsUnBlocked:Redesign"/>
       <option name="productionRule" value="productionGermans:-buyDestroyer"/>
       <option name="productionRule" value="productionGermans:buyDestroyerC6"/>
       <option name="productionRule" value="productionRussians:-buyDestroyer"/>
@@ -12567,6 +12650,20 @@
     </attachment>
     <attachment name="triggerAttachment_MongoliaBoostUlaanbaatar" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="MongoliaBoost"/>
+      <option name="territories" value="Ulaanbaatar"/>
+      <option name="territoryProperty" value="production" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_MongoliaBoostDzavhanRedesign" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Redesign"/>
+      <option name="territories" value="Dzavhan"/>
+      <option name="territoryProperty" value="production" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_MongoliaBoostUlaanbaatarRedesign" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Redesign"/>
       <option name="territories" value="Ulaanbaatar"/>
       <option name="territoryProperty" value="production" count="1"/>
       <option name="when" value="after:changerCombatMove"/>
@@ -13745,7 +13842,7 @@
             <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_VenezuelaMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="conditions" value="conditionAttachmentCDGMOD"/>
       <option name="placement" value="Venezuela:infantry" count="3"/>
       <option name="placement" value="Venezuela:artillery" count="1"/>
       <option name="uses" value="1"/>
@@ -13788,7 +13885,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ArgentinaMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="conditions" value="conditionAttachmentCDGMOD"/>
       <option name="placement" value="Argentina:infantry" count="1"/>
       <option name="placement" value="Argentina:artillery" count="1"/>
       <option name="placement" value="Argentina:Neutral_Navy" count="1"/>
@@ -13796,7 +13893,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ChileMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="conditions" value="conditionAttachmentCDGMOD"/>
       <option name="placement" value="Chile:infantry" count="1"/>
       <option name="placement" value="Chile:artillery" count="1"/>
       <option name="uses" value="1"/>
@@ -13835,7 +13932,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_SwitzerlandMod" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="CDGneutralsModified"/>
+      <option name="conditions" value="conditionAttachmentCDGMOD"/>
       <option name="placement" value="Switzerland:infantry" count="2"/>
       <option name="placement" value="Switzerland:artillery" count="1"/>
       <option name="placement" value="Switzerland:aaGun" count="1"/>
@@ -13871,6 +13968,12 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansLongRangeFtrRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Redesign:conditionAttachmentTurn3OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyFighter_lr"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachmentA0C5DDGermanAdd" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAttack0Cost5BomberChanger"/>
       <option name="placement" value="113 Sea Zone:destroyerC5" count="1"/>
@@ -13891,11 +13994,20 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmentNormandyOriginallyNeutralRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Redesign"/>
+      <option name="territories" value="Normandy Bordeaux"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="originalOwner" count="Neutral_Allies"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachmentRedesignModRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -14423,7 +14535,8 @@
     </attachment>
     <attachment name="triggerAttachmentRedesignModJPN" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_Naval_Upgrade" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -14705,7 +14818,8 @@
     <!-- British Triggers -->
     <attachment name="triggerAttachmentRedesignModUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_British_3_No_Enemy_Submarines" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -15094,7 +15208,8 @@
     <!-- Italians Triggers -->
     <attachment name="triggerAttachmentRedesignModItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Italians_Naval_Upgrade" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -15318,7 +15433,8 @@
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachmentRedesignModANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -16003,10 +16119,28 @@
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
     <attachment name="triggerAttachmentChineseAAgunC4Redesign" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="Redesign"/>
+      <option name="conditions" value="Redesign"/>
       <option name="placement" value="Szechwan:aaGunC4" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentRedesignModChina" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Redesign"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA2D2" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA2D2"/>
+      <option name="tech" value="Escorts_Interceptors_A2D2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansInterceptorsAndEscortsA1D2" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FtrsA1D2"/>
+      <option name="tech" value="InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachmentGermansBMinterceptorsAndEscorts" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BMRules"/>
@@ -16023,7 +16157,8 @@
     <!-- Americans Triggers -->
     <attachment name="triggerAttachmentRedesignModUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_5_Presence_In_France" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -16823,7 +16958,8 @@
     <!-- French Triggers -->
     <attachment name="triggerAttachmentRedesignModFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign"/>
-      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll"/>
+      <option name="tech" value="Elite_GiveToAll:AirTransport_GiveToAll:InteceptorDefend2_GiveToAll"/>
+      <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
        <attachment name="conditionAttachmentDummyCondition" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -25434,7 +25570,7 @@
       <option name="changeOwnership" value="Ulaanbaatar:Mongolians:Russians:true"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_3" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentCDGMODInvert:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia"/>
+      <option name="conditions" value="JapanAttackOnRussiaInvert:conditionAttachmentCDGMODInvert:conditionAttachment_Russians_Conquer_Japanese_Territory_By_MongoliaInvert:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia"/>
       <option name="when" value="after:japaneseNonCombatMove"/>
       <option name="uses" value="1"/>  
       <option name="removeUnits" value="Ulaanbaatar:infantry" count="1"/>
@@ -25447,7 +25583,7 @@
       <option name="placement" value="Dzavhan:Russian_infantry" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_3CDG" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachmentMongoliaInfantry:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia"/>
+      <option name="conditions" value="JapanAttackOnRussiaInvert:conditionAttachmentCDGMOD:conditionAttachmentMongoliaInfantry:conditionAttachment_Russians_Conquer_Japanese_Territory_By_MongoliaInvert:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia"/>
       <option name="when" value="after:japaneseNonCombatMove"/>
       <option name="uses" value="1"/>  
       <option name="removeUnits" value="Ulaanbaatar:infantry" count="1"/>
@@ -25477,6 +25613,19 @@
       <option name="placement" value="Olgiy:Russian_infantry" count="2"/>
       <option name="placement" value="Dzavhan:Russian_infantry" count="1"/>
   </attachment>
+  <attachment name="triggerAttachment_Any_Japanese_Attack_On_Russians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="JapanAttackOnRussia:conditionAttachment_Russians_Conquer_Japanese_Territory_By_MongoliaInvert:conditionAttachmentMongoliaInfantry:conditionAttachment_Japanese_Conquer_Any_Russians_Territory"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>  
+      <option name="removeUnits" value="Ulaanbaatar:infantry" count="1"/>
+      <option name="removeUnits" value="Buyant-Uhaa:infantry" count="2"/>
+      <option name="removeUnits" value="Olgiy:infantry" count="2"/>
+      <option name="removeUnits" value="Dzavhan:infantry" count="1"/>
+      <option name="placement" value="Ulaanbaatar:Russian_infantry" count="1"/>
+      <option name="placement" value="Buyant-Uhaa:Russian_infantry" count="2"/>
+      <option name="placement" value="Olgiy:Russian_infantry" count="2"/>
+      <option name="placement" value="Dzavhan:Russian_infantry" count="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMODInvert:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
       <option name="when" value="after:japaneseBattle"/>
@@ -25495,6 +25644,22 @@
     </attachment>
     <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_1CDG" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="uses" value="1"/>
+      <option name="relationshipChange" value="Russians:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="British:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Chinese:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Dutch:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Neutral_Allies:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="activateTrigger" value="triggerAttachment_Allies_Friendly_With_Mongolians:1:true:true:false:false"/>
+      <option name="activateTrigger" value="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_2:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Conquer_Any_Russians_Territory_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="JapanAttackOnRussia:conditionAttachment_Japanese_Conquer_Any_Russians_Territory:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
       <option name="when" value="after:japaneseBattle"/>
       <option name="uses" value="1"/>
       <option name="relationshipChange" value="Russians:Mongolians:anyNeutral:Friendly_Neutral"/>
@@ -26054,7 +26219,7 @@
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
     <attachment name="politicalActionAttachment_British_To_War_With_True_Neutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="CDGneutralsModified:conditionAttachment_British_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_British_Not_Yet_At_War_With_True_Neutrals"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
       <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
       <option name="relationshipChange" value="ANZAC:Neutral_True:War"/>
@@ -26091,7 +26256,7 @@
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
     <attachment name="politicalActionAttachment_French_To_War_With_True_Neutrals" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="CDGneutralsModified:conditionAttachment_French_Not_Yet_At_War_With_True_Neutrals"/>
+      <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_French_Not_Yet_At_War_With_True_Neutrals"/>
       <option name="relationshipChange" value="French:Neutral_True:War"/>
       
       <!-- France declaring war on Strict Neutrals does not flip Mongolians -->
@@ -27815,6 +27980,9 @@
     <property name="Victory Cities Worth 1 PU" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Victory Cities Worth 1 PU Round 3" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="China AA Gun" value="false" editable="true">
       <boolean/>
     </property>
@@ -27923,7 +28091,10 @@
       <property name="Escorts Attack 1 and Interceptors Defend 2" value="false" editable="true">
       <boolean/>
       </property>
-      <property name="USSR Lend Lease bonus for Japan declaring war on it" value="true" editable="true">
+      <property name="USSR Lend Lease bonus for Japan declaring war on it" value="false" editable="true">
+      <boolean/>
+      </property>
+      <property name="Japan Attacks Russia" value="false" editable="true">
       <boolean/>
       </property>
       <property name="USA bonus for North Africa" value="true" editable="true">
@@ -28440,6 +28611,8 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "SubsCanEvadeDestroyers_ChangerMustActivate"
 <br>
+"Destroyer Cost 6"
+<br>
 "AAGunC4_ChangerMustActivate"
 <br>
 "Escort_Carrier_ChangerMustActivate"
@@ -28449,6 +28622,10 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 "FactoryLimited_ChangerMustActivate"
 <br>
 "NormandyTurnsProAllied_ChangerMustActivate"
+<br>
+"Germany 5 PU Controls France RD 10"
+<br>
+"Normandy Original Owner Pro Neutral Allies"
 <br>
 "Sphere of Influence_ChangerMustActivate"
 <br>
@@ -28460,15 +28637,21 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 <br>
 "Elite_GiveToAll"
 <br>
+"China AA Gun"
+<br>
 "AirTransport_GiveToAll"
 <br>
 "PacificIslandAndPU_Change"
+<br>
+"RussianNationalObjectives"
 <br>
 "ConvoyAndBlockade"
 <br>
 "PrimitiveTerrain"
 <br>
 "BBandCA_AA" Activated Round 2
+<br>
+"PlanesTargetNavalCV" Activated Round 2
 <br>
 "Mobile_Artillery"
 <br>
@@ -28479,6 +28662,16 @@ Adds a lot of the House Rules discussed in the "Redesign Thread" noted below. Th
 "BM Vichy Rule"
 <br>
 "Bunkers" Activated Round 3
+<br>
+"Escorts Attack 1 and Interceptors Defend 2"
+<br>
+"Italy Controls Original"
+<br>
+"Charles de Gaulle Neutrals Modified"
+<br>
+"Long Range Fighter Round 3"
+<br>
+"Mongolia Boost"
 <br>
 <br>
 There are currently No Victory Conditions for this Option.<br>
@@ -28615,6 +28808,9 @@ Mongolia (use OOB rules for this one)<br>
 Portugal: Portugal, Portuguese Giunea, Angola, Mozambique<br>
 Spain: Spain, Rio de Oro<br>
 <br>
+<b>NOTE</b><br>
+If Russia attacks Amur or Korea and the Japanese then Declare War on Mongolia, the Mongolian Infantry will immediately turn Russian <b>BUT</b> the Territories will become Pro Allied. <br>
+<br>
 The new neutral setup is:<br>
 <br>
 Venezuela: 6 infantry<br>
@@ -28673,6 +28869,10 @@ Gives 1 PU to Dzavhan and Ulaanbaatar. Adds some incentive for Japan to attack R
 Germany receives 5 PUs when it controls France round 10 and later.<br><br>
 <b>28)"Normandy Original Owner Pro Neutral Allies"</b><br>
 When France is Liberated, Normandy Bordeaux will no longer turn French.<br><br>
+<b>29)"China AA Gun"</b><br>
+Adds an AA Gun to Szechwan.<br><br>
+<b>30)"Japan Attacks Russia"</b><br>
+Unless Russia attacks Japan first, not just a DOW, <b>ANY</b> Japanese attack activates Mongolia.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
@@ -28693,6 +28893,19 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.675 5/3/21<br>
+Adds "AdditionalVictoryCitiesWorthPUs_ChangerMustActivateRD3 to Map Options". Adds "Planes Target Carriers Round 2" to Option Redesign. Remove "CruisersA4_GiveToAll" from Option Redesign.
+<br>
+<br>
+ Adds "China AA Gun" to Option Redesign. Adds documentation for China AA Gun. Adds "Destroyer Cost 6" to Option Redesign.  Deactivate "USSR Lend Lease bonus for Japan declaring war on it".
+<br> 
+<br>
+Also adds "RussianNationalObjectives", "Germany 5 PU Controls France RD 10", "Normandy Original Owner Pro Neutral Allies", "Escorts Attack 1 and Interceptors Defend 2", "Italy Controls Original", "Charles de Gaulle Neutrals Modified", "Long Range Fighter Round 3" and "Mongolia Boost" to Option Redesign.
+<br>
+<br>
+Fix Incorrect Russian Infantry placement in Mongolia when Russia attacks Amur. Add "Japan Attacks Russia" to Map Options.
 <br>
 <br>
 2.674 4/24/21<br>
