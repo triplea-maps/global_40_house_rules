@@ -1,0 +1,4 @@
+map_name: global_40_house_rules
+games:
+- {game_name: Global 40 House Rules with Canada, file_name: Global_40_House_Rules_Canada.xml}
+- {game_name: Global 40 House Rules, file_name: Global_40_House_Rules.xml}
