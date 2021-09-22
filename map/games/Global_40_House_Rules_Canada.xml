@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.676"/>
+  <info name="Global 40 House Rules with Canada" version="2.677"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -18325,6 +18325,19 @@
       <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
       <option name="playerProperty" value="switch" count="false"/>
     </attachment>
+	<attachment name="French_BB_SZ_92_Option" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Vichy Rule French Battleship Sea Zone 92"/>
+    </attachment>
+    <attachment name="conditionAttachmentVichyCheckFrenchBBSZ92" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="French_BB_SZ_92_Option:Vichy"/>
+      <option name="conditionType" value="AND"/>
+    </attachment>
+    <attachment name="triggerAttachment_Place_French_BB_SZ_92" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentVichyCheckFrenchBBSZ92"/>
+      <option name="placement" value="92 Sea Zone:battleship"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:gameInitDelegate"/>
+    </attachment>
     <!-- Vichy Fleet -->
     <attachment name="conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="93 Sea Zone" count="1"/>
@@ -18407,7 +18420,410 @@
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Cruiser_Remove:1:true:true:false:false"/>
     </attachment>
-    
+    <!-- Vichy Mers-el-Kebir Fleet -->
+    <attachment name="conditionAttachment_92_Sea_Zone_No_British_Units_1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:92 Sea Zone"/>
+      <option name="unitPresence" value="1:submarine:destroyer:cruiser:battleship:carrier"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_92_Sea_Zone_No_American_Units_1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:92 Sea Zone"/>
+      <option name="unitPresence" value="1:submarine:destroyer:cruiser:battleship:carrier"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_92_Sea_Zone_No_Russian_Units_1" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:92 Sea Zone"/>
+      <option name="unitPresence" value="1:submarine:destroyer:cruiser:battleship:carrier"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_92_Sea_Zone_No_ANZAC_Units_1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:92 Sea Zone"/>
+      <option name="unitPresence" value="1:submarine:destroyer:cruiser:battleship:carrier"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_Allied_Units_In_92_Sea_Zone" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_92_Sea_Zone_No_British_Units_1:conditionAttachment_92_Sea_Zone_No_American_Units_1:conditionAttachment_92_Sea_Zone_No_ANZAC_Units_1:conditionAttachment_92_Sea_Zone_No_Russian_Units_1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Yes_Allied_Units_In_92_Sea_Zone" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Allied_Units_In_92_Sea_Zone"/>
+      <option name="invert" value="true"/>
+    </attachment>  
+    <attachment name="conditionAttachment_Fleet_Can_Turn_Vichy_Battleship" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="92 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Fleet_Can_Turn_Vichy_Battleship_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="92 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Axis_Conquer_All_France_Battleship_Remove" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+    </attachment>
+    <attachment name="triggerAttachment_Axis_Conquer_All_France_Battleship_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Allied_Units_In_92_Sea_Zone:conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Battleship"/>
+      <option name="placement" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Axis_Conquer_All_France_Battleship_Sunk" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Yes_Allied_Units_In_92_Sea_Zone:conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Battleship"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Axis_Conquer_All_France_Battleship_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Allied_Units_In_92_Sea_Zone:conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Battleship_2"/>
+      <option name="placement" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Axis_Conquer_All_France_Battleship_Sunk_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Yes_Allied_Units_In_92_Sea_Zone:conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Battleship_2"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <!-- Vichy Dakar Port Fleet & French West Africa -->
+    <attachment name="conditionAttachment_Algeria_No_British_Units_1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Algeria_No_American_Units_1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Algeria_No_Russian_Units_1" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Algeria_No_ANZAC_Units_1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_Allied_Units_In_Algeria" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Algeria_No_British_Units_1:conditionAttachment_Algeria_No_American_Units_1:conditionAttachment_Algeria_No_ANZAC_Units_1:conditionAttachment_Algeria_No_Russian_Units_1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Algeria_No_German_Units_1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Algeria_No_Italian_Units_1" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Algeria_No_Japanese_Units_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Algeria"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_Axis_Units_In_Algeria" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Algeria_No_German_Units_1:conditionAttachment_Algeria_No_Italian_Units_1:conditionAttachment_Algeria_No_Japanese_Units_1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Yes_Axis_Units_In_Algeria" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Axis_Units_In_Algeria"/>
+      <option name="invert" value="true"/>
+    </attachment>  
+    <attachment name="conditionAttachment_Southern_France_No_German_Units_1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_Italian_Units_1" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_Japanese_Units_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_Axis_Units_In_Southern_France" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Southern_France_No_German_Units_1:conditionAttachment_Southern_France_No_Italian_Units_1:conditionAttachment_Southern_France_No_Japanese_Units_1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Yes_Axis_Units_In_Southern_France" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Axis_Units_In_Southern_France"/>
+      <option name="invert" value="true"/>
+    </attachment>  
+    <attachment name="conditionAttachment_French_West_Africa_Vichy_Controlled" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="French West Africa" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="92 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Axis_Occupy_Algeria" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Allied_Units_In_Algeria:conditionAttachment_Yes_Axis_Units_In_Algeria"/>
+      <option name="conditionType" value="AND"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_West_Africa_Can_Turn_Neutral_Allies" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Occupy_Algeria:conditionAttachment_French_West_Africa_Vichy_Controlled:conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship:conditionAttachment_No_Axis_Units_In_Southern_France"/>
+      <option name="conditionType" value="AND"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_West_Africa_Can_Turn_Neutral_Allies_Infantry" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French West Africa" count="1"/>
+      <option name="unitPresence" value="infantry" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Algeria_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Algeria_Infantry_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Can_Turn_Neutral_Allies"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Italy_Occupies_Algeria_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Algeria_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Algeria_Battleship_Neutral_Allies_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Axis_Units_In_Southern_France:conditionAttachment_Axis_Occupy_Algeria:conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Italy_Occupies_Algeria_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Algeria_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Algeria_Infantry_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Can_Turn_Neutral_Allies"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Germany_Occupies_Algeria_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Algeria_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Algeria_Battleship_Neutral_Allies_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_No_Axis_Units_In_Southern_France:conditionAttachment_Axis_Occupy_Algeria:conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Germany_Occupies_Algeria_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Battleship_FWA_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Battleship_FWA_Infantry_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Vichy_Controlled:conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship:conditionAttachment_Yes_Axis_Units_In_Southern_France"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Italy_Occupies_Southern_France_Battleship_FWA_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Battleship_FWA_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Battleship_FWA_Battleship_Neutral_Allies_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship:conditionAttachment_Yes_Axis_Units_In_Southern_France"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Italy_Occupies_Southern_France_Battleship_FWA_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Battleship_FWA_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Battleship_FWA_Infantry_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Vichy_Controlled:conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship:conditionAttachment_Yes_Axis_Units_In_Southern_France"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Germany_Occupies_Southern_France_Battleship_FWA_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Battleship_FWA_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Battleship_FWA_Battleship_Neutral_Allies_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship:conditionAttachment_Yes_Axis_Units_In_Southern_France"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Germany_Occupies_Southern_France_Battleship_FWA_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="conditionAttachment_Allies_Conquer_Morocco_And_Algeria" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="Morocco:Algeria"/>
+    </attachment>
+    <attachment name="conditionAttachment_Allies_Occupy_French_West_Africa" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="French West Africa"/>
+    </attachment>
+    <attachment name="conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship_French" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="87 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Fleet_Can_Turn_Neutral_Axis_Battleship_French" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="87 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_West_Africa_Can_Turn_French_Infantry" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French West Africa" count="1"/>
+      <option name="unitPresence" value="infantry" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_West_Africa_Can_Turn_French" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Allies_Conquer_Morocco_And_Algeria:conditionAttachment_Fleet_Can_Turn_Neutral_Allies_Battleship_French"/>
+      <option name="conditionType" value="AND"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Allies_Infantry_Remove" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:frenchPolitics"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Allies_Infantry_Place" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Can_Turn_French_Infantry:conditionAttachment_French_West_Africa_Can_Turn_French"/>
+      <option name="placement" value="French West Africa:marine"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Allies_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Allies_Battleship_Remove" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Allies_Battleship_Place" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Can_Turn_French"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Allies_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Vichy_Southern_France_Neutral_Axis_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Vichy_Southern_France_Neutral_Allies_Battleship_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Yes_Axis_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Neutral_Axis_Battleship_French"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Italy_Occupies_Vichy_Southern_France_Neutral_Axis_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Vichy_Southern_France_Neutral_Axis_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Vichy_Southern_France_Neutral_Allies_Battleship_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Yes_Axis_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Neutral_Axis_Battleship_French"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Germany_Occupies_Vichy_Southern_France_Neutral_Axis_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_West_Africa_Yes_Neutral_Allies" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French West Africa" count="1"/>
+      <option name="unitPresence" value="infantry" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_French_West_Africa_Turns_Neutral_Allies_2" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_West_Africa_Yes_Neutral_Allies"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="changeOwnership" value="French West Africa:Neutral_Axis:French:true"/>
+      <option name="changeOwnership" value="French West Africa:French:Neutral_Allies:true"/>
+    </attachment>
+	<attachment name="conditionAttachment_Sea_Zone_87_Fleet_Can_Turn_Neutral_Allies_Battleship_Neutral_Axis" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="87 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_FWA_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_FWA_Infantry_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Sea_Zone_87_Fleet_Can_Turn_Neutral_Allies_Battleship_Neutral_Axis:conditionAttachment_French_West_Africa_Vichy_Controlled:conditionAttachment_Yes_Axis_Units_In_Southern_France"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Italy_Occupies_Southern_France_FWA_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_FWA_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germany_Occupies_Southern_France_FWA_Infantry_Place" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Sea_Zone_87_Fleet_Can_Turn_Neutral_Allies_Battleship_Neutral_Axis:conditionAttachment_French_West_Africa_Vichy_Controlled:conditionAttachment_Yes_Axis_Units_In_Southern_France"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Germany_Occupies_Southern_France_FWA_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="conditionAttachment_Sea_Zone_92_Fleet_Can_Turn_Neutral_Axis_Battleship_French" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="92 Sea Zone" count="1"/>
+      <option name="unitPresence" value="battleship" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Neutral_Axis_French_West_Africa_Can_Turn_French_Infantry" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French West Africa" count="1"/>
+      <option name="unitPresence" value="infantry" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Neutral_Axis_French_West_Africa_Can_Turn_French" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Allies_Conquer_Morocco_And_Algeria:conditionAttachment_Sea_Zone_92_Fleet_Can_Turn_Neutral_Axis_Battleship_French"/>
+      <option name="conditionType" value="AND"/>
+    </attachment>
+	<attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_FWA_Neutral_Allies_Switch" attachTo="Neutral_Allies" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Allies_Conquer_Morocco_And_Algeria:conditionAttachment_Sea_Zone_92_Fleet_Can_Turn_Neutral_Axis_Battleship_French"/>
+      <option name="when" value="before:frenchPolitics"/>
+      <option name="uses" value="1"/>
+	  <option name="changeOwnership" value="French West Africa:Neutral_Axis:French:true"/>
+      <option name="changeOwnership" value="French West Africa:French:Neutral_Allies:true"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Axis_Infantry_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="French West Africa:infantry"/>
+      <option name="when" value="after:frenchPolitics"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Axis_Infantry_Place" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Axis_French_West_Africa_Can_Turn_French_Infantry:conditionAttachment_Neutral_Axis_French_West_Africa_Can_Turn_French"/>
+      <option name="placement" value="French West Africa:marine"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Axis_Infantry_Remove:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Axis_Battleship_Remove" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_False"/>
+      <option name="removeUnits" value="92 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+    </attachment>
+    <attachment name="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Axis_Battleship_Place" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Allies_Conquer_Morocco_And_Algeria:conditionAttachment_Sea_Zone_92_Fleet_Can_Turn_Neutral_Axis_Battleship_French"/>
+      <option name="placement" value="87 Sea Zone:battleship"/>
+      <option name="when" value="after:frenchPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="activateTrigger" value="triggerAttachment_Allies_Occupy_French_North_Africa_Neutral_Axis_Battleship_Remove:1:true:true:false:false"/>
+    </attachment>
     <!-- Vichy Morocco -->
     <attachment name="conditionAttachment_Morocco_No_British_Units" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Morocco" count="1"/>
@@ -30584,6 +31000,9 @@
     <property name="BM Vichy Rule" value="false" editable="true">
       <boolean/>
     </property>
+	<property name="Vichy Rule French Battleship Sea Zone 92" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Chinese Guerrilla Fighters" value="false" editable="true">
       <boolean/>
     </property>
@@ -31546,6 +31965,9 @@ Adds an AA Gun to Szechwan.<br><br>
 Unless Russia attacks Japan first, not just a DOW, <b>ANY</b> Japanese attack activates Mongolia.<br><br>
 Most of these house rules are discussed in this thread: www.axisandallies.org/forums/index.php?topic=36518.0 started by Black_Elk. They are also discussed here: www.axisandallies.org/forums/index.php?topic=34568.30<br>
 <br>
+<b>33)"Vichy Rule French Battleship Sea Zone 92"</b><br>
+A French Battleship is added to Sea Zone 92 at game setup. To be used when Vichy Rules are active. Explained after the BM Rules below.<br>
+<br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
 <br>
 Thanks to simon33 for doing the original Canada mod.<br>
@@ -31565,6 +31987,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.677<br> 9/17/21<br>
+Adds "Vichy Rule French Battleship Sea Zone 92" to map options.
 <br>
 <br>
 2.676<br> 5/22/21<br>
@@ -31904,6 +32330,57 @@ Fly-over restrictions applicable to other Neutral territories do not apply to Vi
 <br><br>
 <b>Liberation of France:</b> The Allied liberation of France effectively terminates the Armistice. Any territory and forces still under Vichy French control (including any surviving fleet in sz 93) revert back to Free French control. The Vichy French forces in the Southern France and sz 93 will also revert back if Southern France is liberated by the Free French. 
 
+<br><br>
+<b>**FRENCH BATTLESHIP IN SEA ZONE 92 OPTION**</b>
+<br><br>
+The following rule-set adds to the circumstances and strategic consequences surrounding the Franco-German Armistice by simulating various scenarios based on the French fleet at Mers-el-Kebir.  It is intended for play with the Vichy rule-set active to add an element of balance and trade offs for both sides with historical and realistic consequences depending on the actions taken.
+<br><br>
+If the Vichy conditions are not attained by France's first turn then the battleship can be moved freely as a French unit.  
+<br><br>
+<b>Game Conditions for French Battleship Scenarios</b> 
+<br><br>
+At the beginning of France's turn, the following conditions create scenario paths if met and are in addition to the Franco-German Armistice taking place:
+<br><br>
+1. Axis have eliminated the French battleship; or<br>
+2. Allied ship(s) share Sea Zone 92 with the French battleship; or<br>
+3. The French battleship resides alone in Sea Zone 92.
+<br><br>
+<b>Game Consequences for Respective French Battleship Scenarios</b>
+<br><br>
+1. The Vichy rule-set will have no additional changes; or<br>
+2. The historical attack by the British on Mers-el-Kebir is assumed to have taken place. The surviving French fleet will move to Sea Zone 87 off of the port of Dakar in French West Africa and act defensively as a Pro-Axis neutral battleship; or<br>
+3. The French battleship will convert to a Pro-Axis neutral battleship and continue to reside in Sea Zone 92 with normal game mechanics.
+<br><br>
+<b>Further Game Conditions for Scenario Paths 2 & 3</b> 
+<br><br>
+Immediately upon these conditions being met new paths will take place:
+<br><br>
+2/3a. Allies have eliminated the Pro-Axis neutral battleship; or<br>
+2/3b. Axis have occupied Southern France while the Pro-Axis neutral battleship still remains on the board; or<br>
+3c. Axis have occupied Algeria while the Pro-Axis neutral battleship still remains on the board.
+<br><br>
+<b>Further Game Consequences for Respective Scenario Paths 2 & 3</b>
+<br><br>
+2/3a. The Vichy rule-set will have no additional changes and the battleship and its triggers are completely removed from the game; or<br>
+2/3b. The battleship will convert to a Pro-Allies neutral battleship and locate to Sea Zone 87. French West Africa and the infantry unit will also convert to being Pro-Allies neutral if still Pro-Axis: or<br>
+3c. Same result as 2/3b but only works for path 3.
+<br><br>
+<b>Additional Game Conditions for French North Africa</b> 
+<br><br>
+Checked at the beginning of France's turn while the battleship still remains in play:
+<br><br>
+i. The battleship is Pro-Allies in Sea Zone 87 or Pro-Axis in Sea Zone 92;<br>
+ii. French West Africa is not yet owned by a power at war; and<br>
+iii. The Allies control both Morocco and Algeria.
+<br><br>
+<b>Additional Game Consequences for French North Africa</b>
+<br><br>
+i. The battleship will convert to a Free French battleship and locate to Sea Zone 87;<br>
+ii. The infantry unit in French West Africa will convert to a Free French marine;<br>
+iii. French West Africa will convert to Pro-Allies if it was not already; and<br>
+vi. These units will not be able to move this turn and will act defensively until commands are given on France's next turn.
+
+<br><br>
 
 <br><br>
 
