@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.678"/>
+  <info name="Global 40 House Rules with Canada" version="2.7"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1223,7 +1223,7 @@
     <player name="Neutral_Allies" optional="true"/>
     <player name="Neutral_True" optional="true"/>
     <!-- Alliances -->
-    <alliance player="Changer" alliance="Changer"/>
+    <alliance player="Changer" alliance="Axis"/>
     <alliance player="Russians" alliance="Allies"/>
     <alliance player="Americans" alliance="Allies"/>
     <alliance player="Chinese" alliance="Allies"/>
@@ -1301,11 +1301,16 @@
     <unit name="cruiser"/>
     <unit name="cruiser11"/>
     <unit name="carrier"/>
+	<unit name="carrier2RP"/>
+    <unit name="carrier2RP_BB_Hull"/>
+	<unit name="carrier_hull"/>
     <unit name="EscortCarrier"/>
     <unit name="EscortCarrierASW"/>
     <unit name="battleship"/>
     <unit name="battleship-damaged"/>
     <unit name="battleshipC18"/>
+    <unit name="battleship2RP"/>
+    <unit name="battleship_hull"/>
     <unit name="submarineX"/>
     <unit name="destroyerX"/>
     <unit name="destroyerC5X"/>
@@ -1327,6 +1332,7 @@
     <unit name="Russian_aaGunC4"/>
     <unit name="airfield"/>
     <unit name="airfield12"/>
+	<unit name="drydock"/>
     <unit name="harbour"/>
     <unit name="harbour12"/>
     <unit name="factory_minor"/>
@@ -1797,6 +1803,18 @@
       <cost resource="PUs" quantity="13"/>
       <result resourceOrUnit="carrier" quantity="1"/>
     </productionRule>
+	<productionRule name="buyCarrier2RP">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="carrier" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyCarrier2RP_BB_Hull">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="carrier2RP_BB_Hull" quantity="1"/>
+    </productionRule>
+	<productionRule name="buyCarrierHull">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="carrier_hull" quantity="1"/>
+    </productionRule>
     <productionRule name="buyEscortCarrierX">
     <cost resource="PUs" quantity="8" />
     <result resourceOrUnit="EscortCarrier" quantity="1"/>
@@ -1829,6 +1847,14 @@
       <cost resource="PUs" quantity="18"/>
       <result resourceOrUnit="battleship" quantity="1"/>
     </productionRule>
+	<productionRule name="buyBattleship2RP">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="battleship" quantity="1"/>
+    </productionRule>
+	<productionRule name="buyBattleshipHull">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="battleship_hull" quantity="1"/>
+    </productionRule>
     <productionRule name="buySubmarineX">
       <cost resource="PUs" quantity="5"/>
       <result resourceOrUnit="submarine" quantity="1"/>
@@ -1860,6 +1886,10 @@
     <productionRule name="buyHarbour12">
       <cost resource="PUs" quantity="12"/>
       <result resourceOrUnit="harbour12" quantity="1"/>
+    </productionRule>
+	<productionRule name="buyDrydock">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="drydock" quantity="1"/>
     </productionRule>
     <productionRule name="buyAAGun">
       <cost resource="PUs" quantity="5"/>
@@ -2166,6 +2196,14 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="harbour12" quantity="2"/>
     </repairRule>
+    <repairRule name="repairDrydock">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="drydock" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairDrydockIndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="drydock" quantity="2"/>
+    </repairRule>
     <repairRule name="repairBunker">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="bunker" quantity="1"/>
@@ -2198,6 +2236,7 @@
       <repairRules name="repairAirfield12"/>
       <repairRules name="repairHarbour"/>
       <repairRules name="repairHarbour12"/>
+	  <repairRules name="repairDrydock"/>
       <repairRules name="repairBunker"/>
       <repairRules name="repairUKPBunker"/>
       <repairRules name="repairMilitaryBase"/>
@@ -2210,6 +2249,7 @@
       <repairRules name="repairAirfield12IndustrialTechnology"/>
       <repairRules name="repairHarbourIndustrialTechnology"/>
       <repairRules name="repairHarbour12IndustrialTechnology"/>
+	  <repairRules name="repairDrydockIndustrialTechnology"/>
       <repairRules name="repairBunkerIndustrialTechnology"/>
       <repairRules name="repairUKPBunkerIndustrialTechnology"/>
       <repairRules name="repairMilitaryBaseIndustrialTechnology"/>
@@ -2585,6 +2625,8 @@
       
       <techname name="ChineseMilitia"/>
       <techname name="PrimitiveTerrain"/>
+	  <techname name="CapitalShip2RP"/>
+	  <techname name="EscortCarriers1M"/>
       <techname name="BBandCA_AA"/>
       <techname name="Mobile_Artillery"/>
       <techname name="MilitiaForAll"/>
@@ -2677,6 +2719,8 @@
       <category name="New Units and Unit Changes">
 	<tech name="ChineseMilitia"/>
 	<tech name="PrimitiveTerrain"/>
+	<tech name="CapitalShip2RP"/>
+	<tech name="EscortCarriers1M"/>
 	<tech name="BBandCA_AA"/>
 	<tech name="Mobile_Artillery"/>
 	<tech name="MilitiaForAll"/>
@@ -3526,7 +3570,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Jehol:Hainan:Kwangsi:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Artillery -->
     <attachment name="unitAttachment" attachTo="Japanese_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3889,7 +3933,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:drydock:bunker:UKPbunker:Supply_Crate"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Tactical Bomber -->
@@ -3908,7 +3952,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:drydock:bunker:UKPbunker:Supply_Crate"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Tactical Bomber -->
@@ -3927,7 +3971,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:drydock:bunker:UKPbunker:Supply_Crate"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Tactical Bomber10 -->
@@ -3946,7 +3990,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:drydock:bunker:UKPbunker:Supply_Crate"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Tactical Bomber10 -->
@@ -3965,7 +4009,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:Supply_Crate"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:drydock:Supply_Crate"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Russian_Tactical Bomber10 -->
@@ -3984,7 +4028,7 @@
       <option name="blockade" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="0"/>
-      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:bunker:UKPbunker:Supply_Crate"/>
+      <option name="bombingTargets" value="airfield:airfield12:harbour:harbour12:drydock:bunker:UKPbunker:Supply_Crate"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Transport -->
@@ -4018,6 +4062,28 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="isAAforCombatOnly" value="false"/>
       <option name="maxAAattacks" value="0"/>
+    </attachment>
+    <!-- BattleShip2RP -->
+    <attachment name="unitAttachment" attachTo="battleship2RP" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="isAAforCombatOnly" value="false"/>
+      <option name="maxAAattacks" value="0"/>
+    </attachment>
+	<!-- Battle Ship Hull -->
+    <attachment name="unitAttachment" attachTo="battleship_hull" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <!--<option name="destroyedWhenCapturedBy" value="French:Americans:British:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>-->
     </attachment>
     <!-- BattleShip-damaged -->
     <attachment name="unitAttachment" attachTo="battleship-damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4099,6 +4165,43 @@
       <option name="whenCombatDamaged" value="unitsMayNotLandOnCarrier" count="1:2"/>
       <option name="whenCombatDamaged" value="unitsMayNotLeaveAlliedCarrier" count="1:2"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+    </attachment>
+    <!-- Carrier2RP -->
+    <attachment name="unitAttachment" attachTo="carrier2RP" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="2"/>
+      <option name="carrierCapacity" value="2"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="0"/>
+      <!-- whenCombatDamaged means that when this unit has x:y damage on it, it will have this effect -->
+      <option name="whenCombatDamaged" value="unitsMayNotLandOnCarrier" count="1:2"/>
+      <option name="whenCombatDamaged" value="unitsMayNotLeaveAlliedCarrier" count="1:2"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+    </attachment>
+    <!-- Carrier2RP BB Hull -->
+    <attachment name="unitAttachment" attachTo="carrier2RP_BB_Hull" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="2"/>
+      <option name="carrierCapacity" value="2"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="0"/>
+      <!-- whenCombatDamaged means that when this unit has x:y damage on it, it will have this effect -->
+      <option name="whenCombatDamaged" value="unitsMayNotLandOnCarrier" count="1:2"/>
+      <option name="whenCombatDamaged" value="unitsMayNotLeaveAlliedCarrier" count="1:2"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+    </attachment>
+	<!-- Carrier Hull -->
+    <attachment name="unitAttachment" attachTo="carrier_hull" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <!--<option name="destroyedWhenCapturedBy" value="French:Americans:British:Russians:Germans:Italians:Japanese:ANZAC:Chinese"/>-->
     </attachment>
     <!-- EscortCarrier -->
     <attachment name="unitAttachment" attachTo="EscortCarrier" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4558,6 +4661,19 @@
       <option name="givesMovement" value="1:EscortCarrierASW"/>
       <option name="givesMovement" value="1:battleship"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
+      <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
+    </attachment>
+	<!-- Drydock -->
+    <attachment name="unitAttachment" attachTo="drydock" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isInfrastructure" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="6"/>
+      <option name="maxOperationalDamage" value="2"/>
+	  <option name="carrierCapacity" value="10"/>
+	  <option name="isSea" value="true"/>
+      <option name="movement" value="0"/>
+      <option name="isAAforBombingThisUnitOnly" value="true"/>
+	  <option name="consumesUnits" value="1:infantry"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
     <!-- Military Base -->
@@ -7064,6 +7180,12 @@
     </attachment>
     <attachment name="MongoliaBoost" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Mongolia Boost"/>
+    </attachment>
+	<attachment name="CapitalShip2RoundPurchase" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Battleships and Carriers 2 Round Purchase"/>
+    </attachment>
+    <attachment name="EscortCarriers1Move" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Escort Carriers 1 Movement"/>
     </attachment>
     <attachment name="BbCaAa" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Battleships and Cruisers AA Round 2"/>
@@ -10984,6 +11106,12 @@
     <attachment name="CA11" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Cruiser Cost 11"/>
     </attachment>
+	<attachment name="CapitalShip2RoundPurchase" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Battleships and Carriers 2 Round Purchase"/>
+    </attachment>
+    <attachment name="EscortCarriers1Move" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Escort Carriers 1 Movement"/>
+    </attachment>
     
     <!-- Germans Conditions -->
     <attachment name="conditionAttachmentAttackEscortsInterceptorsA2D2BMGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11039,6 +11167,12 @@
     </attachment>
     <attachment name="conditionAttachmentGermansAirfieldM2Tech" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="AirfieldM2" count="1"/>
+    </attachment>
+	<attachment name="conditionAttachmentCapitalShip2RP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="CapitalShip2RP" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentEscortCarriers1M" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="techs" value="EscortCarriers1M" count="1"/>
     </attachment>
     <attachment name="conditionAttachmentBBAndCAAA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="BBandCA_AA" count="1"/>
@@ -12702,6 +12836,18 @@
       <option name="when" value="before:changerNonCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
+	<attachment name="triggerAttachmentCapitalShip2RP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="CapitalShip2RoundPurchase"/>
+      <option name="tech" value="CapitalShip2RP"/>
+      <option name="when" value="before:changerNonCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachmentEscortCarriers1M" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortCarriers1Move"/>
+      <option name="tech" value="EscortCarriers1M"/>
+      <option name="when" value="before:changerNonCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachmentBBandCAaa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn2OrHigher:Redesign"/>
       <option name="tech" value="BBandCA_AA"/>
@@ -13140,6 +13286,170 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerCombatMove"/>
     </attachment>
+	
+    <attachment name="triggerAttachment_Drydocks" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="productionRule" value="productionGermans:buyDrydock"/>
+      <option name="productionRule" value="productionRussians:buyDrydock"/>
+      <option name="productionRule" value="productionJapanese:buyDrydock"/>
+      <option name="productionRule" value="productionAmericans:buyDrydock"/>
+      <option name="productionRule" value="productionBritish:buyDrydock"/>
+      <option name="productionRule" value="productionUK_Pacific:buyDrydock"/>
+      <option name="productionRule" value="productionItalians:buyDrydock"/>
+      <option name="productionRule" value="productionANZAC:buyDrydock"/>
+      <option name="productionRule" value="productionFrench:buyDrydock"/>
+	  <option name="productionRule" value="productionCanada:buyDrydock"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_CarrierHulls" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="productionRule" value="productionGermans:buyCarrierHull"/>
+      <option name="productionRule" value="productionRussians:buyCarrierHull"/>
+      <option name="productionRule" value="productionJapanese:buyCarrierHull"/>
+      <option name="productionRule" value="productionAmericans:buyCarrierHull"/>
+      <option name="productionRule" value="productionBritish:buyCarrierHull"/>
+      <option name="productionRule" value="productionUK_Pacific:buyCarrierHull"/>
+      <option name="productionRule" value="productionItalians:buyCarrierHull"/>
+      <option name="productionRule" value="productionANZAC:buyCarrierHull"/>
+      <option name="productionRule" value="productionFrench:buyCarrierHull"/>
+	  <option name="productionRule" value="productionCanada:buyCarrierHull"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+	<attachment name="triggerAttachment_BattleshipHulls" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="productionRule" value="productionGermans:buyBattleshipHull"/>
+      <option name="productionRule" value="productionRussians:buyBattleshipHull"/>
+      <option name="productionRule" value="productionJapanese:buyBattleshipHull"/>
+      <option name="productionRule" value="productionAmericans:buyBattleshipHull"/>
+      <option name="productionRule" value="productionBritish:buyBattleshipHull"/>
+      <option name="productionRule" value="productionUK_Pacific:buyBattleshipHull"/>
+      <option name="productionRule" value="productionItalians:buyBattleshipHull"/>
+      <option name="productionRule" value="productionANZAC:buyBattleshipHull"/>
+      <option name="productionRule" value="productionFrench:buyBattleshipHull"/>
+	  <option name="productionRule" value="productionCanada:buyBattleshipHull"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+	<attachment name="triggerAttachment_Carriers2RP_BB_Hull" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="productionRule" value="productionGermans:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionRussians:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionJapanese:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionAmericans:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionBritish:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionUK_Pacific:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionItalians:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionANZAC:buyCarrier2RP_BB_Hull"/>
+      <option name="productionRule" value="productionCanada:buyCarrier2RP_BB_Hull"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+	<attachment name="triggerAttachment_Carriers2RP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="CapitalShip2RoundPurchase"/>
+      <option name="productionRule" value="productionGermans:-buyCarrier"/>
+      <option name="productionRule" value="productionGermans:buyCarrier2RP"/>
+      <option name="productionRule" value="productionRussians:-buyCarrier"/>
+      <option name="productionRule" value="productionRussians:buyCarrier2RP"/>
+      <option name="productionRule" value="productionJapanese:-buyCarrier"/>
+      <option name="productionRule" value="productionJapanese:buyCarrier2RP"/>
+      <option name="productionRule" value="productionAmericans:-buyCarrier"/>
+      <option name="productionRule" value="productionAmericans:buyCarrier2RP"/>
+      <option name="productionRule" value="productionBritish:-buyCarrier"/>
+      <option name="productionRule" value="productionBritish:buyCarrier2RP"/>
+      <option name="productionRule" value="productionUK_Pacific:-buyCarrier"/>
+      <option name="productionRule" value="productionUK_Pacific:buyCarrier2RP"/>
+      <option name="productionRule" value="productionItalians:-buyCarrier"/>
+      <option name="productionRule" value="productionItalians:buyCarrier2RP"/>
+      <option name="productionRule" value="productionANZAC:-buyCarrier"/>
+      <option name="productionRule" value="productionANZAC:buyCarrier2RP"/>
+      <option name="productionRule" value="productionFrench:-buyCarrier"/>
+      <option name="productionRule" value="productionFrench:buyCarrier2RP"/>
+	  <option name="productionRule" value="productionCanada:-buyCarrier"/>
+      <option name="productionRule" value="productionCanada:buyCarrier2RP"/>
+      <option name="when" value="after:changerCombatMove"/> 
+      <option name="uses" value="1"/>
+    </attachment>
+	<attachment name="triggerAttachment_Battleships2RP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="CapitalShip2RoundPurchase"/>
+      <option name="productionRule" value="productionGermans:-buyBattleship"/>
+      <option name="productionRule" value="productionGermans:buyBattleship2RP"/>
+      <option name="productionRule" value="productionRussians:-buyBattleship"/>
+      <option name="productionRule" value="productionRussians:buyBattleship2RP"/>
+      <option name="productionRule" value="productionJapanese:-buyBattleship"/>
+      <option name="productionRule" value="productionJapanese:buyBattleship2RP"/>
+      <option name="productionRule" value="productionAmericans:-buyBattleship"/>
+      <option name="productionRule" value="productionAmericans:buyBattleship2RP"/>
+      <option name="productionRule" value="productionBritish:-buyBattleship"/>
+      <option name="productionRule" value="productionBritish:buyBattleship2RP"/>
+      <option name="productionRule" value="productionUK_Pacific:-buyBattleship"/>
+      <option name="productionRule" value="productionUK_Pacific:buyBattleship2RP"/>
+      <option name="productionRule" value="productionItalians:-buyBattleship"/>
+      <option name="productionRule" value="productionItalians:buyBattleship2RP"/>
+      <option name="productionRule" value="productionANZAC:-buyBattleship"/>
+      <option name="productionRule" value="productionANZAC:buyBattleship2RP"/>
+      <option name="productionRule" value="productionFrench:-buyBattleship"/>
+      <option name="productionRule" value="productionFrench:buyBattleship2RP"/>
+	  <option name="productionRule" value="productionCanada:-buyBattleship"/>
+      <option name="productionRule" value="productionCanada:buyBattleship2RP"/>
+      <option name="when" value="after:changerCombatMove"/> 
+      <option name="uses" value="1"/>
+    </attachment>
+	<attachment name="triggerAttachment_ChangerAddHullsGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="placement" value="Western Germany:carrier_hull" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ChangerAddHullsJapanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="placement" value="Japan:battleship_hull" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+	<attachment name="triggerAttachment_ChangerAddHullsAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="placement" value="Eastern United States:carrier_hull" count="1"/>
+	  <option name="placement" value="Eastern United States:battleship_hull" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+    </attachment>
+	
+	<attachment name="triggerAttachment_Carrier2RoundPurchase" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="unitType" value="carrier"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+	  <option name="unitProperty" value="consumesUnits" count="1:carrier_hull"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Carrier2RoundPurchase_BB_Hull" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="unitType" value="carrier2RP_BB_Hull"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+	  <option name="unitProperty" value="consumesUnits" count="1:battleship_hull"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Battleship2RoundPurchase" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="CapitalShip2RoundPurchase"/>
+      <option name="unitType" value="battleship"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+	  <option name="unitProperty" value="consumesUnits" count="1:battleship_hull"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+	
+    <attachment name="triggerAttachment_EscortCarriers1M" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="EscortCarriers1Move"/>
+      <option name="unitType" value="EscortCarrier"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+	  <option name="unitProperty" value="movement" count="1"/>
+      <option name="when" value="after:changerCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+	
     <attachment name="triggerAttachment_BBAndCAAA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentBBAndCAAA"/>
       <option name="unitType" value="battleship"/>
@@ -29750,6 +30060,12 @@
       <attachment name="techAbilityAttachment" attachTo="FactoryLimited_ChangerMustActivate" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="attackBonus" value="0:bomber"/>
       </attachment>
+	  <attachment name="techAbilityAttachment" attachTo="CapitalShip2RP" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
+      <option name="attackBonus" value="0:bomber"/>
+      </attachment>
+	  <attachment name="techAbilityAttachment" attachTo="EscortCarriers1M" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
+      <option name="attackBonus" value="0:bomber"/>
+      </attachment>
       <attachment name="techAbilityAttachment" attachTo="BBandCA_AA" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="attackBonus" value="0:bomber"/>
       </attachment>
@@ -31117,6 +31433,9 @@
     <property name="Escort Carrier Cost 7" value="false" editable="true">
       <boolean/>
     </property>
+	<property name="Escort Carriers 1 Movement" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Attack 0 Cost 5 Bomber" value="false" editable="true">
       <boolean/>
     </property>
@@ -31136,6 +31455,9 @@
       <boolean/>
     </property>
     <property name="Elite and Air Transport" value="false" editable="true">
+      <boolean/>
+    </property>
+	<property name="Battleships and Carriers 2 Round Purchase" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Battleships and Cruisers AA Round 2" value="false" editable="true">
@@ -31968,6 +32290,23 @@ Most of these house rules are discussed in this thread: www.axisandallies.org/fo
 <b>33)"Vichy Rule French Battleship Sea Zone 92"</b><br>
 A French Battleship is added to Sea Zone 92 at game setup. To be used when Vichy Rules are active. Explained after the BM Rules below.<br>
 <br>
+<b>34)"Battleships and Carriers 2 Round Purchase"</b><br>
+Capital ships require an existing Hull from a previous round in order to build the finished sea unit. Carriers can be built from either a Carrier Hull or a Battleship Hull (albeit more expensive by being built from Battleship Hulls), but Battleships can only be built from Battleship Hulls.<br><br>
+During the purchase phase of the round that you want to place a Carrier or Battleship you must also have a Drydock in your purchases. Only one Drydock needs to be purchased per game as it stays within your purchases and cannot be consumed. The Drydock is required specifically for the game engine to launch Battleships.<br><br>
+The Hull(s) that you intend to convert to finished unit(s) need to be moved to the chosen sea zone during non combat. If this step is missed then one needs to edit in the complete unit(s), remove the hull(s), take note of purchases remaining, and perhaps reduce PUs by the purchases remaining that could not be placed properly.<br>
+<br>
+Game setup adds Hulls to the following territories to accommodate existing game starting strategies as well as following historical circumstances.<br>
+<br>
+Western Germany: 1 Carrier Hull<br>
+Japan: 1 Battleship Hull<br>
+Eastern United States: 1 Carrier Hull, 1 Battleship Hull<br>
+<br>
+It is recommended to use the "Escort Carrier" Map Option when using "Battleships and Carriers 2 Round Purchase". This allows for 1 turn Carrier builds.<br>
+<br>
+<b>35)Escort Carriers 1 Movement"</b><br>
+This option modifies the Escort Carrier's movement to only being 1 (+1 w/ NB). Playing with Escort Carriers needs to be turned on via its Map Option.<br>
+<br>
+<br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
 <br>
 Thanks to simon33 for doing the original Canada mod.<br>
@@ -31989,12 +32328,22 @@ Modded for TripleA by b<br>
 <br>Change Log:
 <br>
 <br>
+2.7<br> 10/13/21<br>
+Changed "Changer" Alliance to Axis. Allows for correct Alliances for Players and has no affect on Game Play.
+Update Game Notes.
+<br>
+<br>
+2.679<br> 10/2/21<br>
+Adds "Battleships and Carriers 2 Round Purchase" to Map Options.
+Adds "Escort Carriers 1 Movement" to Map Options.
+<br>
+<br>
 2.678<br> 10/1/21<br>
 Fixes Chinese Artillery not placing correctly.
 <br>
 <br>
 2.677<br> 9/17/21<br>
-Adds "Vichy Rule French Battleship Sea Zone 92" to map options.
+Adds "Vichy Rule French Battleship Sea Zone 92" to Map Options.
 <br>
 <br>
 2.676<br> 5/22/21<br>
