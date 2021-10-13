@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.678"/>
+  <info name="Global 40 House Rules" version="2.7"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1222,7 +1222,7 @@
     <player name="Neutral_Allies" optional="true"/>
     <player name="Neutral_True" optional="true"/>
     <!-- Alliances -->
-    <alliance player="Changer" alliance="Changer"/>
+    <alliance player="Changer" alliance="Axis"/>
     <alliance player="Russians" alliance="Allies"/>
     <alliance player="Americans" alliance="Allies"/>
     <alliance player="Chinese" alliance="Allies"/>
@@ -3470,7 +3470,7 @@
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Jehol:Hainan:Kwangsi:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
     <!-- Japanese_Artillery -->
     <attachment name="unitAttachment" attachTo="Japanese_artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -29616,18 +29616,21 @@ Most of these house rules are discussed in this thread: www.axisandallies.org/fo
 A French Battleship is added to Sea Zone 92 at game setup. To be used when Vichy Rules are active. Explained after the BM Rules below.<br>
 <br>
 <b>32)"Battleships and Carriers 2 Round Purchase"</b><br>
-Capital ships require an existing hull in order to build the finished sea unit. The hulls need to be launched to the chosen sea zone during non combat and requires the purchase of a drydock unit beforehand (free and not consumed). Carriers can be built from either hull (albeit more expensive by being built from BB hulls), but battleships require BB hulls.<br>
+Capital ships require an existing Hull from a previous round in order to build the finished sea unit. Carriers can be built from either a Carrier Hull or a Battleship Hull (albeit more expensive by being built from Battleship Hulls), but Battleships can only be built from Battleship Hulls.<br><br>
+During the purchase phase of the round that you want to place a Carrier or Battleship you must also have a Drydock in your purchases. Only one Drydock needs to be purchased per game as it stays within your purchases and cannot be consumed. The Drydock is required specifically for the game engine to launch Battleships.<br><br>
+The Hull(s) that you intend to convert to finished unit(s) need to be moved to the chosen sea zone during non combat. If this step is missed then one needs to edit in the complete unit(s), remove the hull(s), take note of purchases remaining, and perhaps reduce PUs by the purchases remaining that could not be placed properly.<br>
 <br>
-Game setup adds hulls to the following territories to accommodate existing game starting strategies as well as following historical circumstances.<br>
+Game setup adds Hulls to the following territories to accommodate existing game starting strategies as well as following historical circumstances.<br>
 <br>
-Western Germany: 1 carrier hull<br>
-Japan: 1 battleship hull<br>
-Eastern United States: 1 carrier hull, 1 battleship hull<br>
+Western Germany: 1 Carrier Hull<br>
+Japan: 1 Battleship Hull<br>
+Eastern United States: 1 Carrier Hull, 1 Battleship Hull<br>
 <br>
-The escort carrier map option exists and can accommodate one turn defensive buys, and is recommended for play.<br>
+It is recommended to use the "Escort Carrier" Map Option when using "Battleships and Carriers 2 Round Purchase". This allows for 1 turn Carrier builds.<br>
 <br>
 <b>33)Escort Carriers 1 Movement"</b><br>
-This option modifies the escort carrier's movement to only being 1 (+1 w/ NB). Playing with escort carriers needs to be turned on via its map option.<br>
+This option modifies the Escort Carrier's movement to only being 1 (+1 w/ NB). Playing with Escort Carriers needs to be turned on via its Map Option.<br>
+<br>
 <br>
 <b>Credits:</b> Thanks to Bung and Veqryn for making the original 1940 mod.<br>
 <br>
@@ -29649,14 +29652,22 @@ Modded for TripleA by b<br>
 <br>Change Log:
 <br>
 <br>
-2.678<br> 10/1/21<br>
+2.7<br> 10/13/21<br>
+Changed "Changer" Alliance to Axis. Allows for correct Alliances for Players and has no affect on Game Play.
+Update Game Notes.
+<br>
+<br>
+2.679<br> 10/2/21<br>
+Update Game Notes.
+<br>
+<br>
+2.678<br> 9/30/21<br>
 Adds "Battleships and Carriers 2 Round Purchase" to map options.
-Adds "Escort Carriers 1 Movement" to map options.<br>
-Also Fixes Chinese Artillery not placing correctly.
+Adds "Escort Carriers 1 Movement" to Map Options. Fixes Chinese Artillery not placing correctly.
 <br>
 <br>
 2.677<br> 9/17/21<br>
-Adds "Vichy Rule French Battleship Sea Zone 92" to map options.
+Adds "Vichy Rule French Battleship Sea Zone 92" to Map Options.
 <br>
 <br>
 2.676<br> 5/22/21<br>
