@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.7"/>
+  <info name="Global 40 House Rules" version="2.71"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1267,11 +1267,11 @@
     <unit name="Japanese_armour"/>
     <unit name="Russian_armour"/>
     <unit name="fighter"/>
-    <unit name="fighter_lr"/>
+    <unit name="fighter_LR"/>
     <unit name="Japanese_fighter"/>
-    <unit name="Japanese_fighter_lr"/>
+    <unit name="Japanese_fighter_LR"/>
     <unit name="Russian_fighter"/>
-    <unit name="Russian_fighter_lr"/>
+    <unit name="Russian_fighter_LR"/>
     <unit name="flying_tiger"/>
     <unit name="tactical_bomber"/>
     <unit name="Japanese_tactical_bomber"/>
@@ -1636,25 +1636,25 @@
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="fighter" quantity="1"/>
     </productionRule>
-    <productionRule name="buyFighter_lr">
+    <productionRule name="buyFighter_LR">
       <cost resource="PUs" quantity="12"/>
-      <result resourceOrUnit="fighter_lr" quantity="1"/>
+      <result resourceOrUnit="fighter_LR" quantity="1"/>
     </productionRule>
     <productionRule name="buyJapanese_Fighter">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="Japanese_fighter" quantity="1"/>
     </productionRule>
-    <productionRule name="buyJapanese_Fighter_lr">
+    <productionRule name="buyJapanese_Fighter_LR">
       <cost resource="PUs" quantity="13"/>
-      <result resourceOrUnit="Japanese_fighter_lr" quantity="1"/>
+      <result resourceOrUnit="Japanese_fighter_LR" quantity="1"/>
     </productionRule>
     <productionRule name="buyRussian_Fighter">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="Russian_fighter" quantity="1"/>
     </productionRule>
-    <productionRule name="buyRussian_Fighter_lr">
+    <productionRule name="buyRussian_Fighter_LR">
       <cost resource="PUs" quantity="13"/>
-      <result resourceOrUnit="Russian_fighter_lr" quantity="1"/>
+      <result resourceOrUnit="Russian_fighter_LR" quantity="1"/>
     </productionRule>
     <productionRule name="buyFlying_Tiger">
       <cost resource="PUs" quantity="13" />
@@ -3575,8 +3575,8 @@
       <option name="blockade" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
-    <!-- Fighter_lr -->
-    <attachment name="unitAttachment" attachTo="fighter_lr" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- Fighter_LR -->
+    <attachment name="unitAttachment" attachTo="fighter_LR" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="5"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="3"/>
@@ -3611,8 +3611,8 @@
       <option name="blockade" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
-    <!-- Japanese_Fighter_lr -->
-    <attachment name="unitAttachment" attachTo="Japanese_fighter_lr" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- Japanese_Fighter_LR -->
+    <attachment name="unitAttachment" attachTo="Japanese_fighter_LR" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="5"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="3"/>
@@ -3647,8 +3647,8 @@
       <option name="blockade" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Shantung:Queensland:New Zealand:New South Wales:Philippines:Mexico:Alaska:French Indo China:West India:Quebec:Egypt:Union of South Africa:Ontario:Scotland:Normandy Bordeaux:Poland:Denmark:Rostov:Ukraine:Western Ukraine:Volgograd:Novgorod:Caucasus:Chile:Turkey:Saudi Arabia:Argentina:Greece:Iraq:Brazil:Venezuela:Persia:Yugoslavia:Spain:Finland:Korea:Kiangsu:Manchuria:India:Malaya:Kwangtung:Celebes:Southern France:Slovakia Hungary:Romania:Norway:Holland Belgium:Southern Italy:Russia:Sweden:Borneo:Java:Sumatra:France:Greater Southern Germany:Northern Italy:Western Germany:Germany:United Kingdom:Japan:Western United States:Central United States:Eastern United States"/>
     </attachment>
-    <!-- Russian_Fighter_lr -->
-    <attachment name="unitAttachment" attachTo="Russian_fighter_lr" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- Russian_Fighter_LR -->
+    <attachment name="unitAttachment" attachTo="Russian_fighter_LR" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="5"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="3"/>
@@ -4414,9 +4414,9 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="movement" value="0"/>
-      <option name="givesMovement" value="1:fighter_lr"/>
-      <option name="givesMovement" value="1:Japanese_fighter_lr"/>
-      <option name="givesMovement" value="1:Russian_fighter_lr"/>
+      <option name="givesMovement" value="1:fighter_LR"/>
+      <option name="givesMovement" value="1:Japanese_fighter_LR"/>
+      <option name="givesMovement" value="1:Russian_fighter_LR"/>
       <option name="givesMovement" value="1:fighter"/>
       <option name="givesMovement" value="1:Japanese_fighter"/>
       <option name="givesMovement" value="1:Russian_fighter"/>
@@ -4464,9 +4464,9 @@
       <option name="givesMovement" value="1:fighter"/>
       <option name="givesMovement" value="1:Japanese_fighter"/>
       <option name="givesMovement" value="1:Russian_fighter"/>
-      <option name="givesMovement" value="1:fighter_lr"/>
-      <option name="givesMovement" value="1:Japanese_fighter_lr"/>
-      <option name="givesMovement" value="1:Russian_fighter_lr"/>
+      <option name="givesMovement" value="1:fighter_LR"/>
+      <option name="givesMovement" value="1:Japanese_fighter_LR"/>
+      <option name="givesMovement" value="1:Russian_fighter_LR"/>
       <option name="givesMovement" value="1:flying_tiger"/>
       <option name="givesMovement" value="1:bomber"/>
       <option name="givesMovement" value="1:Japanese_bomber"/>
@@ -6020,12 +6020,12 @@
     <attachment name="canalAttachmentGibraltar" attachTo="92 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Strait of Gibraltar"/>
       <option name="landTerritories" value="Gibraltar"/>
-      <option name="excludedUnits" value="submarine:fighter:Japanese_fighter:Russian_fighter:fighter_lr:Japanese_fighter_lr:Russian_fighter_lr:flying_tiger:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:bomber:Japanese_bomber:Russian_bomber:bomberA0C5:Japanese_bomberA0C5:Russian_bomberA0C5:air_transport:Japanese_air_transport:Russian_air_transport"/>
+      <option name="excludedUnits" value="submarine:fighter:Japanese_fighter:Russian_fighter:fighter_LR:Japanese_fighter_LR:Russian_fighter_LR:flying_tiger:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:bomber:Japanese_bomber:Russian_bomber:bomberA0C5:Japanese_bomberA0C5:Russian_bomberA0C5:air_transport:Japanese_air_transport:Russian_air_transport"/>
     </attachment>
     <attachment name="canalAttachmentGibraltar" attachTo="91 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Strait of Gibraltar"/>
       <option name="landTerritories" value="Gibraltar"/>
-      <option name="excludedUnits" value="submarine:fighter:Japanese_fighter:Russian_fighter:fighter_lr:Japanese_fighter_lr:Russian_fighter_lr:flying_tiger:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:bomber:Japanese_bomber:Russian_bomber:bomberA0C5:Japanese_bomberA0C5:Russian_bomberA0C5:air_transport:Japanese_air_transport:Russian_air_transport"/>
+      <option name="excludedUnits" value="submarine:fighter:Japanese_fighter:Russian_fighter:fighter_LR:Japanese_fighter_LR:Russian_fighter_LR:flying_tiger:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:bomber:Japanese_bomber:Russian_bomber:bomberA0C5:Japanese_bomberA0C5:Russian_bomberA0C5:air_transport:Japanese_air_transport:Russian_air_transport"/>
     </attachment>
     <attachment name="canalAttachmentPanama" attachTo="89 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Panama Canal"/>
@@ -6121,7 +6121,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentTacticalBomber1_Ftr_lr" attachTo="fighter_lr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentTacticalBomber1_Ftr_LR" attachTo="fighter_LR" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="tactical_bomber:tactical_bomber10"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -6143,7 +6143,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentTacticalBomber1Japanese_Ftr_lr" attachTo="Japanese_fighter_lr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentTacticalBomber1Japanese_Ftr_LR" attachTo="Japanese_fighter_LR" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Japanese_tactical_bomber:Japanese_tactical_bomber10"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -6165,7 +6165,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:UK_Pacific:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentTacticalBomber1USSR_Ftr_lr" attachTo="Russian_fighter_lr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentTacticalBomber1USSR_Ftr_LR" attachTo="Russian_fighter_LR" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Russian_tactical_bomber:Russian_tactical_bomber10"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -6330,7 +6330,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Changer"/>
     </attachment>
-    <attachment name="supportAttachmentBomberA3_Ftr_lr" attachTo="fighter_lr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentBomberA3_Ftr_LR" attachTo="fighter_LR" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="bomber"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -6352,7 +6352,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Changer"/>
     </attachment>
-    <attachment name="supportAttachmentBomberA3Japanese_Ftr_lr" attachTo="Japanese_fighter_lr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentBomberA3Japanese_Ftr_LR" attachTo="Japanese_fighter_LR" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Japanese_bomber"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -6374,7 +6374,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Changer"/>
       </attachment>
-      <attachment name="supportAttachmentBomberA3USSR_Ftr_lr" attachTo="Russian_fighter_lr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <attachment name="supportAttachmentBomberA3USSR_Ftr_LR" attachTo="Russian_fighter_LR" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="bomber:Russian_bomber"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -7314,7 +7314,7 @@
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Japanese_infantry:Japanese_militia:Japanese_marine:Japanese_elite:Japanese_artillery:Japanese_mobile_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_fighter:Japanese_fighter_lr:Japanese_tactical_bomber:Japanese_tactical_bomber10:Japanese_bomber:Japanese_bomberA0C5:Japanese_air_transport:Japanese_aaGun:Japanese_TowedAAgun:Japanese_aaGunC4" count="0"/>
+      <option name="unitPresence" value="Japanese_infantry:Japanese_militia:Japanese_marine:Japanese_elite:Japanese_artillery:Japanese_mobile_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_fighter:Japanese_fighter_LR:Japanese_tactical_bomber:Japanese_tactical_bomber10:Japanese_bomber:Japanese_bomberA0C5:Japanese_air_transport:Japanese_aaGun:Japanese_TowedAAgun:Japanese_aaGunC4" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesGermans1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -8117,7 +8117,7 @@
     <!-- British Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesBritish" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_lr:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
+      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_LR:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesBritish1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -8228,7 +8228,7 @@
     <!-- UK Pacific Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesUK_Pacific" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_lr:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
+      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_LR:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesUK_Pacific1" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -8805,7 +8805,7 @@
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesItalians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Japanese_infantry:Japanese_militia:Japanese_marine:Japanese_elite:Japanese_artillery:Japanese_mobile_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_fighter:Japanese_fighter_lr:Japanese_tactical_bomber:Japanese_tactical_bomber10:Japanese_bomber:Japanese_bomberA0C5:Japanese_air_transport:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="0"/>
+      <option name="unitPresence" value="Japanese_infantry:Japanese_militia:Japanese_marine:Japanese_elite:Japanese_artillery:Japanese_mobile_artillery:Japanese_mech_infantry:Japanese_armour:Japanese_fighter:Japanese_fighter_LR:Japanese_tactical_bomber:Japanese_tactical_bomber10:Japanese_bomber:Japanese_bomberA0C5:Japanese_air_transport:Japanese_aaGun:Japanese_aaGunC4:Japanese_TowedAAgun" count="0"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesItalians1" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -8878,7 +8878,7 @@
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_lr:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
+      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_LR:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
       <option name="invert" value="true"/>  
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesANZAC1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -9469,7 +9469,7 @@
     <!-- Americans Objectives -->
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_lr:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
+      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_LR:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
       <option name="invert" value="true"/> 
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesAmericans1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -10071,7 +10071,7 @@
 	<!-- French Objectives -->
 	<attachment name="conditionAttachmentAlliedExclusionTerritoriesFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedExclusionTerritories" value="controlledNoWater"/>
-      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_lr:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
+      <option name="unitPresence" value="Russian_infantry:Russian_artillery:Russian_mech_infantry:Russian_armour:Russian_fighter:Russian_fighter_LR:Russian_tactical_bomber:Russian_bomber:Russian_bomberA0C5:Russian_mobile_artillery:Russian_marine:Russian_elite:Russian_air_transport:Russian_tactical_bomber10:Russian_aaGun:Russian_aaGunC4:Russian_TowedAAgun" count="0"/>
       <option name="invert" value="true"/> 
     </attachment>
     <attachment name="conditionAttachmentAlliedExclusionTerritoriesFrench1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -12237,9 +12237,9 @@
       <option name="unitProperty" value="givesMovement" count="2:fighter"/>
       <option name="unitProperty" value="givesMovement" count="2:Japanese_fighter"/>
       <option name="unitProperty" value="givesMovement" count="2:Russian_fighter"/>
-      <option name="unitProperty" value="givesMovement" count="2:fighter_lr"/>
-      <option name="unitProperty" value="givesMovement" count="2:Japanese_fighter_lr"/>
-      <option name="unitProperty" value="givesMovement" count="2:Russian_fighter_lr"/>
+      <option name="unitProperty" value="givesMovement" count="2:fighter_LR"/>
+      <option name="unitProperty" value="givesMovement" count="2:Japanese_fighter_LR"/>
+      <option name="unitProperty" value="givesMovement" count="2:Russian_fighter_LR"/>
       <option name="unitProperty" value="givesMovement" count="2:flying_tiger"/>
       <option name="unitProperty" value="givesMovement" count="1:tactical_bomber"/>
       <option name="unitProperty" value="givesMovement" count="1:Japanese_tactical_bomber"/>
@@ -12266,9 +12266,9 @@
       <option name="unitProperty" value="givesMovement" count="2:fighter"/>
       <option name="unitProperty" value="givesMovement" count="2:Japanese_fighter"/>
       <option name="unitProperty" value="givesMovement" count="2:Russian_fighter"/>
-      <option name="unitProperty" value="givesMovement" count="2:fighter_lr"/>
-      <option name="unitProperty" value="givesMovement" count="2:Japanese_fighter_lr"/>
-      <option name="unitProperty" value="givesMovement" count="2:Russian_fighter_lr"/>
+      <option name="unitProperty" value="givesMovement" count="2:fighter_LR"/>
+      <option name="unitProperty" value="givesMovement" count="2:Japanese_fighter_LR"/>
+      <option name="unitProperty" value="givesMovement" count="2:Russian_fighter_LR"/>
       <option name="unitProperty" value="givesMovement" count="2:flying_tiger"/>
       <option name="unitProperty" value="givesMovement" count="1:tactical_bomber"/>
       <option name="unitProperty" value="givesMovement" count="1:Japanese_tactical_bomber"/>
@@ -12649,7 +12649,7 @@
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
       <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
-      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:fighter_lr:Japanese_fighter_lr:Russian_fighter_lr:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger:bomber:Russian_bomber:Japanese_bomber"/>
+      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:fighter_LR:Japanese_fighter_LR:Russian_fighter_LR:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger:bomber:Russian_bomber:Japanese_bomber"/>
       <option name="unitProperty" value="typeAA" count="Battleship and CruiserAA"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -12665,7 +12665,7 @@
       <option name="unitProperty" value="offensiveAttackAA" count="1"/>
       <option name="unitProperty" value="offensiveAttackAAmaxDieSides" count="12"/>
       <option name="unitProperty" value="mayOverStackAA" count="false"/>
-      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:fighter_lr:Japanese_fighter_lr:Russian_fighter_lr:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger:bomber:Russian_bomber:Japanese_bomber"/>
+      <option name="unitProperty" value="targetsAA" count="fighter:Japanese_fighter:Russian_fighter:fighter_LR:Japanese_fighter_LR:Russian_fighter_LR:tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:flying_tiger:bomber:Russian_bomber:Japanese_bomber"/>
       <option name="unitProperty" value="typeAA" count="Battleship and CruiserAA"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
@@ -13692,7 +13692,7 @@
     </attachment>
     <attachment name="triggerAttachment_FactoryLimitedBomber" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentFactoryLimited"/>
-      <option name="unitType" value="bomber:Japanese_bomber:Russian_bomber:bomberA0C5:Japanese_bomberA0C5:Russian_bomberA0C5:fighter_lr:Russian_fighter_lr:Japanese_fighter_lr"/>
+      <option name="unitType" value="bomber:Japanese_bomber:Russian_bomber:bomberA0C5:Japanese_bomberA0C5:Russian_bomberA0C5:fighter_LR:Russian_fighter_LR:Japanese_fighter_LR"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="special" count="canOnlyPlaceInOriginalTerritories"/>
       <option name="unitProperty" value="unitPlacementRestrictions" count="Kwangtung:Egypt:Norway:Alaska:West India:Korea"/>
@@ -13702,7 +13702,7 @@
     </attachment>
     <attachment name="triggerAttachment_FactoryLimitedNoBombers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentFactoryLimited"/>
-      <option name="unitType" value="tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:fighter:Japanese_fighter:Russian_fighter:fighter_lr:Russian_fighter_lr:Japanese_fighter_lr:flying_tiger:air_transport:Japanese_air_transport:Russian_air_transport"/>
+      <option name="unitType" value="tactical_bomber:Japanese_tactical_bomber:Russian_tactical_bomber:tactical_bomber10:Japanese_tactical_bomber10:Russian_tactical_bomber10:fighter:Japanese_fighter:Russian_fighter:fighter_LR:Russian_fighter_LR:Japanese_fighter_LR:flying_tiger:air_transport:Japanese_air_transport:Russian_air_transport"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="requiresUnits" count="airfield12"/>
       <option name="when" value="before:germansPolitics"/>
@@ -14271,13 +14271,13 @@
     </attachment>
     <attachment name="triggerAttachment_GermansLongRangeFtr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionGermans:buyFighter_lr"/>
+      <option name="productionRule" value="productionGermans:buyFighter_LR"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_GermansLongRangeFtrRedesign" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Redesign:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionGermans:buyFighter_lr"/>
+      <option name="productionRule" value="productionGermans:buyFighter_LR"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -14743,7 +14743,7 @@
     </attachment>
     <attachment name="triggerAttachment_RussiansLongRangeFtr" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionRussians:buyRussian_Fighter_lr"/>
+      <option name="productionRule" value="productionRussians:buyRussian_Fighter_LR"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -15117,7 +15117,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapanLongRangeFtr" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionJapanese:buyJapanese_Fighter_lr"/>
+      <option name="productionRule" value="productionJapanese:buyJapanese_Fighter_LR"/>
       <option name="when" value="before:japanesePurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -15400,7 +15400,7 @@
     </attachment>
     <attachment name="triggerAttachment_UKLongRangeFtr" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionBritish:buyFighter_lr"/>
+      <option name="productionRule" value="productionBritish:buyFighter_LR"/>
       <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -15507,7 +15507,7 @@
     </attachment>
     <attachment name="triggerAttachment_UKPLongRangeFtr" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionUK_Pacific:buyFighter_lr"/>
+      <option name="productionRule" value="productionUK_Pacific:buyFighter_LR"/>
       <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -15726,7 +15726,7 @@
     </attachment>
     <attachment name="triggerAttachment_ItalyLongRangeFtr" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionItalians:buyFighter_lr"/>
+      <option name="productionRule" value="productionItalians:buyFighter_LR"/>
       <option name="when" value="before:italiansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -16002,7 +16002,7 @@
     </attachment>
     <attachment name="triggerAttachment_ANZACLongRangeFtr" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionANZAC:buyFighter_lr"/>
+      <option name="productionRule" value="productionANZAC:buyFighter_LR"/>
       <option name="when" value="before:anzacPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -17257,7 +17257,7 @@
     </attachment>
     <attachment name="triggerAttachment_USALongRangeFtr" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionAmericans:buyFighter_lr"/>
+      <option name="productionRule" value="productionAmericans:buyFighter_LR"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -26187,7 +26187,7 @@
     </attachment>
     <attachment name="triggerAttachment_FrenchLongRangeFtr" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="LRFtr:conditionAttachmentTurn3OrHigher"/>
-      <option name="productionRule" value="productionFrench:buyFighter_lr"/>
+      <option name="productionRule" value="productionFrench:buyFighter_LR"/>
       <option name="when" value="before:frenchPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -27270,22 +27270,22 @@
       <option name="attackBonus" value="1:fighter"/>
       <option name="attackBonus" value="1:Japanese_fighter"/>
       <option name="attackBonus" value="1:Russian_fighter"/>
-      <option name="attackBonus" value="1:fighter_lr"/>
-      <option name="attackBonus" value="1:Japanese_fighter_lr"/>
-      <option name="attackBonus" value="1:Russian_fighter_lr"/>
+      <option name="attackBonus" value="1:fighter_LR"/>
+      <option name="attackBonus" value="1:Japanese_fighter_LR"/>
+      <option name="attackBonus" value="1:Russian_fighter_LR"/>
       <option name="attackBonus" value="1:flying_tiger"/>
       <option name="airAttackBonus" value="1:fighter"/>
       <option name="airAttackBonus" value="1:Russian_fighter"/>
-      <option name="airAttackBonus" value="1:fighter_lr"/>
-      <option name="airAttackBonus" value="1:Japanese_fighter_lr"/>
-      <option name="airAttackBonus" value="1:Russian_fighter_lr"/>
+      <option name="airAttackBonus" value="1:fighter_LR"/>
+      <option name="airAttackBonus" value="1:Japanese_fighter_LR"/>
+      <option name="airAttackBonus" value="1:Russian_fighter_LR"/>
       <option name="airAttackBonus" value="1:flying_tiger"/>
       <option name="airDefenseBonus" value="1:fighter"/>
       <option name="airDefenseBonus" value="1:Japanese_fighter"/>
       <option name="airDefenseBonus" value="1:Russian_fighter"/>
-      <option name="airDefenseBonus" value="1:fighter_lr"/>
-      <option name="airDefenseBonus" value="1:Japanese_fighter_lr"/>
-      <option name="airDefenseBonus" value="1:Russian_fighter_lr"/>
+      <option name="airDefenseBonus" value="1:fighter_LR"/>
+      <option name="airDefenseBonus" value="1:Japanese_fighter_LR"/>
+      <option name="airDefenseBonus" value="1:Russian_fighter_LR"/>
       <option name="airDefenseBonus" value="1:flying_tiger"/>
     </attachment>
     <!-- shipyards can either be done with triggers, or the old way (old way only works if all nations have the same production frontier, and it requires a special shipyard frontier) -->
@@ -27481,12 +27481,12 @@
       <option name="airDefenseBonus" value="1:Japanese_fighter"/>
       <option name="airAttackBonus" value="1:Russian_fighter"/>
       <option name="airDefenseBonus" value="1:Russian_fighter"/>
-      <option name="airAttackBonus" value="1:fighter_lr"/>
-      <option name="airDefenseBonus" value="1:fighter_lr"/>
-      <option name="airAttackBonus" value="1:Japanese_fighter_lr"/>
-      <option name="airDefenseBonus" value="1:Japanese_fighter_lr"/>
-      <option name="airAttackBonus" value="1:Russian_fighter_lr"/>
-      <option name="airDefenseBonus" value="1:Russian_fighter_lr"/>
+      <option name="airAttackBonus" value="1:fighter_LR"/>
+      <option name="airDefenseBonus" value="1:fighter_LR"/>
+      <option name="airAttackBonus" value="1:Japanese_fighter_LR"/>
+      <option name="airDefenseBonus" value="1:Japanese_fighter_LR"/>
+      <option name="airAttackBonus" value="1:Russian_fighter_LR"/>
+      <option name="airDefenseBonus" value="1:Russian_fighter_LR"/>
       <option name="airAttackBonus" value="1:flying_tiger"/>
       <option name="airDefenseBonus" value="1:flying_tiger"/>
       </attachment>
@@ -27494,9 +27494,9 @@
       <option name="airDefenseBonus" value="1:fighter"/>
       <option name="airDefenseBonus" value="1:Japanese_fighter"/>
       <option name="airDefenseBonus" value="1:Russian_fighter"/>
-      <option name="airDefenseBonus" value="1:fighter_lr"/>
-      <option name="airDefenseBonus" value="1:Japanese_fighter_lr"/>
-      <option name="airDefenseBonus" value="1:Russian_fighter_lr"/>
+      <option name="airDefenseBonus" value="1:fighter_LR"/>
+      <option name="airDefenseBonus" value="1:Japanese_fighter_LR"/>
+      <option name="airDefenseBonus" value="1:Russian_fighter_LR"/>
       <option name="airDefenseBonus" value="1:flying_tiger"/>
       </attachment>
       <attachment name="techAbilityAttachment" attachTo="CloseAirSupport" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
@@ -29650,6 +29650,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.71<br> 1/28/22<br>
+Fix all "figher_LR" Units to work correctly when "longRangeAir" and "jetPower" Tech activated. Fix "battelship and carrier hull" Units to work correctly.
 <br>
 <br>
 2.7<br> 10/13/21<br>
