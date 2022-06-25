@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.72"/>
+  <info name="Global 40 House Rules with Canada" version="2.71"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -32333,10 +32333,6 @@ Modded for TripleA by b<br>
 <br>
 2.71<br> 1/28/22<br>
 Fix all "figher_LR" Units to work correctly when "longRangeAir" and "jetPower" Tech activated. Fix "battelship and carrier hull" Units to work correctly.
-<br>
-<br>
-2.72<br> 1/28/22<br>
-Fix Chinese "Harbour 12" error with Kwangtung.
 <br>
 <br>
 2.7<br> 10/13/21<br>
