@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules" version="2.71"/>
+  <info name="Global 40 House Rules" version="2.72"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -29650,6 +29650,10 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
+<br>
+<br>
+2.72<br> 6/24/22<br>
+Fix Chinese "Harbour 12" error when controlling Kwangtung.
 <br>
 <br>
 2.71<br> 1/28/22<br>
