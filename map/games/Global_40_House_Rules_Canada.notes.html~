@@ -718,8 +718,6 @@ Chile: -1 infantry adds 1 artillery<br>
 <b>21)Long Range Fighter</b><br>
 A3 D4 M5 +1 w/Airfield C12. May not land on or be transported by Carriers. May be purchased beginning of round 3.<br>
 This provides Escort primarily for A0 C5 Strategic Bombers. Air battle is same as regular Fighter.<br><br>
-<b>Does Not Work with Technology</b><br>
-<br>
 <b>22)Destroyer Cost 6</b><br>
 This is only usable with "SubsCanEvadeDestroyers_ChangerMustActivate" or "Option Redesign". It increases the cost of "DestroyerC5" to 6 PUs.<br>
 DDC5 was overpowered compared to OOB. DDC6 is close to OOB except for being slightly weaker compared to Battleship and Carrier with Tac and Ftr. As the Defensive Fleet has the advantage, this should help reduce naval stalemates.<br><br>
@@ -784,10 +782,6 @@ Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
 <br>Change Log:
-<br>
-<br>
-2.73<br> 2/27/23<br>
-Fix "figher_LR" Units not showing up. They no longer work with Technology.
 <br>
 <br>
 2.71<br> 1/28/22<br>
