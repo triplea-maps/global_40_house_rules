@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 House Rules with Canada" version="2.73"/>
+  <info name="Global 40 House Rules with Canada" version="2.74"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -29222,7 +29222,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    
+    <attachment name="triggerAttachment_2.6PreNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1Check"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+      <option name="notification" value="Prerelease"/>
+    </attachment>
     <!-- Player Attachments -->
     <attachment name="playerAttachment" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="captureUnitOnEnteringBy" value="Americans:French:British:Canada:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
@@ -32330,19 +32335,22 @@ Mursilis for his ideas.
 Also to everyone else who helped with their comments and ideas.<br>
 <br>
 Modded for TripleA by b<br>
-<br>Change Log:
+<br>Change Log:<br>
+<br>
+2.74<br> 12/6/23<br>
+Fix "fighter_LR" Tech Units not showing up. They no longer work with Technology but still need a tech image, otherwise they throw a error.
 <br>
 <br>
 2.73<br> 2/27/23<br>
 Fix "figher_LR" Units not showing up. They no longer work with Technology.
 <br>
 <br>
+2.72<br> 6/24/22<br>
+Fix Chinese "Harbour 12" error with Kwangtung.
+<br>
+<br>
 2.71<br> 1/28/22<br>
 Fix all "figher_LR" Units to work correctly when "longRangeAir" and "jetPower" Tech activated. Fix "battelship and carrier hull" Units to work correctly.
-<br>
-<br>
-2.72<br> 1/28/22<br>
-Fix Chinese "Harbour 12" error with Kwangtung.
 <br>
 <br>
 2.7<br> 10/13/21<br>
